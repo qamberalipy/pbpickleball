@@ -1833,123 +1833,20 @@ header .header-actions {
 .text-navy { color: var(--navy); }
 .text-green { color: var(--green); }
 
-/* --- Hero Section --- */
-.about-hero {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    padding: 60px 20px 60px;
-    background-color: var(--white);
-    position: relative;
-    overflow: hidden;
+/* --- About Hero (full-width, inherits global .hero styles) ---
+   .about-hero-full piggybacks on the global .hero class for layout,
+   min-height, the ::before gradient overlay, and .hero-container.
+   Only the background image is overridden here. */
+.about-hero-full {
+    background: url('about-hero-bg.jpg') center/cover no-repeat;
+    background-color: var(--gray-light);
 }
 
-/* Soft radial glow behind the image column */
-.about-hero::after {
-    content: '';
-    position: absolute;
-    right: -80px;
-    top: -60px;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(103, 155, 48, 0.07) 0%, rgba(103, 155, 48, 0) 70%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.about-hero > * {
-    position: relative;
-    z-index: 1;
-}
-
-.ah-image {
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ah-title {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    line-height: 0.9;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.ah-subtitle {
-    font-family: var(--font-body);
-    font-size: 1.25rem;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--navy-light);
-    margin-bottom: 15px;
-}
-
-.ah-text p {
-    font-size: 0.95rem;
-    color: var(--navy);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    max-width: 90%;
-}
-
-.ah-motto {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--green);
-    font-size: 1.05rem;
-    font-family: var(--font-heading);
-}
-
-.ah-image img {
-    width: 100%;
-    max-height: 480px;
-    height: auto;
-    object-fit: contain;
-    transform: scale(1.02);
-    filter: drop-shadow(0 20px 30px rgba(11, 32, 70, 0.08));
-}
-
-/* Right Side Mission List */
-.ah-cards {
-    background: var(--white);
-    border: 1px solid var(--gray-light);
-    border-radius: var(--radius);
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.m-item {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-.m-item:last-child { margin-bottom: 0; }
-
-.m-icon {
-    flex-shrink: 0;
-    color: var(--green);
-    width: 32px;
-    height: 32px;
-}
-
-.m-text h4 {
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 4px;
-}
-
-.m-text p {
-    font-size: 0.75rem;
-    color: var(--gray-text);
-    line-height: 1.4;
+@media (max-width: 768px) {
+    .about-hero-full {
+        background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95)),
+                    url('about-hero-bg.jpg') center/cover no-repeat;
+    }
 }
 
 /* --- Differentiators Section --- */
@@ -1985,7 +1882,11 @@ header .header-actions {
 .diff-grid {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    padding: 40px 20px;
 }
 
 .diff-item {
@@ -1994,9 +1895,7 @@ header .header-actions {
     gap: 12px;
     align-items: flex-start;
     padding: 0 15px;
-    border-right: 1px solid var(--gray-light);
 }
-.diff-item:last-child { border-right: none; }
 
 .d-icon {
     width: 38px;
@@ -2030,24 +1929,19 @@ header .header-actions {
 }
 
 .ag-box {
-    background: var(--white);
+    background-color: var(--white);
+    border: 1px solid rgba(11, 32, 70, 0.05);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.06)!important;
+    box-shadow: 0 10px 30px rgba(11, 32, 70, 0.06);
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ag-box:hover {
-    box-shadow: 0 20px 50px rgba(11, 32, 70, 0.1);
-    transform: translateY(-3px);
-}
-
-/* First box (Core Values) — soft contrasting background */
-.ag-box:first-child {
-    background-color: var(--gray-bg);
-    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.06);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(11, 32, 70, 0.1);
 }
 
 .ag-header {

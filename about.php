@@ -8,19 +8,17 @@ get_header();
 <main class="about-page">
 
     <!-- Hero Section -->
-    <section class="about-hero container">
-        <div class="ah-text anim-fade-right">
-            <h1 class="ah-title"><span class="text-navy">About</span><br><span class="text-green">PBPA</span></h1>
-            <h2 class="ah-subtitle">More Than a Game. A Community.</h2>
-            <p>At PB Pickleball Academy, we believe pickleball is more than a game—it's a way to stay active, make friends, and enjoy life. Our mission is to make learning simple, fun, and rewarding for beginners and active adults.</p>
-            <div class="ah-motto">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                <strong>We teach. We play. We care.</strong>
+    <section class="hero about-hero-full">
+        <div class="hero-container">
+            <div class="hero-left anim-fade-right">
+                <h2 class="hero-subtitle">MORE THAN A GAME</h2>
+                <h1>ABOUT <br><span class="highlight">PBPA</span></h1>
+                <p>At PB Pickleball Academy, we believe pickleball is more than a game—it's a way to stay active, make friends, and enjoy life. Our mission is to make learning simple, fun, and rewarding for beginners and active adults.</p>
+                <div class="ah-motto" style="display:flex;align-items:center;gap:10px;color:var(--green);font-size:1.05rem;font-family:var(--font-heading);margin-top:20px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <strong>We teach. We play. We care.</strong>
+                </div>
             </div>
-        </div>
-
-        <div class="ah-image anim-scale-in">
-            <img src="<?php echo get_template_directory_uri(); ?>/about-hero-illustration.png" alt="Happy active adults playing pickleball">
         </div>
     </section>
 
