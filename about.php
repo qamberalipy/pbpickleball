@@ -138,24 +138,21 @@ get_header();
     </section>
 
     <!-- Specific About Page CTA Bar -->
-    <section class="about-cta-banner container anim-scale-in">
+    <section class="about-cta-banner container anim-scale-in is-visible">
         <div class="acb-inner">
             <div class="acb-left">
-                <div class="acb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                <div class="acb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 62%;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                 <div class="acb-text">
                     <h4>READY TO JOIN OUR COMMUNITY?</h4>
                     <p>Book your first lesson today and discover the joy of pickleball!</p>
                 </div>
             </div>
-            
+
             <button class="btn btn-green acb-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span><strong>BOOK YOUR LESSON</strong><br><small>Spots fill up fast - reserve your time today!</small></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span><strong>BOOK YOUR LESSON</strong></span>
             </button>
-            
-            <div class="acb-right">
-                <img src="<?php echo get_template_directory_uri(); ?>/about-paddle-arrow.png" alt="Paddle and ball" class="acb-paddle-graphic">
-            </div>
+
         </div>
     </section>
 
