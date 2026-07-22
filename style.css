@@ -426,7 +426,22 @@ nav {
     max-width: 550px;
     flex: 1 1 450px;
 }
-
+/* Force GPU acceleration and smooth font rendering for keyframe elements */
+.hero-subtitle,
+.hero-left h1,
+.hero-tagline,
+.hero-left p,
+.hero-left .btn,
+.hero-right,
+.announcement-bar,
+header .logo,
+header .nav-links,
+header .header-actions {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+}
 .hero-subtitle {
     font-family: var(--font-heading);
     font-size: 1.6rem;
@@ -1648,20 +1663,20 @@ footer {
    ============================================================ */
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-28px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translate3d(0, -40px, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translate3d(0, 50px, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: translate3d(-60px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: translate3d(60px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -1722,30 +1737,45 @@ footer {
 
 .anim-fade-up {
     opacity: 0;
-    transform: translateY(36px);
+    transform: translate3d(0, 36px, 0);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
     transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22,1,0.36,1);
 }
 .anim-fade-left {
     opacity: 0;
-    transform: translateX(-45px);
+    transform: translate3d(-45px, 0, 0);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
     transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
 }
 .anim-fade-right {
     opacity: 0;
-    transform: translateX(45px);
+    transform: translate3d(45px, 0, 0);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
     transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
 }
 .anim-scale-in {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.9) translate3d(0, 0, 0);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
 }
 .anim-fade-up.is-visible,
 .anim-fade-left.is-visible,
-.anim-fade-right.is-visible,
+.anim-fade-right.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
 .anim-scale-in.is-visible {
     opacity: 1;
-    transform: none;
+    transform: scale(1) translate3d(0, 0, 0);
 }
 .anim-stagger { transition-delay: var(--stagger-delay, 0ms); }
 
