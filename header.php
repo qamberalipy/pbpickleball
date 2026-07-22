@@ -61,21 +61,21 @@
             <!-- Main Navigation -->
             <nav id="mainNav">
                 <ul class="nav-links">
-                    <li><a href="<?php echo home_url('/'); ?>" class="active">HOME</a></li>
-                    <li><a href="#">ABOUT PBPA</a></li>
+                    <li><a href="<?php echo home_url('/'); ?>" <?php if (is_front_page() || is_home() || is_page('home')) echo 'class="active"'; ?>>HOME</a></li>
+                    <li><a href="<?php echo home_url('/about-pbpa/'); ?>" <?php if (is_page('about-pbpa')) echo 'class="active"'; ?>>ABOUT PBPA</a></li>
                     <li><a href="#">LESSONS &amp; PROGRAMS</a></li>
-                    <li><a href="#">OUR INSTRUCTORS</a></li>
+                    <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
                     <li><a href="#">BEGINNER MANUAL</a></li>
                     <li><a href="#">RETREATS</a></li>
                     <li><a href="#">COURT DIRECTORY</a></li>
                     <li><a href="#">SHOP</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="<?php echo home_url('/contact-us/'); ?>" <?php if (is_page('contact-us')) echo 'class="active"'; ?>>CONTACT</a></li>
                 </ul>
             </nav>
 
             <div class="header-right-actions">
                 <div class="header-actions">
-                    <button class="btn btn-green">
+                    <a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-green">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -84,7 +84,7 @@
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
                         Book a Lesson
-                    </button>
+                    </a>
                 </div>
 
                 <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav"

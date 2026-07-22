@@ -2950,3 +2950,573 @@ header .header-actions {
         background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95));
     }
 }
+
+/* ============================================================
+   OUR INSTRUCTORS PAGE STYLES
+   ============================================================ */
+
+/* Page Wrapper */
+.instructors-page {
+    background-color: var(--gray-bg);
+}
+
+/* ---------------------------------------------------------------
+   1. HERO
+   --------------------------------------------------------------- */
+.instructors-hero-full {
+    background: url('instructors-hero-bg.jpg') center/cover no-repeat;
+    background-color: var(--navy);
+}
+
+.instructors-hero-full::before {
+    background: linear-gradient(to right, rgba(11, 32, 70, 0.9) 0%, rgba(11, 32, 70, 0.2) 65%, rgba(11, 32, 70, 0) 100%);
+}
+
+.instructors-hero-full .hero-subtitle,
+.instructors-hero-full h1,
+.instructors-hero-full p {
+    color: var(--white);
+}
+
+.instructors-hero-full h1 .highlight {
+    color: var(--green-bright);
+}
+
+.inst-hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+}
+
+.hr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hr-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.hr-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(103, 155, 48, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    flex-shrink: 0;
+}
+
+.hr-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ---------------------------------------------------------------
+   2. FEATURED INSTRUCTOR
+   --------------------------------------------------------------- */
+.featured-instructor {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.2fr 1.2fr;
+    gap: 30px;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    align-items: stretch;
+}
+
+.fi-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fi-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 250px;
+}
+
+.fi-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fi-info {
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.fi-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.fi-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.fi-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fi-stats li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.fi-philosophy {
+    background: var(--gray-bg);
+    border-radius: 12px;
+    padding: 24px;
+    justify-content: center;
+    position: relative;
+}
+
+.fi-quote-mark {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: rgba(103, 155, 48, 0.15);
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    line-height: 1;
+}
+
+.fi-quote-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.fi-bio {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+.fi-expertise {
+    padding-left: 20px;
+    border-left: 1px solid var(--gray-light);
+    justify-content: center;
+}
+
+.fi-exp-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.fi-exp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.fi-exp-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--navy);
+}
+
+.fi-exp-list svg {
+    width: 14px;
+    height: 14px;
+    color: var(--green);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.fi-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.fi-badge {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------------------
+   3. TEAM GRID
+   --------------------------------------------------------------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(11, 32, 70, 0.03);
+    border: 1px solid rgba(11, 32, 70, 0.04);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card:hover {
+    box-shadow: 0 15px 35px rgba(11, 32, 70, 0.08);
+    transform: translateY(-6px);
+}
+
+.tc-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 16px;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tc-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tc-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.tc-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.tc-bio {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.tc-specialties {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    flex-grow: 1;
+}
+
+.tc-specialties li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--navy);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.tc-specialties li:last-child {
+    border-bottom: none;
+}
+
+.tc-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.75rem;
+    margin-top: auto;
+}
+
+/* ---------------------------------------------------------------
+   4. JOIN CTA BANNER
+   --------------------------------------------------------------- */
+.join-cta-banner {
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-bg) 100%);
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    border: 1px solid rgba(11, 32, 70, 0.04);
+}
+
+.jcb-left h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.jcb-left p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+.jcb-middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.jcb-icon-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jcb-icon-block svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.jcb-icon-block span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+}
+
+.jcb-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   5. CREDENTIALS STRIP
+   --------------------------------------------------------------- */
+.credentials-strip {
+    background-color: var(--navy);
+    padding: 40px 0;
+    color: var(--white);
+}
+
+.cs-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.cs-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cs-title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    padding-right: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+}
+
+.cs-logos {
+    display: flex;
+    gap: 24px;
+}
+
+.cs-logo-dummy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.cs-logo-dummy:hover {
+    opacity: 1;
+}
+
+.cs-logo-dummy svg {
+    width: 20px;
+    height: 20px;
+    color: var(--green-bright);
+}
+
+.cs-logo-dummy span {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cs-right {
+    text-align: right;
+    max-width: 300px;
+}
+
+.cs-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.cs-author {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green-bright);
+    text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------
+   INSTRUCTORS PAGE — RESPONSIVE
+   --------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .featured-instructor {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fi-photo {
+        min-height: 350px;
+    }
+    .fi-expertise {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--gray-light);
+        padding-top: 20px;
+    }
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 980px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .join-cta-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .jcb-middle {
+        margin: 0 auto;
+    }
+    .cs-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cs-left {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .cs-title {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 15px;
+    }
+    .cs-right {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-instructor {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+    .fi-photo {
+        min-height: 250px;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .jcb-middle {
+        grid-template-columns: 1fr;
+    }
+    .cs-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .instructors-hero-full::before {
+        background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95));
+    }
+}

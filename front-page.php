@@ -9,7 +9,7 @@
             <h3 class="hero-tagline">Beginners Welcome. Friends for Life.</h3>
             <p>We make learning pickleball simple, fun, and rewarding. Our programs help active adults build skills,
                 confidence, meet new friends, and enjoy one of America's fastest-growing sports.</p>
-            <button class="btn btn-green">
+            <a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -18,7 +18,7 @@
                     <line x1="3" y1="10" x2="21" y2="10"></line>
                 </svg>
                 BOOK YOUR FIRST LESSON
-            </button>
+            </a>
         </div>
 
         <div class="hero-right">
