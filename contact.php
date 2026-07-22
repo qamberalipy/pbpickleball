@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Template Name: Contact Page
 */
@@ -304,7 +304,7 @@ get_header();
             <h2 class="ct-wb-title">Your Journey Starts Here</h2>
             <p class="ct-wb-body">Whether you've never picked up a paddle or you're looking to refine your game, there's a spot for you on our courts. Come as you are — we'll take care of the rest.</p>
             <div class="ct-wb-actions">
-                <a href="tel:5618559500" class="btn btn-outline-white">
+                <a href="tel:5618559500" class="btn btn-outline">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/></svg>
                     Call 561-855-9500
                 </a>

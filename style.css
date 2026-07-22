@@ -2286,6 +2286,20 @@ header .header-actions {
     background-color: var(--navy);
 }
 
+.contact-hero-full::before {
+    background: linear-gradient(to right, rgba(11, 32, 70, 0.9) 0%, rgba(11, 32, 70, 0.2) 65%, rgba(11, 32, 70, 0) 100%);
+}
+
+.contact-hero-full .hero-subtitle,
+.contact-hero-full h1,
+.contact-hero-full p {
+    color: var(--white);
+}
+
+.contact-hero-full h1 .highlight {
+    color: var(--green-bright);
+}
+
 /* Hero trust tags row */
 .ct-hero-tags {
     display: flex;
@@ -2322,7 +2336,7 @@ header .header-actions {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 30px;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* Shared card base */
@@ -2333,6 +2347,9 @@ header .header-actions {
     border-radius: 16px;
     padding: 40px;
     box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .ct-card-header {
@@ -2588,7 +2605,7 @@ header .header-actions {
 
 .ct-qs-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
 }
 
@@ -2596,7 +2613,7 @@ header .header-actions {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 28px;
+    padding: 20px 12px;
     background-color: var(--gray-bg);
     border: 1px solid rgba(11, 32, 70, 0.05);
     border-radius: 16px;
@@ -2630,25 +2647,25 @@ header .header-actions {
 .ct-qs-card:hover::before { transform: scaleX(1); }
 
 .ct-qs-icon {
-    width: 54px;
-    height: 54px;
+    width: 40px;
+    height: 40px;
     background: rgba(103, 155, 48, 0.1);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     flex-shrink: 0;
 }
 
 .ct-qs-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
 }
 
 .ct-qs-card h3 {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 900;
     text-transform: uppercase;
     color: var(--navy);
@@ -2657,11 +2674,11 @@ header .header-actions {
 }
 
 .ct-qs-card p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--gray-text);
     line-height: 1.5;
     flex-grow: 1;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .ct-qs-arrow {
@@ -2740,8 +2757,8 @@ header .header-actions {
    5. WHY CHOOSE PBPA? — Features Grid
    --------------------------------------------------------------- */
 .ct-features {
-    background-color: var(--navy);
-    padding: 70px 0;
+    background-color: var(--gray-bg);
+    padding: 80px 0;
 }
 
 .ct-features-title {
@@ -2749,7 +2766,7 @@ header .header-actions {
     font-size: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--navy);
     text-align: center;
     margin-bottom: 50px;
     letter-spacing: 1px;
@@ -2761,7 +2778,7 @@ header .header-actions {
     display: block;
     width: 45px;
     height: 3px;
-    background: var(--green-bright);
+    background: var(--green);
     border-radius: 2px;
     margin: 12px auto 0;
 }
@@ -2774,42 +2791,43 @@ header .header-actions {
 
 .ct-feature-item {
     text-align: center;
-    padding: 30px 16px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    transition: background 0.25s ease, transform 0.25s ease;
+    padding: 35px 20px;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid rgba(11, 32, 70, 0.04);
+    box-shadow: 0 4px 15px rgba(11, 32, 70, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .ct-feature-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(11, 32, 70, 0.08);
+    transform: translateY(-6px);
 }
 
 .ct-fi-icon {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     margin: 0 auto 16px;
 }
 
 .ct-fi-icon svg {
-    width: 56px;
-    height: 56px;
+    width: 100%;
+    height: 100%;
 }
 
 .ct-feature-item h3 {
     font-family: var(--font-heading);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 8px;
+    color: var(--navy);
+    margin-bottom: 10px;
     line-height: 1.3;
 }
 
 .ct-feature-item p {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--gray-text);
     line-height: 1.5;
 }
 
@@ -2817,7 +2835,7 @@ header .header-actions {
    6. ALL LEVELS WELCOME — Banner Strip
    --------------------------------------------------------------- */
 .ct-welcome-banner {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-bright) 100%);
     padding: 80px 0;
     position: relative;
     overflow: hidden;
@@ -2845,9 +2863,9 @@ header .header-actions {
 
 .ct-wb-badge {
     display: inline-block;
-    background: rgba(103, 155, 48, 0.2);
-    border: 1px solid rgba(103, 155, 48, 0.4);
-    color: var(--green-bright);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
     font-family: var(--font-heading);
     font-size: 0.7rem;
     font-weight: 800;
@@ -2883,7 +2901,21 @@ header .header-actions {
 }
 
 .ct-wb-primary {
+    background-color: var(--navy);
+    color: var(--white);
     box-shadow: 0 6px 20px rgba(103, 155, 48, 0.4);
+}
+
+/* Safely override outline button colors ONLY inside the green welcome banner */
+.ct-welcome-banner .btn-outline {
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 14px 26px; /* Scaled up slightly to match the primary button */
+}
+
+.ct-welcome-banner .btn-outline:hover {
+    background-color: var(--white);
+    color: var(--green);
 }
 
 /* ---------------------------------------------------------------
@@ -2891,7 +2923,7 @@ header .header-actions {
    --------------------------------------------------------------- */
 @media (max-width: 980px) {
     .contact-split-grid { grid-template-columns: 1fr; }
-    .ct-qs-grid { grid-template-columns: repeat(2, 1fr); }
+    .ct-qs-grid { grid-template-columns: repeat(3, 1fr); }
     .ct-features-grid { grid-template-columns: repeat(3, 1fr); }
     .ct-map-wrapper { aspect-ratio: 16 / 8; }
 }
@@ -2912,4 +2944,9 @@ header .header-actions {
     .ct-wb-actions { flex-direction: column; align-items: center; }
     .ct-wb-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
     .ct-hero-tags { gap: 8px; }
+
+    /* Contact hero mobile overlay */
+    .contact-hero-full::before {
+        background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95));
+    }
 }
