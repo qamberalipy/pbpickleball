@@ -22,39 +22,6 @@ get_header();
         <div class="ah-image anim-scale-in">
             <img src="<?php echo get_template_directory_uri(); ?>/about-hero-illustration.png" alt="Happy active adults playing pickleball">
         </div>
-
-        <div class="ah-cards anim-fade-left">
-            <div class="mission-list">
-                <div class="m-item">
-                    <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                    <div class="m-text">
-                        <h4>OUR MISSION</h4>
-                        <p>Make learning pickleball simple, fun, and rewarding.</p>
-                    </div>
-                </div>
-                <div class="m-item">
-                    <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-                    <div class="m-text">
-                        <h4>OUR VISION</h4>
-                        <p>To be the leading pickleball academy for beginners and active adults in South Florida.</p>
-                    </div>
-                </div>
-                <div class="m-item">
-                    <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-                    <div class="m-text">
-                        <h4>OUR PROMISE</h4>
-                        <p>Patient instruction, a supportive community, and real results.</p>
-                    </div>
-                </div>
-                <div class="m-item">
-                    <div class="m-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
-                    <div class="m-text">
-                        <h4>OUR PASSION</h4>
-                        <p>Helping you play better, feel better, and have more fun!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Differentiators Section -->
@@ -231,14 +198,6 @@ get_header();
                     <p class="pf-highlight">561-855-9500</p>
                     <p>Mon - Sun: 7am - 8pm</p>
                 </div>
-            </div>
-            <div class="pf-item pf-chat">
-                <div>
-                    <h5>QUESTIONS? CHAT WITH US!</h5>
-                    <p>We're online and ready to help you.</p>
-                    <p class="pf-online"><span class="dot"></span> Online now</p>
-                </div>
-                <div class="chat-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 10H6v-2h12v2zm0-3H6V7h12v2z"/></svg></div>
             </div>
         </div>
     </section>
