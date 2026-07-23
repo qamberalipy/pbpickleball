@@ -660,7 +660,7 @@
 
                     <!-- Card 2 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop');">
+                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop');">
                             <span class="cd-fc-badge">Public Indoor</span>
                         </div>
                         <div class="cd-fc-content">
@@ -746,7 +746,7 @@
             <!-- Cards -->
             <div class="cd-surface-cards anim-fade-up">
                 <div class="cd-scard">
-                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="cd-scard-body">
                         <h4>Hard Court</h4>
                         <p>Standard tennis court surface, usually asphalt or concrete coated with acrylic.</p>
@@ -765,7 +765,7 @@
                 </div>
 
                 <div class="cd-scard">
-                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="cd-scard-body">
                         <h4>Indoor Court</h4>
                         <p>Typically wood or synthetic gym floor, common in rec centers.</p>
@@ -784,7 +784,7 @@
                 </div>
 
                 <div class="cd-scard">
-                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1560012057-4372e14c5085?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="cd-scard-body">
                         <h4>Clay Court</h4>
                         <p>Crushed stone or brick. Very rare for pickleball but exists at some clubs.</p>
