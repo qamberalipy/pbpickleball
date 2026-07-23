@@ -314,67 +314,59 @@
     <!-- 2. Main Layout (Sidebar + Grid) -->
     <section class="shop-container shop-main-layout">
         
-        <!-- Left Sidebar -->
+        <!-- Left Sidebar Filters -->
         <aside class="shop-sidebar">
             <div class="shop-sidebar__section">
                 <h3 class="shop-sidebar__title">Categories</h3>
                 <ul class="shop-category-list">
-                    <li><a href="#">Paddles <span>(24)</span></a></li>
-                    <li><a href="#">Balls <span>(8)</span></a></li>
-                    <li><a href="#">Footwear <span>(16)</span></a></li>
-                    <li><a href="#">Bags & Backpacks <span>(12)</span></a></li>
-                    <li><a href="#">Eyewear & Hats <span>(18)</span></a></li>
-                    <li><a href="#">Apparel <span>(42)</span></a></li>
-                    <li><a href="#">Training & Acc. <span>(9)</span></a></li>
+                    <li><a href="#" class="cat-filter active" data-cat="all">All Categories</a></li>
+                    <li><a href="#" class="cat-filter" data-cat="paddles">Paddles <span>(2)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="balls">Balls <span>(2)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="footwear">Footwear <span>(2)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="bags">Bags & Backpacks <span>(1)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="eyewear">Eyewear & Hats <span>(1)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="apparel">Apparel <span>(1)</span></a></li>
                 </ul>
             </div>
 
             <div class="shop-sidebar__section">
                 <h3 class="shop-sidebar__title">Filter by Price</h3>
-                <div class="shop-filter-list">
-                    <label class="shop-filter-label"><input type="checkbox"> Under $25</label>
-                    <label class="shop-filter-label"><input type="checkbox"> $25 to $50</label>
-                    <label class="shop-filter-label"><input type="checkbox"> $50 to $100</label>
-                    <label class="shop-filter-label"><input type="checkbox"> $100 to $150</label>
-                    <label class="shop-filter-label"><input type="checkbox"> $150 & Above</label>
+                <div class="shop-filter-list" id="price-filters">
+                    <label class="shop-filter-label"><input type="checkbox" value="0-25"> Under $25</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="25-50"> $25 to $50</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="50-100"> $50 to $100</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="100-150"> $100 to $150</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="150-999"> $150 & Above</label>
                 </div>
             </div>
 
             <div class="shop-sidebar__section">
                 <h3 class="shop-sidebar__title">Filter by Rating</h3>
-                <div class="shop-filter-list">
-                    <label class="shop-filter-label"><input type="checkbox"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5 Stars</label>
-                    <label class="shop-filter-label"><input type="checkbox"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4 Stars & Up</label>
-                    <label class="shop-filter-label"><input type="checkbox"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9734;&#9734;</span> 3 Stars & Up</label>
+                <div class="shop-filter-list" id="rating-filters">
+                    <label class="shop-filter-label"><input type="checkbox" value="5"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5 Stars</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="4"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4 Stars & Up</label>
+                    <label class="shop-filter-label"><input type="checkbox" value="3"> <span style="color:#FFC107;">&#9733;&#9733;&#9733;&#9734;&#9734;</span> 3 Stars & Up</label>
                 </div>
             </div>
 
-            <!-- Reused Trust Box -->
+            <!-- Trust Box Sidebar -->
             <div class="shop-trust-box">
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
+                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
                     <div class="shop-trust-item__body">
                         <h4 class="shop-trust-item__title">Pro Recommended</h4>
                         <p class="shop-trust-item__text">Tested and approved by certified PBPA instructors.</p>
                     </div>
                 </div>
-
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    </div>
+                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
                     <div class="shop-trust-item__body">
                         <h4 class="shop-trust-item__title">Safe & Secure</h4>
                         <p class="shop-trust-item__text">Encrypted checkout for 100% safe transactions.</p>
                     </div>
                 </div>
-
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
-                    </div>
+                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg></div>
                     <div class="shop-trust-item__body">
                         <h4 class="shop-trust-item__title">30-Day Guarantee</h4>
                         <p class="shop-trust-item__text">Easy, hassle-free returns on all unworn equipment.</p>
@@ -386,10 +378,10 @@
         <!-- Main Product Area -->
         <div class="shop-content">
             <div class="shop-content__topbar">
-                <div class="shop-content__count">Showing 1-9 of 129 results</div>
+                <div class="shop-content__count" id="product-count">Showing 9 of 9 results</div>
                 <div class="shop-sort">
                     Sort by:
-                    <select aria-label="Sort products">
+                    <select id="shop-sort-select" aria-label="Sort products">
                         <option value="featured">Featured</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
@@ -398,9 +390,9 @@
                 </div>
             </div>
 
-            <div class="shop-products">
+            <div class="shop-products" id="product-grid">
                 <!-- Card 1 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="paddles" data-price="129.99" data-rating="4.9" data-featured="1">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge">Best Seller</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
@@ -412,16 +404,13 @@
                         <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$129.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.9 (128)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.9 (128)</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="balls" data-price="14.99" data-rating="4.8" data-featured="2">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge shop-card__badge--alt">PBPA Approved</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
@@ -433,16 +422,13 @@
                         <div class="shop-card__subtitle">Durable 3-Pack</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$14.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.8 (342)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.8 (342)</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="footwear" data-price="119.99" data-rating="4.6" data-featured="3">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge">New Arrival</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Pro Pickleball Shoes" class="shop-card__image">
@@ -454,16 +440,13 @@
                         <div class="shop-card__subtitle">Enhanced Grip & Lateral Support</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$119.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.6 (85)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.6 (85)</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 4 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="bags" data-price="89.99" data-rating="4.9" data-featured="4">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
@@ -475,16 +458,13 @@
                         <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$89.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.9 (42)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.9 (42)</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 5 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="eyewear" data-price="45.00" data-rating="4.5" data-featured="5">
                     <div class="shop-card__image-wrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/glasses.png" alt="Performance Sunglasses" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
@@ -495,16 +475,13 @@
                         <div class="shop-card__subtitle">Polarized UV Protection</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$45.00</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.5 (61)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.5 (61)</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 6 -->
-                <a href="#" class="shop-card">
+                <a href="#" class="shop-card" data-category="apparel" data-price="34.99" data-rating="4.7" data-featured="6">
                     <div class="shop-card__image-wrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
@@ -515,16 +492,13 @@
                         <div class="shop-card__subtitle">Breathable Moisture Wicking</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$34.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.7 (112)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.7 (112)</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Card 7 (Placeholder) -->
-                <a href="#" class="shop-card">
+                <!-- Card 7 -->
+                <a href="#" class="shop-card" data-category="paddles" data-price="149.99" data-rating="4.4" data-featured="7">
                     <div class="shop-card__image-wrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="Tour Elite Paddle" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
@@ -535,16 +509,13 @@
                         <div class="shop-card__subtitle">Maximum Spin Control</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$149.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.4 (55)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.4 (55)</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Card 8 (Placeholder) -->
-                <a href="#" class="shop-card">
+                <!-- Card 8 -->
+                <a href="#" class="shop-card" data-category="footwear" data-price="95.00" data-rating="5.0" data-featured="8">
                     <div class="shop-card__image-wrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Lite Shoes" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
@@ -555,16 +526,13 @@
                         <div class="shop-card__subtitle">Breathable Mesh</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$95.00</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                5.0 (22)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 5.0 (22)</span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Card 9 (Placeholder) -->
-                <a href="#" class="shop-card">
+                <!-- Card 9 -->
+                <a href="#" class="shop-card" data-category="balls" data-price="12.99" data-rating="4.7" data-featured="9">
                     <div class="shop-card__image-wrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Indoor Balls" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
@@ -575,18 +543,16 @@
                         <div class="shop-card__subtitle">Precision Bounce 3-Pack</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$12.99</span>
-                            <span class="shop-card__rating">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                4.7 (104)
-                            </span>
+                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.7 (104)</span>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <!-- Load More Button -->
-            <div class="shop-load-more">
-                <a href="#" class="btn">Load More Products</a>
+            <!-- Empty State Message container -->
+            <div id="no-products-msg" style="display: none; text-align: center; padding: 50px 20px; background: #f8f9fa; border-radius: 12px; font-family: var(--font-heading, sans-serif);">
+                <h3 style="color: var(--navy, #0B192C); margin-bottom: 10px;">No Products Found</h3>
+                <p style="color: var(--gray-text, #666); font-family: var(--font-body, sans-serif);">Try clearing some of your active filters to see more results.</p>
             </div>
 
         </div>
@@ -624,4 +590,107 @@
 
 </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = Array.from(document.querySelectorAll('#product-grid .shop-card'));
+    const grid = document.getElementById('product-grid');
+    const noProductsMsg = document.getElementById('no-products-msg');
+    const productCount = document.getElementById('product-count');
+    
+    const catFilters = document.querySelectorAll('.cat-filter');
+    const priceFilters = document.querySelectorAll('#price-filters input');
+    const ratingFilters = document.querySelectorAll('#rating-filters input');
+    const sortSelect = document.getElementById('shop-sort-select');
+
+    function updateProducts() {
+        // 1. Get active category
+        const activeCatBtn = document.querySelector('.cat-filter.active');
+        const activeCat = activeCatBtn ? activeCatBtn.getAttribute('data-cat') : 'all';
+
+        // 2. Get active prices
+        const activePrices = Array.from(priceFilters).filter(cb => cb.checked).map(cb => cb.value);
+
+        // 3. Get active ratings
+        const activeRatings = Array.from(ratingFilters).filter(cb => cb.checked).map(cb => parseInt(cb.value));
+
+        // 4. Filter
+        let filtered = cards.filter(card => {
+            const cat = card.getAttribute('data-category');
+            const price = parseFloat(card.getAttribute('data-price'));
+            const rating = parseFloat(card.getAttribute('data-rating'));
+
+            // Category check
+            if (activeCat !== 'all' && cat !== activeCat) return false;
+
+            // Price check
+            if (activePrices.length > 0) {
+                const passesPrice = activePrices.some(range => {
+                    const [minStr, maxStr] = range.split('-');
+                    const min = parseFloat(minStr);
+                    const max = parseFloat(maxStr);
+                    return price >= min && price <= max;
+                });
+                if (!passesPrice) return false;
+            }
+
+            // Rating check
+            if (activeRatings.length > 0) {
+                const passesRating = activeRatings.some(minRating => rating >= minRating);
+                if (!passesRating) return false;
+            }
+
+            return true;
+        });
+
+        // 5. Sort
+        const sortVal = sortSelect.value;
+        filtered.sort((a, b) => {
+            if (sortVal === 'price-low') {
+                return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+            } else if (sortVal === 'price-high') {
+                return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+            } else if (sortVal === 'rating') {
+                return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+            } else {
+                // featured
+                return parseInt(a.getAttribute('data-featured')) - parseInt(b.getAttribute('data-featured'));
+            }
+        });
+
+        // 6. Render
+        grid.innerHTML = '';
+        if (filtered.length === 0) {
+            grid.style.display = 'none';
+            noProductsMsg.style.display = 'block';
+            productCount.textContent = 'Showing 0 results';
+        } else {
+            grid.style.display = '';
+            noProductsMsg.style.display = 'none';
+            filtered.forEach(card => grid.appendChild(card));
+            productCount.textContent = `Showing ${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
+        }
+    }
+
+    // Attach events
+    catFilters.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            catFilters.forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            updateProducts();
+        });
+    });
+
+    priceFilters.forEach(cb => cb.addEventListener('change', updateProducts));
+    ratingFilters.forEach(cb => cb.addEventListener('change', updateProducts));
+    sortSelect.addEventListener('change', updateProducts);
+});
+</script>
+<style>
+/* Active state for Category Links */
+.shop-category-list a.active {
+    color: var(--green, #00D06C) !important;
+    font-weight: 800 !important;
+}
+</style>
 <?php get_footer(); ?>

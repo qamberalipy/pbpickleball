@@ -9,12 +9,36 @@
 /* Shop Global Styles */
 .shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* 1. Hero Section (Theme-Aligned & Constrained) */
+/* 1. Hero Section (Full Background Image + Navy Overlay) */
 .shop-hero {
-    background-color: var(--gray-bg, #f4f5f7);
-    padding: 60px 0 80px 0;
     position: relative;
+    padding: 80px 0 100px 0;
+    color: var(--white, #fff);
+    min-height: 480px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
+}
+
+.shop-hero__bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.shop-hero__bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(11, 25, 44, 0.92) 0%, rgba(11, 25, 44, 0.80) 100%);
+}
+
+.shop-hero__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .shop-hero__grid {
@@ -32,7 +56,7 @@
 
 .shop-hero__title {
     font-family: var(--font-heading, sans-serif);
-    color: var(--navy, #0B192C);
+    color: var(--white, #ffffff);
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -42,7 +66,7 @@
 
 .shop-hero__subtitle {
     font-family: var(--font-heading, sans-serif);
-    color: var(--green, #00D06C);
+    color: var(--green-bright, #00FF87);
     font-size: 1.35rem;
     font-style: italic;
     font-weight: 700;
@@ -51,7 +75,7 @@
 
 .shop-hero__text {
     font-family: var(--font-body, sans-serif);
-    color: var(--gray-text, #666);
+    color: #e0e0e0;
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -70,48 +94,43 @@
     gap: 10px;
     font-family: var(--font-heading, sans-serif);
     font-weight: 700;
-    color: var(--navy, #0B192C);
+    color: var(--white, #ffffff);
     font-size: 0.95rem;
 }
 
 .shop-hero__feature svg {
     width: 22px;
     height: 22px;
-    stroke: var(--green, #00D06C);
+    stroke: var(--green-bright, #00FF87);
     flex-shrink: 0;
 }
 
-/* Right Side Card Wrapper */
+/* Right Side Overlay Card Only */
 .shop-hero__right {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.shop-hero__image-card {
-    height: 260px;
-    border-radius: var(--radius, 12px);
-    background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1200&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08);
+    justify-content: flex-end;
 }
 
 .shop-hero__overlay-card {
-    background: var(--navy, #0B192C);
+    background: rgba(11, 25, 44, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 135, 0.25);
     color: var(--white, #fff);
-    padding: 30px;
-    border-radius: var(--radius, 12px);
-    box-shadow: 0 15px 30px rgba(11, 25, 44, 0.15);
+    padding: 35px;
+    border-radius: var(--radius, 16px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 440px;
 }
 
 .shop-hero__overlay-title {
     font-family: var(--font-heading, sans-serif);
-    font-size: 1.3rem;
-    margin-bottom: 16px;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
     color: var(--green-bright, #00FF87);
     font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .shop-hero__list {
@@ -120,7 +139,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
 }
 
 .shop-hero__list li {
@@ -129,7 +148,8 @@
     gap: 8px;
     font-family: var(--font-body, sans-serif);
     font-size: 0.9rem;
-    color: #e0e0e0;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .shop-hero__list svg {
@@ -141,9 +161,10 @@
 
 /* Responsive Hero Fixes */
 @media (max-width: 992px) {
-    .shop-hero { padding: 40px 0; }
-    .shop-hero__grid { grid-template-columns: 1fr; gap: 30px; }
-    .shop-hero__image-card { height: 220px; }
+    .shop-hero { padding: 60px 0; }
+    .shop-hero__grid { grid-template-columns: 1fr; gap: 40px; }
+    .shop-hero__right { justify-content: flex-start; }
+    .shop-hero__overlay-card { max-width: 100%; }
 }
 
 @media (max-width: 576px) {
@@ -523,7 +544,8 @@
 
     <!-- 1. Hero Section -->
     <section class="shop-hero">
-        <div class="shop-container">
+        <div class="shop-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="shop-container shop-hero__container">
             <div class="shop-hero__grid">
                 
                 <!-- Left Content -->
@@ -552,9 +574,8 @@
                     </div>
                 </div>
 
-                <!-- Right Visual Side -->
+                <!-- Right Visual Side (Overlay Card Only) -->
                 <div class="shop-hero__right">
-                    <div class="shop-hero__image-card"></div>
                     <div class="shop-hero__overlay-card">
                         <div class="shop-hero__overlay-title">Everything You Need To Play Your Best</div>
                         <ul class="shop-hero__list">
