@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Retreats & Cruises
+ * Template Name: Retreats  Cruises
  */
 get_header(); ?>
 
@@ -8,12 +8,12 @@ get_header(); ?>
 
     <!-- 1. Hero Section -->
     <section class="r-hero anim-fade-up">
-        <div class="r-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="r-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/Gemini_Generated_Image_irl3vsirl3vsirl3.png');"></div>
         <div class="r-hero__overlay"></div>
 
         <div class="container r-hero__container">
             <div class="r-hero__left">
-                <h1 class="r-hero__title">RETREATS & CRUISES</h1>
+                <h1 class="r-hero__title">RETREATS and CRUISES</h1>
                 <h2 class="r-hero__subtitle">Play Pickleball. Explore. Connect.</h2>
                 <p class="r-hero__intro">Combine your passion for pickleball with unforgettable vacations. Join us at breathtaking resorts and luxury cruises for world-class coaching, daily open play, and amazing new friends from around the world.</p>
                 
@@ -75,7 +75,7 @@ get_header(); ?>
             <div class="r-grid r-grid--upcoming anim-fade-up">
                 <!-- Card 1 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1544322896-1594e5af40e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')">
                         <div class="r-card__badge">Nov 15-20, 2026</div>
                     </div>
                     <div class="r-card__content">
@@ -90,13 +90,13 @@ get_header(); ?>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Beachfront Play</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Social Mixers</li>
                         </ul>
-                        <a href="#" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
                     </div>
                 </article>
 
                 <!-- Card 2 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1599640842225-85d111c60e6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')">
                         <div class="r-card__badge">Jan 10-17, 2027</div>
                     </div>
                     <div class="r-card__content">
@@ -111,13 +111,13 @@ get_header(); ?>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> VIP Dining</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Pro Exhibitions</li>
                         </ul>
-                        <a href="#" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
                     </div>
                 </article>
 
                 <!-- Card 3 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1549293116-c73ab62506e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')">
                         <div class="r-card__badge">Mar 5-10, 2027</div>
                     </div>
                     <div class="r-card__content">
@@ -132,13 +132,13 @@ get_header(); ?>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Sunset Sails</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spa Access</li>
                         </ul>
-                        <a href="#" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
                     </div>
                 </article>
 
                 <!-- Card 4 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')">
                         <div class="r-card__badge">May 12-22, 2027</div>
                     </div>
                     <div class="r-card__content">
@@ -153,7 +153,7 @@ get_header(); ?>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Daily Match Play</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wine Tasting</li>
                         </ul>
-                        <a href="#" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
                     </div>
                 </article>
 
@@ -163,7 +163,7 @@ get_header(); ?>
                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="r-cta-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle><path d="M12 22V10"></path></svg>
                         <h3>INTERESTED IN A FUTURE TRIP?</h3>
                         <p>Join our waitlist to get early access to new destinations, special pricing, and exclusive updates before they sell out.</p>
-                        <a href="#" class="btn btn-navy">JOIN THE LIST</a>
+                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-navy">JOIN THE LIST</a>
                     </div>
                 </article>
             </div>
@@ -226,7 +226,7 @@ get_header(); ?>
             <h3 class="r-subsection-title anim-fade-up">Types of Pickleball Retreats</h3>
             <div class="r-types-grid anim-fade-up">
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Weekend Getaway</h4>
                     <ul>
                         <li>2-3 Days</li>
@@ -236,7 +236,7 @@ get_header(); ?>
                     <span class="r-tag">Best for: Busy schedules</span>
                 </div>
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1544322896-1594e5af40e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1544322896-1594e5af40e5?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Week-Long Escape</h4>
                     <ul>
                         <li>5-7 Days</li>
@@ -246,7 +246,7 @@ get_header(); ?>
                     <span class="r-tag">Best for: Full vacations</span>
                 </div>
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Luxury VIP</h4>
                     <ul>
                         <li>5-Star Resorts</li>
@@ -256,7 +256,7 @@ get_header(); ?>
                     <span class="r-tag">Best for: Premium comfort</span>
                 </div>
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Skill Focus</h4>
                     <ul>
                         <li>Level-Specific</li>
@@ -266,7 +266,7 @@ get_header(); ?>
                     <span class="r-tag">Best for: Competitive players</span>
                 </div>
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Social & Fun</h4>
                     <ul>
                         <li>Open Play Focused</li>
@@ -306,10 +306,10 @@ get_header(); ?>
                 <div class="r-dest-grid-container">
                     <h3 class="r-subsection-title">Popular Retreat Destinations</h3>
                     <div class="r-image-grid r-image-grid-4">
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Beach Resorts</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Mountain Lodges</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Desert Oasis</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>City Escapes</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')"><span>Beach Resorts</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')"><span>Mountain Lodges</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=800&auto=format&fit=crop')"><span>Desert Oasis</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=800&auto=format&fit=crop')"><span>City Escapes</span></div>
                     </div>
                 </div>
                 <aside class="r-sidebar bg-gray">
@@ -413,12 +413,12 @@ get_header(); ?>
                 <div class="r-dest-grid-container">
                     <h3 class="r-subsection-title">Popular Cruise Destinations</h3>
                     <div class="r-image-grid r-image-grid-6">
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Caribbean</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1520119846662-31518fdf2591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Alaska</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f40889c2e5c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Mediterranean</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1542259009477-d625272157b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Hawaii</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1540202404-b7111429c319?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Bahamas</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1563206769-0cb3298a0f2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"><span>Panama Canal</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"><span>Caribbean</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1520119846662-31518fdf2591?q=80&w=800&auto=format&fit=crop')"><span>Alaska</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f40889c2e5c6?q=80&w=800&auto=format&fit=crop')"><span>Mediterranean</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1542259009477-d625272157b7?q=80&w=800&auto=format&fit=crop')"><span>Hawaii</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1540202404-b7111429c319?q=80&w=800&auto=format&fit=crop')"><span>Bahamas</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1563206769-0cb3298a0f2b?q=80&w=800&auto=format&fit=crop')"><span>Panama Canal</span></div>
                     </div>
                 </div>
                 <aside class="r-sidebar bg-white">
@@ -451,7 +451,7 @@ get_header(); ?>
 
     <!-- 6. Global CTA Footer -->
     <section class="r-global-cta anim-fade-up">
-        <div class="r-global-cta__bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="r-global-cta__bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');"></div>
         <div class="r-global-cta__overlay"></div>
         <div class="container r-global-cta__content">
             <h2>READY TO BOOK?</h2>
