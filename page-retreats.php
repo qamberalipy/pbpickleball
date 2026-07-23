@@ -414,7 +414,7 @@ get_header(); ?>
                     <h3 class="r-subsection-title">Popular Cruise Destinations</h3>
                     <div class="r-image-grid r-image-grid-6">
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"><span>Caribbean</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1531366936336-62e0672eceab?q=80&w=800&auto=format&fit=crop')"><span>Alaska</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=800&auto=format&fit=crop')"><span>Alaska</span></div>
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=800&auto=format&fit=crop')"><span>Mediterranean</span></div>
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1542259009477-d625272157b7?q=80&w=800&auto=format&fit=crop')"><span>Hawaii</span></div>
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=800&auto=format&fit=crop')"><span>Bahamas</span></div>
