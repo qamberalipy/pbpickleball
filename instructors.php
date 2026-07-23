@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Template Name: Our Instructors
 */
@@ -65,7 +65,7 @@ get_header();
         <div class="featured-instructor anim-fade-up">
             
             <div class="fi-col fi-photo">
-                <img src="<?php echo get_template_directory_uri(); ?>/about-founder-charles.jpg" alt="Charles Azoulay">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles.jpg" alt="Charles Azoulay">
             </div>
             
             <div class="fi-col fi-info">

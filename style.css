@@ -394,7 +394,7 @@ nav {
     display: flex;
     min-height: 550px;
     position: relative;
-    background: url('hero-bg.jpg') center/cover no-repeat;
+    background: url('media/hero-bg.jpg') center/cover no-repeat;
     background-color: var(--gray-light);
 }
 
@@ -1380,7 +1380,7 @@ footer {
     }
 
     .hero {
-        background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95)), url('hero-bg.jpg') center/cover no-repeat;
+        background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95)), url('media/hero-bg.jpg') center/cover no-repeat;
     }
 
     .hero::before {
@@ -1566,7 +1566,7 @@ footer {
     background-color: #F4F6F8;
     background-image: 
         linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, rgba(244, 246, 248, 0.85) 65%, rgba(244, 246, 248, 0) 100%), 
-        url('paddles-bg.jpg');
+        url('media/paddles-bg.jpg');
     background-position: left top, right center;
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
@@ -1868,14 +1868,14 @@ header .header-actions {
    min-height, the ::before gradient overlay, and .hero-container.
    Only the background image is overridden here. */
 .about-hero-full {
-    background: url('about-hero-bg.jpg') center/cover no-repeat;
+    background: url('media/about-hero-bg.jpg') center/cover no-repeat;
     background-color: var(--gray-light);
 }
 
 @media (max-width: 768px) {
     .about-hero-full {
         background: linear-gradient(rgba(11, 32, 70, 0.85), rgba(11, 32, 70, 0.95)),
-                    url('about-hero-bg.jpg') center/cover no-repeat;
+                    url('media/about-hero-bg.jpg') center/cover no-repeat;
     }
 }
 
@@ -2312,7 +2312,7 @@ header .header-actions {
    1. HERO
    --------------------------------------------------------------- */
 .contact-hero-full {
-    background: url('contact-hero-bg.jpg') center/cover no-repeat;
+    background: url('media/contact-hero-bg.jpg') center/cover no-repeat;
     background-color: var(--navy);
 }
 
@@ -2994,7 +2994,7 @@ header .header-actions {
    1. HERO
    --------------------------------------------------------------- */
 .instructors-hero-full {
-    background: url('instructors-hero-bg.jpg') center/cover no-repeat;
+    background: url('media/instructors-hero-bg.jpg') center/cover no-repeat;
     background-color: var(--navy);
 }
 

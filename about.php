@@ -110,7 +110,7 @@ get_header();
                 <div class="ag-line"></div>
             </div>
             <div class="founder-flex">
-                <img src="<?php echo get_template_directory_uri(); ?>/about-founder-charles.jpg" alt="Charles Azoulay" class="founder-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles.jpg" alt="Charles Azoulay" class="founder-img">
                 <div class="founder-bio">
                     <h4 class="f-name">Charles Azoulay</h4>
                     <span class="f-title">Founder & Lead Instructor</span>
@@ -127,7 +127,7 @@ get_header();
                 <div class="ag-line"></div>
             </div>
             <div class="local-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/about-court-banner.jpg" alt="PBPA Pickleball Court" class="local-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-court-banner.jpg" alt="PBPA Pickleball Court" class="local-img">
                 <p>We are proud to serve communities across Palm Beach County with programs, events, and partnerships that keep our community active and connected.</p>
                 <div class="location-pin">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
