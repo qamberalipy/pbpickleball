@@ -165,7 +165,7 @@
     font-size: 1.15rem;
     font-weight: 800;
     margin: 0 0 6px 0;
-    line-height: 1.35;
+    line-height: 0.95rem;
     transition: color 0.2s ease;
 }
 
@@ -192,7 +192,7 @@
 .shop-card__price {
     font-family: var(--font-heading, sans-serif);
     color: var(--navy, #0B192C);
-    font-size: 1.35rem;
+    font-size: 1rem;
     font-weight: 900;
 }
 
@@ -320,9 +320,9 @@
                 <h3 class="shop-sidebar__title">Categories</h3>
                 <ul class="shop-category-list">
                     <li><a href="#" class="cat-filter active" data-cat="all">All Categories</a></li>
-                    <li><a href="#" class="cat-filter" data-cat="paddles">Paddles <span>(2)</span></a></li>
-                    <li><a href="#" class="cat-filter" data-cat="balls">Balls <span>(2)</span></a></li>
-                    <li><a href="#" class="cat-filter" data-cat="footwear">Footwear <span>(2)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="paddles">Paddles <span>(1)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="balls">Balls <span>(1)</span></a></li>
+                    <li><a href="#" class="cat-filter" data-cat="footwear">Footwear <span>(1)</span></a></li>
                     <li><a href="#" class="cat-filter" data-cat="bags">Bags & Backpacks <span>(1)</span></a></li>
                     <li><a href="#" class="cat-filter" data-cat="eyewear">Eyewear & Hats <span>(1)</span></a></li>
                     <li><a href="#" class="cat-filter" data-cat="apparel">Apparel <span>(1)</span></a></li>
@@ -378,7 +378,7 @@
         <!-- Main Product Area -->
         <div class="shop-content">
             <div class="shop-content__topbar">
-                <div class="shop-content__count" id="product-count">Showing 9 of 9 results</div>
+                <div class="shop-content__count" id="product-count">Showing 6 of 6 results</div>
                 <div class="shop-sort">
                     Sort by:
                     <select id="shop-sort-select" aria-label="Sort products">
@@ -497,56 +497,6 @@
                     </div>
                 </a>
 
-                <!-- Card 7 -->
-                <a href="#" class="shop-card" data-category="paddles" data-price="149.99" data-rating="4.4" data-featured="7">
-                    <div class="shop-card__image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="Tour Elite Paddle" class="shop-card__image">
-                        <span class="shop-card__action-btn">View Details</span>
-                    </div>
-                    <div class="shop-card__content">
-                        <span class="shop-card__category">Paddles</span>
-                        <h3 class="shop-card__title">Tour Elite Paddle</h3>
-                        <div class="shop-card__subtitle">Maximum Spin Control</div>
-                        <div class="shop-card__bottom">
-                            <span class="shop-card__price">$149.99</span>
-                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.4 (55)</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Card 8 -->
-                <a href="#" class="shop-card" data-category="footwear" data-price="95.00" data-rating="5.0" data-featured="8">
-                    <div class="shop-card__image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Lite Shoes" class="shop-card__image">
-                        <span class="shop-card__action-btn">View Details</span>
-                    </div>
-                    <div class="shop-card__content">
-                        <span class="shop-card__category">Footwear</span>
-                        <h3 class="shop-card__title">Court Lite Shoes</h3>
-                        <div class="shop-card__subtitle">Breathable Mesh</div>
-                        <div class="shop-card__bottom">
-                            <span class="shop-card__price">$95.00</span>
-                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 5.0 (22)</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Card 9 -->
-                <a href="#" class="shop-card" data-category="balls" data-price="12.99" data-rating="4.7" data-featured="9">
-                    <div class="shop-card__image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Indoor Balls" class="shop-card__image">
-                        <span class="shop-card__action-btn">View Details</span>
-                    </div>
-                    <div class="shop-card__content">
-                        <span class="shop-card__category">Balls</span>
-                        <h3 class="shop-card__title">PBPA Indoor Balls</h3>
-                        <div class="shop-card__subtitle">Precision Bounce 3-Pack</div>
-                        <div class="shop-card__bottom">
-                            <span class="shop-card__price">$12.99</span>
-                            <span class="shop-card__rating"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4.7 (104)</span>
-                        </div>
-                    </div>
-                </a>
             </div>
 
             <!-- Empty State Message container -->
