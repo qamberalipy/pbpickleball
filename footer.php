@@ -56,7 +56,8 @@
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <a href="#">Court Directory</a>
                             <a href="#">Shop</a>
-                            <a href="<?php echo home_url('/contact-us/'); ?>">Contact / Book a Lesson</a>
+                            <a href="<?php echo home_url('/contact-us/'); ?>">Contact Us</a>
+                            <a href="<?php echo home_url('/book-a-lesson/'); ?>">Book a Lesson</a>
                             <a href="#">FAQ</a>
                         </div>
                     </div>

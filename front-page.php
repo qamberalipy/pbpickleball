@@ -9,7 +9,7 @@
             <h3 class="hero-tagline">Beginners Welcome. Friends for Life.</h3>
             <p>We make learning pickleball simple, fun, and rewarding. Our programs help active adults build skills,
                 confidence, meet new friends, and enjoy one of America's fastest-growing sports.</p>
-            <a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-green">
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -277,7 +277,7 @@
         </div>
 
         <div class="cta-center">
-            <button class="cta-btn-main" id="ctaBookLesson">
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="cta-btn-main" id="ctaBookLesson">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                     <line x1="16" y1="2" x2="16" y2="6"/>
@@ -285,7 +285,7 @@
                     <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
                 BOOK YOUR LESSON
-            </button>
+            </a>
             <span class="cta-or-text">or call 561-855-9500</span>
         </div>
 
