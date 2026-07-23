@@ -54,7 +54,7 @@
 
             <div class="logo">
                 <a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/weblogo.png" alt="PB Pickleball Academy" class="logo-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo.png" alt="PB Pickleball Academy" class="logo-img">
                 </a>
             </div>
 
