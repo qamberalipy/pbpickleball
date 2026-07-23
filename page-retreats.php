@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Retreats  Cruises
+ * Template Name: Retreats  & Cruises
  */
 get_header(); ?>
 
@@ -13,7 +13,7 @@ get_header(); ?>
 
         <div class="container r-hero__container">
             <div class="r-hero__left">
-                <h1 class="r-hero__title">RETREATS and CRUISES</h1>
+                <h1 class="r-hero__title">RETREATS & CRUISES</h1>
                 <h2 class="r-hero__subtitle">Play Pickleball. Explore. Connect.</h2>
                 <p class="r-hero__intro">Combine your passion for pickleball with unforgettable vacations. Join us at breathtaking resorts and luxury cruises for world-class coaching, daily open play, and amazing new friends from around the world.</p>
                 
