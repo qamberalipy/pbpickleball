@@ -236,7 +236,7 @@ get_header(); ?>
                     <span class="r-tag">Best for: Busy schedules</span>
                 </div>
                 <div class="r-type-col">
-                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1544322896-1594e5af40e5?q=80&w=600&auto=format&fit=crop')"></div>
+                    <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Week-Long Escape</h4>
                     <ul>
                         <li>5-7 Days</li>
@@ -414,11 +414,11 @@ get_header(); ?>
                     <h3 class="r-subsection-title">Popular Cruise Destinations</h3>
                     <div class="r-image-grid r-image-grid-6">
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"><span>Caribbean</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1520119846662-31518fdf2591?q=80&w=800&auto=format&fit=crop')"><span>Alaska</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f40889c2e5c6?q=80&w=800&auto=format&fit=crop')"><span>Mediterranean</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1531366936336-62e0672eceab?q=80&w=800&auto=format&fit=crop')"><span>Alaska</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=800&auto=format&fit=crop')"><span>Mediterranean</span></div>
                         <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1542259009477-d625272157b7?q=80&w=800&auto=format&fit=crop')"><span>Hawaii</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1540202404-b7111429c319?q=80&w=800&auto=format&fit=crop')"><span>Bahamas</span></div>
-                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1563206769-0cb3298a0f2b?q=80&w=800&auto=format&fit=crop')"><span>Panama Canal</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=800&auto=format&fit=crop')"><span>Bahamas</span></div>
+                        <div class="r-grid-img" style="background-image: url('https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=800&auto=format&fit=crop')"><span>Panama Canal</span></div>
                     </div>
                 </div>
                 <aside class="r-sidebar bg-white">
