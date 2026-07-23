@@ -229,11 +229,12 @@
                 <p class="founder-col-title">Our Story</p>
                 <h3 id="founderHeading">Meet Our Founder</h3>
                 <div class="founder-profile">
-                    <img src="<?php echo get_template_directory_uri(); ?>/charles-headshot.png" alt="Dave Ruth – Founder &amp; Head Instructor" class="founder-photo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/about-founder-charles.jpg" alt="Charles Azoulay – Founder &amp; Lead Instructor" class="founder-photo">
                     <div class="founder-info">
-                        <h4>Dave Ruth</h4>
-                        <p class="founder-role">Founder &amp; Head Instructor</p>
-                        <p>Dave is a passionate pickleball educator and Palm Beach County local who has dedicated himself to making pickleball accessible to everyone — especially beginners and active adults. With a warm, patient coaching style and a deep love for the sport, Dave built PB Pickleball Academy from the ground up to create a community where players of all levels feel welcomed, supported, and inspired to keep improving.</p>
+                        <h4>Charles Azoulay</h4>
+                        <p class="founder-role">Founder &amp; Lead Instructor</p>
+                        <p>Charles discovered pickleball later in life and instantly fell in love with the game. With a background in teaching and a passion for helping others, he founded PB Pickleball Academy to create a positive place where beginners can learn, improve, and have a great time.</p>
+                        <p style="font-weight: 700; color: var(--navy); font-style: italic; margin-top: 10px;">We're here to help you love the game!</p>
                     </div>
                 </div>
             </div>
