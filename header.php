@@ -75,7 +75,7 @@
 
             <div class="header-right-actions">
                 <div class="header-actions">
-                    <a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-green">
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>

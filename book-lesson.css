@@ -1,0 +1,617 @@
+/* ==========================================================================
+   Book a Lesson Page
+   Reuses global tokens/classes from style.css (--navy, --green, --green-bright,
+   --gray-text, --white, .container, .btn, bg-gray, anim-fade-up, etc.)
+   ========================================================================== */
+
+.book-lesson-page {
+	overflow-x: hidden;
+}
+
+/* 1. Hero */
+.bl-hero {
+	position: relative;
+	padding: 120px 0 90px;
+	color: var(--white, #fff);
+	overflow: hidden;
+}
+
+.bl-hero__bg {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+}
+
+.bl-hero__overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%);
+}
+
+.bl-hero__container {
+	position: relative;
+	z-index: 1;
+	max-width: 760px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.bl-hero__eyebrow {
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--green-bright, #6fd66f);
+	margin-bottom: 12px;
+}
+
+.bl-hero__title {
+	font-size: clamp(28px, 5vw, 52px);
+	line-height: 1.1;
+	margin-bottom: 16px;
+	word-break: break-word;
+}
+
+.bl-hero__intro {
+	font-size: clamp(15px, 2.5vw, 18px);
+	line-height: 1.6;
+	opacity: 0.92;
+	margin-bottom: 28px;
+}
+
+.bl-hero__strip {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px 24px;
+	margin-bottom: 32px;
+}
+
+.bl-strip__item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.bl-strip__item svg {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.bl-hero__cta {
+	display: inline-block;
+	min-height: 48px;
+	line-height: 1.2;
+}
+
+/* Shared section rhythm */
+.bl-section {
+	padding: 80px 0;
+}
+
+.bl-section-title {
+	text-align: center;
+	font-size: clamp(22px, 3.5vw, 30px);
+	letter-spacing: 1px;
+	margin-bottom: 40px;
+}
+
+/* 2. Benefits */
+.bl-benefits-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+
+.bl-benefit {
+	background: var(--white, #fff);
+	border-radius: 12px;
+	padding: 28px 22px;
+	text-align: center;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.bl-benefit svg {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 14px;
+}
+
+.bl-benefit h3 {
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+
+.bl-benefit p {
+	font-size: 14px;
+	color: var(--gray-text, #6b7280);
+	line-height: 1.5;
+}
+
+/* 3. Booking form */
+.bl-form-card {
+	max-width: 860px;
+	margin: 0 auto;
+	background: var(--white, #fff);
+	border-radius: 16px;
+	padding: 40px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.bl-card-header {
+	text-align: center;
+	margin-bottom: 28px;
+}
+
+.bl-card-header p {
+	color: var(--gray-text, #6b7280);
+}
+
+.bl-alert {
+	border-radius: 8px;
+	padding: 14px 18px;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.bl-alert--success {
+	background: rgba(46, 125, 50, 0.1);
+	color: var(--green, #2e7d32);
+	border: 1px solid rgba(46, 125, 50, 0.3);
+}
+
+.bl-alert--error {
+	background: rgba(200, 40, 40, 0.08);
+	color: #b3261e;
+	border: 1px solid rgba(200, 40, 40, 0.25);
+}
+
+.bl-alert--error ul {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.bl-form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.bl-form-group {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.bl-form-group--full {
+	grid-column: 1 / -1;
+}
+
+.bl-form-group label {
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 6px;
+	color: var(--navy, #0a1e2d);
+}
+
+.bl-form-group input,
+.bl-form-group select,
+.bl-form-group textarea {
+	font: inherit;
+	width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
+	padding: 12px 14px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+	background: var(--white, #fff);
+	color: var(--navy, #0a1e2d);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.bl-form-group select {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+	padding-right: 36px;
+}
+
+.bl-form-group input:focus,
+.bl-form-group select:focus,
+.bl-form-group textarea:focus {
+	outline: none;
+	border-color: var(--green, #2e7d32);
+	box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.bl-form-group input.bl-invalid,
+.bl-form-group select.bl-invalid,
+.bl-form-group textarea.bl-invalid {
+	border-color: #b3261e;
+}
+
+.bl-form-group input[type="date"],
+.bl-form-group input[type="time"] {
+	min-height: 46px;
+}
+
+.bl-hp {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.bl-submit-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	min-height: 48px;
+	justify-content: center;
+	margin-top: 8px;
+}
+
+/* 4. Testimonials */
+.bl-testimonial-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
+	align-items: start;
+}
+
+.bl-testimonial {
+	background: var(--white, #fff);
+	border-radius: 16px;
+	padding: 32px 28px 28px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.bl-testimonial:hover {
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+	transform: translateY(-3px);
+}
+
+.bl-testimonial__avatar-wrap {
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 16px;
+	border: 3px solid var(--green, #2e7d32);
+	flex-shrink: 0;
+	box-shadow: 0 2px 10px rgba(46, 125, 50, 0.2);
+}
+
+.bl-testimonial__avatar {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	max-width: 100%;
+}
+
+.bl-testimonial__stars {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	margin-bottom: 14px;
+}
+
+.bl-testimonial__stars svg {
+	width: 16px;
+	height: 16px;
+}
+
+.bl-testimonial p {
+	font-size: 15px;
+	line-height: 1.65;
+	color: var(--navy, #0a1e2d);
+	margin-bottom: 20px;
+	flex-grow: 1;
+	font-style: italic;
+}
+
+.bl-testimonial footer {
+	display: flex;
+	background-color: white !important;
+	color: var(--navy)!important;
+	padding: 0px !important;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+}
+
+.bl-testimonial__name {
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--navy, #0a1e2d);
+}
+
+.bl-testimonial__location {
+	font-size: 12px;
+	color: var(--gray-text, #6b7280);
+	letter-spacing: 0.3px;
+}
+
+/* 5. FAQ */
+.bl-faq {
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+.bl-faq-item {
+	background: var(--white, #fff);
+	border-radius: 10px;
+	padding: 0;
+	margin-bottom: 12px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	overflow: hidden;
+}
+
+.bl-faq-item summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: var(--navy, #0a1e2d);
+	list-style: none;
+	padding: 18px 52px 18px 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 56px;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+	line-height: 1.4;
+}
+
+.bl-faq-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.bl-faq-item summary::after {
+	content: '+';
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--green, #2e7d32);
+	width: 28px;
+	text-align: center;
+}
+
+.bl-faq-item[open] summary::after {
+	content: '−';
+}
+
+.bl-faq-item p {
+	margin: 0;
+	padding: 0 20px 18px;
+	color: var(--gray-text, #6b7280);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+/* 6. Global CTA */
+.bl-global-cta {
+	position: relative;
+	padding: 90px 0;
+	text-align: center;
+	color: var(--white, #fff);
+	overflow: hidden;
+}
+
+.bl-global-cta__bg {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+}
+
+.bl-global-cta__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(10, 30, 45, 0.8);
+}
+
+.bl-global-cta__content {
+	position: relative;
+	z-index: 1;
+}
+
+.bl-global-cta__content h2 {
+	font-size: clamp(24px, 4vw, 40px);
+	margin-bottom: 10px;
+}
+
+.bl-global-cta__tagline {
+	font-size: clamp(14px, 2vw, 16px);
+	opacity: 0.9;
+	margin-bottom: 28px;
+}
+
+.bl-global-cta__actions {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* 992px — tablet landscape */
+@media (max-width: 992px) {
+	.bl-benefits-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.bl-testimonial-grid {
+		grid-template-columns: 1fr;
+		max-width: 520px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* 768px — tablet portrait */
+@media (max-width: 768px) {
+	.bl-hero {
+		padding: 100px 0 70px;
+	}
+
+	.bl-section {
+		padding: 60px 0;
+	}
+
+	.bl-form-card {
+		padding: 32px 24px;
+	}
+
+	.bl-global-cta {
+		padding: 70px 0;
+	}
+
+	.bl-global-cta__actions {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.bl-global-cta__actions .btn {
+		width: 100%;
+		max-width: 320px;
+		min-height: 48px;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+/* 640px — large phones */
+@media (max-width: 640px) {
+	.bl-hero {
+		padding: 90px 0 60px;
+	}
+
+	.bl-hero__strip {
+		gap: 12px 16px;
+	}
+
+	.bl-strip__item {
+		font-size: 13px;
+		white-space: normal;
+		text-align: left;
+	}
+
+	.bl-hero__cta {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.bl-benefits-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.bl-form-card {
+		padding: 24px 16px;
+	}
+
+	.bl-form-row {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.bl-form-group input[type="date"],
+	.bl-form-group input[type="time"] {
+		max-width: 100%;
+	}
+
+	.bl-testimonial {
+		padding: 28px 20px 24px;
+	}
+
+	.bl-faq-item summary {
+		padding: 16px 48px 16px 16px;
+	}
+
+	.bl-faq-item p {
+		padding: 0 16px 16px;
+	}
+
+	.bl-global-cta {
+		padding: 60px 0;
+	}
+}
+
+/* 414px — iPhone Plus / Max */
+@media (max-width: 414px) {
+	.bl-hero {
+		padding: 80px 0 56px;
+	}
+
+	.bl-hero__eyebrow {
+		font-size: 12px;
+		letter-spacing: 1.5px;
+	}
+
+	.bl-section-title {
+		margin-bottom: 28px;
+	}
+
+	.bl-form-card {
+		border-radius: 12px;
+	}
+
+	.bl-testimonial {
+		border-radius: 12px;
+	}
+}
+
+/* 375px — iPhone SE / standard small phones */
+@media (max-width: 375px) {
+	.bl-hero {
+		padding: 72px 0 48px;
+	}
+
+	.bl-hero__strip {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.bl-section {
+		padding: 48px 0;
+	}
+
+	.bl-form-card {
+		padding: 20px 14px;
+		border-radius: 10px;
+	}
+
+	.bl-testimonial__avatar-wrap {
+		width: 60px;
+		height: 60px;
+	}
+
+	.bl-global-cta__actions .btn {
+		max-width: 100%;
+	}
+}
