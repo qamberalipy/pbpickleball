@@ -66,9 +66,9 @@
                     <li><a href="#">LESSONS &amp; PROGRAMS</a></li>
                     <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
                     <li><a href="#">BEGINNER MANUAL</a></li>
-                    <li><a href="#">RETREATS</a></li>
-                    <li><a href="#">COURT DIRECTORY</a></li>
-                    <li><a href="#">SHOP</a></li>
+                    <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
+                    <li><a href="<?php echo home_url('/page-court-directory/'); ?>" <?php if (is_page('court-directory')) echo 'class="active"'; ?>>COURT DIRECTORY</a></li>
+                    <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
                     <li><a href="<?php echo home_url('/contact-us/'); ?>" <?php if (is_page('contact-us')) echo 'class="active"'; ?>>CONTACT</a></li>
                 </ul>
             </nav>
