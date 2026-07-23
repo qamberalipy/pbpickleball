@@ -43,25 +43,235 @@
 .shop-load-more .btn { padding: 15px 40px; font-size: 1.1rem; border: 2px solid var(--navy, #0B192C); color: var(--navy, #0B192C); text-decoration: none; border-radius: 30px; font-family: var(--font-heading, sans-serif); font-weight: 700; transition: all 0.3s ease; display: inline-block; background: transparent; }
 .shop-load-more .btn:hover { background: var(--navy, #0B192C); color: var(--white, #fff); border-color: var(--navy, #0B192C); }
 
-/* Reused Product Cards */
-.shop-card { background: var(--white, #fff); border: 1px solid #eaeaea; border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none; height: 100%; }
-.shop-card:hover { box-shadow: 0 15px 35px rgba(11, 25, 44, 0.1); border-color: transparent; transform: translateY(-5px); }
-.shop-card__image { width: 100%; height: 220px; object-fit: contain; background: #f8f9fa; mix-blend-mode: multiply; border-radius: 4px; margin-bottom: 20px; padding: 20px; }
-.shop-card__content { display: flex; flex-direction: column; flex-grow: 1; }
-.shop-card__title { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-size: 1.25rem; font-weight: 700; margin-bottom: 5px; line-height: 1.3; }
-.shop-card__subtitle { font-family: var(--font-body, sans-serif); color: var(--gray-text, #666); font-size: 0.9rem; margin-bottom: 15px; }
-.shop-card__bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-.shop-card__price { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-size: 1.4rem; font-weight: 800; }
-.shop-card__rating { display: flex; align-items: center; gap: 5px; font-family: var(--font-body, sans-serif); font-size: 0.85rem; color: var(--gray-text, #666); }
-.shop-card__stars { color: #FFC107; font-size: 1rem; }
+/* Modern Product Card Grid */
+.shop-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
 
-/* Reused Trust Box */
-.shop-trust-box { background: rgba(0, 208, 108, 0.08); padding: 30px; border-radius: var(--radius, 8px); display: flex; flex-direction: column; gap: 30px; height: fit-content; }
-.shop-trust-item { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.shop-trust-item__icon { width: 48px; height: 48px; background: var(--white, #fff); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.shop-trust-item__icon svg { width: 24px; height: 24px; stroke: var(--green, #00D06C); }
-.shop-trust-item__title { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-weight: 700; font-size: 1.1rem; margin: 0; }
-.shop-trust-item__text { font-family: var(--font-body, sans-serif); color: var(--gray-text, #666); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+.shop-card {
+    background: #ffffff;
+    border: 1px solid rgba(11, 25, 44, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.shop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(11, 25, 44, 0.12);
+    border-color: rgba(0, 208, 108, 0.4);
+}
+
+/* Image Container & Hover Effects */
+.shop-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #edf0f4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.shop-card__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--navy, #0B192C);
+    color: var(--green-bright, #00FF87);
+    font-family: var(--font-heading, sans-serif);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(11, 25, 44, 0.15);
+}
+
+.shop-card__badge--alt {
+    background: var(--green, #00D06C);
+    color: var(--navy, #0B192C);
+}
+
+.shop-card__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shop-card:hover .shop-card__image {
+    transform: scale(1.08);
+}
+
+/* Hover Action Button Overlay */
+.shop-card__action-btn {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy, #0B192C);
+    color: #ffffff;
+    font-family: var(--font-heading, sans-serif);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 22px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(11, 25, 44, 0.25);
+}
+
+.shop-card:hover .shop-card__action-btn {
+    bottom: 15px;
+    opacity: 1;
+}
+
+/* Card Content Details */
+.shop-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.shop-card__category {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 0.75rem;
+    color: var(--gray-text, #888888);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.shop-card__title {
+    font-family: var(--font-heading, sans-serif);
+    color: var(--navy, #0B192C);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+    transition: color 0.2s ease;
+}
+
+.shop-card:hover .shop-card__title {
+    color: var(--green, #00D06C);
+}
+
+.shop-card__subtitle {
+    font-family: var(--font-body, sans-serif);
+    color: var(--gray-text, #666);
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.shop-card__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(11, 25, 44, 0.08);
+}
+
+.shop-card__price {
+    font-family: var(--font-heading, sans-serif);
+    color: var(--navy, #0B192C);
+    font-size: 1.35rem;
+    font-weight: 900;
+}
+
+.shop-card__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff9e6;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy, #0B192C);
+}
+
+.shop-card__rating svg {
+    width: 14px;
+    height: 14px;
+    fill: #FFC107;
+}
+
+/* Modern Glassmorphic Trust Sidebar */
+.shop-trust-box {
+    background: linear-gradient(180deg, rgba(0, 208, 108, 0.06) 0%, rgba(11, 25, 44, 0.03) 100%);
+    border: 1px solid rgba(0, 208, 108, 0.15);
+    padding: 32px 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: fit-content;
+}
+
+.shop-trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.shop-trust-item__icon {
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 18px rgba(11, 25, 44, 0.06);
+    border: 1px solid rgba(11, 25, 44, 0.05);
+}
+
+.shop-trust-item__icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--navy, #0B192C);
+}
+
+.shop-trust-item__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-trust-item__title {
+    font-family: var(--font-heading, sans-serif);
+    color: var(--navy, #0B192C);
+    font-weight: 800;
+    font-size: 1.02rem;
+    margin: 0 0 4px 0;
+}
+
+.shop-trust-item__text {
+    font-family: var(--font-body, sans-serif);
+    color: var(--gray-text, #666);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin: 0;
+}
 
 /* Reused Motivational CTA */
 .shop-cta { background: var(--navy, #0B192C); padding: 60px 0; color: var(--white, #fff); }
@@ -142,19 +352,33 @@
             <!-- Reused Trust Box -->
             <div class="shop-trust-box">
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
-                    <h4 class="shop-trust-item__title">PBPA Recommended</h4>
-                    <p class="shop-trust-item__text">Every item in our shop is tested and approved by our professional coaching staff.</p>
+                    <div class="shop-trust-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <div class="shop-trust-item__body">
+                        <h4 class="shop-trust-item__title">Pro Recommended</h4>
+                        <p class="shop-trust-item__text">Tested and approved by certified PBPA instructors.</p>
+                    </div>
                 </div>
+
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
-                    <h4 class="shop-trust-item__title">Safe & Secure</h4>
-                    <p class="shop-trust-item__text">Shop with confidence. All transactions are securely encrypted for your protection.</p>
+                    <div class="shop-trust-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <div class="shop-trust-item__body">
+                        <h4 class="shop-trust-item__title">Safe & Secure</h4>
+                        <p class="shop-trust-item__text">Encrypted checkout for 100% safe transactions.</p>
+                    </div>
                 </div>
+
                 <div class="shop-trust-item">
-                    <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg></div>
-                    <h4 class="shop-trust-item__title">Easy Returns</h4>
-                    <p class="shop-trust-item__text">Not quite right? We offer a hassle-free 30-day return policy on all unworn gear.</p>
+                    <div class="shop-trust-item__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+                    </div>
+                    <div class="shop-trust-item__body">
+                        <h4 class="shop-trust-item__title">30-Day Guarantee</h4>
+                        <p class="shop-trust-item__text">Easy, hassle-free returns on all unworn equipment.</p>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -177,117 +401,184 @@
             <div class="shop-products">
                 <!-- Card 1 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <span class="shop-card__badge">Best Seller</span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Paddles</span>
                         <h3 class="shop-card__title">PBPA Signature Paddle</h3>
                         <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$129.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5 (128)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.9 (128)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <span class="shop-card__badge shop-card__badge--alt">PBPA Approved</span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Balls</span>
                         <h3 class="shop-card__title">PBPA Outdoor Balls</h3>
                         <div class="shop-card__subtitle">Durable 3-Pack</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$14.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.8 (342)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.8 (342)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Pro Pickleball Shoes" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <span class="shop-card__badge">New Arrival</span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Pro Pickleball Shoes" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Footwear</span>
                         <h3 class="shop-card__title">Court Pro Shoes</h3>
-                        <div class="shop-card__subtitle">Enhanced Grip & Support</div>
+                        <div class="shop-card__subtitle">Enhanced Grip & Lateral Support</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$119.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.6 (85)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.6 (85)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 4 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Bags</span>
                         <h3 class="shop-card__title">PBPA Pro Backpack</h3>
-                        <div class="shop-card__subtitle">Fits 4 Paddles + Gear</div>
+                        <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$89.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.9 (42)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.9 (42)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 5 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/glasses.png" alt="Performance Sunglasses" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/glasses.png" alt="Performance Sunglasses" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
-                        <h3 class="shop-card__title">Performance Sunglasses</h3>
+                        <span class="shop-card__category">Eyewear</span>
+                        <h3 class="shop-card__title">Performance Eyewear</h3>
                         <div class="shop-card__subtitle">Polarized UV Protection</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$45.00</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5 (61)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.5 (61)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 6 -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
-                        <h3 class="shop-card__title">PBPA Performance Shirt</h3>
-                        <div class="shop-card__subtitle">Moisture Wicking</div>
+                        <span class="shop-card__category">Apparel</span>
+                        <h3 class="shop-card__title">Performance Tech Tee</h3>
+                        <div class="shop-card__subtitle">Breathable Moisture Wicking</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$34.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.7 (112)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.7 (112)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 7 (Placeholder) -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="Tour Elite Paddle" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="Tour Elite Paddle" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Paddles</span>
                         <h3 class="shop-card__title">Tour Elite Paddle</h3>
                         <div class="shop-card__subtitle">Maximum Spin Control</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$149.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.4 (55)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.4 (55)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 8 (Placeholder) -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Lite Shoes" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Lite Shoes" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Footwear</span>
                         <h3 class="shop-card__title">Court Lite Shoes</h3>
                         <div class="shop-card__subtitle">Breathable Mesh</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$95.00</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 (22)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                5.0 (22)
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 9 (Placeholder) -->
                 <a href="#" class="shop-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Indoor Balls" class="shop-card__image">
+                    <div class="shop-card__image-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Indoor Balls" class="shop-card__image">
+                        <span class="shop-card__action-btn">View Details</span>
+                    </div>
                     <div class="shop-card__content">
+                        <span class="shop-card__category">Balls</span>
                         <h3 class="shop-card__title">PBPA Indoor Balls</h3>
                         <div class="shop-card__subtitle">Precision Bounce 3-Pack</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$12.99</span>
-                            <span class="shop-card__rating"><span class="shop-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.7 (104)</span>
+                            <span class="shop-card__rating">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                4.7 (104)
+                            </span>
                         </div>
                     </div>
                 </a>
