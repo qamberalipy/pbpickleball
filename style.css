@@ -937,7 +937,7 @@ header .header-actions {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     border: 4px solid var(--green);
     box-shadow: 0 8px 20px rgba(11,32,70,0.15);
 }
@@ -2031,7 +2031,7 @@ header .header-actions {
 .founder-img {
     width: 180px;
     height: 180px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 50%;
     border: 4px solid var(--green);
     box-shadow: 0 8px 25px rgba(103, 155, 48, 0.25);

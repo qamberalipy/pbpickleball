@@ -8,29 +8,6 @@
 <style>
 /* Court Directory Styles */
 
-/* 1. In-Page Navigation */
-.cd-nav-strip {
-    background-color: var(--navy, #0B192C);
-    padding: 15px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.cd-nav-strip a {
-    color: var(--white, #fff);
-    text-decoration: none;
-    margin: 0 20px;
-    font-family: var(--font-heading, sans-serif);
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-.cd-nav-strip a:hover {
-    color: var(--green-bright, #00FF87);
-}
 
 /* 2. Hero Section */
 .cd-hero {
@@ -84,13 +61,12 @@
 }
 .cd-stats-search .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
 }
 .cd-stats-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 .cd-stat-item {
@@ -577,11 +553,6 @@
 
 <main class="court-directory-page">
 
-    <!-- 1. In-Page Navigation -->
-    <nav class="cd-nav-strip">
-        <a href="#find-a-court">Find a Court</a>
-        <a href="#surfaces-guide">Court Surfaces Guide</a>
-    </nav>
 
     <!-- 2. Hero Section -->
     <section class="cd-hero anim-fade-up">
@@ -621,33 +592,7 @@
                 </div>
             </div>
 
-            <!-- Search -->
-            <div class="cd-search-card anim-fade-left">
-                <h3>Find Your Court</h3>
-                <form class="cd-search-form">
-                    <select aria-label="Location">
-                        <option value="">Select Location...</option>
-                        <option value="palm-beach-gardens">Palm Beach Gardens</option>
-                        <option value="jupiter">Jupiter</option>
-                        <option value="boca-raton">Boca Raton</option>
-                    </select>
-                    <select aria-label="Court Type">
-                        <option value="">Any Court Type...</option>
-                        <option value="indoor">Indoor</option>
-                        <option value="outdoor">Outdoor</option>
-                    </select>
-                    <select aria-label="Access">
-                        <option value="">Any Access...</option>
-                        <option value="public">Public (Free)</option>
-                        <option value="public-fee">Public (Fee)</option>
-                        <option value="private">Private Club</option>
-                    </select>
-                    <div class="cd-search-actions">
-                        <a href="#map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> View Map</a>
-                        <button type="button" class="btn btn-green">Search Courts</button>
-                    </div>
-                </form>
-            </div>
+
         </div>
     </section>
 
@@ -669,7 +614,7 @@
                     
                     <!-- Card 1 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1622228581699-281b997e3a65?q=80&w=800&auto=format&fit=crop');">
+                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1526413232644-8a40f4110320?q=80&w=800&auto=format&fit=crop');">
                             <span class="cd-fc-badge">Public Outdoor</span>
                         </div>
                         <div class="cd-fc-content">
@@ -756,11 +701,11 @@
         <div class="container">
             <div class="cd-cta-box">
                 <h3>Don't See Your Favorite Court?</h3>
-                <a href="/contact" class="btn btn-navy">Submit a Court</a>
+                <a href="<?php echo esc_url(site_url('/contact')); ?>" class="btn btn-navy">Submit a Court</a>
             </div>
             <div class="cd-cta-box">
                 <h3>Traveling to Palm Beach County?</h3>
-                <a href="/retreats" class="btn btn-navy">Plan Your Trip</a>
+                <a href="<?php echo esc_url(site_url('/retreats')); ?>" class="btn btn-navy">Plan Your Trip</a>
             </div>
         </div>
     </div>
@@ -776,7 +721,7 @@
             <!-- Cards -->
             <div class="cd-surface-cards anim-fade-up">
                 <div class="cd-scard">
-                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1622228581699-281b997e3a65?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1526413232644-8a40f4110320?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="cd-scard-body">
                         <h4>Hard Court</h4>
                         <p>Standard tennis court surface, usually asphalt or concrete coated with acrylic.</p>
@@ -965,6 +910,35 @@
         </div>
     </section>
 
+    <!-- Filter Tabs JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterTabs = document.querySelectorAll('.cd-filter-tab');
+            const cards = document.querySelectorAll('.cd-featured-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filterText = this.textContent.trim();
+
+                    cards.forEach(card => {
+                        if (filterText === 'All Courts') {
+                            card.style.display = 'flex';
+                        } else {
+                            const badgeText = card.querySelector('.cd-fc-badge').textContent.trim();
+                            if (badgeText === filterText) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </main>
 
 <?php get_footer(); ?>
