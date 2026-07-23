@@ -9,27 +9,146 @@
 /* Shop Global Styles */
 .shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* 1. Hero Section */
-.shop-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 500px; background-color: var(--gray-bg, #f4f5f7); position: relative; }
-.shop-hero__content { padding: 80px 40px; display: flex; flex-direction: column; justify-content: center; }
-.shop-hero__title { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-size: 3.5rem; text-transform: uppercase; margin-bottom: 10px; line-height: 1.1; }
-.shop-hero__subtitle { font-family: var(--font-heading, sans-serif); color: var(--green-bright, #00FF87); font-size: 1.5rem; font-style: italic; margin-bottom: 20px; }
-.shop-hero__text { font-family: var(--font-body, sans-serif); color: var(--gray-text, #666); font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px; }
-.shop-hero__features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.shop-hero__feature { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading, sans-serif); font-weight: 600; color: var(--navy, #0B192C); font-size: 1rem; }
-.shop-hero__feature svg { width: 24px; height: 24px; stroke: var(--green, #00D06C); flex-shrink: 0; }
-.shop-hero__image { background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; position: relative; }
-.shop-hero__overlay { position: absolute; bottom: -30px; left: -50px; background: var(--navy, #0B192C); color: var(--white, #fff); padding: 40px; border-radius: var(--radius, 8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-width: 350px; }
-.shop-hero__overlay-title { font-family: var(--font-heading, sans-serif); font-size: 1.5rem; margin-bottom: 20px; color: var(--green-bright, #00FF87); }
-.shop-hero__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.shop-hero__list li { display: flex; align-items: center; gap: 10px; font-family: var(--font-body, sans-serif); font-size: 0.95rem; }
-.shop-hero__list svg { width: 18px; height: 18px; stroke: var(--green-bright, #00FF87); flex-shrink: 0; }
+/* 1. Hero Section (Theme-Aligned & Constrained) */
+.shop-hero {
+    background-color: var(--gray-bg, #f4f5f7);
+    padding: 60px 0 80px 0;
+    position: relative;
+    overflow: hidden;
+}
 
-/* Responsive Hero */
+.shop-hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.shop-hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shop-hero__title {
+    font-family: var(--font-heading, sans-serif);
+    color: var(--navy, #0B192C);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.shop-hero__subtitle {
+    font-family: var(--font-heading, sans-serif);
+    color: var(--green, #00D06C);
+    font-size: 1.35rem;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.shop-hero__text {
+    font-family: var(--font-body, sans-serif);
+    color: var(--gray-text, #666);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+.shop-hero__features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.shop-hero__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading, sans-serif);
+    font-weight: 700;
+    color: var(--navy, #0B192C);
+    font-size: 0.95rem;
+}
+
+.shop-hero__feature svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--green, #00D06C);
+    flex-shrink: 0;
+}
+
+/* Right Side Card Wrapper */
+.shop-hero__right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shop-hero__image-card {
+    height: 260px;
+    border-radius: var(--radius, 12px);
+    background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08);
+}
+
+.shop-hero__overlay-card {
+    background: var(--navy, #0B192C);
+    color: var(--white, #fff);
+    padding: 30px;
+    border-radius: var(--radius, 12px);
+    box-shadow: 0 15px 30px rgba(11, 25, 44, 0.15);
+}
+
+.shop-hero__overlay-title {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: var(--green-bright, #00FF87);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.shop-hero__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.shop-hero__list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.shop-hero__list svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--green-bright, #00FF87);
+    flex-shrink: 0;
+}
+
+/* Responsive Hero Fixes */
 @media (max-width: 992px) {
-    .shop-hero { grid-template-columns: 1fr; }
-    .shop-hero__image { min-height: 400px; }
-    .shop-hero__overlay { left: 20px; bottom: 20px; right: 20px; max-width: calc(100% - 40px); }
+    .shop-hero { padding: 40px 0; }
+    .shop-hero__grid { grid-template-columns: 1fr; gap: 30px; }
+    .shop-hero__image-card { height: 220px; }
+}
+
+@media (max-width: 576px) {
+    .shop-hero__features,
+    .shop-hero__list { grid-template-columns: 1fr; }
 }
 
 /* 2. Category Nav Strip */
@@ -124,39 +243,51 @@
 
     <!-- 1. Hero Section -->
     <section class="shop-hero">
-        <div class="shop-hero__content">
-            <h1 class="shop-hero__title">PBPA SHOP</h1>
-            <div class="shop-hero__subtitle">Gear You Can Trust. Performance You'll Love.</div>
-            <p class="shop-hero__text">We've hand-selected the best pickleball equipment so you don't have to guess. From pro-level paddles to premium court shoes, we have exactly what you need to elevate your game.</p>
-            <div class="shop-hero__features">
-                <div class="shop-hero__feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Quality Products
+        <div class="shop-container">
+            <div class="shop-hero__grid">
+                
+                <!-- Left Content -->
+                <div class="shop-hero__content">
+                    <h1 class="shop-hero__title">PBPA SHOP</h1>
+                    <div class="shop-hero__subtitle">Gear You Can Trust. Performance You'll Love.</div>
+                    <p class="shop-hero__text">We've hand-selected the best pickleball equipment so you don't have to guess. From pro-level paddles to premium court shoes, we have exactly what you need to elevate your game.</p>
+                    
+                    <div class="shop-hero__features">
+                        <div class="shop-hero__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            Quality Products
+                        </div>
+                        <div class="shop-hero__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="18" x2="12" y2="22"></line><line x1="12" y1="2" x2="12" y2="6"></line></svg>
+                            Great Value
+                        </div>
+                        <div class="shop-hero__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Fast Shipping
+                        </div>
+                        <div class="shop-hero__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            Expert Support
+                        </div>
+                    </div>
                 </div>
-                <div class="shop-hero__feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="18" x2="12" y2="22"></line><line x1="12" y1="2" x2="12" y2="6"></line></svg>
-                    Great Value
+
+                <!-- Right Visual Side -->
+                <div class="shop-hero__right">
+                    <div class="shop-hero__image-card"></div>
+                    <div class="shop-hero__overlay-card">
+                        <div class="shop-hero__overlay-title">Everything You Need To Play Your Best</div>
+                        <ul class="shop-hero__list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Paddles</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Official Balls</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Court Footwear</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Bags & Gear</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Performance Apparel</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Training Aids</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="shop-hero__feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    Fast Shipping
-                </div>
-                <div class="shop-hero__feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    Expert Support
-                </div>
-            </div>
-        </div>
-        <div class="shop-hero__image">
-            <div class="shop-hero__overlay">
-                <div class="shop-hero__overlay-title">Everything You Need to Play Your Best!</div>
-                <ul class="shop-hero__list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Paddles</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Official Tournament Balls</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Court Footwear</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Bags & Accessories</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Apparel & Headwear</li>
-                </ul>
+
             </div>
         </div>
     </section>
