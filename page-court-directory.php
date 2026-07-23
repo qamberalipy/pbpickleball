@@ -54,87 +54,93 @@
     font-family: var(--font-body, sans-serif);
 }
 
-/* 3. Stats & Search Panel */
+/* Modern Stats Section */
 .cd-stats-search {
-    padding: 60px 0;
-    background-color: var(--gray-bg, #f4f5f7);
+    padding: 40px 0;
+    background-color: var(--gray-bg, #f8f9fa);
+    margin-top: -30px; /* Pulls section up slightly over hero for a modern layered overlap */
+    position: relative;
+    z-index: 10;
 }
-.cd-stats-search .container {
-    display: grid;
-    gap: 40px;
-    align-items: center;
-}
+
 .cd-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 24px;
 }
-.cd-stat-item {
+
+.cd-stat-card {
+    background: var(--white, #ffffff);
+    padding: 24px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 10px 30px rgba(11, 25, 44, 0.05);
+    border: 1px solid rgba(11, 25, 44, 0.06);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cd-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(11, 25, 44, 0.1);
+    border-color: var(--green, #00D06C);
+}
+
+.cd-stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(0, 208, 108, 0.12); /* Soft green background badge */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cd-stat-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--navy, #0B192C);
+}
+
+.cd-stat-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
-.cd-stat-item svg {
-    width: 32px;
-    height: 32px;
-    stroke: var(--green, #00D06C);
-    margin-bottom: 10px;
-}
+
 .cd-stat-num {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
     font-family: var(--font-heading, sans-serif);
     color: var(--navy, #0B192C);
-    line-height: 1;
-    margin-bottom: 5px;
+    line-height: 1.1;
 }
+
 .cd-stat-label {
-    font-size: 1rem;
-    color: var(--gray-text, #666);
-    font-family: var(--font-body, sans-serif);
-}
-.cd-search-card {
-    background: var(--white, #fff);
-    padding: 30px;
-    border-radius: var(--radius, 8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.cd-search-card h3 {
-    margin-bottom: 20px;
-    color: var(--navy, #0B192C);
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.cd-search-form select {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: var(--font-body, sans-serif);
-    font-size: 1rem;
-    width: 100%;
-}
-.cd-search-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-.cd-search-actions a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--navy, #0B192C);
-    text-decoration: none;
+    font-size: 0.88rem;
     font-weight: 600;
+    color: var(--gray-text, #666666);
     font-family: var(--font-body, sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
 }
-.cd-search-actions a svg {
-    width: 20px; height: 20px;
-    stroke: var(--green, #00D06C);
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .cd-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .cd-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .cd-stats-search {
+        margin-top: 0;
+    }
 }
 
 /* 4. Directory Section */
@@ -564,35 +570,54 @@
         </div>
     </section>
 
-    <!-- 3. Stats & Search Panel -->
+    <!-- 3. Stats Section -->
     <section class="cd-stats-search">
         <div class="container">
-            <!-- Stats -->
-            <div class="cd-stats-grid anim-fade-up">
-                <!-- TODO: Verify actual stat numbers with client -->
-                <div class="cd-stat-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span class="cd-stat-num">200+</span>
-                    <span class="cd-stat-label">Court Locations</span>
+            <div class="cd-stats-grid anim-fade-up is-visible">
+                <!-- Stat 1 -->
+                <div class="cd-stat-card">
+                    <div class="cd-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="cd-stat-info">
+                        <span class="cd-stat-num">200+</span>
+                        <span class="cd-stat-label">Court Locations</span>
+                    </div>
                 </div>
-                <div class="cd-stat-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <span class="cd-stat-num">150+</span>
-                    <span class="cd-stat-label">Outdoor Courts</span>
+
+                <!-- Stat 2 -->
+                <div class="cd-stat-card">
+                    <div class="cd-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </div>
+                    <div class="cd-stat-info">
+                        <span class="cd-stat-num">150+</span>
+                        <span class="cd-stat-label">Outdoor Courts</span>
+                    </div>
                 </div>
-                <div class="cd-stat-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
-                    <span class="cd-stat-num">40+</span>
-                    <span class="cd-stat-label">Indoor Facilities</span>
+
+                <!-- Stat 3 -->
+                <div class="cd-stat-card">
+                    <div class="cd-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+                    </div>
+                    <div class="cd-stat-info">
+                        <span class="cd-stat-num">40+</span>
+                        <span class="cd-stat-label">Indoor Facilities</span>
+                    </div>
                 </div>
-                <div class="cd-stat-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span class="cd-stat-num">60+</span>
-                    <span class="cd-stat-label">Private Clubs</span>
+
+                <!-- Stat 4 -->
+                <div class="cd-stat-card">
+                    <div class="cd-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div class="cd-stat-info">
+                        <span class="cd-stat-num">60+</span>
+                        <span class="cd-stat-label">Private Clubs</span>
+                    </div>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -614,7 +639,7 @@
                     
                     <!-- Card 1 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1526413232644-8a40f4110320?q=80&w=800&auto=format&fit=crop');">
+                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop');">
                             <span class="cd-fc-badge">Public Outdoor</span>
                         </div>
                         <div class="cd-fc-content">
@@ -721,7 +746,7 @@
             <!-- Cards -->
             <div class="cd-surface-cards anim-fade-up">
                 <div class="cd-scard">
-                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1526413232644-8a40f4110320?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="cd-scard-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=600&auto=format&fit=crop');"></div>
                     <div class="cd-scard-body">
                         <h4>Hard Court</h4>
                         <p>Standard tennis court surface, usually asphalt or concrete coated with acrylic.</p>
