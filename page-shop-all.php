@@ -7,13 +7,13 @@
 
 <style>
 /* Shop Global Styles */
-.shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.shop-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
 /* 1. Page Header */
 .shop-header { padding: 40px 0; background: var(--gray-bg, #f4f5f7); border-bottom: 1px solid #eaeaea; }
 .shop-breadcrumbs { font-family: var(--font-body, sans-serif); font-size: 0.9rem; color: var(--gray-text, #666); margin-bottom: 10px; }
 .shop-breadcrumbs a { color: var(--navy, #0B192C); text-decoration: none; font-weight: 600; }
-.shop-header__title { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-size: 2.5rem; text-transform: uppercase; margin: 0; }
+.shop-header__title { font-family: var(--font-heading, sans-serif); color: var(--navy, #0B192C); font-size: 2.2rem; text-transform: uppercase; margin: 0; }
 
 /* 2. Main Layout Split */
 .shop-main-layout { display: grid; grid-template-columns: 25% 75%; gap: 40px; padding: 60px 0; }
@@ -72,7 +72,7 @@
 .shop-card__image-wrap {
     position: relative;
     width: 100%;
-    height: 240px;
+    height: 180px;
     background: linear-gradient(135deg, #f8f9fa 0%, #edf0f4 100%);
     display: flex;
     align-items: center;
@@ -162,7 +162,7 @@
 .shop-card__title {
     font-family: var(--font-heading, sans-serif);
     color: var(--navy, #0B192C);
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 800;
     margin: 0 0 6px 0;
     line-height: 0.95rem;

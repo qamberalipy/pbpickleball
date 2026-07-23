@@ -7,7 +7,7 @@
 
 <style>
 /* Shop Global Styles */
-.shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.shop-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
 /* 1. Hero Section (Full Background Image + Navy Overlay) */
 .shop-hero {
@@ -57,7 +57,7 @@
 .shop-hero__title {
     font-family: var(--font-heading, sans-serif);
     color: var(--white, #ffffff);
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
     text-transform: uppercase;
     margin-bottom: 8px;
     line-height: 1.1;
@@ -287,7 +287,7 @@
 .shop-card__image-wrap {
     position: relative;
     width: 100%;
-    height: 240px;
+    height: 180px;
     background: linear-gradient(135deg, #f8f9fa 0%, #edf0f4 100%);
     display: flex;
     align-items: center;
@@ -377,7 +377,7 @@
 .shop-card__title {
     font-family: var(--font-heading, sans-serif);
     color: var(--navy, #0B192C);
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 800;
     margin: 0 0 6px 0;
     line-height: 1.35;
