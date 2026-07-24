@@ -141,17 +141,56 @@ get_header();
 		</div>
 	</section>
 
-	<!-- 4. BOTTOM BANNER: quote + features -->
+	<!-- 4. BOTTOM BANNER: Trust & Features -->
 	<section class="bm-bottom anim-fade-up">
-		<div class="container bm-bottom-grid">
-			<blockquote class="bm-quote">&ldquo;The more you learn, the more you enjoy the game.&rdquo;<cite>— Instructor Charles</cite></blockquote>
+		<div class="container bm-bottom-container">
+			
+			<!-- Left Side: Instructor Quote -->
+			<div class="bm-quote-block">
+				<blockquote class="bm-quote">
+					&ldquo;The more you learn, the more you enjoy the game.&rdquo;
+				</blockquote>
+				<cite>
+					<span class="bm-cite-name">&mdash; Instructor Charles</span>
+					<span class="bm-cite-title">Head Pro &amp; Author</span>
+				</cite>
+			</div>
 
-			<div class="bm-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg><div><strong>Beginner Focused</strong><span>Designed for new players.</span></div></div>
-			<div class="bm-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg><div><strong>Made for Active Adults</strong><span>Simple, clear, and easy to follow.</span></div></div>
-			<div class="bm-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><div><strong>Real Results</strong><span>Learn better. Play better. Have more fun.</span></div></div>
-			<div class="bm-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><div><strong>Stronger Community</strong><span>We grow together on and off the court.</span></div></div>
+			<!-- Right Side: Feature Grid -->
+			<div class="bm-features-wrap">
+				<div class="bm-feature-card">
+					<div class="bm-fc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a8 8 0 0116 0v1"></path></svg></div>
+					<div class="bm-fc-text">
+						<strong>Beginner Focused</strong>
+						<span>Designed specifically for new players.</span>
+					</div>
+				</div>
+				
+				<div class="bm-feature-card">
+					<div class="bm-fc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"></path></svg></div>
+					<div class="bm-fc-text">
+						<strong>Active Adults</strong>
+						<span>Simple, clear, and easy to follow.</span>
+					</div>
+				</div>
 
-			<img src="<?php echo esc_url( pbpa_bm_img( 'https://picsum.photos/seed/pbpa-manual-bottom/500/260', 'https://picsum.photos/500/260' ) ); ?>" alt="Pickleball paddles and net on court" class="bm-bottom-img" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/500/260';">
+				<div class="bm-feature-card">
+					<div class="bm-fc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+					<div class="bm-fc-text">
+						<strong>Real Results</strong>
+						<span>Learn better. Play better. Have fun.</span>
+					</div>
+				</div>
+
+				<div class="bm-feature-card">
+					<div class="bm-fc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg></div>
+					<div class="bm-fc-text">
+						<strong>Community</strong>
+						<span>Grow together on &amp; off the court.</span>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
