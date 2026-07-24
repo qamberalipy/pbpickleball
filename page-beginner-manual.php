@@ -94,23 +94,50 @@ get_header();
 		</div>
 	</section>
 
-	<!-- 3. PACKAGE / PURCHASE STRIP -->
-	<section class="bm-strip container anim-fade-up">
-		<div class="bm-strip-item">
-			<span class="bm-strip-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M22 7H2v5h20V7zM12 22V7M12 7c-1.5-3-6-4-6-1s4.5 3 6 1zM12 7c1.5-3 6-4 6-1s-4.5 3-6 1z"/></svg></span>
-			<div><strong>Included With Lesson Packages</strong><span>Get Volume 1 FREE when you sign up for certain lesson packages.</span></div>
-		</div>
+	<!-- 3. PREMIUM PURCHASE CTA -->
+	<section class="bm-purchase-section container anim-fade-up">
+		<div class="bm-purchase-container">
+			
+			<!-- Left Side: Value Proposition -->
+			<div class="bm-purchase-content">
+				<span class="bm-purchase-eyebrow">Start Winning Today</span>
+				<h2>Get Your Copy of Volume 1</h2>
+				<p>Available as a bonus with our lesson packages or for individual purchase in your preferred format.</p>
+				
+				<div class="bm-purchase-features">
+					<div class="bm-pf-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+						<span><strong>Digital or Print:</strong> Choose the format that works best for you.</span>
+					</div>
+					<div class="bm-pf-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+						<span><strong>Lesson Bonus:</strong> Get Volume 1 FREE with certain packages.</span>
+					</div>
+				</div>
+			</div>
 
-		<div class="bm-strip-cta">
-			<span class="bm-strip-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
-			<div><strong>Get Your Copy Today!</strong><span>Available as a bonus with packages or for individual purchase.</span></div>
-			<!-- Purchase/download flow not wired up yet — hook this up to your checkout later. -->
-			<a href="#bm-buy" id="bm-buy" class="btn btn-navy">Order Your Copy Now!</a>
-		</div>
+			<!-- Right Side: Order Action Box -->
+			<div class="bm-purchase-action">
+				<div class="bm-action-card">
+					<div class="bm-action-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+					</div>
+					<h3>Beginner Manual</h3>
+					<p>Ready to level up your game?</p>
+					
+					<!-- Purchase/download flow not wired up yet -->
+					<a href="#bm-buy" id="bm-buy" class="btn bm-btn-order">
+						Order Your Copy Now
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+					</a>
+					
+					<div class="bm-secure-badge">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+						Secure Online Ordering
+					</div>
+				</div>
+			</div>
 
-		<div class="bm-strip-item">
-			<span class="bm-strip-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></span>
-			<div><strong>Digital or Print</strong><span>Choose the format that works best for you.</span></div>
 		</div>
 	</section>
 

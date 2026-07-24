@@ -116,7 +116,90 @@
 .bm-sample-body p { font-size: 0.72rem; color: var(--gray-text); }
 
 /* Strip */
-.bm-strip { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 1.25rem; align-items: center; background: #eef4e6; border-radius: 12px; padding: 1.5rem; margin: 0 auto 3rem; }
+/* Premium Purchase Section */
+.bm-purchase-section { margin: 2rem auto 4rem; }
+.bm-purchase-container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(15, 42, 74, 0.06);
+    overflow: hidden;
+    align-items: stretch;
+}
+
+/* Left Side */
+.bm-purchase-content { padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+.bm-purchase-eyebrow { color: var(--green); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.5rem; }
+.bm-purchase-content h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem; font-family: "Montserrat", sans-serif; font-weight: 900; line-height: 1.1; }
+.bm-purchase-content p { color: var(--gray-text); line-height: 1.6; margin-bottom: 2rem; font-size: 1.05rem; max-width: 90%; }
+.bm-purchase-features { display: flex; flex-direction: column; gap: 1.2rem; }
+.bm-pf-item { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--navy); font-size: 0.95rem; line-height: 1.4; }
+.bm-pf-item svg { width: 22px; height: 22px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+
+/* Right Side Action Box */
+.bm-purchase-action {
+    background: var(--navy);
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+.bm-action-card { text-align: center; }
+.bm-action-icon svg { width: 50px; height: 50px; color: var(--green); margin-bottom: 1rem; }
+.bm-action-card h3 { color: #fff; font-size: 1.6rem; margin-bottom: 0.5rem; font-family: "Montserrat", sans-serif; font-weight: 800; }
+.bm-action-card p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 2rem; }
+
+/* The Order Button */
+.bm-btn-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--green);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(103, 155, 48, 0.25);
+    width: 100%;
+    text-decoration: none;
+}
+.bm-btn-order svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+.bm-btn-order:hover { 
+    background: #5a8a29; 
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 25px rgba(103, 155, 48, 0.4); 
+    color: #fff; 
+}
+.bm-btn-order:hover svg { transform: translateX(5px); }
+
+.bm-secure-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.bm-secure-badge svg { width: 14px; height: 14px; }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .bm-purchase-container { grid-template-columns: 1fr; }
+    .bm-purchase-action { padding: 3rem 2rem; }
+    .bm-purchase-content { padding: 3rem 2rem 2rem; }
+}
 .bm-strip-item, .bm-strip-cta { display: flex; align-items: center; gap: 0.75rem; }
 .bm-strip-cta { background: var(--green); color: #fff; border-radius: 10px; padding: 1rem 1.25rem; flex-wrap: wrap; }
 .bm-strip-icon { color: var(--green); flex-shrink: 0; }
