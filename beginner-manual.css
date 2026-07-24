@@ -103,7 +103,8 @@
 
 /* 2. Sample Pages (Reverted to 6-col & Fixed Zoom) */
 .bm-samples { 
-    padding: 2rem 0 4rem; 
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 }
 .bm-samples .lp-section-title {
     text-align: center;

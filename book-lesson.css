@@ -4,10 +4,6 @@
    --gray-text, --white, .container, .btn, bg-gray, anim-fade-up, etc.)
    ========================================================================== */
 
-.book-lesson-page {
-	overflow-x: hidden;
-}
-
 /* 1. Hero */
 .bl-hero {
 	position: relative;

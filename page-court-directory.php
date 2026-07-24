@@ -402,8 +402,16 @@
     grid-template-columns: 2fr 1fr;
     gap: 40px;
 }
+.cd-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border-radius: var(--radius, 8px);
+}
 .cd-comparison-table {
     width: 100%;
+    min-width: 650px; /* Forces table to scroll instead of squishing columns */
     border-collapse: collapse;
     font-family: var(--font-body, sans-serif);
 }
@@ -544,10 +552,6 @@
     .cd-cb-props {
         flex-direction: column;
         gap: 30px;
-    }
-    .cd-comparison-table {
-        display: block;
-        overflow-x: auto;
     }
 }
 @media (max-width: 576px) {

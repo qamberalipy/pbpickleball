@@ -8,7 +8,7 @@ get_header(); ?>
 
     <!-- 1. Hero Section -->
     <section class="r-hero anim-fade-up">
-        <div class="r-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/retreat-hero-bg.png');"></div>
+        <div class="r-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.png');"></div>
         <div class="r-hero__overlay"></div>
 
         <div class="container r-hero__container">
