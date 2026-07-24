@@ -52,7 +52,7 @@ get_header();
 			<div class="lp-cards-grid">
 
 				<article class="lp-card anim-fade-up">
-					<span class="lp-tag">MOST POPULAR</span>
+					
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture1.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
 					<div class="lp-card-body">
 						<h3>BEGINNER 101</h3>
