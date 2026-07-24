@@ -9,27 +9,6 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'pbpa-lessons-programs', get_template_directory_uri() . '/lessons-programs.css', array(), '1.0.0' );
 } );
 
-/**
- * Verify a remote image actually loads (HTTP 200) before using it,
- * caching the result for a day. Falls back to a second free image
- * if the primary URL fails.
- *
- * @param string $url      Primary image URL.
- * @param string $fallback Fallback image URL.
- * @return string A verified (or fallback) image URL.
- */
-function pbpa_lp_verified_image( $url, $fallback ) {
-	$cache_key = 'pbpa_img_ok_' . md5( $url );
-	$ok        = get_transient( $cache_key );
-
-	if ( false === $ok ) {
-		$response = wp_remote_head( $url, array( 'timeout' => 4 ) );
-		$ok       = ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) ? 1 : 0;
-		set_transient( $cache_key, $ok, DAY_IN_SECONDS );
-	}
-
-	return $ok ? $url : $fallback;
-}
 
 get_header();
 ?>
@@ -50,10 +29,7 @@ get_header();
 				<p class="lp-hero-note">Let's get you on the court!</p>
 			</div>
 
-			<div class="lp-hero-img anim-fade-up">
-				<?php $img = pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-hero/900/500', 'https://picsum.photos/900/500' ); ?>
-				<img src="<?php echo esc_url( $img ); ?>" alt="Instructor coaching a group of adult students on a pickleball court" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/900/500';">
-			</div>
+			<div class="lp-hero-img anim-fade-up" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/pageandprogramhero.jpg');');"></div>
 
 			<aside class="lp-why-box anim-fade-up">
 				<h2>WHY LEARN WITH PBPA?</h2>
@@ -79,7 +55,7 @@ get_header();
 
 				<article class="lp-card anim-fade-up">
 					<span class="lp-tag">MOST POPULAR</span>
-					<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-beginner/500/300', 'https://picsum.photos/500/300' ) ); ?>" alt="Beginner pickleball players high-fiving on court" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/500/300';">
+					<img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=500&auto=format&fit=crop" alt="Beginner pickleball players high-fiving on court" loading="lazy">
 					<div class="lp-card-body">
 						<h3>BEGINNER 101</h3>
 						<p class="lp-card-tag">Start Here!</p>
@@ -93,7 +69,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:60ms;">
-					<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-group/500/300', 'https://picsum.photos/501/300' ) ); ?>" alt="Group of players practicing together" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/501/300';">
+					<img src="https://images.unsplash.com/photo-1593344484962-796055d4a3a4?q=80&w=500&auto=format&fit=crop" alt="Group of players practicing together" loading="lazy">
 					<div class="lp-card-body">
 						<h3>GROUP LESSONS</h3>
 						<p class="lp-card-tag">Learn &amp; Have Fun Together!</p>
@@ -107,7 +83,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:120ms;">
-					<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-private/500/300', 'https://picsum.photos/502/300' ) ); ?>" alt="Instructor giving a private one on one lesson" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/502/300';">
+					<img src="https://images.unsplash.com/photo-1526413232644-8a40f287f03b?q=80&w=500&auto=format&fit=crop" alt="Instructor giving a private one on one lesson" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PRIVATE LESSONS</h3>
 						<p class="lp-card-tag">Personalized Just for You!</p>
@@ -121,7 +97,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:180ms;">
-					<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-play/500/300', 'https://picsum.photos/503/300' ) ); ?>" alt="Players enjoying supervised open play" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/503/300';">
+					<img src="https://images.unsplash.com/photo-1575361204481-48a282802dce?q=80&w=500&auto=format&fit=crop" alt="Players enjoying supervised open play" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PLAY &amp; IMPROVE</h3>
 						<p class="lp-card-tag">Practice. Play. Improve.</p>
@@ -135,7 +111,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:240ms;">
-					<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-club/500/300', 'https://picsum.photos/504/300' ) ); ?>" alt="Country club clubhouse with pickleball courts" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/504/300';">
+					<img src="https://images.unsplash.com/photo-1544919982-9020cd05f0a7?q=80&w=500&auto=format&fit=crop" alt="Country club clubhouse with pickleball courts" loading="lazy">
 					<div class="lp-card-body">
 						<h3>COUNTRY CLUB &amp; HOA</h3>
 						<p class="lp-card-tag">We Bring Pickleball to You!</p>
@@ -218,7 +194,7 @@ get_header();
 
 		<div class="lp-testimonial-grid">
 			<div class="lp-testimonial">
-				<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://i.pravatar.cc/150?img=32', 'https://i.pravatar.cc/150?img=5' ) ); ?>" alt="Photo of Linda M." class="lp-avatar" loading="lazy" onerror="this.onerror=null;this.src='https://i.pravatar.cc/150?img=5';">
+				<img src="https://i.pravatar.cc/150?img=32" alt="Photo of Linda M." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;Charles made learning pickleball easy and enjoyable. I was playing confidently after just a few lessons!&rdquo;</p>
 				<strong>Linda M.</strong>
@@ -227,7 +203,7 @@ get_header();
 			</div>
 
 			<div class="lp-testimonial">
-				<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://i.pravatar.cc/150?img=54', 'https://i.pravatar.cc/150?img=12' ) ); ?>" alt="Photo of Robert T." class="lp-avatar" loading="lazy" onerror="this.onerror=null;this.src='https://i.pravatar.cc/150?img=12';">
+				<img src="https://i.pravatar.cc/150?img=54" alt="Photo of Robert T." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;Patient, knowledgeable, and always encouraging. I highly recommend PB Pickleball Academy.&rdquo;</p>
 				<strong>Robert T.</strong>
@@ -236,7 +212,7 @@ get_header();
 			</div>
 
 			<div class="lp-testimonial">
-				<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://i.pravatar.cc/150?img=47', 'https://i.pravatar.cc/150?img=9' ) ); ?>" alt="Photo of Susan K." class="lp-avatar" loading="lazy" onerror="this.onerror=null;this.src='https://i.pravatar.cc/150?img=9';">
+				<img src="https://i.pravatar.cc/150?img=47" alt="Photo of Susan K." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;I never thought I could learn a new sport in my 60s. Now I play every week!&rdquo;</p>
 				<strong>Susan K.</strong>
@@ -248,7 +224,7 @@ get_header();
 
 	<!-- 9. BOTTOM BANNER -->
 	<section class="lp-bottom-banner anim-fade-up">
-		<img src="<?php echo esc_url( pbpa_lp_verified_image( 'https://picsum.photos/seed/pbpa-court/1200/400', 'https://picsum.photos/1200/400' ) ); ?>" alt="Pickleball net and paddles on court" class="lp-bottom-img" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/1200/400';">
+		<div class="lp-bottom-bg" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop');"></div>
 		<div class="lp-bottom-overlay">
 			<h2>Every Lesson.<br>Every Student.<br>Every Time.</h2>
 			<p>We're Here for You.</p>
