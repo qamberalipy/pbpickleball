@@ -16,7 +16,7 @@ get_header();
 <main class="lp-page">
 
 	<!-- 1. TITLE BANNER -->
-	<section class="lp-hero">
+	<section class="lp-hero" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/media/pageandprogramhero.jpg');">
 		<div class="lp-hero-grid container">
 			<div class="lp-hero-left anim-fade-right">
 				<h1>LESSONS &amp; <span class="highlight">PROGRAMS</span></h1>
@@ -28,8 +28,6 @@ get_header();
 				</a>
 				<p class="lp-hero-note">Let's get you on the court!</p>
 			</div>
-
-			<div class="lp-hero-img anim-fade-up" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/pageandprogramhero.jpg');');"></div>
 
 			<aside class="lp-why-box anim-fade-up">
 				<h2>WHY LEARN WITH PBPA?</h2>
@@ -55,7 +53,7 @@ get_header();
 
 				<article class="lp-card anim-fade-up">
 					<span class="lp-tag">MOST POPULAR</span>
-					<img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=500&auto=format&fit=crop" alt="Beginner pickleball players high-fiving on court" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture1.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
 					<div class="lp-card-body">
 						<h3>BEGINNER 101</h3>
 						<p class="lp-card-tag">Start Here!</p>
@@ -69,7 +67,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:60ms;">
-					<img src="https://images.unsplash.com/photo-1593344484962-796055d4a3a4?q=80&w=500&auto=format&fit=crop" alt="Group of players practicing together" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture2.png" alt="Group of players practicing together" loading="lazy">
 					<div class="lp-card-body">
 						<h3>GROUP LESSONS</h3>
 						<p class="lp-card-tag">Learn &amp; Have Fun Together!</p>
@@ -83,7 +81,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:120ms;">
-					<img src="https://images.unsplash.com/photo-1526413232644-8a40f287f03b?q=80&w=500&auto=format&fit=crop" alt="Instructor giving a private one on one lesson" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture3.png" alt="Instructor giving a private one on one lesson" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PRIVATE LESSONS</h3>
 						<p class="lp-card-tag">Personalized Just for You!</p>
@@ -97,7 +95,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:180ms;">
-					<img src="https://images.unsplash.com/photo-1575361204481-48a282802dce?q=80&w=500&auto=format&fit=crop" alt="Players enjoying supervised open play" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture4.png" alt="Players enjoying supervised open play" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PLAY &amp; IMPROVE</h3>
 						<p class="lp-card-tag">Practice. Play. Improve.</p>
@@ -111,7 +109,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:240ms;">
-					<img src="https://images.unsplash.com/photo-1544919982-9020cd05f0a7?q=80&w=500&auto=format&fit=crop" alt="Country club clubhouse with pickleball courts" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture5.png" alt="Country club clubhouse with pickleball courts" loading="lazy">
 					<div class="lp-card-body">
 						<h3>COUNTRY CLUB &amp; HOA</h3>
 						<p class="lp-card-tag">We Bring Pickleball to You!</p>
@@ -148,13 +146,6 @@ get_header();
 					</div>
 				</div>
 
-				<!-- 5. PACKAGES -->
-				<div class="lp-sidebar-dark anim-fade-up">
-					<h3>PACKAGE &amp; MEMBERSHIP OPTIONS</h3>
-					<p>Save more when you commit to your pickleball journey!</p>
-					<a href="<?php echo esc_url( home_url( '/packages/' ) ); ?>" class="btn btn-green lp-full-btn">View Packages</a>
-				</div>
-
 				<!-- 6. CALL CTA -->
 				<div class="lp-sidebar-call anim-fade-up">
 					<span class="lp-call-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/></svg></span>
@@ -185,11 +176,7 @@ get_header();
 
 	<!-- 8. TESTIMONIALS -->
 	<section class="lp-testimonials container anim-fade-up">
-		<div class="lp-badge">
-			<div class="lp-badge-shield">PB<span>ACADEMY</span></div>
-			<p>BUILDING CONFIDENCE<br><em>ONE LESSON AT A TIME</em></p>
-		</div>
-
+	
 		<h2 class="lp-section-title">WHAT OUR STUDENTS SAY</h2>
 
 		<div class="lp-testimonial-grid">
