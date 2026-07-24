@@ -31,8 +31,9 @@ get_header();
 <main class="bm-page">
 
 	<!-- 1. HERO: manual intro + book mockup + "What You'll Learn" -->
-	<section class="bm-hero container">
-		<div class="bm-hero-grid">
+	<section class="bm-hero">
+		<div class="container">
+			<div class="bm-hero-grid">
 
 			<div class="bm-hero-left anim-fade-right">
 				<h1>BEGINNER<br><span class="highlight">TRAINING MANUAL</span></h1>
@@ -43,14 +44,13 @@ get_header();
 					<li>Clear illustrations &amp; diagrams</li>
 					<li>Tips, strategies &amp; rules explained</li>
 					<li>Built for beginners &amp; active adults</li>
-					<li>Learn at your own pace</li>
+					<li>Learn at your own pace</li> 
 				</ul>
 			</div>
 
 			<div class="bm-hero-center anim-fade-up">
+				<img src="<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero.png" alt="Beginner Pickleball Handbook Volume 1 cover" class="bm-book-cover" loading="lazy">
 				<div class="bm-book-badge">PERFECT FOR<br>BEGINNERS &amp;<br>ACTIVE ADULTS!</div>
-				<img src="<?php echo esc_url( pbpa_bm_img( 'https://picsum.photos/seed/pbpa-manual-cover/480/620', 'https://picsum.photos/480/620' ) ); ?>" alt="Beginner Pickleball Handbook Volume 1 cover" class="bm-book-cover" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/480/620';">
-				<p class="bm-ai-note"><em>Note: replace with the AI-generated hero image — Gemini prompt provided below.</em></p>
 			</div>
 
 			<aside class="bm-sidebar anim-fade-up">
@@ -63,6 +63,7 @@ get_header();
 					<li><span class="bm-learn-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><strong>Safety &amp; Etiquette</strong><p>Play safe. Be respectful. Have more fun.</p></div></li>
 				</ul>
 			</aside>
+			</div>
 		</div>
 	</section>
 

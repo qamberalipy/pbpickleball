@@ -3,25 +3,77 @@
 
 .bm-page { --navy: var(--navy, #0f2a4a); color: #222; }
 
-.bm-hero { padding: 3rem 0 2.5rem; }
-.bm-hero-grid { display: grid; grid-template-columns: 1fr 1fr 300px; gap: 2rem; align-items: start; }
-
-.bm-hero-left h1 { font-family: "Montserrat", sans-serif; color: var(--navy); font-size: 2.3rem; line-height: 1.1; margin-bottom: 0.5rem; }
-.bm-hero-sub { color: var(--green); font-style: italic; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
-.bm-hero-text { color: var(--gray-text); margin-bottom: 1.1rem; max-width: 42ch; }
-.bm-check-list { font-size: 0.9rem; }
-.bm-check-list li::before { background: var(--green); }
-
-.bm-hero-center { position: relative; text-align: center; }
-.bm-book-cover { max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-.bm-book-badge {
-	position: absolute; top: -10px; right: 0; z-index: 2;
-	background: var(--green); color: #fff; border-radius: 50%;
-	width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
-	font-size: 0.68rem; font-weight: 700; text-align: center; line-height: 1.2;
-	padding: 0.5rem;
+.bm-hero { 
+    position: relative;
+    padding: 4rem 0 5rem; 
+    background-color: var(--white, #ffffff);
 }
-.bm-ai-note { font-size: 0.7rem; color: var(--gray-text); margin-top: 0.6rem; }
+
+.bm-hero::before {
+    display: none; /* Removes the dark gradient */
+}
+
+.bm-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.bm-hero-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1.5fr 300px; /* Wider center column for the double-book image */
+    gap: 2.5rem; 
+    align-items: center; 
+}
+
+@media (max-width: 1024px) {
+    .bm-hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .bm-hero-left { margin: 0 auto; }
+    .bm-check-list { display: inline-block; text-align: left; }
+    .bm-book-badge { position: relative; margin: -20px auto 0; bottom: auto; left: auto; transform: none; }
+}
+
+.bm-hero-left h1 { font-family: "Montserrat", sans-serif; color: var(--navy); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin-bottom: 0.5rem; font-weight: 900; }
+.bm-hero-sub { color: var(--green); font-style: italic; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
+.bm-hero-text { color: var(--gray-text); margin-bottom: 1.5rem; max-width: 42ch; line-height: 1.6; }
+.bm-check-list { font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px; font-weight: 600; color: var(--navy); margin-bottom: 0; padding: 0; }
+.bm-check-list li { display: flex; align-items: center; gap: 10px; }
+.bm-check-list li::before { 
+    content: '✓'; 
+    display: inline-flex; justify-content: center; align-items: center; 
+    width: 20px; height: 20px; background-color: var(--green); color: #fff; 
+    border-radius: 50%; font-size: 0.7rem; font-weight: bold; flex-shrink: 0; 
+}
+
+.bm-hero-center { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
+.bm-book-cover { 
+    width: 100%; 
+    max-width: 650px; 
+    height: auto; 
+    display: block; 
+    /* Removed box-shadow and border-radius so the PNG transparency is seamless */
+}
+
+.bm-book-badge {
+    position: absolute; 
+    bottom: 5%; 
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: var(--green); 
+    color: #fff; 
+    border-radius: 50%;
+    width: 110px; 
+    height: 110px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 0.72rem; 
+    font-weight: 800; 
+    text-align: center; 
+    line-height: 1.2;
+    padding: 0.5rem;
+    box-shadow: 0 10px 20px rgba(103, 155, 48, 0.3);
+}
 
 .bm-sidebar { background: var(--navy); color: #fff; border-radius: 12px; padding: 1.5rem; }
 .bm-sidebar h2 { color: var(--green); font-size: 0.95rem; margin-bottom: 1rem; }
