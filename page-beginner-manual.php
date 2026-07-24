@@ -120,8 +120,15 @@ get_header();
 			<div class="bm-purchase-action">
 				<div class="bm-action-card">
 					<div class="bm-action-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-					</div>
+	    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+	        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+	        <path d="M4 22h16"></path>
+	        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+	        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+	        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+	    </svg>
+</div>
 					<h3>Beginner Manual</h3>
 					<p>Ready to level up your game?</p>
 					
