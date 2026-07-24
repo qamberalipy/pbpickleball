@@ -73,18 +73,17 @@ get_header();
 		<div class="bm-samples-grid">
 			<?php
 			$bm_samples = array(
-				array( 'title' => 'The Court', 'sub' => 'Get to know the court.', 'page' => 8 ),
-				array( 'title' => 'Grips', 'sub' => 'Choose the right grip.', 'page' => 16 ),
-				array( 'title' => '3rd Shot Drop', 'sub' => 'A smart way to take control.', 'page' => 32 ),
-				array( 'title' => 'Moving to the Kitchen', 'sub' => 'After you serve…', 'page' => 38 ),
-				array( 'title' => 'Returning a Shot', 'sub' => '4 smart ways to place it.', 'page' => 42 ),
-				array( 'title' => 'You Got This!', 'sub' => 'Practice. Play. Improve.', 'page' => 71 ),
+				array( 'title' => 'The Court', 'sub' => 'Get to know the court.', 'page' => 8, 'img' => 'court.png.jpg' ),
+				array( 'title' => 'Grips', 'sub' => 'Choose the right grip.', 'page' => 16, 'img' => 'grips.jpg' ),
+				array( 'title' => '3rd Shot Drop', 'sub' => 'A smart way to take control.', 'page' => 32, 'img' => '3d-shot.jpg' ),
+				array( 'title' => 'Moving to the Kitchen', 'sub' => 'After you serve…', 'page' => 38, 'img' => 'move-to-kitchen.jpg' ),
+				array( 'title' => 'Returning a Shot', 'sub' => '4 smart ways to place it.', 'page' => 42, 'img' => 'return-ashot.jpg' ),
+				array( 'title' => 'You Got This!', 'sub' => 'Practice. Play. Improve.', 'page' => 71, 'img' => 'let-go.jpg' ),
 			);
 			foreach ( $bm_samples as $i => $s ) :
-				$seed = 'pbpa-sample-' . $i;
 				?>
 				<div class="bm-sample-card anim-fade-up anim-stagger" style="--stagger-delay:<?php echo esc_attr( $i * 60 ); ?>ms;">
-					<img src="<?php echo esc_url( pbpa_bm_img( 'https://picsum.photos/seed/' . $seed . '/300/220', 'https://picsum.photos/300/220' ) ); ?>" alt="<?php echo esc_attr( $s['title'] . ' sample page' ); ?>" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/300/220';">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/media/' . $s['img'] ); ?>" alt="<?php echo esc_attr( $s['title'] . ' sample page' ); ?>" loading="lazy">
 					<span class="bm-page-num"><?php echo esc_html( $s['page'] ); ?></span>
 					<div class="bm-sample-body">
 						<h3><?php echo esc_html( $s['title'] ); ?></h3>
