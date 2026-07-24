@@ -566,7 +566,7 @@
 
     <!-- 2. Hero Section -->
     <section class="cd-hero anim-fade-up">
-        <div class="cd-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/hero-court-directory.jpg');"></div>
+        <div class="cd-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/hero-court-directory.webp');"></div>
         <div class="container cd-hero__container">
             <h1>PICKLEBALL COURT DIRECTORY</h1>
             <h2>Find. Play. Enjoy.</h2>
