@@ -49,7 +49,7 @@ get_header();
 			</div>
 
 			<div class="bm-hero-center anim-fade-up">
-				<img src="<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero.png" alt="Beginner Pickleball Handbook Volume 1 cover" class="bm-book-cover" loading="lazy">
+				<img src="<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero.webp" alt="Beginner Pickleball Handbook Volume 1 cover" class="bm-book-cover" loading="lazy">
 				<div class="bm-book-badge">PERFECT FOR<br>BEGINNERS &amp;<br>ACTIVE ADULTS!</div>
 			</div>
 
