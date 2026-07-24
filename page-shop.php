@@ -396,38 +396,45 @@
 }
 
 .shop-card__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(11, 25, 44, 0.08);
+    padding-top: 16px;
+    border-top: 1px solid rgba(11, 25, 44, 0.06);
 }
 
-.shop-card__price {
-    font-family: var(--font-heading, sans-serif);
-    color: var(--navy, #0B192C);
-    font-size: 1.35rem;
-    font-weight: 900;
-}
-
-.shop-card__rating {
-    display: inline-flex;
+.shop-guide-btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
-    background: #fff9e6;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-family: var(--font-body, sans-serif);
-    font-size: 0.8rem;
-    font-weight: 700;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: var(--font-heading, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+}
+
+.shop-guide-btn.btn-green {
+    background: var(--green, #00D06C);
     color: var(--navy, #0B192C);
 }
 
-.shop-card__rating svg {
-    width: 14px;
-    height: 14px;
-    fill: #FFC107;
+.shop-guide-btn.btn-green:hover {
+    background: var(--green-bright, #00FF87);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 208, 108, 0.25);
+}
+
+.shop-guide-btn.btn-disabled {
+    background: #f4f5f7;
+    color: #a0aabf;
+    border: 1.5px dashed #d1d6e0;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Modern Glassmorphic Trust Sidebar */
@@ -644,139 +651,106 @@
                     <span class="shop-featured__tag">Curated Selection</span>
                     <h2 class="shop-featured__title">Featured Products</h2>
                 </div>
-                <a href="<?php echo esc_url(site_url('/all-product')); ?>" class="shop-featured__view-all">
-                    View Catalog
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+                <!-- View Catalog removed -->
             </div>
             
             <div class="shop-featured__layout">
                 <!-- Main Grid -->
                 <div class="shop-products">
-                    
+
                     <!-- Card 1 -->
-                    <a href="#" class="shop-card">
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge">Best Seller</span>
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Paddles</span>
                             <h3 class="shop-card__title">PBPA Signature Paddle</h3>
                             <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$129.99</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.9 (128)
-                                </span>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/paddle-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Card 2 -->
-                    <a href="#" class="shop-card">
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge shop-card__badge--alt">PBPA Approved</span>
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Balls</span>
                             <h3 class="shop-card__title">PBPA Outdoor Balls</h3>
                             <div class="shop-card__subtitle">Durable 3-Pack</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$14.99</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.8 (342)
-                                </span>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/ball-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Card 3 -->
-                    <a href="#" class="shop-card">
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge">New Arrival</span>
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Pro Pickleball Shoes" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Footwear</span>
                             <h3 class="shop-card__title">Court Pro Shoes</h3>
-                            <div class="shop-card__subtitle">Enhanced Grip & Lateral Support</div>
+                            <div class="shop-card__subtitle">Enhanced Grip &amp; Lateral Support</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$119.99</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.6 (85)
-                                </span>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/shoes-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- Card 4 -->
-                    <a href="#" class="shop-card">
+                    <!-- Card 4 (Bag) -->
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Bags</span>
                             <h3 class="shop-card__title">PBPA Pro Backpack</h3>
                             <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$89.99</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.9 (42)
-                                </span>
+                                <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
                     <!-- Card 5 -->
-                    <a href="#" class="shop-card">
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/glasses.png" alt="Performance Sunglasses" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Eyewear</span>
                             <h3 class="shop-card__title">Performance Eyewear</h3>
                             <div class="shop-card__subtitle">Polarized UV Protection</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$45.00</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.5 (61)
-                                </span>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/safety-glasses-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- Card 6 -->
-                    <a href="#" class="shop-card">
+                    <!-- Card 6 (Shirt) -->
+                    <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
-                            <span class="shop-card__action-btn">View Details</span>
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Apparel</span>
                             <h3 class="shop-card__title">Performance Tech Tee</h3>
                             <div class="shop-card__subtitle">Breathable Moisture Wicking</div>
                             <div class="shop-card__bottom">
-                                <span class="shop-card__price">$34.99</span>
-                                <span class="shop-card__rating">
-                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                    4.7 (112)
-                                </span>
+                                <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
                             </div>
                         </div>
-                    </a>
+                    </div>
 
                 </div>
 
