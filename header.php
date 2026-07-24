@@ -63,9 +63,9 @@
                 <ul class="nav-links">
                     <li><a href="<?php echo home_url('/'); ?>" <?php if (is_front_page() || is_home() || is_page('home')) echo 'class="active"'; ?>>HOME</a></li>
                     <li><a href="<?php echo home_url('/about-pbpa/'); ?>" <?php if (is_page('about-pbpa')) echo 'class="active"'; ?>>ABOUT PBPA</a></li>
-                    <li><a href="#">LESSONS &amp; PROGRAMS</a></li>
+                    <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>LESSONS &amp; PROGRAMS</a></li>
                     <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
-                    <li><a href="#">BEGINNER MANUAL</a></li>
+                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>BEGINNER MANUAL</a></li>
                     <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
                     <li><a href="<?php echo home_url('/page-court-directory/'); ?>" <?php if (is_page('court-directory')) echo 'class="active"'; ?>>COURT DIRECTORY</a></li>
                     <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
