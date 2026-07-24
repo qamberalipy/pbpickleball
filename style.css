@@ -353,6 +353,10 @@ nav {
     flex-shrink: 0;
 }
 
+.nav-btn-item {
+    display: none;
+}
+
 .header-actions .btn {
     padding: 10px 18px;
     font-size: 0.75rem;
@@ -1318,6 +1322,25 @@ footer {
         display: block;
     }
 
+    .header-actions {
+        display: none;
+    }
+
+    .nav-btn-item {
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+
+    .nav-btn-item .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 18px;
+    }
+
     nav {
         order: 3;
         flex: 1 0 100%;
@@ -1364,6 +1387,46 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col p,
+    .footer-col li {
+        justify-content: center;
+    }
+
+    .footer-col h4 {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .footer-links > div {
+        align-items: center;
+        width: 100%;
+    }
+
+    .newsletter-form {
+        margin: 15px auto 0;
+        max-width: 320px;
+        width: 100%;
+    }
 
     .logo-img {
         max-height: 45px;
