@@ -147,27 +147,6 @@
 .cd-directory-section {
     padding: 80px 0;
 }
-.cd-filter-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-.cd-filter-tab {
-    background: var(--gray-bg, #f4f5f7);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-family: var(--font-heading, sans-serif);
-    font-weight: 600;
-    color: var(--navy, #0B192C);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.cd-filter-tab.active, .cd-filter-tab:hover {
-    background: var(--navy, #0B192C);
-    color: var(--white, #fff);
-}
 .cd-directory-split {
     display: grid;
     grid-template-columns: 70% 28%;
@@ -186,15 +165,10 @@
     display: flex;
     flex-direction: column;
 }
-.cd-fc-img {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
 .cd-fc-badge {
-    position: absolute;
-    top: 15px; left: 15px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 12px;
     background: var(--green, #00D06C);
     color: var(--navy, #0B192C);
     padding: 5px 10px;
@@ -628,25 +602,14 @@
     <!-- 4. Directory Section -->
     <section id="find-a-court" class="cd-directory-section">
         <div class="container">
-            <div class="cd-filter-tabs anim-fade-up">
-                <button class="cd-filter-tab active">All Courts</button>
-                <button class="cd-filter-tab">Public Outdoor</button>
-                <button class="cd-filter-tab">Public Indoor</button>
-                <button class="cd-filter-tab">Private Clubs</button>
-                <button class="cd-filter-tab">Reservation Required</button>
-                <button class="cd-filter-tab">Lighted Courts</button>
-            </div>
-
             <div class="cd-directory-split">
                 <!-- Main Grid -->
                 <div class="cd-directory-grid anim-fade-up">
                     
                     <!-- Card 1 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop');">
-                            <span class="cd-fc-badge">Public Outdoor</span>
-                        </div>
                         <div class="cd-fc-content">
+                            <span class="cd-fc-badge">Public Outdoor</span>
                             <h4>Palm Beach Gardens Regional Park</h4>
                             <div class="cd-fc-city">
                                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -664,10 +627,8 @@
 
                     <!-- Card 2 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop');">
-                            <span class="cd-fc-badge">Public Indoor</span>
-                        </div>
                         <div class="cd-fc-content">
+                            <span class="cd-fc-badge">Public Indoor</span>
                             <h4>Jupiter Community Center</h4>
                             <div class="cd-fc-city">
                                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -685,10 +646,8 @@
 
                     <!-- Card 3 -->
                     <article class="cd-featured-card">
-                        <div class="cd-fc-img" style="background-image: url('https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=800&auto=format&fit=crop');">
-                            <span class="cd-fc-badge">Private Club</span>
-                        </div>
                         <div class="cd-fc-content">
+                            <span class="cd-fc-badge">Private Club</span>
                             <h4>The Pickleball Club at Boca</h4>
                             <div class="cd-fc-city">
                                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -939,35 +898,6 @@
         </div>
     </section>
 
-    <!-- Filter Tabs JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const filterTabs = document.querySelectorAll('.cd-filter-tab');
-            const cards = document.querySelectorAll('.cd-featured-card');
-
-            filterTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    filterTabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filterText = this.textContent.trim();
-
-                    cards.forEach(card => {
-                        if (filterText === 'All Courts') {
-                            card.style.display = 'flex';
-                        } else {
-                            const badgeText = card.querySelector('.cd-fc-badge').textContent.trim();
-                            if (badgeText === filterText) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </main>
 
 <?php get_footer(); ?>
