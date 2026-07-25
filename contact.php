@@ -102,9 +102,14 @@ get_header();
 
 /* Responsive Overrides */
 @media (max-width: 980px) {
+    .ct-new-hero {
+        /* Pushes the bottom down so there is a safe zone to view the image */
+        padding: 60px 0 140px 0; 
+    }
     .ct-new-hero__bg::after {
         width: 100%; /* Cover full width on mobile */
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
+        /* Bulletproof Fix: Top-to-Bottom gradient. Solid white behind text, fading to clear at the bottom. */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.1) 100%);
     }
     .ct-new-hero__text-col {
         margin: 0 auto;

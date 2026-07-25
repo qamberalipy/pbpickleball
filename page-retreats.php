@@ -1,69 +1,128 @@
 <?php
 /**
- * Template Name: Retreats  & Cruises
+ * Template Name: Retreats & Cruises
  */
 get_header(); ?>
 
+<style>
+/* ============================================================
+   RETREATS HERO REDESIGN (Matches Front Page + Fixes Visibility)
+   ============================================================ */
+.retreat-hero-full {
+    background-image: url('<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.webp');
+    background-position: center top; /* Keeps faces pinned to the top */
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: flex-end; /* Pushes content down */
+    padding-top: 150px; /* Leaves space at the top for faces on desktop */
+}
+
+/* DESKTOP GRADIENT: Fades to transparent at the top-right to reveal the image */
+.retreat-hero-full::before {
+    width: 100%;
+    background: linear-gradient(to top right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0) 60%);
+}
+
+/* Replicate Contact Page Tag Styles */
+.ct-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ct-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(11, 32, 70, 0.05);
+    border: 1px solid rgba(11, 32, 70, 0.1);
+    color: var(--navy);
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 50px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+    .retreat-hero-full {
+        padding-top: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .retreat-hero-full {
+        padding-top: 280px; 
+        padding-bottom: 40px;
+    }
+    /* MOBILE GRADIENT: Solid white at the bottom, transparent at the top */
+    .retreat-hero-full::before {
+        display: block !important; /* Overrides style.css hiding ::before on mobile */
+        background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 0) 100%);
+    }
+    /* Overrides style.css forcing text to be white on mobile hero banners */
+    .retreat-hero-full .hero-subtitle,
+    .retreat-hero-full .hero-left h1,
+    .retreat-hero-full .hero-left p,
+    .retreat-hero-full .hero-list li,
+    .retreat-hero-full .hero-right-header h3 {
+        color: var(--navy) !important;
+    }
+    .retreat-hero-full .hero-right {
+        margin-top: 20px;
+    }
+    .ct-hero-tags {
+        justify-content: center;
+    }
+}
+</style>
+
 <main class="retreats-page">
 
-    <!-- 1. Hero Section -->
-    <section class="r-hero anim-fade-up">
-        <div class="r-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.webp');"></div>
-        <div class="r-hero__overlay"></div>
-
-        <div class="container r-hero__container">
-            <div class="r-hero__left">
-                <h1 class="r-hero__title">RETREATS & CRUISES</h1>
-                <h2 class="r-hero__subtitle">Play Pickleball. Explore. Connect.</h2>
-                <p class="r-hero__intro">Combine your passion for pickleball with unforgettable vacations. Join us at breathtaking resorts and luxury cruises for world-class coaching, daily open play, and amazing new friends from around the world.</p>
+    <!-- 1. REDESIGNED HERO SECTION -->
+    <section class="hero retreat-hero-full">
+        <div class="hero-container">
+            
+            <div class="hero-left anim-fade-right">
+                <h2 class="hero-subtitle">PLAY. EXPLORE. CONNECT.</h2>
+                <h1>RETREATS &amp;<br><span class="highlight">CRUISES</span></h1>
+                <p>Combine your passion for pickleball with unforgettable vacations. Join us at breathtaking resorts and luxury cruises for world-class coaching, daily open play, and amazing new friends from around the world.</p>
                 
-                <div class="r-hero__strip">
-                    <div class="r-strip__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                        <span>Daily Pickleball</span>
-                    </div>
-                    <div class="r-strip__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        <span>New Friends</span>
-                    </div>
-                    <div class="r-strip__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span>Exciting Destinations</span>
-                    </div>
-                    <div class="r-strip__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                        <span>Active & Fun</span>
-                    </div>
+                <div class="ct-hero-tags">
+                    <span class="ct-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                        Daily Pickleball
+                    </span>
+                    <span class="ct-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        New Friends
+                    </span>
+                    <span class="ct-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Epic Destinations
+                    </span>
                 </div>
             </div>
             
-            <div class="r-hero__right anim-fade-left">
-                <div class="r-floating-card">
-                    <h3 class="r-floating-card__title">WHY JOIN OUR RETREATS & CRUISES?</h3>
-                    <ul class="r-floating-card__list">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Improve skills with expert coaching
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Enjoy daily open play & events
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Discover beautiful new places
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            All-inclusive luxury & convenience
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Fun, safe, and beginner-friendly
-                        </li>
+            <div class="hero-right anim-fade-left">
+                <div class="hero-right-header">
+                    <h3>WHY JOIN US?</h3>
+                </div>
+                <div class="hero-right-body">
+                    <ul class="hero-list">
+                        <li>Improve skills with expert coaching</li>
+                        <li>Enjoy daily open play &amp; events</li>
+                        <li>Discover beautiful new places</li>
+                        <li>All-inclusive luxury &amp; convenience</li>
+                        <li>Fun, safe, and beginner-friendly</li>
                     </ul>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -75,9 +134,7 @@ get_header(); ?>
             <div class="r-grid r-grid--upcoming anim-fade-up">
                 <!-- Card 1 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')">
-                        <div class="r-card__badge">Nov 15-20, 2026</div>
-                    </div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Punta Cana Paradise Retreat</h3>
                         <p class="r-card__location">
@@ -96,9 +153,7 @@ get_header(); ?>
 
                 <!-- Card 2 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')">
-                        <div class="r-card__badge">Jan 10-17, 2027</div>
-                    </div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Caribbean Explorer Cruise</h3>
                         <p class="r-card__location">
@@ -117,9 +172,7 @@ get_header(); ?>
 
                 <!-- Card 3 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')">
-                        <div class="r-card__badge">Mar 5-10, 2027</div>
-                    </div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Aruba Sun & Sand Retreat</h3>
                         <p class="r-card__location">
@@ -138,9 +191,7 @@ get_header(); ?>
 
                 <!-- Card 4 -->
                 <article class="r-card">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')">
-                        <div class="r-card__badge">May 12-22, 2027</div>
-                    </div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Grecian Odyssey Retreat</h3>
                         <p class="r-card__location">
