@@ -13,7 +13,7 @@
 .cd-hero {
     position: relative;
     padding: 100px 0;
-    color: var(--white, #fff);
+    color: var(--navy, #0B192C); /* Changed from white to Navy */
     display: flex;
     align-items: center;
     min-height: 50vh;
@@ -28,26 +28,42 @@
 .cd-hero__bg::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(11, 25, 44, 0.9) 0%, rgba(11, 25, 44, 0.5) 100%);
+    top: 0; left: 0; 
+    width: 60%; /* Replicates the front page left-side fade */
+    height: 100%;
+    /* White gradient fading to transparent to match front-page.php */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 60%, rgba(255, 255, 255, 0) 100%);
 }
 .cd-hero__container {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    width: 100%; 
+    /* Removed max-width and margin-left. The global .container class will now perfectly align this with your header logo. */
 }
+
+/* Apply the 650px limit directly to the text so it doesn't bleed into the image, keeping the container grid intact */
+.cd-hero h1,
+.cd-hero h2,
+.cd-hero p {
+    max-width: 650px; 
+    text-align: left;
+}
+
 .cd-hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 10px;
     text-transform: uppercase;
     font-family: var(--font-heading, sans-serif);
+    color: var(--navy, #0B192C); 
 }
+
 .cd-hero h2 {
-    color: var(--green-bright, #00FF87);
+    color: var(--green, #679B30); 
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 20px;
     font-family: var(--font-heading, sans-serif);
 }
+
 .cd-hero p {
     font-size: 1.2rem;
     line-height: 1.6;
