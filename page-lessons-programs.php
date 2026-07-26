@@ -53,7 +53,7 @@ get_header();
 
 				<article class="lp-card anim-fade-up">
 					
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture1.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/beginner-01.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
 					<div class="lp-card-body">
 						<h3>BEGINNER 101</h3>
 						<p class="lp-card-tag">Start Here!</p>
@@ -67,7 +67,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:60ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture2.png" alt="Group of players practicing together" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/group-lesson.png" alt="Group of players practicing together" loading="lazy">
 					<div class="lp-card-body">
 						<h3>GROUP LESSONS</h3>
 						<p class="lp-card-tag">Learn &amp; Have Fun Together!</p>
@@ -81,7 +81,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:120ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture3.png" alt="Instructor giving a private one on one lesson" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/private-lessons.png" alt="Instructor giving a private one on one lesson" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PRIVATE LESSONS</h3>
 						<p class="lp-card-tag">Personalized Just for You!</p>
@@ -95,7 +95,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:180ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture4.png" alt="Players enjoying supervised open play" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/play-improve.png" alt="Players enjoying supervised open play" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PLAY &amp; IMPROVE</h3>
 						<p class="lp-card-tag">Practice. Play. Improve.</p>
@@ -109,7 +109,7 @@ get_header();
 				</article>
 
 				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:240ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/paddle/Picture5.png" alt="Country club clubhouse with pickleball courts" loading="lazy">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/country-court.png" alt="Country club clubhouse with pickleball courts" loading="lazy">
 					<div class="lp-card-body">
 						<h3>COUNTRY CLUB &amp; HOA</h3>
 						<p class="lp-card-tag">We Bring Pickleball to You!</p>
