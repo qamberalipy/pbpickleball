@@ -391,7 +391,7 @@ get_header();
          ============================================================ -->
     <section class="ct-features">
         <div class="container">
-            <h2 class="ct-features-title anim-fade-up">WHY CHOOSE PBA?</h2>
+            <h2 class="ct-features-title anim-fade-up">WHY CHOOSE PB ACADEMY?</h2>
             <div class="ct-features-grid">
                 <div class="ct-feature-item anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="ct-fi-icon"><svg viewBox="0 0 24 24" fill="var(--green)"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
