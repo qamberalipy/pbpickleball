@@ -23,7 +23,7 @@
 
         <div class="hero-right">
             <div class="hero-right-header">
-                <h3>WHY CHOOSE PBA?</h3>
+                <h3>WHY CHOOSE PB ACADEMY?</h3>
             </div>
             <div class="hero-right-body">
                 <ul class="hero-list">
