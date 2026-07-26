@@ -363,7 +363,7 @@ get_header();
         </div>
         <div class="ct-map-wrapper">
             <iframe
-                title="PBPA Location — Boynton Beach, FL"
+                title="PBA Location — Boynton Beach, FL"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114705.38!2d-80.155!3d26.535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8da4f97e5fa35%3A0xbfc11e4a6cf5c9f3!2sBoynton%20Beach%2C%20FL!5e0!3m2!1sen!2sus!4v1680000000000"
                 loading="lazy"
                 allowfullscreen
@@ -387,11 +387,11 @@ get_header();
     </section>
 
     <!-- ============================================================
-         5. WHY CHOOSE PBPA? (Remains unchanged)
+         5. WHY CHOOSE PBA? (Remains unchanged)
          ============================================================ -->
     <section class="ct-features">
         <div class="container">
-            <h2 class="ct-features-title anim-fade-up">WHY CHOOSE PBPA?</h2>
+            <h2 class="ct-features-title anim-fade-up">WHY CHOOSE PBA?</h2>
             <div class="ct-features-grid">
                 <div class="ct-feature-item anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="ct-fi-icon"><svg viewBox="0 0 24 24" fill="var(--green)"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>

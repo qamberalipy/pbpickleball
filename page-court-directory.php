@@ -910,7 +910,7 @@
                 </div>
             </div>
             <h2>Great Players Adapt to Any Surface. Know the Court. Trust Your Game.</h2>
-            <blockquote>"Great courts. Great people. Better together. – PBPA Team"</blockquote>
+            <blockquote>"Great courts. Great people. Better together. – PBA Team"</blockquote>
         </div>
     </section>
 
