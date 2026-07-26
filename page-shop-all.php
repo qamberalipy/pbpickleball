@@ -355,7 +355,7 @@
                     <div class="shop-trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
                     <div class="shop-trust-item__body">
                         <h4 class="shop-trust-item__title">Pro Recommended</h4>
-                        <p class="shop-trust-item__text">Tested and approved by certified PBPA instructors.</p>
+                        <p class="shop-trust-item__text">Tested and approved by certified PBA instructors.</p>
                     </div>
                 </div>
                 <div class="shop-trust-item">
@@ -395,12 +395,12 @@
                 <a href="#" class="shop-card" data-category="paddles" data-price="129.99" data-rating="4.9" data-featured="1">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge">Best Seller</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBA Signature Paddle" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
                     </div>
                     <div class="shop-card__content">
                         <span class="shop-card__category">Paddles</span>
-                        <h3 class="shop-card__title">PBPA Signature Paddle</h3>
+                        <h3 class="shop-card__title">PBA Signature Paddle</h3>
                         <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$129.99</span>
@@ -412,13 +412,13 @@
                 <!-- Card 2 -->
                 <a href="#" class="shop-card" data-category="balls" data-price="14.99" data-rating="4.8" data-featured="2">
                     <div class="shop-card__image-wrap">
-                        <span class="shop-card__badge shop-card__badge--alt">PBPA Approved</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
+                        <span class="shop-card__badge shop-card__badge--alt">PBA Approved</span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBA Outdoor Balls" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
                     </div>
                     <div class="shop-card__content">
                         <span class="shop-card__category">Balls</span>
-                        <h3 class="shop-card__title">PBPA Outdoor Balls</h3>
+                        <h3 class="shop-card__title">PBA Outdoor Balls</h3>
                         <div class="shop-card__subtitle">Durable 3-Pack</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$14.99</span>
@@ -449,12 +449,12 @@
                 <a href="#" class="shop-card" data-category="bags" data-price="89.99" data-rating="4.9" data-featured="4">
                     <div class="shop-card__image-wrap">
                         <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBA Pro Backpack" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
                     </div>
                     <div class="shop-card__content">
                         <span class="shop-card__category">Bags</span>
-                        <h3 class="shop-card__title">PBPA Pro Backpack</h3>
+                        <h3 class="shop-card__title">PBA Pro Backpack</h3>
                         <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                         <div class="shop-card__bottom">
                             <span class="shop-card__price">$89.99</span>
@@ -483,7 +483,7 @@
                 <!-- Card 6 -->
                 <a href="#" class="shop-card" data-category="apparel" data-price="34.99" data-rating="4.7" data-featured="6">
                     <div class="shop-card__image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBA Performance Shirt" class="shop-card__image">
                         <span class="shop-card__action-btn">View Details</span>
                     </div>
                     <div class="shop-card__content">

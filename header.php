@@ -50,7 +50,7 @@
             <nav id="mainNav">
                 <ul class="nav-links">
                     <li><a href="<?php echo home_url('/'); ?>" <?php if (is_front_page() || is_home() || is_page('home')) echo 'class="active"'; ?>>HOME</a></li>
-                    <li><a href="<?php echo home_url('/about-pbpa/'); ?>" <?php if (is_page('about-pbpa')) echo 'class="active"'; ?>>ABOUT PBPA</a></li>
+                    <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT PBA</a></li>
                     <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>LESSONS &amp; PROGRAMS</a></li>
                     <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
                     <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>BEGINNER MANUAL</a></li>

@@ -12,7 +12,7 @@ get_header();
         <div class="hero-container">
             <div class="hero-left anim-fade-right">
                 <h2 class="hero-subtitle">MORE THAN A GAME</h2>
-                <h1>ABOUT <br><span class="highlight">PBPA</span></h1>
+                <h1>ABOUT <br><span class="highlight">PBA</span></h1>
                 <p>At PB Pickleball Academy, we believe pickleball is more than a game—it's a way to stay active, make friends, and enjoy life. Our mission is to make learning simple, fun, and rewarding for beginners and active adults.</p>
                 <div class="ah-motto" style="display:flex;align-items:center;gap:10px;color:var(--green);font-size:1.05rem;font-family:var(--font-heading);margin-top:20px;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -25,7 +25,7 @@ get_header();
     <!-- Differentiators Section -->
     <section class="about-diff container">
         <div class="diff-header anim-fade-up">
-            <h3 class="line-heading">WHAT MAKES PBPA DIFFERENT?</h3>
+            <h3 class="line-heading">WHAT MAKES PBA DIFFERENT?</h3>
         </div>
         <div class="diff-grid">
             <div class="diff-item anim-fade-up anim-stagger" style="--stagger-delay: 0ms">
@@ -127,7 +127,7 @@ get_header();
                 <div class="ag-line"></div>
             </div>
             <div class="local-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/about-court-banner.jpg" alt="PBPA Pickleball Court" class="local-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-court-banner.webp" alt="PBA Pickleball Court" class="local-img">
                 <p>We are proud to serve communities across Palm Beach County with programs, events, and partnerships that keep our community active and connected.</p>
                 <div class="location-pin">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>

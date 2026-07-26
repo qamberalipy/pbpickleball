@@ -557,7 +557,7 @@
                 
                 <!-- Left Content -->
                 <div class="shop-hero__content">
-                    <h1 class="shop-hero__title">PBPA SHOP</h1>
+                    <h1 class="shop-hero__title">PBA SHOP</h1>
                     <div class="shop-hero__subtitle">Gear You Can Trust. Performance You'll Love.</div>
                     <p class="shop-hero__text">We've hand-selected the best pickleball equipment so you don't have to guess. From pro-level paddles to premium court shoes, we have exactly what you need to elevate your game.</p>
                     
@@ -662,11 +662,11 @@
                     <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge">Best Seller</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBPA Signature Paddle" class="shop-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBA Signature Paddle" class="shop-card__image">
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Paddles</span>
-                            <h3 class="shop-card__title">PBPA Signature Paddle</h3>
+                            <h3 class="shop-card__title">PBA Signature Paddle</h3>
                             <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                             <div class="shop-card__bottom">
                                 <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/paddle-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
@@ -677,12 +677,12 @@
                     <!-- Card 2 -->
                     <div class="shop-card">
                         <div class="shop-card__image-wrap">
-                            <span class="shop-card__badge shop-card__badge--alt">PBPA Approved</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBPA Outdoor Balls" class="shop-card__image">
+                            <span class="shop-card__badge shop-card__badge--alt">PBA Approved</span>
+                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBA Outdoor Balls" class="shop-card__image">
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Balls</span>
-                            <h3 class="shop-card__title">PBPA Outdoor Balls</h3>
+                            <h3 class="shop-card__title">PBA Outdoor Balls</h3>
                             <div class="shop-card__subtitle">Durable 3-Pack</div>
                             <div class="shop-card__bottom">
                                 <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/ball-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
@@ -710,11 +710,11 @@
                     <div class="shop-card">
                         <div class="shop-card__image-wrap">
                             <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBPA Pro Backpack" class="shop-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBA Pro Backpack" class="shop-card__image">
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Bags</span>
-                            <h3 class="shop-card__title">PBPA Pro Backpack</h3>
+                            <h3 class="shop-card__title">PBA Pro Backpack</h3>
                             <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                             <div class="shop-card__bottom">
                                 <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
@@ -740,7 +740,7 @@
                     <!-- Card 6 (Shirt) -->
                     <div class="shop-card">
                         <div class="shop-card__image-wrap">
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBPA Performance Shirt" class="shop-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBA Performance Shirt" class="shop-card__image">
                         </div>
                         <div class="shop-card__content">
                             <span class="shop-card__category">Apparel</span>
@@ -762,7 +762,7 @@
                         </div>
                         <div class="shop-trust-item__body">
                             <h4 class="shop-trust-item__title">Pro Recommended</h4>
-                            <p class="shop-trust-item__text">Tested and approved by certified PBPA instructors.</p>
+                            <p class="shop-trust-item__text">Tested and approved by certified PBA instructors.</p>
                         </div>
                     </div>
 

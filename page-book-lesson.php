@@ -4,7 +4,7 @@ Template Name: Book a Lesson
 */
 
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_style( 'pbpa-book-lesson', get_template_directory_uri() . '/book-lesson.css', array(), '1.0.0' );
+	wp_enqueue_style( 'pba-book-lesson', get_template_directory_uri() . '/book-lesson.css', array(), '1.0.0' );
 } );
 
 $bl_errors  = array();
@@ -12,8 +12,8 @@ $bl_success = false;
 
 if ( isset( $_POST['bl_submit'] ) ) {
 
-	if ( ! isset( $_POST['bl_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['bl_nonce'] ), 'pbpa_book_lesson' ) ) {
-		$bl_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pbpa' );
+	if ( ! isset( $_POST['bl_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['bl_nonce'] ), 'pba_book_lesson' ) ) {
+		$bl_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pba' );
 	} elseif ( ! empty( $_POST['bl_hp'] ) ) {
 		// Honeypot triggered — silently accept without emailing.
 		$bl_success = true;
@@ -29,22 +29,22 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		$message      = isset( $_POST['bl_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['bl_message'] ) ) : '';
 
 		if ( '' === $name ) {
-			$bl_errors[] = __( 'Please enter your name.', 'pbpa' );
+			$bl_errors[] = __( 'Please enter your name.', 'pba' );
 		}
 		if ( '' === $email || ! is_email( $email ) ) {
-			$bl_errors[] = __( 'Please enter a valid email address.', 'pbpa' );
+			$bl_errors[] = __( 'Please enter a valid email address.', 'pba' );
 		}
 		if ( '' === $phone ) {
-			$bl_errors[] = __( 'Please enter your phone number.', 'pbpa' );
+			$bl_errors[] = __( 'Please enter your phone number.', 'pba' );
 		}
 		if ( '' === $lesson_type ) {
-			$bl_errors[] = __( 'Please select a lesson type.', 'pbpa' );
+			$bl_errors[] = __( 'Please select a lesson type.', 'pba' );
 		}
 		if ( '' === $skill_level ) {
-			$bl_errors[] = __( 'Please select your skill level.', 'pbpa' );
+			$bl_errors[] = __( 'Please select your skill level.', 'pba' );
 		}
 		if ( '' === $pref_date ) {
-			$bl_errors[] = __( 'Please choose a preferred date.', 'pbpa' );
+			$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
 		}
 		if ( $participants < 1 ) {
 			$participants = 1;
@@ -52,7 +52,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 
 		if ( empty( $bl_errors ) ) {
 			$to      = get_option( 'admin_email' );
-			$subject = sprintf( __( 'New Lesson Booking Request from %s', 'pbpa' ), $name );
+			$subject = sprintf( __( 'New Lesson Booking Request from %s', 'pba' ), $name );
 			$body    = "New lesson booking request:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
@@ -71,7 +71,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 			$bl_success = (bool) wp_mail( $to, $subject, $body, $headers );
 
 			if ( ! $bl_success ) {
-				$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pbpa' );
+				$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
 			}
 		}
 	}
@@ -140,7 +140,7 @@ get_header();
 
 				<?php if ( $bl_success ) : ?>
 					<div class="bl-alert bl-alert--success" role="status">
-						<?php esc_html_e( 'Thanks! Your request has been sent — we\'ll be in touch shortly to confirm.', 'pbpa' ); ?>
+						<?php esc_html_e( 'Thanks! Your request has been sent — we\'ll be in touch shortly to confirm.', 'pba' ); ?>
 					</div>
 				<?php elseif ( ! empty( $bl_errors ) ) : ?>
 					<div class="bl-alert bl-alert--error" role="alert">
@@ -153,7 +153,7 @@ get_header();
 				<?php endif; ?>
 
 				<form class="bl-form" method="post" action="<?php echo esc_url( get_permalink() . '#bl-form' ); ?>" novalidate>
-					<?php wp_nonce_field( 'pbpa_book_lesson', 'bl_nonce' ); ?>
+					<?php wp_nonce_field( 'pba_book_lesson', 'bl_nonce' ); ?>
 					<input type="text" name="bl_hp" value="" class="bl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
 					<div class="bl-form-row">

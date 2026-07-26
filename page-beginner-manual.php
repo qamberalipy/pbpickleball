@@ -10,12 +10,12 @@
  */
 
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_style( 'pbpa-beginner-manual', get_template_directory_uri() . '/beginner-manual.css', array(), '1.0.0' );
+	wp_enqueue_style( 'pba-beginner-manual', get_template_directory_uri() . '/beginner-manual.css', array(), '1.0.0' );
 } );
 
 /** Verify a remote image loads (HTTP 200) before using it; cached 1 day. */
-function pbpa_bm_img( $url, $fallback ) {
-	$key = 'pbpa_bm_img_' . md5( $url );
+function pba_bm_img( $url, $fallback ) {
+	$key = 'pba_bm_img_' . md5( $url );
 	$ok  = get_transient( $key );
 	if ( false === $ok ) {
 		$r  = wp_remote_head( $url, array( 'timeout' => 4 ) );
