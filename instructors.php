@@ -98,8 +98,9 @@ get_header();
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Injury Prevention</li>
                 </ul>
                 <div class="fi-badges">
-                    <span class="fi-badge">USA Pickleball Certified</span>
-                    <span class="fi-badge">PPR Certified Pro</span>
+                    <span class="fi-badge">Certified</span>
+                    <span class="fi-badge">Pickleball Ambassador</span>
+                    <span class="fi-badge">10 Years of Experience</span>
                 </div>
             </div>
             
@@ -115,7 +116,7 @@ get_header();
             <!-- Instructor Card 1 -->
             <div class="team-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                 <div class="tc-photo">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Sarah Jenkins">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-1.png" alt="Sarah Jenkins">
                 </div>
                 <div class="tc-content">
                     <h3 class="tc-name">Sarah Jenkins</h3>
@@ -133,7 +134,7 @@ get_header();
             <!-- Instructor Card 2 -->
             <div class="team-card anim-fade-up anim-stagger" style="--stagger-delay: 100ms;">
                 <div class="tc-photo">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="David Chen">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/male-avatar-2.png" alt="David Chen">
                 </div>
                 <div class="tc-content">
                     <h3 class="tc-name">David Chen</h3>
@@ -151,11 +152,11 @@ get_header();
             <!-- Instructor Card 3 -->
             <div class="team-card anim-fade-up anim-stagger" style="--stagger-delay: 200ms;">
                 <div class="tc-photo">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" alt="Elena Rodriguez">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-3.png" alt="Elena Rodriguez">
                 </div>
                 <div class="tc-content">
                     <h3 class="tc-name">Elena Rodriguez</h3>
-                    <span class="tc-title">Youth Program Director</span>
+                    <span class="tc-title">Program Director</span>
                     <p class="tc-bio">Elena focuses on the next generation of players, designing fun, engaging programs for kids and teens.</p>
                     <ul class="tc-specialties">
                         <li>Youth Coaching</li>
@@ -169,7 +170,7 @@ get_header();
             <!-- Instructor Card 4 -->
             <div class="team-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                 <div class="tc-photo">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" alt="Michael Thompson">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/male-avatar-1.png" alt="Michael Thompson">
                 </div>
                 <div class="tc-content">
                     <h3 class="tc-name">Michael Thompson</h3>
@@ -187,7 +188,7 @@ get_header();
             <!-- Instructor Card 5 -->
             <div class="team-card anim-fade-up anim-stagger" style="--stagger-delay: 400ms;">
                 <div class="tc-photo">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Jessica Lee">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-2.png" alt="Jessica Lee">
                 </div>
                 <div class="tc-content">
                     <h3 class="tc-name">Jessica Lee</h3>

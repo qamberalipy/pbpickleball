@@ -2847,7 +2847,7 @@ header .header-actions {
 }
 
 /* ---------------------------------------------------------------
-   5. WHY CHOOSE PBPA? — Features Grid
+   5. WHY CHOOSE PBA? — Features Grid
    --------------------------------------------------------------- */
 .ct-features {
     background-color: var(--gray-bg);
@@ -3057,7 +3057,7 @@ header .header-actions {
    1. HERO
    --------------------------------------------------------------- */
 .instructors-hero-full {
-    background: url('media/instructors-hero-bg.jpg') center/cover no-repeat;
+    background: url('media/instructors-hero-bg.png') center/cover no-repeat;
     background-color: var(--navy);
 }
 
