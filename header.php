@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <?php wp_head(); ?>
+    <link rel="icon" type="image/png" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PB pickleball Academy" />
+    <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/site.webmanifest" />
 </head>
 
 <body <?php body_class(); ?>>
