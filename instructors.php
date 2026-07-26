@@ -236,7 +236,7 @@ get_header();
             </div>
             
             <div class="jcb-right">
-                <a href="#" class="btn btn-outline jcb-btn">APPLY TO BECOME AN INSTRUCTOR &rarr;</a>
+                <a href="<?php echo home_url('/join-our-team/'); ?>" class="btn btn-outline jcb-btn">APPLY TO BECOME AN INSTRUCTOR &rarr;</a>
             </div>
         </div>
     </section>
