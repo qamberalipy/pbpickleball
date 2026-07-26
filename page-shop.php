@@ -669,7 +669,7 @@
                             <h3 class="shop-card__title">PBA Signature Paddle</h3>
                             <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
                             <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/paddle-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/paddle-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
                             </div>
                         </div>
                     </div>
@@ -685,7 +685,7 @@
                             <h3 class="shop-card__title">PBA Outdoor Balls</h3>
                             <div class="shop-card__subtitle">Durable 3-Pack</div>
                             <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/ball-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/ball-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
                             </div>
                         </div>
                     </div>
@@ -701,7 +701,7 @@
                             <h3 class="shop-card__title">Court Pro Shoes</h3>
                             <div class="shop-card__subtitle">Enhanced Grip &amp; Lateral Support</div>
                             <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/shoes-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/shoes-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
                             </div>
                         </div>
                     </div>
@@ -732,7 +732,7 @@
                             <h3 class="shop-card__title">Performance Eyewear</h3>
                             <div class="shop-card__subtitle">Polarized UV Protection</div>
                             <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/safety-glasses-guide.pdf" class="shop-guide-btn btn-green" target="_blank" download>Download Guide</a>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/safety-glasses-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
                             </div>
                         </div>
                     </div>
