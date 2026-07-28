@@ -5,7 +5,7 @@
 
                 <div class="footer-col">
                     <a href="<?php echo home_url('/'); ?>" style="display: inline-block; margin-bottom: 14px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Pickleball Academy" style="max-height: 70px; width: auto;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Pickleball Academy" style="max-height: 90px; width: auto;">
                     </a>
                     <p>Pickleball instruction designed for active adults and seniors.</p>
                 </div>
