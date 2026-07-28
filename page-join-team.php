@@ -38,7 +38,7 @@ if ( isset( $_POST['jt_submit'] ) ) {
 		}
 
 		if ( empty( $jt_errors ) ) {
-			$to      = get_option( 'admin_email' );
+			$to      = 'contact@gopbacademy.com';
 			$subject = sprintf( __( 'New Instructor Application: %s %s', 'pba' ), $first_name, $last_name );
 			$body    = "New Instructor Application Received:\n\n"
 				. "Name: {$first_name} {$last_name}\n"
@@ -50,6 +50,7 @@ if ( isset( $_POST['jt_submit'] ) ) {
 				. "Why they want to join:\n{$message}\n";
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
+				'From: PB Academy <noreply@gopbacademy.com>',
 				'Reply-To: ' . $first_name . ' <' . $email . '>',
 			);
 

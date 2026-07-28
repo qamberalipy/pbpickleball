@@ -51,7 +51,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		}
 
 		if ( empty( $bl_errors ) ) {
-			$to      = get_option( 'admin_email' );
+			$to      = 'contact@gopbacademy.com';
 			$subject = sprintf( __( 'New Lesson Booking Request from %s', 'pba' ), $name );
 			$body    = "New lesson booking request:\n\n"
 				. "Name: {$name}\n"
@@ -65,6 +65,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 				. "Message: {$message}\n";
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
+				'From: PB Academy <noreply@gopbacademy.com>',
 				'Reply-To: ' . $name . ' <' . $email . '>',
 			);
 

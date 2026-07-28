@@ -2,6 +2,63 @@
 /*
 Template Name: Contact Page
 */
+
+// ── Form Processing Logic ──────────────────────────────────────────────────
+$ct_errors  = array();
+$ct_success = false;
+
+if ( isset( $_POST['ct_submit'] ) ) {
+
+	if ( ! isset( $_POST['ct_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['ct_nonce'] ), 'pba_contact_form' ) ) {
+		$ct_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pba' );
+	} elseif ( ! empty( $_POST['ct_hp'] ) ) {
+		// Honeypot triggered — silently accept without emailing.
+		$ct_success = true;
+	} else {
+		$first_name        = isset( $_POST['first_name'] )        ? sanitize_text_field( wp_unslash( $_POST['first_name'] ) )        : '';
+		$last_name         = isset( $_POST['last_name'] )         ? sanitize_text_field( wp_unslash( $_POST['last_name'] ) )         : '';
+		$email             = isset( $_POST['email'] )             ? sanitize_email( wp_unslash( $_POST['email'] ) )                  : '';
+		$phone             = isset( $_POST['phone'] )             ? sanitize_text_field( wp_unslash( $_POST['phone'] ) )             : '';
+		$interest          = isset( $_POST['interest'] )          ? sanitize_text_field( wp_unslash( $_POST['interest'] ) )          : '';
+		$preferred_datetime = isset( $_POST['preferred_datetime'] ) ? sanitize_text_field( wp_unslash( $_POST['preferred_datetime'] ) ) : '';
+		$message           = isset( $_POST['message'] )           ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) )      : '';
+
+		if ( '' === $first_name ) {
+			$ct_errors[] = __( 'Please enter your first name.', 'pba' );
+		}
+		if ( '' === $last_name ) {
+			$ct_errors[] = __( 'Please enter your last name.', 'pba' );
+		}
+		if ( '' === $email || ! is_email( $email ) ) {
+			$ct_errors[] = __( 'Please enter a valid email address.', 'pba' );
+		}
+
+		if ( empty( $ct_errors ) ) {
+			$to      = 'contact@gopbacademy.com';
+			$subject = sprintf( __( 'New Contact Form Submission from %s %s', 'pba' ), $first_name, $last_name );
+			$body    = "New contact form submission:\n\n"
+				. "Name: {$first_name} {$last_name}\n"
+				. "Email: {$email}\n"
+				. "Phone: {$phone}\n"
+				. "Interested In: {$interest}\n"
+				. "Preferred Date/Time: {$preferred_datetime}\n\n"
+				. "Message:\n{$message}\n";
+			$headers = array(
+				'Content-Type: text/plain; charset=UTF-8',
+				'From: PB Academy <noreply@gopbacademy.com>',
+				'Reply-To: ' . $first_name . ' ' . $last_name . ' <' . $email . '>',
+			);
+
+			$ct_success = (bool) wp_mail( $to, $subject, $body, $headers );
+
+			if ( ! $ct_success ) {
+				$ct_errors[] = __( 'Sorry, something went wrong sending your message. Please email us directly or call us.', 'pba' );
+			}
+		}
+	}
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 get_header();
 ?>
 
@@ -11,6 +68,28 @@ get_header();
    ============================================================ */
 
 /* 1. Base Hero Container */
+/* Alerts for Form Feedback */
+.jt-alert {
+	border-radius: 8px;
+	padding: 14px 18px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: var(--font-body);
+}
+.jt-alert--success {
+	background: rgba(46, 125, 50, 0.1);
+	color: var(--green, #2e7d32);
+	border: 1px solid rgba(46, 125, 50, 0.3);
+}
+.jt-alert--error {
+	background: rgba(200, 40, 40, 0.08);
+	color: #b3261e;
+	border: 1px solid rgba(200, 40, 40, 0.25);
+}
+.jt-alert--error ul {
+	margin: 0;
+	padding-left: 18px;
+}
 .ct-new-hero {
     position: relative;
     padding: 100px 0;
@@ -227,13 +306,30 @@ get_header();
                 </div>
             </div>
 
-            <!-- RIGHT: Contact Form -->
-            <div class="ct-form-card" id="ct-form">
-                <div class="ct-card-header">
-                    <h2 class="ct-section-title">Send Us a Message</h2>
-                    <div class="ct-title-line"></div>
-                </div>
-                <form class="ct-form" action="#" method="post" novalidate>
+                <!-- RIGHT: Contact Form -->
+                <div class="ct-form-card" id="ct-form">
+                    <div class="ct-card-header">
+                        <h2 class="ct-section-title">Send Us a Message</h2>
+                        <div class="ct-title-line"></div>
+                    </div>
+
+                    <?php if ( $ct_success ) : ?>
+                        <div class="jt-alert jt-alert--success" role="status">
+                            <?php esc_html_e( 'Thank you! Your message has been sent. We\'ll be in touch shortly.', 'pba' ); ?>
+                        </div>
+                    <?php elseif ( ! empty( $ct_errors ) ) : ?>
+                        <div class="jt-alert jt-alert--error" role="alert">
+                            <ul>
+                                <?php foreach ( $ct_errors as $ct_error ) : ?>
+                                    <li><?php echo esc_html( $ct_error ); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
+                    <form class="ct-form" action="<?php echo esc_url( get_permalink() . '#ct-form' ); ?>" method="post" novalidate>
+                        <?php wp_nonce_field( 'pba_contact_form', 'ct_nonce' ); ?>
+                        <input type="text" name="ct_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="ct-form-row">
                         <div class="ct-form-group">
                             <label for="ct-first-name">First Name <span aria-hidden="true">*</span></label>
@@ -280,7 +376,7 @@ get_header();
                             <textarea id="ct-message" name="message" rows="4" placeholder="Tell us a little about yourself and what you're hoping to achieve…"></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-green ct-submit-btn">
+                    <button type="submit" name="ct_submit" value="1" class="btn btn-green ct-submit-btn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                         Send Message
                     </button>
