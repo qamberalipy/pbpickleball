@@ -66,10 +66,11 @@
                 <div class="footer-col">
                     <h4>STAY CONNECTED</h4>
                     <p>Sign up for tips, drills, and pickleball updates!</p>
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
                         <input type="email" placeholder="Your email address" required aria-label="Email address">
                         <button type="submit">SIGN UP</button>
                     </form>
+                    <a href="<?php echo home_url('/join-our-team/'); ?>" class="btn btn-outline" style="margin-top: 15px; width: 100%; display: inline-block; text-align: center;">Join Our Team</a>
                 </div>
 
             </div>
