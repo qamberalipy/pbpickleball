@@ -5,7 +5,7 @@
 
                 <div class="footer-col">
                     <a href="<?php echo home_url('/'); ?>" style="display: inline-block; margin-bottom: 14px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Pickleball Academy" style="max-height: 90px; width: auto;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Pickleball Academy" style="max-height: 110px; width: auto;">
                     </a>
                     <p>Pickleball instruction designed for active adults and seniors.</p>
                 </div>
@@ -66,10 +66,11 @@
                 <div class="footer-col">
                     <h4>STAY CONNECTED</h4>
                     <p>Sign up for tips, drills, and pickleball updates!</p>
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
                         <input type="email" placeholder="Your email address" required aria-label="Email address">
                         <button type="submit">SIGN UP</button>
                     </form>
+                    <a href="<?php echo home_url('/join-our-team/'); ?>" class="btn btn-outline join-team-btn" style="margin-top: 15px; width: 100%; max-width: 320px; display: inline-flex; justify-content: center; align-items: center; box-sizing: border-box;">Join Our Team</a>
                 </div>
 
             </div>

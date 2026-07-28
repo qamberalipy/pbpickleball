@@ -77,35 +77,35 @@
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
                 <h4>PRIVATE LESSONS</h4>
                 <p>Personalized one-on-one instruction at your pace.</p>
-                <a href="#" class="btn btn-outline">LEARN MORE &gt;</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
                 <h4>SMALL GROUP LESSONS</h4>
                 <p>Learn with friends in a relaxed, social environment.</p>
-                <a href="#" class="btn btn-outline">LEARN MORE &gt;</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2" fill="var(--white)"></circle><circle cx="8" cy="10" r="1.5" fill="var(--white)"></circle><circle cx="16" cy="10" r="1.5" fill="var(--white)"></circle><circle cx="8" cy="14" r="1.5" fill="var(--white)"></circle><circle cx="16" cy="14" r="1.5" fill="var(--white)"></circle><circle cx="12" cy="7" r="1.5" fill="var(--white)"></circle><circle cx="12" cy="17" r="1.5" fill="var(--white)"></circle></svg>
                 <h4>BEGINNER CLINICS</h4>
                 <p>A complete introduction to pickleball from the ground up.</p>
-                <a href="#" class="btn btn-outline">LEARN MORE &gt;</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path></svg>
                 <h4>COUNTRY CLUB PROGRAM MANAGEMENT</h4>
                 <p>Professional instruction and organized programs for country clubs, HOAs, and community associations.</p>
-                <a href="#" class="btn btn-outline">LEARN MORE &gt;</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M21.9 14.5c-1.3-1.6-3.1-2.5-4.9-2.5h-1V5.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v6.5h-2V3.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V12h-2V7.5C6 7.5 5.3 8.2 5.3 9s.7 1.5 1.5 1.5V12h-1c-1.8 0-3.6.9-4.9 2.5-.3.4-.1 1 .4 1.2 1.3.5 2.8.5 4.1 0v6.8c0 .8.7 1.5 1.5 1.5h10c.8 0 1.5-.7 1.5-1.5v-6.8c1.3.5 2.8.5 4.1 0 .5-.2.7-.8.4-1.2z"></path></svg>
                 <h4>PICKLEBALL RETREATS</h4>
                 <p>Combine learning, travel, and fun with future PB Pickleball Academy retreats.</p>
-                <a href="#" class="btn btn-outline">LEARN MORE &gt;</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
         </div>
