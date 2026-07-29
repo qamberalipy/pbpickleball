@@ -154,61 +154,61 @@
                     
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah M.">
-                        <p>Charles made learning pickleball easy and enjoyable. I was playing confidently after just a few lessons.</p>
+                        <p>Coach Charles completely changed my game. His tips on dinking and kitchen play helped me win my first local tournament. Unbelievable coaching!</p>
                         <span class="t-author">- Sarah M., Boynton Beach</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David L.">
-                        <p>Patient, knowledgeable, and always encouraging. I highly recommend PB Pickleball Academy for anyone starting out.</p>
+                        <p>As an active adult, I was worried about injuries, but Charles emphasizes proper form and safety. My 3rd shot drop has never been better!</p>
                         <span class="t-author">- David L., Delray Beach</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Linda K.">
-                        <p>I never thought I could learn a new sport in my 70s. Now I play every week and have made wonderful friends!</p>
+                        <p>Learning the kitchen strategies from Coach Charles was a game-changer. He breaks down complex techniques into simple, repeatable steps.</p>
                         <span class="t-author">- Linda K., Lantana</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Robert T.">
-                        <p>The beginner clinic was exactly what I needed. Friendly environment, great instruction, and zero intimidation.</p>
+                        <p>The beginner clinic was exactly what I needed. We focused on mastering the dink and court positioning. Great instruction and a fun group!</p>
                         <span class="t-author">- Robert T., West Palm Beach</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mary J.">
-                        <p>I've met so many great friends through these group lessons. Signing up was the best decision I've made this year.</p>
+                        <p>My partner and I took lessons to improve our 3rd shot drops and team communication. Charles is a fantastic instructor who really cares.</p>
                         <span class="t-author">- Mary J., Boca Raton</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="James P.">
-                        <p>My serve has improved dramatically. The coaching here is top-notch and tailored perfectly to my skill level.</p>
+                        <p>My serve and return of serve have improved dramatically. The coaching here focuses on the details that make a huge difference in match play.</p>
                         <span class="t-author">- James P., Wellington</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Susan W.">
-                        <p>As an active senior, I really appreciate the focus on safety, stretching, and proper form. Highly recommended.</p>
+                        <p>As an active senior, I really appreciate the focus on mobility and smart placement over power. Mastering the soft game has been incredibly rewarding.</p>
                         <span class="t-author">- Susan W., Lake Worth</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael B.">
-                        <p>The private lessons helped me fix my backhand mechanics in just two sessions. Amazing, patient instructor!</p>
+                        <p>The private lessons helped me fix my backhand mechanics and understand when to speed up the ball at the kitchen line. Amazing, patient instructor!</p>
                         <span class="t-author">- Michael B., Boynton Beach</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily R.">
-                        <p>Fun, engaging, and professional. The upcoming retreats look amazing too, I can't wait to join one next season.</p>
+                        <p>Fun, engaging, and professional. Charles taught me how to reset the point with a soft block instead of just banging the ball. Highly recommend!</p>
                         <span class="t-author">- Emily R., Delray Beach</span>
                     </div>
 
                     <div class="t-card">
                         <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="John D.">
-                        <p>If you want to learn pickleball the right way without picking up bad habits, this is the academy to join.</p>
+                        <p>If you want to learn proper pickleball techniques like the 3rd shot drop and dinking without picking up bad habits, this is the academy to join.</p>
                         <span class="t-author">- John D., Palm Beach Gardens</span>
                     </div>
 

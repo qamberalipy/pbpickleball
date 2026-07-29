@@ -583,10 +583,7 @@ get_header();
                 </div>
 
                 <div class="bm-feature-card">
-                    <a href="<?php echo home_url('/beginner-manual-download/'); ?>" id="bm-buy" class="btn bm-btn-order">
-						GET YOUR MANUAL NOW
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
+                    <div class="bm-fc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
                     <div class="bm-fc-text">
                         <strong>Real Results</strong>
                         <span>Learn better. Play better. Have fun.</span>
