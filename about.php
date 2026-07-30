@@ -128,7 +128,7 @@ get_header();
             </div>
             <div class="local-content">
                 <img src="<?php echo get_template_directory_uri(); ?>/media/about-court-banner.webp" alt="PBA Pickleball Court" class="local-img">
-                <p>We are proud to serve communities across Palm Beach County with programs, events, and partnerships that keep our community active and connected.</p>
+                <p>We are proud to serve communities across Pickle Ball Academy with programs, events, and partnerships that keep our community active and connected.</p>
                 <div class="location-pin">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     <strong>Boynton Beach, FL</strong>
@@ -184,7 +184,7 @@ get_header();
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <div>
                     <h5>LOCAL & TRUSTED</h5>
-                    <p>Proudly serving Palm Beach County.</p>
+                    <p>Proudly serving Pickle Ball Academy.</p>
                 </div>
             </div>
             <div class="pf-item pf-contact">

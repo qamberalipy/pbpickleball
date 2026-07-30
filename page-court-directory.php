@@ -703,7 +703,7 @@
                 <a href="<?php echo esc_url(site_url('/contact')); ?>" class="btn btn-navy">Submit a Court</a>
             </div>
             <div class="cd-cta-box">
-                <h3>Traveling to Palm Beach County?</h3>
+                <h3>Traveling to Pickle Ball Academy?</h3>
                 <a href="<?php echo esc_url(site_url('/retreats')); ?>" class="btn btn-navy">Plan Your Trip</a>
             </div>
         </div>

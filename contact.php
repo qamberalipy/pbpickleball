@@ -277,7 +277,7 @@ get_header();
                         </div>
                         <div class="ct-ci-text">
                             <span class="ct-ci-label">Our Location</span>
-                            <span class="ct-ci-value">Boynton Beach, FL<br><small style="color:var(--gray-text);font-weight:400;">Serving Palm Beach County</small></span>
+                            <span class="ct-ci-value">Boynton Beach, FL<br><small style="color:var(--gray-text);font-weight:400;">Serving Pickle Ball Academy</small></span>
                         </div>
                     </li>
                     <li class="ct-contact-item">
@@ -455,7 +455,7 @@ get_header();
         <div class="ct-map-header">
             <h2 class="ct-section-title">Find Us</h2>
             <div class="ct-title-line"></div>
-            <p>We're centrally located in Boynton Beach, Florida — easy to reach from anywhere in Palm Beach County.</p>
+            <p>We're centrally located in Boynton Beach, Florida — easy to reach from anywhere in Pickle Ball Academy.</p>
         </div>
         <div class="ct-map-wrapper">
             <iframe
