@@ -25,7 +25,7 @@
         <div class="container announcement-inner">
             <div class="announcement-left">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Serving Palm Beach County, FL</span>
+                <span>Serving Pickle Ball Academy</span>
                 &nbsp;|&nbsp; Beginner Focused. Active Adults. Real Results.
             </div>
             <div class="announcement-right">
@@ -59,7 +59,7 @@
                     <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT PBA</a></li>
                     <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>LESSONS &amp; PROGRAMS</a></li>
                     <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
-                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>BEGINNER MANUAL</a></li>
+                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>WHAT'S PB</a></li>
                     <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
                     <li><a href="<?php echo home_url('/page-court-directory/'); ?>" <?php if (is_page('court-directory')) echo 'class="active"'; ?>>COURT DIRECTORY</a></li>
                     <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
