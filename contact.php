@@ -268,7 +268,7 @@ get_header();
                         </div>
                         <div class="ct-ci-text">
                             <span class="ct-ci-label">Email</span>
-                            <a href="mailto:info@pbpickleballacademy.com" class="ct-ci-value">info@pbpickleballacademy.com</a>
+                            <a href="mailto:info@gopbacademy.com" class="ct-ci-value">info@gopbacademy.com</a>
                         </div>
                     </li>
                     <li class="ct-contact-item">
