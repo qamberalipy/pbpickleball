@@ -672,22 +672,34 @@ header .header-actions {
     text-align: center;
     border: 1px solid var(--gray-light);
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     height: 100%;
 }
 
-.program-card:hover { 
-    box-shadow: 0 10px 25px rgba(11,32,70,0.1); 
-    transform: translateY(-4px); 
+/* OBVIOUS hover feedback for 60+ seniors:
+   Pale-green tint, significant lift, heavy shadow, green border */
+.program-card:hover {
+    box-shadow: 0 20px 45px rgba(11, 32, 70, 0.18);
+    transform: translateY(-8px);
+    background-color: #F4F9F0;
+    border-color: rgba(103, 155, 48, 0.45);
 }
 
-.program-icon { 
-    width: 55px; 
-    height: 55px; 
-    margin-bottom: 20px; 
-    fill: var(--green); 
-    flex-shrink: 0; 
+.program-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+    fill: var(--green);
+    flex-shrink: 0;
+    transition: fill 0.3s ease, transform 0.3s ease;
 }
+
+/* Icon reacts on hover — unambiguous click affordance */
+.program-card:hover .program-icon {
+    fill: var(--navy);
+    transform: scale(1.2);
+}
+
 
 .program-card h4 {
     font-family: var(--font-heading);

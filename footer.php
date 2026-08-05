@@ -82,107 +82,201 @@
     </footer>
 
     <script>
-        // Mobile nav toggle
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
-        navToggle.addEventListener('click', () => {
-            const isOpen = mainNav.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', isOpen);
-        });
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
+    /* ================================================================
+       PB PICKLEBALL ACADEMY — Consolidated Page Scripts
+       All JS in one place, running after DOM is ready.
+       ================================================================ */
+    (function () {
+        'use strict';
+
+        /* ────────────────────────────────────────────────────────────
+           1. MOBILE NAV TOGGLE
+        ──────────────────────────────────────────────────────────── */
+        var navToggle = document.getElementById('navToggle');
+        var mainNav   = document.getElementById('mainNav');
+
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', function () {
+                var isOpen = mainNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen);
             });
-        });
-    </script>
-    <script>
-        // Testimonials Carousel Logic
-        const track = document.getElementById('testimonialTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const cards = Array.from(track.children);
-        
-        let currentIndex = 0;
-        const totalCards = cards.length;
-
-        function getCardsPerView() {
-            if (window.innerWidth <= 768) return 1;
-            if (window.innerWidth <= 980) return 2;
-            return 3;
+            mainNav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    mainNav.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
         }
 
-        function updateCarousel() {
-            const cardsPerView = getCardsPerView();
-            const cardWidth = cards[0].getBoundingClientRect().width;
-            const gap = 20;
-            
-            const moveAmount = currentIndex * (cardWidth + gap);
-            track.style.transform = `translateX(-${moveAmount}px)`;
-
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= (totalCards - cardsPerView);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            const cardsPerView = getCardsPerView();
-            if (currentIndex < totalCards - cardsPerView) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            const cardsPerView = getCardsPerView();
-            if (currentIndex > totalCards - cardsPerView) {
-                currentIndex = Math.max(0, totalCards - cardsPerView);
-            }
-            updateCarousel();
-        });
-
-        updateCarousel();
-    </script>
-    <script>
-        /* SCROLL-REVEAL: IntersectionObserver */
+        /* ────────────────────────────────────────────────────────────
+           2. HERO TYPING ANIMATION
+           Moved from front-page.php — runs once, types tagline,
+           leaves blinking cursor. 80 ms/char for 60+ readability.
+        ──────────────────────────────────────────────────────────── */
         (function () {
-            const rules = [
-                ['.features .feature-item',     'anim-fade-up',    true],
-                ['.programs-grid .program-card','anim-fade-up',    true],
-                ['.section-title',              'anim-fade-up',    false],
-                ['.manual-img-left',            'anim-fade-left',  false],
-                ['.manual-content',             'anim-fade-right', false],
-                ['.t-card',                     'anim-fade-up',    true],
-                ['.founder-col:first-child',    'anim-fade-left',  false],
-                ['.founder-col.looking-ahead-col', 'anim-fade-right', false],
-                ['.cta-left',                   'anim-fade-left',  false],
-                ['.cta-center',                 'anim-scale-in',   false],
-                ['.cta-right',                  'anim-fade-right', false],
-                ['.footer-col',                 'anim-fade-up',    true],
-                ['.hero-list li',               'anim-fade-up',    true],
-                ['.la-item',                    'anim-fade-up',    true],
-                ['.manual-list-new li',         'anim-fade-up',    true],
+            var PHRASE      = 'Beginners Welcome. Friends for Life.';
+            var SPEED_MS    = 80;
+            var START_DELAY = 600;
+
+            var tagline = document.querySelector('.hero-tagline.type-effect');
+            if (!tagline) return;
+
+            var cursor = document.createElement('span');
+            cursor.className = 'cursor';
+            cursor.setAttribute('aria-hidden', 'true');
+            cursor.textContent = '|';
+
+            var textNode = document.createTextNode('');
+            tagline.appendChild(textNode);
+            tagline.appendChild(cursor);
+
+            var index = 0;
+
+            function typeNext() {
+                if (index < PHRASE.length) {
+                    textNode.nodeValue += PHRASE.charAt(index);
+                    index++;
+                    setTimeout(typeNext, SPEED_MS);
+                }
+                /* Done — cursor stays, blinks forever. No loop. */
+            }
+
+            var prefersReduced = window.matchMedia &&
+                                 window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            setTimeout(function () {
+                if (prefersReduced) {
+                    textNode.nodeValue = PHRASE; /* show instantly */
+                } else {
+                    typeNext();
+                }
+            }, START_DELAY);
+        })();
+
+        /* ────────────────────────────────────────────────────────────
+           3. TESTIMONIALS CAROUSEL  +  AUTO-PLAY
+           • Auto-advances every 4000 ms
+           • Pauses on mouseenter — CRITICAL for senior readability
+           • Resumes on mouseleave
+           • Wraps back to first card for seamless looping
+        ──────────────────────────────────────────────────────────── */
+        (function () {
+            var track             = document.getElementById('testimonialTrack');
+            var prevBtn           = document.getElementById('prevBtn');
+            var nextBtn           = document.getElementById('nextBtn');
+            var carouselContainer = document.querySelector('.carousel-container');
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            var cards      = Array.from(track.children);
+            var totalCards = cards.length;
+            var currentIndex = 0;
+            var autoTimer    = null;
+
+            function getCardsPerView() {
+                if (window.innerWidth <= 768) return 1;
+                if (window.innerWidth <= 980) return 2;
+                return 3;
+            }
+
+            function updateCarousel() {
+                var cardsPerView = getCardsPerView();
+                var cardWidth    = cards[0].getBoundingClientRect().width;
+                var gap          = 20;
+                track.style.transform = 'translateX(-' + (currentIndex * (cardWidth + gap)) + 'px)';
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= (totalCards - cardsPerView);
+            }
+
+            function advance() {
+                var cardsPerView = getCardsPerView();
+                if (currentIndex < totalCards - cardsPerView) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; /* wrap to start */
+                }
+                updateCarousel();
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoTimer = setInterval(advance, 4000);
+            }
+
+            function stopAutoPlay() {
+                if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+            }
+
+            nextBtn.addEventListener('click', advance);
+
+            prevBtn.addEventListener('click', function () {
+                if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+            });
+
+            window.addEventListener('resize', function () {
+                var cardsPerView = getCardsPerView();
+                if (currentIndex > totalCards - cardsPerView) {
+                    currentIndex = Math.max(0, totalCards - cardsPerView);
+                }
+                updateCarousel();
+            });
+
+            /* Hover pause — seniors must be able to read at their own pace */
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            updateCarousel();
+            startAutoPlay();
+        })();
+
+        /* ────────────────────────────────────────────────────────────
+           4. SCROLL-REVEAL  +  CASCADE STAGGER
+           • 150 ms between each staggered child (vs. old 80 ms)
+             — slower cascade is far more legible for 60+ users
+           • .founder-achievements li + .manual-list-new li both
+             stagger so checkmarks draw the eye down the list
+        ──────────────────────────────────────────────────────────── */
+        (function () {
+            var STAGGER_MS = 150; /* deliberate, visible cascade */
+
+            var rules = [
+                /* selector                              anim class        stagger */
+                ['.features .feature-item',             'anim-fade-up',   true ],
+                ['.programs-grid .program-card',        'anim-fade-up',   true ],
+                ['.section-title',                      'anim-fade-up',   false],
+                ['.manual-img-left',                    'anim-fade-left', false],
+                ['.manual-content',                     'anim-fade-right',false],
+                ['.t-card',                             'anim-fade-up',   true ],
+                ['.founder-col:first-child',            'anim-fade-left', false],
+                ['.founder-col.looking-ahead-col',      'anim-fade-right',false],
+                ['.cta-left',                           'anim-fade-left', false],
+                ['.cta-center',                         'anim-scale-in',  false],
+                ['.cta-right',                          'anim-fade-right',false],
+                ['.footer-col',                         'anim-fade-up',   true ],
+                ['.la-item',                            'anim-fade-up',   true ],
+                ['.manual-list-new li',                 'anim-fade-up',   true ], /* checklist cascade */
+                ['.founder-achievements li',            'anim-fade-up',   true ], /* founder bullets cascade */
             ];
 
-            rules.forEach(([selector, animClass, stagger]) => {
-                const els = document.querySelectorAll(selector);
-                els.forEach((el, i) => {
+            rules.forEach(function (rule) {
+                var selector  = rule[0];
+                var animClass = rule[1];
+                var stagger   = rule[2];
+
+                document.querySelectorAll(selector).forEach(function (el, i) {
                     el.classList.add(animClass);
                     if (stagger) {
                         el.classList.add('anim-stagger');
-                        el.style.setProperty('--stagger-delay', (i * 80) + 'ms');
+                        el.style.setProperty('--stagger-delay', (i * STAGGER_MS) + 'ms');
                     }
                 });
             });
 
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+            /* Main scroll observer — threshold 0.12 catches items near top of viewport */
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         io.unobserve(entry.target);
@@ -192,23 +286,24 @@
 
             document.querySelectorAll(
                 '.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in'
-            ).forEach(el => io.observe(el));
+            ).forEach(function (el) { io.observe(el); });
 
-            const titleIO = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
+            /* Tighter observer for section titles — needs to be more visible */
+            var titleIO = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
                     if (e.isIntersecting) {
                         e.target.classList.add('is-visible');
                         titleIO.unobserve(e.target);
                     }
                 });
             }, { threshold: 0.5 });
-            document.querySelectorAll('.section-title').forEach(el => titleIO.observe(el));
 
-            const heroList = document.querySelectorAll('.hero-list li');
-            heroList.forEach((li, i) => {
-                li.style.transitionDelay = (i * 70) + 'ms';
+            document.querySelectorAll('.section-title').forEach(function (el) {
+                titleIO.observe(el);
             });
         })();
+
+    })(); /* end main IIFE */
     </script>
 
 
