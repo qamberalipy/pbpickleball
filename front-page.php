@@ -1,14 +1,15 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and book your first lesson today.">
+    <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
+        <source src="<?php echo get_template_directory_uri(); ?>/media/front-page-hero-video.mp4" type="video/mp4">
+    </video>
     <div class="hero-container">
-        <div class="hero-left">
+        <div class="hero-content">
             <h2 class="hero-subtitle">WELCOME TO</h2>
             <h1>PB PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
-            <h3 class="hero-tagline">Beginners Welcome. Friends for Life.</h3>
-            <p>We make learning pickleball simple, fun, and rewarding. Our programs help active adults build skills,
-                confidence, meet new friends, and enjoy one of America's fastest-growing sports.</p>
+            <h3 class="hero-tagline type-effect"></h3>
             <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -20,29 +21,65 @@
                 BOOK YOUR FIRST LESSON
             </a>
         </div>
-
-        <div class="hero-right">
-            <div class="hero-right-header">
-                <h3>WHY CHOOSE PB ACADEMY?</h3>
-            </div>
-            <div class="hero-right-body">
-                <ul class="hero-list">
-                    <li>Friendly, patient instruction</li>
-                    <li>Programs designed for beginners</li>
-                    <li>Special focus on active adults &amp; seniors</li>
-                    <li>Private and group lessons</li>
-                    <li>Country club &amp; HOA programs</li>
-                    <li>Beginner Training Manual</li>
-                    <li>Retreats and special events</li>
-                    <li>Growing team of qualified instructors</li>
-                </ul>
-            </div>
-        </div>
     </div>
 </section>
 
+<!-- Hero Typing Animation Engine -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── Config ── */
+    var PHRASE      = 'Beginners Welcome. Friends for Life.';
+    var SPEED_MS    = 80;   /* ~80 ms per character — legible for 60+ users */
+    var START_DELAY = 600;  /* wait for hero fade-in before typing begins   */
+
+    /* ── DOM ── */
+    var tagline = document.querySelector('.hero-tagline.type-effect');
+    if (!tagline) return;
+
+    /* Inject the blinking cursor element */
+    var cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.textContent = '|';
+
+    /* Text node that grows as we type */
+    var textNode = document.createTextNode('');
+    tagline.appendChild(textNode);
+    tagline.appendChild(cursor);
+
+    /* ── State ── */
+    var index = 0;
+
+    /* ── Typing loop ── */
+    function typeNext() {
+        if (index < PHRASE.length) {
+            textNode.nodeValue += PHRASE.charAt(index);
+            index++;
+            setTimeout(typeNext, SPEED_MS);
+        }
+        /* When done: leave cursor blinking — no loop, no removal. */
+    }
+
+    /* Respect prefers-reduced-motion: show full text instantly */
+    var prefersReduced = window.matchMedia &&
+                         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    setTimeout(function () {
+        if (prefersReduced) {
+            textNode.nodeValue = PHRASE;
+        } else {
+            typeNext();
+        }
+    }, START_DELAY);
+
+})();
+</script>
+
+
 <!-- Features Section -->
-<section class="features">
+<section class="features" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
     <div class="container features-grid">
         <div class="feature-item">
             <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
@@ -68,7 +105,7 @@
 </section>
 
 <!-- Programs Section -->
-<section class="programs">
+<section class="programs" data-mascot-msg="Explore our programs — from private coaching to beginner clinics and retreats!">
     <div class="container">
         <h2 class="section-title">PROGRAMS WE OFFER</h2>
         <div class="programs-grid">
@@ -76,35 +113,35 @@
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
                 <h4>PRIVATE LESSONS</h4>
-                <p>Personalized one-on-one instruction at your pace.</p>
+                <p>One-on-one coaching, your pace.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
                 <h4>SMALL GROUP LESSONS</h4>
-                <p>Learn with friends in a relaxed, social environment.</p>
+                <p>Fun social learning with friends.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2" fill="var(--white)"></circle><circle cx="8" cy="10" r="1.5" fill="var(--white)"></circle><circle cx="16" cy="10" r="1.5" fill="var(--white)"></circle><circle cx="8" cy="14" r="1.5" fill="var(--white)"></circle><circle cx="16" cy="14" r="1.5" fill="var(--white)"></circle><circle cx="12" cy="7" r="1.5" fill="var(--white)"></circle><circle cx="12" cy="17" r="1.5" fill="var(--white)"></circle></svg>
                 <h4>BEGINNER CLINICS</h4>
-                <p>A complete introduction to pickleball from the ground up.</p>
+                <p>Start from scratch, play with confidence.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"></path></svg>
                 <h4>COUNTRY CLUB PROGRAM MANAGEMENT</h4>
-                <p>Professional instruction and organized programs for country clubs, HOAs, and community associations.</p>
+                <p>Expert programs for clubs &amp; HOAs.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M21.9 14.5c-1.3-1.6-3.1-2.5-4.9-2.5h-1V5.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v6.5h-2V3.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V12h-2V7.5C6 7.5 5.3 8.2 5.3 9s.7 1.5 1.5 1.5V12h-1c-1.8 0-3.6.9-4.9 2.5-.3.4-.1 1 .4 1.2 1.3.5 2.8.5 4.1 0v6.8c0 .8.7 1.5 1.5 1.5h10c.8 0 1.5-.7 1.5-1.5v-6.8c1.3.5 2.8.5 4.1 0 .5-.2.7-.8.4-1.2z"></path></svg>
                 <h4>PICKLEBALL RETREATS</h4>
-                <p>Combine learning, travel, and fun with future PB Pickleball Academy retreats.</p>
+                <p>Learn, travel, and play together.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
@@ -113,7 +150,7 @@
 </section>
 
 <!-- Beginner Manual Banner -->
-<section class="manual-banner">
+<section class="manual-banner" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
     <div class="container manual-banner-inner">
         <div class="manual-img-left">
             <img src="<?php echo get_template_directory_uri(); ?>/media/manual-book.png" alt="Beginner Training Manual Book">
@@ -142,7 +179,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials-section">
+<section class="testimonials-section" data-mascot-msg="See what our students have to say about Coach Charles and the academy.">
     <div class="container">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">WHAT STUDENTS SAY</h2>
         
@@ -221,7 +258,7 @@
 </section>
 
 <!-- Founder & Looking Ahead Section -->
-<section class="founder-section" aria-labelledby="founderHeading">
+<section class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Pickleball Academy is headed next!" aria-labelledby="founderHeading">
     <div class="container">
         <div class="founder-grid">
 
@@ -233,8 +270,11 @@
                     <div class="founder-info">
                         <h4>Charles Azoulay</h4>
                         <p class="founder-role">Founder &amp; Lead Instructor</p>
-                        <p>Charles discovered pickleball later in life and instantly fell in love with the game. With a background in teaching and a passion for helping others, he founded PB Pickleball Academy to create a positive place where beginners can learn, improve, and have a great time.</p>
-                        <p style="font-weight: 700; color: var(--navy); font-style: italic; margin-top: 10px;">We're here to help you love the game!</p>
+                        <ul class="founder-achievements">
+                            <li><span class="fa-check">✓</span> Founded PB Pickleball Academy for active adult beginners</li>
+                            <li><span class="fa-check">✓</span> Background in teaching — patient, clear, and encouraging</li>
+                            <li><span class="fa-check">✓</span> Dedicated to making pickleball fun, safe &amp; accessible</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -258,7 +298,7 @@
 </section>
 
 <!-- Redesigned CTA Bar -->
-<section class="cta-bar" aria-label="Book a lesson call to action">
+<section class="cta-bar" data-mascot-msg="Ready to play? Reserve your spot or call us directly at 561-855-9500!" aria-label="Book a lesson call to action">
     <div class="container cta-container">
 
         <div class="cta-left">

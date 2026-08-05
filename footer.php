@@ -211,6 +211,127 @@
         })();
     </script>
 
+
+    <!-- ===== Mascot Scroll Companion ===== -->
+    <div id="mascot-companion" role="complementary" aria-label="PB Academy Guide">
+        <div id="mascot-bubble">
+            <p id="mascot-text">Welcome to PB Academy! Scroll down to explore.</p>
+        </div>
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/media/mascot.png"
+            alt="PB Mascot"
+            id="mascot-avatar"
+            class="mascot-img"
+        >
+    </div>
+
+    <script>
+        /* ================================================================
+           PB PICKLEBALL ACADEMY — Mascot Scroll Companion Guide Engine
+           Dependency-free Vanilla JS | IntersectionObserver API
+           ================================================================ */
+        (function () {
+            'use strict';
+
+            /* ── DOM refs ── */
+            var bubble   = document.getElementById('mascot-bubble');
+            var textEl   = document.getElementById('mascot-text');
+            var sections = Array.from(document.querySelectorAll('section[data-mascot-msg]'));
+
+            if (!bubble || !textEl || sections.length === 0) return;
+
+            /* ── State ── */
+            var currentMsg  = '';
+            var hideTimer   = null;
+            var isAnimating = false;
+
+            /* ────────────────────────────────────────────────
+               showBubble(msg)
+               Fades bubble out → swaps text → fades back in.
+               200 ms total per transition, per spec.
+            ──────────────────────────────────────────────── */
+            function showBubble(msg) {
+                /* Skip duplicate messages that are already visible */
+                if (msg === currentMsg && bubble.style.opacity === '1') return;
+
+                /* Cancel any pending auto-hide */
+                clearTimeout(hideTimer);
+
+                if (isAnimating) return; /* don't stack transitions */
+                isAnimating = true;
+
+                /* PHASE 1 — fade OUT (200 ms) */
+                bubble.style.opacity = '0';
+
+                setTimeout(function () {
+                    /* PHASE 2 — swap text while invisible */
+                    textEl.textContent = msg;
+                    currentMsg = msg;
+
+                    /* PHASE 3 — fade IN (200 ms) */
+                    bubble.style.opacity = '1';
+                    isAnimating = false;
+
+                    /* Auto-hide after 6 s of inactivity */
+                    hideTimer = setTimeout(function () {
+                        bubble.style.opacity = '0';
+                    }, 6000);
+                }, 200);
+            }
+
+            /* ────────────────────────────────────────────────
+               setActiveSection(section)
+               Applies .active-focus to the intersecting section
+               and strips it from every other section.
+            ──────────────────────────────────────────────── */
+            function setActiveSection(activeEl) {
+                sections.forEach(function (s) {
+                    if (s === activeEl) {
+                        s.classList.add('active-focus');
+                    } else {
+                        s.classList.remove('active-focus');
+                    }
+                });
+            }
+
+            /* ────────────────────────────────────────────────
+               IntersectionObserver
+               Threshold 0.35 — triggers when 35 % of a section
+               is visible in the viewport.
+            ──────────────────────────────────────────────── */
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        var msg = entry.target.getAttribute('data-mascot-msg');
+
+                        /* Update speech bubble */
+                        if (msg) showBubble(msg);
+
+                        /* Highlight the active section */
+                        setActiveSection(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.35
+            });
+
+            /* Observe every qualifying section */
+            sections.forEach(function (s) { io.observe(s); });
+
+            /* ────────────────────────────────────────────────
+               Welcome message — shown 800 ms after page load
+            ──────────────────────────────────────────────── */
+            var welcomeMsg = textEl.textContent.trim();
+            bubble.style.opacity = '0'; /* start hidden */
+
+            setTimeout(function () {
+                showBubble(welcomeMsg);
+            }, 800);
+
+        })();
+    </script>
+
+
     <?php wp_footer(); ?>
 </body>
-</html>
+</html>
