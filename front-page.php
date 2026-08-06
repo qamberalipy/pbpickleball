@@ -8,7 +8,7 @@
     <div class="hero-container">
         <div class="hero-content">
             <h2 class="hero-subtitle">WELCOME TO</h2>
-            <h1>PB PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
+            <h1>PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
             <h3 class="hero-tagline type-effect"></h3>
             <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -104,7 +104,7 @@
 
         <div class="manual-content">
             <h2>WHAT'S PB</h2>
-            <p>The <strong>PB Pickleball Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
+            <p>The <strong>Pickleball Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
             
             <ul class="manual-list-new">
                 <li>Easy-to-follow illustrations</li>
