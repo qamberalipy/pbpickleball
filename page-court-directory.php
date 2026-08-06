@@ -5,562 +5,24 @@
 ?>
 <?php get_header(); ?>
 
-<style>
-/* Court Directory Styles */
 
-
-/* 2. Hero Section */
-.cd-hero {
-    position: relative;
-    padding: 100px 0;
-    color: var(--navy, #0B192C); /* Changed from white to Navy */
-    display: flex;
-    align-items: center;
-    min-height: 50vh;
-}
-.cd-hero__bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-.cd-hero__bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; 
-    width: 60%; /* Replicates the front page left-side fade */
-    height: 100%;
-    /* White gradient fading to transparent to match front-page.php */
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 60%, rgba(255, 255, 255, 0) 100%);
-}
-.cd-hero__container {
-    position: relative;
-    z-index: 2;
-    width: 100%; 
-    /* Removed max-width and margin-left. The global .container class will now perfectly align this with your header logo. */
-}
-
-/* Apply the 650px limit directly to the text so it doesn't bleed into the image, keeping the container grid intact */
-.cd-hero h1,
-.cd-hero h2,
-.cd-hero p {
-    max-width: 650px; 
-    text-align: left;
-}
-
-.cd-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-family: var(--font-heading, sans-serif);
-    color: var(--navy, #0B192C); 
-}
-
-.cd-hero h2 {
-    color: var(--green, #679B30); 
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 20px;
-    font-family: var(--font-heading, sans-serif);
-}
-
-.cd-hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    font-family: var(--font-body, sans-serif);
-}
-
-/* Modern Stats Section */
-.cd-stats-search {
-    padding: 40px 0;
-    background-color: var(--gray-bg, #f8f9fa);
-    margin-top: -30px; /* Pulls section up slightly over hero for a modern layered overlap */
-    position: relative;
-    z-index: 10;
-}
-
-.cd-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.cd-stat-card {
-    background: var(--white, #ffffff);
-    padding: 24px 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    box-shadow: 0 10px 30px rgba(11, 25, 44, 0.05);
-    border: 1px solid rgba(11, 25, 44, 0.06);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cd-stat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(11, 25, 44, 0.1);
-    border-color: var(--green, #00D06C);
-}
-
-.cd-stat-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(0, 208, 108, 0.12); /* Soft green background badge */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.cd-stat-icon svg {
-    width: 26px;
-    height: 26px;
-    stroke: var(--navy, #0B192C);
-}
-
-.cd-stat-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.cd-stat-num {
-    font-size: 2.2rem;
-    font-weight: 800;
-    font-family: var(--font-heading, sans-serif);
-    color: var(--navy, #0B192C);
-    line-height: 1.1;
-}
-
-.cd-stat-label {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--gray-text, #666666);
-    font-family: var(--font-body, sans-serif);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-}
-
-/* Responsive Grid */
-@media (max-width: 992px) {
-    .cd-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .cd-stats-grid {
-        grid-template-columns: 1fr;
-    }
-    .cd-stats-search {
-        margin-top: 0;
-    }
-}
-
-/* 4. Directory Section */
-.cd-directory-section {
-    padding: 80px 0;
-}
-.cd-directory-split {
-    display: grid;
-    grid-template-columns: 70% 28%;
-    gap: 2%;
-}
-.cd-directory-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-.cd-featured-card {
-    background: var(--white, #fff);
-    border-radius: var(--radius, 8px);
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-}
-.cd-fc-badge {
-    display: inline-block;
-    width: fit-content;
-    margin-bottom: 12px;
-    background: var(--green, #00D06C);
-    color: var(--navy, #0B192C);
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-fc-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-.cd-fc-content h4 {
-    font-size: 1.3rem;
-    color: var(--navy, #0B192C);
-    margin-bottom: 5px;
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-fc-city {
-    color: var(--gray-text, #666);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-fc-city svg {
-    width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-}
-.cd-fc-details {
-    list-style: none;
-    padding: 0; margin: 0 0 20px 0;
-    flex-grow: 1;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-fc-details li {
-    font-size: 0.9rem;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-}
-.cd-fc-details li:last-child {
-    border-bottom: none;
-}
-.cd-fc-details li span {
-    font-weight: 600;
-    color: var(--navy, #0B192C);
-}
-.cd-info-sidebar {
-    background: var(--gray-bg, #f4f5f7);
-    padding: 30px;
-    border-radius: var(--radius, 8px);
-    position: sticky;
-    top: 80px;
-}
-.cd-info-sidebar h3 {
-    margin-bottom: 20px;
-    color: var(--navy, #0B192C);
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-info-list {
-    list-style: none;
-    padding: 0; margin: 0;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-info-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: var(--gray-text, #666);
-}
-.cd-info-list svg {
-    width: 20px; height: 20px;
-    stroke: var(--green, #00D06C);
-    flex-shrink: 0;
-    fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
-}
-
-/* Secondary CTA Strip */
-.cd-cta-strip {
-    background: var(--green, #00D06C);
-    padding: 60px 0;
-    margin-top: 80px;
-}
-.cd-cta-strip .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-.cd-cta-box {
-    background: var(--white, #fff);
-    padding: 40px;
-    border-radius: var(--radius, 8px);
-    text-align: center;
-}
-.cd-cta-box h3 {
-    color: var(--navy, #0B192C);
-    margin-bottom: 20px;
-    font-family: var(--font-heading, sans-serif);
-}
-
-/* 5. Court Surfaces Guide */
-.cd-surfaces-guide {
-    padding: 80px 0;
-    background: var(--white, #fff);
-}
-.cd-surfaces-header {
-    text-align: center;
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto; margin-right: auto;
-}
-.cd-surfaces-header h2 {
-    color: var(--navy, #0B192C);
-    font-family: var(--font-heading, sans-serif);
-    margin-bottom: 10px;
-}
-.cd-surfaces-header p {
-    color: var(--gray-text, #666);
-    font-family: var(--font-body, sans-serif);
-    font-size: 1.1rem;
-}
-.cd-surface-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 60px;
-}
-.cd-scard {
-    background: var(--gray-bg, #f4f5f7);
-    border-radius: var(--radius, 8px);
-    overflow: hidden;
-}
-.cd-scard-body {
-    padding: 20px;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-scard-body h4 {
-    color: var(--navy, #0B192C);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-scard-body p {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    color: var(--gray-text, #666);
-}
-.cd-scard-body h5 {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-    color: var(--navy, #0B192C);
-    font-weight: 600;
-}
-.cd-scard-list {
-    list-style: disc;
-    padding-left: 20px;
-    margin-bottom: 15px;
-    font-size: 0.85rem;
-    color: var(--gray-text, #666);
-}
-.cd-scard-note {
-    background: rgba(0, 208, 108, 0.1);
-    border-left: 3px solid var(--green, #00D06C);
-    padding: 10px;
-    font-size: 0.85rem;
-    color: var(--navy, #0B192C);
-    font-weight: 500;
-}
-.cd-quick-tips {
-    background: var(--navy, #0B192C);
-    color: var(--white, #fff);
-    padding: 40px;
-    border-radius: var(--radius, 8px);
-    margin-bottom: 60px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-.cd-qt-col h5 {
-    color: var(--green-bright, #00FF87);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-qt-col p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-surfaces-bottom {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-}
-.cd-table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 20px;
-    border-radius: var(--radius, 8px);
-}
-.cd-comparison-table {
-    width: 100%;
-    min-width: 650px; /* Forces table to scroll instead of squishing columns */
-    border-collapse: collapse;
-    font-family: var(--font-body, sans-serif);
-}
-.cd-comparison-table th, .cd-comparison-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-.cd-comparison-table th {
-    background: var(--gray-bg, #f4f5f7);
-    color: var(--navy, #0B192C);
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-stars {
-    display: flex;
-    gap: 2px;
-}
-.cd-stars svg {
-    width: 16px; height: 16px;
-    fill: var(--green, #00D06C);
-    stroke: none;
-}
-.cd-stars svg.empty {
-    fill: #ddd;
-}
-.cd-surface-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.cd-ss-card {
-    background: var(--gray-bg, #f4f5f7);
-    padding: 25px;
-    border-radius: var(--radius, 8px);
-    font-family: var(--font-body, sans-serif);
-}
-.cd-ss-card h4 {
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 15px;
-    color: var(--navy, #0B192C);
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-ss-card h4 svg {
-    width: 24px; height: 24px; stroke: var(--green, #00D06C); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-}
-.cd-ss-card ul {
-    list-style: disc;
-    padding-left: 20px;
-    color: var(--gray-text, #666);
-    font-size: 0.9rem;
-}
-.cd-ss-card p {
-    color: var(--gray-text, #666);
-    font-size: 0.9rem;
-}
-
-/* 6. Closing Banner */
-.cd-closing-banner {
-    position: relative;
-    padding: 100px 0;
-    color: var(--white, #fff);
-    text-align: center;
-}
-.cd-closing__bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-.cd-closing__bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(11, 25, 44, 0.85); /* heavy navy */
-}
-.cd-closing__content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.cd-cb-props {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 40px;
-}
-.cd-cb-prop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-.cd-cb-prop svg {
-    width: 48px; height: 48px; stroke: var(--green-bright, #00FF87); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-}
-.cd-cb-prop span {
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-closing__content h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 20px;
-    color: var(--green-bright, #00FF87);
-    font-family: var(--font-heading, sans-serif);
-}
-.cd-closing__content blockquote {
-    font-size: 1.2rem;
-    font-style: italic;
-    opacity: 0.9;
-    font-family: var(--font-body, sans-serif);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .cd-stats-search .container,
-    .cd-directory-split,
-    .cd-cta-strip .container,
-    .cd-surfaces-bottom {
-        grid-template-columns: 1fr;
-    }
-    .cd-info-sidebar {
-        position: static;
-        margin-top: 40px;
-    }
-    .cd-surface-cards, .cd-quick-tips {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (max-width: 768px) {
-    .cd-stats-grid,
-    .cd-directory-grid {
-        grid-template-columns: 1fr;
-    }
-    .cd-cb-props {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
-@media (max-width: 576px) {
-    .cd-surface-cards, .cd-quick-tips {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
 
 <main class="court-directory-page">
 
 
     <!-- 2. Hero Section -->
-    <section class="cd-hero anim-fade-up">
-        <div class="cd-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/hero-court-directory.webp');"></div>
-        <div class="container cd-hero__container">
-            <h1>PICKLEBALL COURT DIRECTORY</h1>
-            <h2>Find. Play. Enjoy.</h2>
-            <p>Discover the best pickleball courts in your area. Whether you're looking for public parks, premium indoor facilities, or exclusive private clubs, our directory helps you find exactly where you want to play.</p>
+    <section class="cd-hero" data-mascot-msg="Explore the best pickleball courts in your area!">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/hero-court-directory.mp4" type="video/mp4"></video>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>PICKLEBALL COURT DIRECTORY</h1>
+                <h3 class="hero-tagline type-effect"></h3>
+            </div>
         </div>
     </section>
 
     <!-- 3. Stats Section -->
-    <section class="cd-stats-search">
+    <section class="cd-stats-search" data-mascot-msg="We track hundreds of locations, from public parks to private clubs.">
         <div class="container">
             <div class="cd-stats-grid anim-fade-up is-visible">
                 <!-- Stat 1 -->
@@ -611,7 +73,7 @@
     </section>
 
     <!-- 4. Directory Section -->
-    <section id="find-a-court" class="cd-directory-section">
+    <section id="find-a-court" class="cd-directory-section" data-mascot-msg="Check out our featured courts and see what they offer.">
         <div class="container">
             <div class="cd-directory-split">
                 <!-- Main Grid -->
@@ -696,7 +158,7 @@
     </section>
 
     <!-- Secondary CTA Strip -->
-    <div class="cd-cta-strip anim-fade-up">
+    <div class="cd-cta-strip anim-fade-up" data-mascot-msg="Don't see your favorite court? Let us know!">
         <div class="container">
             <div class="cd-cta-box">
                 <h3>Don't See Your Favorite Court?</h3>
@@ -710,7 +172,7 @@
     </div>
 
     <!-- 5. Court Surfaces Guide -->
-    <section id="surfaces-guide" class="cd-surfaces-guide">
+    <section id="surfaces-guide" class="cd-surfaces-guide" data-mascot-msg="Every surface plays differently. Learn how to adjust your game here.">
         <div class="container">
             <div class="cd-surfaces-header anim-fade-up">
                 <h2>Types of Pickleball Court Surfaces</h2>
@@ -718,8 +180,8 @@
             </div>
 
             <!-- Cards -->
-            <div class="cd-surface-cards anim-fade-up">
-                <div class="cd-scard">
+            <div class="cd-surface-cards">
+                <div class="cd-scard anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="cd-scard-body">
                         <h4>Hard Court</h4>
                         <p>Standard tennis court surface, usually asphalt or concrete coated with acrylic.</p>
@@ -737,7 +199,7 @@
                     </div>
                 </div>
 
-                <div class="cd-scard">
+                <div class="cd-scard anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
                     <div class="cd-scard-body">
                         <h4>Indoor Court</h4>
                         <p>Typically wood or synthetic gym floor, common in rec centers.</p>
@@ -755,7 +217,7 @@
                     </div>
                 </div>
 
-                <div class="cd-scard">
+                <div class="cd-scard anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                     <div class="cd-scard-body">
                         <h4>Clay Court</h4>
                         <p>Crushed stone or brick. Very rare for pickleball but exists at some clubs.</p>
@@ -773,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="cd-scard">
+                <div class="cd-scard anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
                     <div class="cd-scard-body">
                         <h4>Grass/Turf</h4>
                         <p>Synthetic turf or real grass, usually temporary backyard setups.</p>
@@ -793,20 +255,20 @@
             </div>
 
             <!-- Quick Tips Banner -->
-            <div class="cd-quick-tips anim-fade-up">
-                <div class="cd-qt-col">
+            <div class="cd-quick-tips">
+                <div class="cd-qt-col anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <h5>Hard Court Tips</h5>
                     <p>Bend your knees more. Prepare for fast, high bounces and a solid grip.</p>
                 </div>
-                <div class="cd-qt-col">
+                <div class="cd-qt-col anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
                     <h5>Indoor Tips</h5>
                     <p>Stay low and expect the ball to skid and stay low after the bounce.</p>
                 </div>
-                <div class="cd-qt-col">
+                <div class="cd-qt-col anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                     <h5>Clay Tips</h5>
                     <p>Be patient. Points last longer. Prepare for irregular, unpredictable bounces.</p>
                 </div>
-                <div class="cd-qt-col">
+                <div class="cd-qt-col anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
                     <h5>Turf Tips</h5>
                     <p>Attack the net quickly. Hard drives and baseline games are less effective.</p>
                 </div>
@@ -883,7 +345,7 @@
     </section>
 
     <!-- 6. Consolidated Closing Banner -->
-    <section class="cd-closing-banner anim-fade-up">
+    <section class="cd-closing-banner anim-fade-up" data-mascot-msg="Great players adapt. Know the court and trust your game!">
         <div class="cd-closing__bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');"></div>
         <div class="container cd-closing__content">
             <div class="cd-cb-props">

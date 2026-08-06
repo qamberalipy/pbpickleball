@@ -62,174 +62,36 @@ if ( isset( $_POST['ct_submit'] ) ) {
 get_header();
 ?>
 
-<style>
-/* ============================================================
-   CONTACT PAGE HERO REDESIGN (Front Page/Court Directory Style)
-   ============================================================ */
 
-/* 1. Base Hero Container */
-/* Alerts for Form Feedback */
-.jt-alert {
-	border-radius: 8px;
-	padding: 14px 18px;
-	margin-bottom: 20px;
-	font-size: 14px;
-	font-family: var(--font-body);
-}
-.jt-alert--success {
-	background: rgba(46, 125, 50, 0.1);
-	color: var(--green, #2e7d32);
-	border: 1px solid rgba(46, 125, 50, 0.3);
-}
-.jt-alert--error {
-	background: rgba(200, 40, 40, 0.08);
-	color: #b3261e;
-	border: 1px solid rgba(200, 40, 40, 0.25);
-}
-.jt-alert--error ul {
-	margin: 0;
-	padding-left: 18px;
-}
-.ct-new-hero {
-    position: relative;
-    padding: 100px 0;
-    color: var(--navy, #0B192C);
-    display: flex;
-    align-items: center;
-    min-height: 60vh; /* Set appropriate height */
-    background-color: var(--gray-bg, #F5F7F8); /* Fallback */
-    overflow: hidden;
-}
-
-/* 2. Background Image Layer */
-.ct-new-hero__bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-/* 3. The White Fade Overlay (Front Page style) */
-.ct-new-hero__bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 65%; /* Width of the fade cover */
-    height: 100%;
-    /* White gradient fading to transparent to match front-page.php */
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
-}
-
-/* 4. Content Container (Standard .container ensures alignment with logo) */
-.ct-new-hero__container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-/* 5. Text Column (Strictly left-aligned and width-limited) */
-.ct-new-hero__text-col {
-    max-width: 650px; /* Constraints text to the safe fade area */
-    text-align: left;
-}
-
-/* 6. Typography Styling */
-.ct-new-hero__text-col h1 {
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 900;
-    line-height: 1;
-    text-transform: uppercase;
-    color: var(--navy, #0B192C);
-    margin-bottom: 15px;
-    font-family: var(--font-heading, sans-serif);
-}
-
-.ct-new-hero__text-col h1 .highlight {
-    color: var(--green, #679B30);
-}
-
-.ct-new-hero__text-col .hero-subtitle {
-    font-family: var(--font-heading, sans-serif);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--navy, #0B192C);
-    margin-bottom: 0;
-    text-transform: uppercase;
-    display: block;
-}
-
-.ct-new-hero__text-col p {
-    font-size: 1.1rem;
-    color: var(--navy, #0B192C);
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-family: var(--font-body, sans-serif);
-}
-
-/* 7. Tags Styling (Modified for light background) */
-.ct-new-hero .ct-hero-tags {
-    margin-top: 0; /* Override old margin */
-    justify-content: flex-start; /* Ensure left alignment */
-}
-
-.ct-new-hero .ct-tag {
-    background: rgba(11, 32, 70, 0.05); /* Soft navy background */
-    border: 1px solid rgba(11, 32, 70, 0.1);
-    color: var(--navy, #0B192C);
-}
-
-/* Responsive Overrides */
-@media (max-width: 980px) {
-    .ct-new-hero {
-        /* Pushes the bottom down so there is a safe zone to view the image */
-        padding: 60px 0 140px 0; 
-    }
-    .ct-new-hero__bg::after {
-        width: 100%; /* Cover full width on mobile */
-        /* Bulletproof Fix: Top-to-Bottom gradient. Solid white behind text, fading to clear at the bottom. */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.1) 100%);
-    }
-    .ct-new-hero__text-col {
-        margin: 0 auto;
-        text-align: center;
-    }
-    .ct-new-hero .ct-hero-tags {
-        justify-content: center;
-    }
-}
-</style>
 
 <main class="contact-page">
 
     <!-- ============================================================
          1. REDESIGNED HERO SECTION (Front Page Style)
          ============================================================ -->
-    <section class="ct-new-hero">
-        <!-- Background Layer with local fallback image until you generate the new one -->
-        <div class="ct-new-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/contact-hero-bg.webp');"></div>
-
-        <div class="container ct-new-hero__container anim-fade-up">
-            <div class="ct-new-hero__text-col">
-                <span class="hero-subtitle">WE'D LOVE TO HEAR FROM YOU</span>
+    <section class="ct-new-hero" data-mascot-msg="We'd love to hear from you! Send us a message or give us a call.">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/contact-hero.mp4" type="video/mp4"></video>
+        <div class="hero-container">
+            <div class="hero-content anim-fade-up">
+                <h2 class="hero-subtitle">WE'D LOVE TO HEAR FROM YOU</h2>
                 <h1>GET IN<br><span class="highlight">TOUCH</span></h1>
-                <p>Have a question about our programs, want to book a lesson, or just looking to join the community? Reach out — we're here and happy to help!</p>
+                <p class="hero-tagline type-effect"></p>
 
                 <div class="ct-hero-tags">
                     <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green, #679B30)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)">
                             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/>
                         </svg>
                         Quick Response
                     </span>
                     <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green, #679B30)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                         </svg>
                         Beginners Welcome
                     </span>
                     <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green, #679B30)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)">
                             <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
                         </svg>
                         Flexible Scheduling
@@ -242,7 +104,7 @@ get_header();
     <!-- ============================================================
          2. MAIN CONTACT SPLIT (Remains unchanged)
          ============================================================ -->
-    <section class="contact-split container anim-fade-up">
+    <section class="contact-split container anim-fade-up" data-mascot-msg="Fill out the form below and our team will get right back to you.">
         <div class="contact-split-grid">
 
             <!-- LEFT: Get In Touch -->
@@ -389,7 +251,7 @@ get_header();
     <!-- ============================================================
          3. QUICK START (Remains unchanged)
          ============================================================ -->
-    <section class="ct-quickstart">
+    <section class="ct-quickstart" data-mascot-msg="Not sure where to start? Pick a program and let's go!">
         <div class="container">
             <div class="ct-qs-header anim-fade-up">
                 <h2 class="ct-qs-title">QUICK START</h2>
@@ -451,7 +313,7 @@ get_header();
     <!-- ============================================================
          4. FIND US (Remains unchanged)
          ============================================================ -->
-    <section class="ct-map-section container anim-fade-up">
+    <section class="ct-map-section container anim-fade-up" data-mascot-msg="We are located in Boynton Beach. Come drop by the courts!">
         <div class="ct-map-header">
             <h2 class="ct-section-title">Find Us</h2>
             <div class="ct-title-line"></div>
@@ -485,7 +347,7 @@ get_header();
     <!-- ============================================================
          5. WHY CHOOSE PBA? (Remains unchanged)
          ============================================================ -->
-    <section class="ct-features">
+    <section class="ct-features" data-mascot-msg="Patient instructors, a fun environment, and flexible scheduling.">
         <div class="container">
             <h2 class="ct-features-title anim-fade-up">WHY CHOOSE PB ACADEMY?</h2>
             <div class="ct-features-grid">
@@ -521,7 +383,7 @@ get_header();
     <!-- ============================================================
          6. ALL LEVELS WELCOME (Remains unchanged)
          ============================================================ -->
-    <section class="ct-welcome-banner">
+    <section class="ct-welcome-banner" data-mascot-msg="All skill levels are welcome. Your journey starts right here.">
         <div class="ct-wb-deco" aria-hidden="true">
             <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="100" cy="110" rx="80" ry="90" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>

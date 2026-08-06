@@ -158,7 +158,7 @@
 
         <div class="manual-content">
             <h2>WHAT'S PB</h2>
-            <p>The <strong>PB Pickleball Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
+            <p>The <strong>Pickleball Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
             
             <ul class="manual-list-new">
                 <li>Easy-to-follow illustrations</li>

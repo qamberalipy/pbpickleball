@@ -4,93 +4,17 @@
  */
 get_header(); ?>
 
-<style>
-/* ============================================================
-   RETREATS HERO REDESIGN (Matches Front Page + Fixes Visibility)
-   ============================================================ */
-.retreat-hero-full {
-    background-image: url('<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.webp');
-    background-position: center top; /* Keeps faces pinned to the top */
-    background-size: cover;
-    background-repeat: no-repeat;
-    align-items: flex-end; /* Pushes content down */
-    padding-top: 150px; /* Leaves space at the top for faces on desktop */
-}
-
-/* DESKTOP GRADIENT: Fades to transparent at the top-right to reveal the image */
-.retreat-hero-full::before {
-    width: 100%;
-    background: linear-gradient(to top right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0) 60%);
-}
-
-/* Replicate Contact Page Tag Styles */
-.ct-hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.ct-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(11, 32, 70, 0.05);
-    border: 1px solid rgba(11, 32, 70, 0.1);
-    color: var(--navy);
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 50px;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 992px) {
-    .retreat-hero-full {
-        padding-top: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .retreat-hero-full {
-        padding-top: 280px; 
-        padding-bottom: 40px;
-    }
-    /* MOBILE GRADIENT: Solid white at the bottom, transparent at the top */
-    .retreat-hero-full::before {
-        display: block !important; /* Overrides style.css hiding ::before on mobile */
-        background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 0) 100%);
-    }
-    /* Overrides style.css forcing text to be white on mobile hero banners */
-    .retreat-hero-full .hero-subtitle,
-    .retreat-hero-full .hero-left h1,
-    .retreat-hero-full .hero-left p,
-    .retreat-hero-full .hero-list li,
-    .retreat-hero-full .hero-right-header h3 {
-        color: var(--navy) !important;
-    }
-    .retreat-hero-full .hero-right {
-        margin-top: 20px;
-    }
-    .ct-hero-tags {
-        justify-content: center;
-    }
-}
-</style>
-
 <main class="retreats-page">
 
     <!-- 1. REDESIGNED HERO SECTION -->
-    <section class="hero retreat-hero-full">
+    <section class="hero retreat-hero-full" data-mascot-msg="Combine your passion for pickleball with unforgettable luxury vacations!">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.mp4" type="video/mp4"></video>
         <div class="hero-container">
             
-            <div class="hero-left anim-fade-right">
+            <div class="hero-content anim-fade-right">
                 <h2 class="hero-subtitle">PLAY. EXPLORE. CONNECT.</h2>
                 <h1>RETREATS &amp;<br><span class="highlight">CRUISES</span></h1>
-                <p>Combine your passion for pickleball with unforgettable vacations. Join us at breathtaking resorts and luxury cruises for world-class coaching, daily open play, and amazing new friends from around the world.</p>
+                <h3 class="hero-tagline type-effect"></h3>
                 
                 <div class="ct-hero-tags">
                     <span class="ct-tag">
@@ -107,33 +31,18 @@ get_header(); ?>
                     </span>
                 </div>
             </div>
-            
-            <div class="hero-right anim-fade-left">
-                <div class="hero-right-header">
-                    <h3>WHY JOIN US?</h3>
-                </div>
-                <div class="hero-right-body">
-                    <ul class="hero-list">
-                        <li>Improve skills with expert coaching</li>
-                        <li>Enjoy daily open play &amp; events</li>
-                        <li>Discover beautiful new places</li>
-                        <li>All-inclusive luxury &amp; convenience</li>
-                        <li>Fun, safe, and beginner-friendly</li>
-                    </ul>
-                </div>
-            </div>
 
         </div>
     </section>
 
     <!-- 2. Upcoming Retreats & Cruises (Grid Section) -->
-    <section class="r-section r-upcoming bg-gray">
+    <section class="r-section r-upcoming bg-gray" data-mascot-msg="Check out our upcoming retreats and secure your spot before they sell out.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">UPCOMING RETREATS & CRUISES</h2>
             
             <div class="r-grid r-grid--upcoming anim-fade-up">
                 <!-- Card 1 -->
-                <article class="r-card">
+                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Punta Cana Paradise Retreat</h3>
@@ -152,7 +61,7 @@ get_header(); ?>
                 </article>
 
                 <!-- Card 2 -->
-                <article class="r-card">
+                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
                     <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Caribbean Explorer Cruise</h3>
@@ -171,7 +80,7 @@ get_header(); ?>
                 </article>
 
                 <!-- Card 3 -->
-                <article class="r-card">
+                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                     <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Aruba Sun & Sand Retreat</h3>
@@ -190,7 +99,7 @@ get_header(); ?>
                 </article>
 
                 <!-- Card 4 -->
-                <article class="r-card">
+                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
                     <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="r-card__content">
                         <h3 class="r-card__title">Grecian Odyssey Retreat</h3>
@@ -209,7 +118,7 @@ get_header(); ?>
                 </article>
 
                 <!-- Card 5 (CTA) -->
-                <article class="r-card r-card--cta">
+                <article class="r-card r-card--cta anim-fade-up anim-stagger" style="--stagger-delay: 600ms;">
                     <div class="r-card__cta-content">
                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="r-cta-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle><path d="M12 22V10"></path></svg>
                         <h3>INTERESTED IN A FUTURE TRIP?</h3>
@@ -258,25 +167,25 @@ get_header(); ?>
     </section>
 
     <!-- 3. Retreats Deep Dive Section -->
-    <section class="r-section r-deep-dive">
+    <section class="r-section r-deep-dive" data-mascot-msg="A curated vacation experience designed entirely around your favorite sport.">
         <div class="container">
             <div class="r-intro-block anim-fade-up">
                 <h2>What is a Pickleball Retreat?</h2>
                 <div class="r-intro-content">
                     <p>A pickleball retreat is a curated vacation experience designed around your favorite sport. We combine world-class instruction, structured play, and breathtaking resort destinations into an all-inclusive package. It's the ultimate way to level up your game while enjoying a luxurious getaway.</p>
                     <ul class="r-checkmark-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Immersive pickleball experience</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Tailored instruction for all levels</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Luxury accommodations</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Organized social events</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Local cultural excursions</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 0ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Immersive pickleball experience</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 150ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Tailored instruction for all levels</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 300ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Luxury accommodations</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 450ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Organized social events</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 600ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Local cultural excursions</li>
                     </ul>
                 </div>
             </div>
             
             <h3 class="r-subsection-title anim-fade-up">Types of Pickleball Retreats</h3>
             <div class="r-types-grid anim-fade-up">
-                <div class="r-type-col">
+                <div class="r-type-col anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Weekend Getaway</h4>
                     <ul>
@@ -286,7 +195,7 @@ get_header(); ?>
                     </ul>
                     <span class="r-tag">Best for: Busy schedules</span>
                 </div>
-                <div class="r-type-col">
+                <div class="r-type-col anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
                     <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Week-Long Escape</h4>
                     <ul>
@@ -296,7 +205,7 @@ get_header(); ?>
                     </ul>
                     <span class="r-tag">Best for: Full vacations</span>
                 </div>
-                <div class="r-type-col">
+                <div class="r-type-col anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                     <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Luxury VIP</h4>
                     <ul>
@@ -306,7 +215,7 @@ get_header(); ?>
                     </ul>
                     <span class="r-tag">Best for: Premium comfort</span>
                 </div>
-                <div class="r-type-col">
+                <div class="r-type-col anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
                     <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Skill Focus</h4>
                     <ul>
@@ -316,7 +225,7 @@ get_header(); ?>
                     </ul>
                     <span class="r-tag">Best for: Competitive players</span>
                 </div>
-                <div class="r-type-col">
+                <div class="r-type-col anim-fade-up anim-stagger" style="--stagger-delay: 600ms;">
                     <div class="r-type-img" style="background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=600&auto=format&fit=crop')"></div>
                     <h4>Social & Fun</h4>
                     <ul>
@@ -332,12 +241,12 @@ get_header(); ?>
                 <div class="r-split-left">
                     <h3>Benefits of Going</h3>
                     <ul class="r-checkmark-list r-checkmark-list--stacked">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Rapidly improve your technique and game strategy</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Make lasting friendships with like-minded players</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Reduce stress through active, healthy travel</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Explore new cultures and stunning environments</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Enjoy a completely hassle-free, planned itinerary</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Return home refreshed and playing better than ever</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 0ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Rapidly improve your technique and game strategy</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 150ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Make lasting friendships with like-minded players</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 300ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Reduce stress through active, healthy travel</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 450ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Explore new cultures and stunning environments</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 600ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Enjoy a completely hassle-free, planned itinerary</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay: 750ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Return home refreshed and playing better than ever</li>
                     </ul>
                 </div>
                 <div class="r-split-right bg-navy">
@@ -378,47 +287,47 @@ get_header(); ?>
             </div>
 
             <!-- Reusable Component: Who Can Go -->
-            <div class="r-who-can-go anim-fade-up">
+            <div class="r-who-can-go anim-fade-up" data-mascot-msg="No matter your skill level or who you travel with, there's a spot for you!">
                 <h3>Who Can Go?</h3>
                 <div class="r-who-grid">
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><span>Beginners</span></div>
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg><span>Intermediate</span></div>
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span>Advanced</span></div>
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Couples</span></div>
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Friends</span></div>
-                    <div class="r-who-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Solo Travelers</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 0ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg><span>Beginners</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 150ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg><span>Intermediate</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 300ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span>Advanced</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 450ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Couples</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 600ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Friends</span></div>
+                    <div class="r-who-item anim-fade-up anim-stagger" style="--stagger-delay: 750ms;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Solo Travelers</span></div>
                 </div>
             </div>
             
             <!-- Reusable Component: Daily Schedule -->
-            <div class="r-schedule-component anim-fade-up">
+            <div class="r-schedule-component anim-fade-up" data-mascot-msg="A perfect balance of intensive training, open play, and relaxing downtime.">
                 <h3 class="r-subsection-title">Sample Daily Schedule</h3>
                 <div class="r-schedule-table">
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                         <div class="r-time">7:00 AM</div>
                         <div class="r-activity">Breakfast & Coffee</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
                         <div class="r-time">8:30 AM</div>
                         <div class="r-activity">Morning Clinic (Drills & Strategy)</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
                         <div class="r-time">10:30 AM</div>
                         <div class="r-activity">Open Play / Round Robin</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
                         <div class="r-time">12:30 PM</div>
                         <div class="r-activity">Group Lunch</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 600ms;">
                         <div class="r-time">2:00 PM</div>
                         <div class="r-activity">Free Time (Beach, Spa, Explore)</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 750ms;">
                         <div class="r-time">4:30 PM</div>
                         <div class="r-activity">Sunset Match Play (Optional)</div>
                     </div>
-                    <div class="r-schedule-row">
+                    <div class="r-schedule-row anim-fade-up anim-stagger" style="--stagger-delay: 900ms;">
                         <div class="r-time">7:00 PM</div>
                         <div class="r-activity">Group Dinner & Social Mixer</div>
                     </div>
@@ -501,7 +410,7 @@ get_header(); ?>
     </section>
 
     <!-- 6. Global CTA Footer -->
-    <section class="r-global-cta anim-fade-up">
+    <section class="r-global-cta anim-fade-up" data-mascot-msg="Play hard. Relax more. Book your dream pickleball getaway today!">
         <div class="r-global-cta__bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');"></div>
         <div class="r-global-cta__overlay"></div>
         <div class="container r-global-cta__content">

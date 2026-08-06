@@ -10,50 +10,13 @@ get_header();
     <!-- ============================================================
          PHASE 1: HERO SECTION
          ============================================================ -->
-    <section class="hero instructors-hero-full">
+    <section class="hero instructors-hero-full" data-mascot-msg="Meet the passionate professionals who make learning pickleball a breeze!">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/instructors-hero-bg.mp4" type="video/mp4"></video>
         <div class="hero-container">
-            <div class="hero-left anim-fade-right">
+            <div class="hero-content anim-fade-right">
                 <h2 class="hero-subtitle">Experienced, Friendly &amp; Passionate Instructors</h2>
                 <h1>OUR <br><span class="highlight">INSTRUCTORS</span></h1>
-                <p>We believe that a great coach makes all the difference. Our team of certified professionals is dedicated to helping you achieve your goals, whether you're just starting out or looking to master advanced techniques.</p>
-                <div class="inst-hero-tagline">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>We teach. We play. We care.</span>
-                </div>
-            </div>
-            
-            <div class="hero-right anim-fade-left">
-                <div class="hero-right-header">
-                    <h3>WHAT MAKES OUR TEAM SPECIAL?</h3>
-                </div>
-                <div class="hero-right-body">
-                    <ul class="hr-list">
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Experienced
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Specialized in beginners
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Patient
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Safety focused
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Committed to success
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                            Passionate about growing the game
-                        </li>
-                    </ul>
-                </div>
+                <h3 class="hero-tagline type-effect"></h3>
             </div>
         </div>
     </section>
@@ -61,7 +24,7 @@ get_header();
     <!-- ============================================================
          PHASE 2: FEATURED INSTRUCTOR (CHARLES AZOULAY)
          ============================================================ -->
-    <section class="container" style="padding: 80px 20px 40px;">
+    <section class="container featured-instructor-section" style="padding: 80px 20px 40px;" data-mascot-msg="Coach Charles brings years of expertise to help you master the fundamentals.">
         <div class="featured-instructor anim-fade-up">
             
             <div class="fi-col fi-photo">
@@ -110,7 +73,7 @@ get_header();
     <!-- ============================================================
          PHASE 3: INSTRUCTOR GRID (5 Cards)
          ============================================================ -->
-    <section class="container" style="padding: 0 20px 80px;">
+    <section class="container team-grid-section" style="padding: 0 20px 80px;" data-mascot-msg="Our certified team is dedicated to your safety, success, and fun.">
         <div class="team-grid">
             
             <!-- Instructor Card 1 -->
@@ -209,7 +172,7 @@ get_header();
     <!-- ============================================================
          PHASE 4: WANT TO JOIN OUR TEAM? (CTA Banner)
          ============================================================ -->
-    <section class="container" style="padding-bottom: 80px;">
+    <section class="container join-team-section" style="padding-bottom: 80px;" data-mascot-msg="Passionate about pickleball? We are always looking for great instructors!">
         <div class="join-cta-banner anim-fade-up">
             <div class="jcb-left">
                 <h2>Want to Join Our Team?</h2>
