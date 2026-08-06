@@ -5,6 +5,7 @@
     <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
         <source src="<?php echo get_template_directory_uri(); ?>/media/front-page-hero-video.mp4" type="video/mp4">
     </video>
+    
     <div class="hero-container">
         <div class="hero-content">
             <h2 class="hero-subtitle">WELCOME TO</h2>
