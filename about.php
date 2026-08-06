@@ -8,13 +8,14 @@ get_header();
 <main class="about-page">
 
     <!-- Hero Section -->
-    <section class="hero about-hero-full">
+    <section class="hero about-hero-full" data-mascot-msg="We teach. We play. We care. Welcome to the PBA family!">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/about-hero.mp4" type="video/mp4"></video>
         <div class="hero-container">
-            <div class="hero-left anim-fade-right">
+            <div class="hero-content anim-fade-right">
                 <h2 class="hero-subtitle">MORE THAN A GAME</h2>
                 <h1>ABOUT <br><span class="highlight">PBA</span></h1>
-                <p>At PB Pickleball Academy, we believe pickleball is more than a game—it's a way to stay active, make friends, and enjoy life. Our mission is to make learning simple, fun, and rewarding for beginners and active adults.</p>
-                <div class="ah-motto" style="display:flex;align-items:center;gap:10px;color:var(--green);font-size:1.05rem;font-family:var(--font-heading);margin-top:20px;">
+                <h3 class="hero-tagline type-effect"></h3>
+                <div class="ah-motto" style="display:flex;align-items:center;justify-content:center;gap:10px;color:var(--green);font-size:1.05rem;font-family:var(--font-heading);margin-top:20px;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--green)" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                     <strong>We teach. We play. We care.</strong>
                 </div>
@@ -23,7 +24,7 @@ get_header();
     </section>
 
     <!-- Differentiators Section -->
-    <section class="about-diff container">
+    <section class="about-diff container" data-mascot-msg="See what makes our academy the best choice for active adults.">
         <div class="diff-header anim-fade-up">
             <h3 class="line-heading">WHAT MAKES PBA DIFFERENT?</h3>
         </div>
@@ -67,7 +68,7 @@ get_header();
     </section>
 
     <!-- Bottom 3-Column Grid -->
-    <section class="about-grid-3 container">
+    <section class="about-grid-3 container" data-mascot-msg="Safety first, respect for everyone, and proven results.">
         
         <!-- Box 1: Values -->
         <div class="ag-box anim-fade-up">
@@ -114,7 +115,11 @@ get_header();
                 <div class="founder-bio">
                     <h4 class="f-name">Charles Azoulay</h4>
                     <span class="f-title">Founder & Lead Instructor</span>
-                    <p>Charles discovered pickleball later in life and instantly fell in love with the game. With a background in teaching and a passion for helping others, he founded PB Pickleball Academy to create a positive place where beginners can learn, improve, and have a great time.</p>
+                    <ul class="founder-achievements">
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay:0ms"><span class="fa-check">✓</span> Discovered pickleball later in life — now he's your guide to loving it.</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay:100ms"><span class="fa-check">✓</span> Teaching background turned into a mission: make every beginner feel confident.</li>
+                        <li class="anim-fade-up anim-stagger" style="--stagger-delay:200ms"><span class="fa-check">✓</span> Founded PBA to build a community where learning is fun and friendships are real.</li>
+                    </ul>
                     <p class="f-highlight">We're here to help you love the game!</p>
                 </div>
             </div>
@@ -138,7 +143,7 @@ get_header();
     </section>
 
     <!-- Specific About Page CTA Bar -->
-    <section class="about-cta-banner container anim-scale-in is-visible">
+    <section class="about-cta-banner container anim-scale-in is-visible" data-mascot-msg="Don't wait—book your first lesson and join the fun today!">
         <div class="acb-inner">
             <div class="acb-left">
                 <div class="acb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 62%;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
@@ -157,7 +162,7 @@ get_header();
     </section>
 
     <!-- Dark Blue Pre-Footer Bar -->
-    <section class="about-prefooter">
+    <section class="about-prefooter" data-mascot-msg="Need help? Give us a call at 561-855-9500.">
         <div class="container prefooter-grid">
             <div class="pf-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
