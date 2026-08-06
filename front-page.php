@@ -8,7 +8,7 @@
     <div class="hero-container">
         <div class="hero-content">
             <h2 class="hero-subtitle">WELCOME TO</h2>
-            <h1>PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
+            <h1>PB PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
             <h3 class="hero-tagline type-effect"></h3>
             <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -23,6 +23,60 @@
         </div>
     </div>
 </section>
+
+<!-- Hero Typing Animation Engine -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── Config ── */
+    var PHRASE      = 'Beginners Welcome. Friends for Life.';
+    var SPEED_MS    = 80;   /* ~80 ms per character — legible for 60+ users */
+    var START_DELAY = 600;  /* wait for hero fade-in before typing begins   */
+
+    /* ── DOM ── */
+    var tagline = document.querySelector('.hero-tagline.type-effect');
+    if (!tagline) return;
+
+    /* Inject the blinking cursor element */
+    var cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.textContent = '|';
+
+    /* Text node that grows as we type */
+    var textNode = document.createTextNode('');
+    tagline.appendChild(textNode);
+    tagline.appendChild(cursor);
+
+    /* ── State ── */
+    var index = 0;
+
+    /* ── Typing loop ── */
+    function typeNext() {
+        if (index < PHRASE.length) {
+            textNode.nodeValue += PHRASE.charAt(index);
+            index++;
+            setTimeout(typeNext, SPEED_MS);
+        }
+        /* When done: leave cursor blinking — no loop, no removal. */
+    }
+
+    /* Respect prefers-reduced-motion: show full text instantly */
+    var prefersReduced = window.matchMedia &&
+                         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    setTimeout(function () {
+        if (prefersReduced) {
+            textNode.nodeValue = PHRASE;
+        } else {
+            typeNext();
+        }
+    }, START_DELAY);
+
+})();
+</script>
+
 
 <!-- Features Section -->
 <section class="features" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
