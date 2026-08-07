@@ -16,43 +16,30 @@ get_header();
 <main class="lp-page">
 
 	<!-- 1. TITLE BANNER -->
-	<section class="lp-hero" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/media/pageandprogramhero.jpg');">
-		<div class="lp-hero-grid container">
-			<div class="lp-hero-left anim-fade-right">
+	<section class="hero lp-hero-full" data-mascot-msg="Learn at your own pace and improve for life with our expert instructors!">
+		<video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
+			<source src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/pageandprogramhero.mp4" type="video/mp4">
+		</video>
+		<div class="hero-container">
+			<div class="hero-content anim-fade-up">
 				<h1>LESSONS &amp; <span class="highlight">PROGRAMS</span></h1>
-				<p class="lp-hero-sub">Learn at Your Pace. Improve for Life.</p>
-				<p class="lp-hero-text">At PB Pickleball Academy, we make learning fun, effective, and social. Our programs are designed for beginners and active adults who want to build skills, confidence, and friendships while staying active.</p>
+				<h3 class="hero-tagline type-effect"></h3>
 				<a href="<?php echo esc_url( home_url( '/book-a-lesson/' ) ); ?>" class="btn btn-green">
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
 					Book Your First Lesson
 				</a>
-				<p class="lp-hero-note">Let's get you on the court!</p>
 			</div>
-
-			<aside class="lp-why-box anim-fade-up">
-				<h2>WHY LEARN WITH PBA?</h2>
-				<ul class="lp-check-list">
-					<li>Beginner focused</li>
-					<li>Patient, friendly instruction</li>
-					<li>Small class sizes</li>
-					<li>Private and group lessons</li>
-					<li>Step-by-step skill building</li>
-					<li>A supportive community</li>
-					<li>Real results, lots of fun!</li>
-				</ul>
-			</aside>
 		</div>
 	</section>
 
 	<!-- 2 & 3. PROGRAMS + SIDEBAR -->
-	<section class="lp-programs container">
+	<section class="lp-programs container" data-mascot-msg="We offer programs for everyone, from absolute beginners to advanced players.">
 		<h2 class="lp-section-title anim-fade-up">OUR PROGRAMS</h2>
 
 		<div class="lp-programs-layout">
 			<div class="lp-cards-grid">
 
-				<article class="lp-card anim-fade-up">
-					
+				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/beginner-01.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
 					<div class="lp-card-body">
 						<h3>BEGINNER 101</h3>
@@ -66,7 +53,7 @@ get_header();
 					</div>
 				</article>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:60ms;">
+				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/group-lesson.png" alt="Group of players practicing together" loading="lazy">
 					<div class="lp-card-body">
 						<h3>GROUP LESSONS</h3>
@@ -80,7 +67,7 @@ get_header();
 					</div>
 				</article>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:120ms;">
+				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/private-lessons.png" alt="Instructor giving a private one on one lesson" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PRIVATE LESSONS</h3>
@@ -94,7 +81,7 @@ get_header();
 					</div>
 				</article>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:180ms;">
+				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:450ms;">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/play-improve.png" alt="Players enjoying supervised open play" loading="lazy">
 					<div class="lp-card-body">
 						<h3>PLAY &amp; IMPROVE</h3>
@@ -108,7 +95,7 @@ get_header();
 					</div>
 				</article>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:240ms;">
+				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/country-court.png" alt="Country club clubhouse with pickleball courts" loading="lazy">
 					<div class="lp-card-body">
 						<h3>COUNTRY CLUB &amp; HOA</h3>
@@ -128,19 +115,19 @@ get_header();
 				<div class="lp-sidebar-card anim-fade-up">
 					<h3>CHOOSE WHAT'S BEST FOR YOU</h3>
 
-					<div class="lp-feature">
+					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
 						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
 						<div><strong>Beginner Focused</strong><p>Programs designed specifically for new players.</p></div>
 					</div>
-					<div class="lp-feature">
+					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
 						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
 						<div><strong>Step-by-Step Progression</strong><p>Build your skills with a proven learning path.</p></div>
 					</div>
-					<div class="lp-feature">
+					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
 						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
 						<div><strong>Fun &amp; Social</strong><p>Make new friends while staying active.</p></div>
 					</div>
-					<div class="lp-feature">
+					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:450ms;">
 						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
 						<div><strong>Safe &amp; Supportive</strong><p>Safety first with patient, encouraging instructors.</p></div>
 					</div>
@@ -158,16 +145,16 @@ get_header();
 	</section>
 
 	<!-- 7. FLEXIBLE SCHEDULING STRIP -->
-	<section class="lp-strip container anim-fade-up">
-		<div class="lp-strip-item">
+	<section class="lp-strip container anim-fade-up" data-mascot-msg="Don't worry about gear—we provide paddles and balls for all lessons!">
+		<div class="lp-strip-item anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
 			<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
 			<div><strong>Flexible Scheduling</strong><span>Lessons available 7 days a week. Morning, afternoon &amp; evening options.</span></div>
 		</div>
-		<div class="lp-strip-item">
+		<div class="lp-strip-item anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
 			<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
 			<div><strong>All Equipment Provided</strong><span>Paddles and balls are provided for all lessons.</span></div>
 		</div>
-		<a href="<?php echo esc_url( home_url( '/book-a-lesson/' ) ); ?>" class="lp-strip-cta">
+		<a href="<?php echo esc_url( home_url( '/book-a-lesson/' ) ); ?>" class="lp-strip-cta anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
 			<div><strong>Book Your Lesson Now</strong><span>Spots fill up fast – reserve today!</span></div>
 			<svg class="lp-strip-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -175,12 +162,12 @@ get_header();
 	</section>
 
 	<!-- 8. TESTIMONIALS -->
-	<section class="lp-testimonials container anim-fade-up">
+	<section class="lp-testimonials container anim-fade-up" data-mascot-msg="Listen to what our amazing students have achieved on the court.">
 	
 		<h2 class="lp-section-title">WHAT OUR STUDENTS SAY</h2>
 
 		<div class="lp-testimonial-grid">
-			<div class="lp-testimonial">
+			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
 				<img src="https://i.pravatar.cc/150?img=32" alt="Photo of Linda M." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;Charles made learning pickleball easy and enjoyable. I was playing confidently after just a few lessons!&rdquo;</p>
@@ -189,7 +176,7 @@ get_header();
 				<div class="lp-stars" aria-label="5 out of 5 stars">★★★★★</div>
 			</div>
 
-			<div class="lp-testimonial">
+			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
 				<img src="https://i.pravatar.cc/150?img=54" alt="Photo of Robert T." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;Patient, knowledgeable, and always encouraging. I highly recommend PB Pickleball Academy.&rdquo;</p>
@@ -198,7 +185,7 @@ get_header();
 				<div class="lp-stars" aria-label="5 out of 5 stars">★★★★★</div>
 			</div>
 
-			<div class="lp-testimonial">
+			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
 				<img src="https://i.pravatar.cc/150?img=47" alt="Photo of Susan K." class="lp-avatar" loading="lazy">
 				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
 				<p>&ldquo;I never thought I could learn a new sport in my 60s. Now I play every week!&rdquo;</p>
@@ -210,7 +197,7 @@ get_header();
 	</section>
 
 	<!-- 9. BOTTOM BANNER -->
-	<section class="lp-bottom-banner anim-fade-up">
+	<section class="lp-bottom-banner anim-fade-up" data-mascot-msg="Every lesson. Every student. Every time. We're here for you.">
 		<div class="lp-bottom-bg" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop');"></div>
 		<div class="lp-bottom-overlay">
 			<h2>Every Lesson.<br>Every Student.<br>Every Time.</h2>

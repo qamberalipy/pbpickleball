@@ -12,98 +12,15 @@
 /* The .btn-navy rules have been removed to let style.css take over */
 
 /* 1. HERO */
-.lp-hero {
-	position: relative;
-	background-size: cover;
-	background-position: center;
-	background-color: var(--gray-bg); /* Fallback color updated to light gray */
-	padding: 5rem 0 4rem;
-	min-height: 420px;
-	display: flex;
-	align-items: center;
-}
-
-/* New White Fade Overlay */
-.lp-hero::before {
-	content: '';
-	position: absolute;
-	top: 0; left: 0;
-	width: 65%; /* Only covers the left side, leaving the right side image clear */
-	height: 100%;
-	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
-	z-index: 0;
-}
-
-.lp-hero > * { position: relative; z-index: 1; }
-
-.lp-hero-grid {
-	position: relative;
-	z-index: 1;
-	display: grid;
-	grid-template-columns: 1fr auto;
-	gap: 2rem;
-	align-items: start;
-	width: 100%;
-}
-
-/* Text updated to Dark Navy for legibility over white */
-.lp-hero-left h1 {
-	font-family: "Montserrat", sans-serif;
-	color: var(--navy); 
-	font-size: 2.4rem;
-	line-height: 1.1;
-	margin-bottom: 0.5rem;
-}
-
-.lp-hero-sub {
-	color: var(--green);
-	font-style: italic;
-	font-weight: 800;
-	font-size: 1.15rem;
-	margin-bottom: 0.75rem;
-}
-
-.lp-hero-text {
-	color: var(--navy); 
-	margin-bottom: 1.25rem;
-	max-width: 40ch;
-	font-weight: 500;
-}
-
-.lp-hero-note {
-	margin-top: 0.6rem;
-	color: var(--green);
-	font-style: italic;
-	font-size: 0.9rem;
-	font-weight: 700;
-}
-
-/* The Box remains Navy so it stands out over the image */
-.lp-why-box {
-	background: var(--navy);
-	color: #fff;
-	border-radius: 12px;
-	padding: 1.5rem;
-	width: 260px;
-	box-shadow: 0 10px 30px rgba(11, 32, 70, 0.15);
-}
-.lp-why-box h2 { color: var(--green); font-size: 1rem; margin-bottom: 1rem; }
-.lp-check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.9rem; }
-.lp-check-list li { position: relative; padding-left: 1.5rem; }
-.lp-check-list li::before {
-	content: "";
-	position: absolute; left: 0; top: 2px;
-	width: 16px; height: 16px;
-	background: var(--green);
-	border-radius: 50%;
-}
-.lp-check-list li::after {
-	content: "";
-	position: absolute; left: 4px; top: 5px;
-	width: 8px; height: 4px;
-	border-left: 2px solid #fff; border-bottom: 2px solid #fff;
-	transform: rotate(-45deg);
-}
+.lp-hero-full { min-height: 80vh; padding: 100px 20px; background-color: var(--navy); position: relative; overflow: hidden; display: flex; align-items: center; }
+.lp-hero-full::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(10 12 15 / 45%); z-index: 1; }
+.lp-hero-full .hero-video-bg { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translate(-50%, -50%); object-fit: cover; }
+.lp-hero-full .hero-container { position: relative; z-index: 2; display: flex; justify-content: center; width: 100%; }
+.lp-hero-full .hero-content { color: var(--white); text-shadow: 0 2px 15px rgba(0,0,0,0.7); max-width: 800px; margin: 0 auto; text-align: center; }
+.lp-hero-full .hero-content h1, .lp-hero-full .hero-content h3 { color: var(--white); text-shadow: 0 2px 15px rgba(0,0,0,0.7); font-family: var(--font-heading); margin-bottom: 16px; }
+.lp-hero-full .hero-content h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; text-transform: uppercase; line-height: 1; }
+.lp-hero-full .hero-tagline { font-size: 1.5rem; font-weight: 600; font-style: italic; min-height: 2.2rem; }
+@media (max-width: 768px) { .lp-hero-full { min-height: 60vh; } }
 
 /* 2 & 3. PROGRAMS */
 .lp-section-title {
@@ -123,17 +40,20 @@
 	background: #fff;
 	border-radius: 16px;
 	overflow: hidden;
-	border: 1px solid rgba(0,0,0,0.04);
+	border: 1px solid transparent;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transition: all 0.3s ease;
 }
 
-.lp-card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 16px 28px rgba(0,0,0,0.1);
+.lp-card:hover, .lp-sidebar-card:hover, .lp-testimonial:hover {
+	background-color: #F4F9F0;
+	border-color: rgba(103, 155, 48, 0.45);
+	transform: translateY(-8px);
+	box-shadow: 0 20px 45px rgba(11, 32, 70, 0.18);
+	transition: all 0.3s ease;
 }
 
 .lp-card img {
@@ -153,7 +73,7 @@
 	flex-direction: column;
 	gap: 0.35rem;
 	flex: 1;
-	background: #fff;
+	background: transparent;
 	z-index: 1;
 }
 .lp-card-body h3 { color: var(--navy); font-size: 1.05rem; }
@@ -170,9 +90,10 @@
 
 .lp-sidebar-card {
 	background: #fff;
-	border: 1px solid rgba(0,0,0,0.08);
+	border: 1px solid transparent;
 	border-radius: 12px;
 	padding: 1.25rem;
+	transition: all 0.3s ease;
 }
 .lp-sidebar-card h3 { color: var(--navy); font-size: 0.95rem; margin-bottom: 1rem; }
 
@@ -249,9 +170,10 @@
 	background: #fff;
 	border-radius: 12px;
 	padding: 1.5rem;
-	border: 1px solid rgba(0,0,0,0.06);
+	border: 1px solid transparent;
 	position: relative;
 	text-align: left;
+	transition: all 0.3s ease;
 }
 .lp-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem; }
 .lp-quote-mark { position: absolute; top: 1.25rem; right: 1.25rem; color: var(--green); opacity: 0.3; }
@@ -259,6 +181,16 @@
 .lp-testimonial strong { display: block; color: var(--navy); font-size: 0.9rem; }
 .lp-testimonial span { font-size: 0.78rem; color: var(--gray-text); }
 .lp-stars { color: var(--green); margin-top: 0.4rem; letter-spacing: 2px; }
+
+.lp-meta span svg, .lp-feature-icon svg, .lp-quote-mark {
+	transition: all 0.3s ease;
+}
+.lp-card:hover .lp-meta span svg,
+.lp-sidebar-card:hover .lp-feature-icon svg,
+.lp-testimonial:hover .lp-quote-mark {
+	transform: scale(1.2);
+	color: var(--navy);
+}
 
 /* 9. BOTTOM BANNER */
 .lp-bottom-banner {
@@ -281,13 +213,6 @@
 
 /* ============================= RESPONSIVE ============================= */
 @media (max-width: 1024px) {
-	.lp-hero { padding: 3.5rem 0 3rem; }
-	.lp-hero::before {
-		width: 100%;
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0) 100%);
-	}
-	.lp-hero-grid { grid-template-columns: 1fr; }
-	.lp-why-box { width: 100%; max-width: 400px; margin: 0 auto; }
 	.lp-programs-layout { grid-template-columns: 1fr; }
 	.lp-cards-grid { grid-template-columns: repeat(2, 1fr); }
 	.lp-testimonial-grid { grid-template-columns: repeat(2, 1fr); }
@@ -300,5 +225,4 @@
 	.lp-strip-item { flex-direction: column; text-align: center; }
 	.lp-testimonial-grid { grid-template-columns: 1fr; }
 	.lp-bottom-overlay { padding: 0 1.5rem; text-align: center; align-items: center; }
-	.lp-hero-left h1 { font-size: 1.9rem; }
 }
