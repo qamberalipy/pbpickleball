@@ -6540,19 +6540,36 @@ html, body {
    UI CORRECTIONS (BUTTONS, SEARCH BAR, FOOTER)
    ============================================================ */
 
-/* --- 1. Perfect Button Alignment --- */
-.btn {
-    border: 2px solid transparent !important;
-    box-sizing: border-box !important;
-    padding: 14px 24px !important;
-    min-height: 52px;
+/* --- 1. Perfect Button Alignment (Industrial Standard) --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
-.btn-green {
+
+.hero-buttons .btn {
+    height: 54px !important; /* Mathematically forces exact identical heights */
+    padding: 0 32px !important; /* Horizontal padding only */
+    border: 2px solid transparent !important; /* Reserves identical border space */
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important; /* Vertically centers text perfectly */
+    justify-content: center !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+}
+
+.hero-buttons .btn-green {
     background-color: var(--green) !important;
     border-color: var(--green) !important;
     color: var(--white) !important;
 }
-.btn-outline-white {
+
+.hero-buttons .btn-outline-white {
     background-color: transparent !important;
     border-color: var(--white) !important;
     color: var(--white) !important;
