@@ -6545,35 +6545,50 @@ html, body {
 }
 
 /* ============================================================
-   UI CORRECTIONS (BUTTONS, SEARCH BAR, FOOTER)
+   INDUSTRIAL ZERO-ERROR UI FIXES 
    ============================================================ */
 
-/* --- 1. Perfect Button Alignment (Industrial Standard) --- */
+/* --- 1. Prevent Nav Menu from Breaking into Two Lines --- */
+.header-content {
+    gap: 12px !important;
+}
+.nav-links {
+    gap: 8px !important;
+}
+.nav-links li a {
+    padding: 8px 5px !important;
+    font-size: 0.8rem !important; /* Slightly scaled down to fit 12 items */
+    letter-spacing: 0 !important;
+}
+
+/* --- 2. Flawless Hero Button Alignment --- */
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
 }
 
 .hero-buttons .btn {
-    height: 54px !important; /* Mathematically forces exact identical heights */
-    padding: 0 32px !important; /* Horizontal padding only */
-    border: 2px solid transparent !important; /* Reserves identical border space */
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important; /* Mathematically prevents baseline shift */
+    padding: 0 32px !important;
+    border: 2px solid transparent !important;
     box-sizing: border-box !important;
     display: inline-flex !important;
-    align-items: center !important; /* Vertically centers text perfectly */
+    align-items: center !important;
     justify-content: center !important;
     margin: 0 !important;
     line-height: 1 !important;
     font-size: 0.85rem !important;
-    letter-spacing: 0.5px !important;
+    text-decoration: none !important;
 }
 
 .hero-buttons .btn-green {
     background-color: var(--green) !important;
-    border-color: var(--green) !important;
+    border-color: var(--green) !important; 
     color: var(--white) !important;
 }
 
@@ -6583,57 +6598,105 @@ html, body {
     color: var(--white) !important;
 }
 
-/* --- 2. Premium Sleek Search Bar --- */
+/* --- 3. Lock Search Bar Width & Prevent Icon Hiding --- */
 .premium-search-form {
-    display: flex;
-    align-items: center;
-    background: #F4F6F8;
-    border: 1px solid #D1D6E0;
-    border-radius: 30px;
-    overflow: hidden;
-    height: 42px;
-    width: 220px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex !important;
+    align-items: center !important;
+    background: #F4F6F8 !important;
+    border: 1px solid #D1D6E0 !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    height: 42px !important;
+    width: 200px !important; /* LOCKED WIDTH: Fixes the layout shift */
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
+
 .premium-search-form:focus-within {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15);
-    background: var(--white);
-    width: 260px;
+    border-color: var(--green) !important;
+    box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15) !important;
+    background: var(--white) !important;
+    width: 200px !important; /* WIDTH REMAINS 200px - NO SHIFTING */
 }
+
 .premium-search-input {
-    flex: 1;
+    flex: 1 1 auto !important;
+    min-width: 0 !important; /* Prevents text from pushing the icon out */
     border: none !important;
     background: transparent !important;
-    padding: 0 0 0 16px !important;
-    font-family: var(--font-body);
+    padding: 0 5px 0 16px !important;
+    font-family: var(--font-body) !important;
     font-size: 0.85rem !important;
     color: var(--navy) !important;
     outline: none !important;
     box-shadow: none !important;
-    height: 100%;
-}
-.premium-search-input::placeholder {
-    color: #9aabb8;
-    font-weight: 500;
-}
-.premium-search-btn {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 14px !important;
-    color: var(--navy) !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s ease;
-    height: 100%;
-}
-.premium-search-btn:hover {
-    color: var(--green) !important;
+    height: 100% !important;
+    margin: 0 !important;
+    -webkit-appearance: none !important;
 }
 
-/* --- 3. Footer Layout & Typography Fixes --- */
+.premium-search-btn {
+    flex: 0 0 42px !important; /* Locks the button into a perfect square */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+/* FORCES the magnifying glass SVG to display perfectly */
+.premium-search-btn svg {
+    display: block !important;
+    stroke: var(--navy) !important;
+    fill: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    stroke-width: 2.5 !important;
+    transition: stroke 0.2s ease !important;
+}
+
+.premium-search-btn:hover svg,
+.premium-search-form:focus-within .premium-search-btn svg {
+    stroke: var(--green) !important;
+}
+
+/* --- 4. Mobile Search Bar Display Logic --- */
+.mobile-search-wrap {
+    display: none; 
+}
+
+@media (max-width: 980px) {
+    /* Hide the desktop search bar */
+    .header-search-wrap { 
+        display: none !important; 
+    }
+    
+    /* Reveal and format the search bar inside the mobile dropdown menu */
+    .mobile-search-wrap {
+        display: block !important;
+        padding: 15px 20px !important;
+        background: var(--white) !important;
+        border-bottom: 1px solid var(--gray-light) !important;
+    }
+    
+    /* Force mobile search bar to span full width of the menu */
+    .mobile-search-wrap .premium-search-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 48px !important;
+    }
+    
+    .mobile-search-wrap .premium-search-btn {
+        flex: 0 0 48px !important; /* Scale square up for mobile touch */
+    }
+}
+
+/* --- 5. Footer Layout & Typography Fixes --- */
 .footer-brand-col .footer-logo-wrap {
     display: inline-block;
     margin-bottom: 24px;
@@ -6677,11 +6740,6 @@ html, body {
     color: var(--green-bright);
 }
 
-/* Hide search bar on mobile — hamburger menu takes priority */
-@media (max-width: 980px) {
-    .header-search-wrap { display: none; }
-}
-
 /* --- Fresh Accent Color Injections --- */
 /* Makes the active menu item underline pop with the new orange */
 .nav-links li a.active::after,
@@ -6692,4 +6750,123 @@ html, body {
 /* Warms up the giant quote marks in the testimonial slider */
 .t-card p::before {
     color: rgba(242, 169, 0, 0.2) !important; /* Faded orange */
+}
+
+/* ============================================================
+   GOD-LEVEL UI FIX: SEARCH BAR & MOBILE NAV
+   ============================================================ */
+
+/* --- 1. KILL DESKTOP SEARCH JUMPING & FORCE ICON VISIBILITY --- */
+.header-content .premium-search-form {
+    display: flex !important;
+    align-items: center !important;
+    background: #F4F6F8 !important;
+    border: 1px solid #D1D6E0 !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    height: 42px !important;
+    width: 180px !important; /* RIGID DESKTOP WIDTH - NO JUMPING */
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    transition: border-color 0.2s ease !important; 
+}
+
+/* Overrides any legacy :focus-within expansion rules */
+.header-content .premium-search-form:focus-within,
+.header-search-wrap .search-form:focus-within {
+    border-color: var(--green) !important;
+    box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15) !important;
+    background: var(--white) !important;
+    width: 180px !important; /* STRICTLY LOCKED ON CLICK */
+}
+
+.premium-search-input {
+    flex: 1 1 auto !important;
+    min-width: 0 !important; /* CRITICAL: Prevents text from crushing the SVG icon */
+    border: none !important;
+    background: transparent !important;
+    padding: 0 0 0 16px !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.85rem !important;
+    color: var(--navy) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    -webkit-appearance: none !important;
+}
+
+.premium-search-btn {
+    flex: 0 0 42px !important; /* Rigid box for the icon */
+    width: 42px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+/* Forces the SVG to render regardless of parent crushing */
+.premium-search-btn svg {
+    display: block !important;
+    stroke: var(--navy) !important;
+    fill: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    stroke-width: 2.5 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.premium-search-btn:hover svg {
+    stroke: var(--green) !important;
+}
+
+/* --- 2. FIX MOBILE TWO-COLUMN NAV BUG --- */
+.mobile-search-wrap {
+    display: none !important; /* Hidden on desktop */
+}
+
+@media (max-width: 980px) {
+    .header-search-wrap {
+        display: none !important; /* Hide desktop search */
+    }
+
+    nav.open {
+        display: flex !important;
+        flex-direction: column !important; /* THIS FIXES THE 2-COLUMN BUG */
+        width: 100% !important;
+    }
+
+    .mobile-search-wrap {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 20px !important;
+        border-bottom: 1px solid var(--gray-light) !important;
+        margin-bottom: 10px !important;
+        order: -1 !important; /* Forces search bar to the very top of the menu */
+    }
+
+    .mobile-search-wrap .premium-search-form {
+        display: flex !important;
+        align-items: center !important;
+        background: #F4F6F8 !important;
+        border: 1px solid #D1D6E0 !important;
+        border-radius: 30px !important;
+        overflow: hidden !important;
+        width: 100% !important; /* Full width on mobile */
+        max-width: 100% !important;
+        height: 48px !important; /* Taller for senior touch-targets */
+    }
+    
+    .mobile-search-wrap .premium-search-form:focus-within {
+        border-color: var(--green) !important;
+        box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15) !important;
+        background: var(--white) !important;
+        width: 100% !important; /* Stays full width on click */
+    }
 }
