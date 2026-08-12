@@ -10,12 +10,20 @@ Version: 1.0
     --navy-light: #16366B;
     --green: #679B30;
     --green-bright: #78B036;
-    --gray-bg: #F5F7F8;
+
+    /* NEW: Warmed up from clinical gray to a premium pearl */
+    --gray-bg: #FDFCFA;
     --gray-light: #E0E4E8;
     --gray-text: #4A4A4A;
     --white: #FFFFFF;
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
+
+    /* NEW: A fresh pop of color to break up the Navy/Green monotony */
+    --accent-orange: #F2A900;
+
+    /* NEW: Highly legible, modern typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
     --radius: 8px;
 }
 
@@ -6672,4 +6680,16 @@ html, body {
 /* Hide search bar on mobile — hamburger menu takes priority */
 @media (max-width: 980px) {
     .header-search-wrap { display: none; }
+}
+
+/* --- Fresh Accent Color Injections --- */
+/* Makes the active menu item underline pop with the new orange */
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+    background-color: var(--accent-orange) !important;
+}
+
+/* Warms up the giant quote marks in the testimonial slider */
+.t-card p::before {
+    color: rgba(242, 169, 0, 0.2) !important; /* Faded orange */
 }
