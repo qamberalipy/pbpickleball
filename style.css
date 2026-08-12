@@ -241,7 +241,7 @@ input:focus-visible {
 /* ---------- Header ---------- */
 header {
     background-color: var(--white);
-    padding: 15px 0;
+    padding: 18px 0;
     border-bottom: 2px solid var(--gray-light);
     position: sticky;
     top: 38px;
@@ -326,17 +326,19 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 18px;
+    gap: 10px;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     font-weight: 800;
 }
 
 .nav-links li a {
     text-transform: uppercase;
-    padding-bottom: 6px;
+    padding: 8px 6px;
     position: relative;
     display: inline-block;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
 }
 
 .nav-links li a.active::after,
@@ -350,12 +352,80 @@ nav {
     background-color: var(--green);
 }
 
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
 .header-actions {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 6px;
     flex-shrink: 0;
+}
+
+/* ---------- Header Search Wrap ---------- */
+.header-search-wrap {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-search-wrap .search-form {
+    display: flex;
+    align-items: center;
+    background: var(--gray-bg);
+    border: 1.5px solid var(--gray-light);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    height: 40px;
+}
+
+.header-search-wrap .search-form:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15);
+}
+
+.header-search-wrap .search-field {
+    border: none;
+    background: transparent;
+    padding: 0 14px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--navy);
+    outline: none;
+    width: 160px;
+    height: 100%;
+}
+
+.header-search-wrap .search-field::placeholder {
+    color: #9aabb8;
+    font-style: italic;
+}
+
+.header-search-wrap .search-submit {
+    background: var(--green);
+    border: none;
+    color: var(--white);
+    padding: 0 14px;
+    height: 100%;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.header-search-wrap .search-submit:hover {
+    background: var(--green-bright);
 }
 
 .nav-btn-item {
@@ -1473,6 +1543,11 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
+    /* Hide search bar on mobile — it's in the collapsed nav area */
+    .header-search-wrap {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1482,6 +1557,10 @@ footer {
         width: 100%;
         z-index: 999;
         position: sticky;
+    }
+
+    .header-search-wrap {
+        display: none;
     }
 
     .logo {
@@ -6455,4 +6534,125 @@ html, body {
     .instructors-hero-full::before {
         background: rgb(10 12 15 / 45%) !important;
     }
+}
+
+/* ============================================================
+   UI CORRECTIONS (BUTTONS, SEARCH BAR, FOOTER)
+   ============================================================ */
+
+/* --- 1. Perfect Button Alignment --- */
+.btn {
+    border: 2px solid transparent !important;
+    box-sizing: border-box !important;
+    padding: 14px 24px !important;
+    min-height: 52px;
+}
+.btn-green {
+    background-color: var(--green) !important;
+    border-color: var(--green) !important;
+    color: var(--white) !important;
+}
+.btn-outline-white {
+    background-color: transparent !important;
+    border-color: var(--white) !important;
+    color: var(--white) !important;
+}
+
+/* --- 2. Premium Sleek Search Bar --- */
+.premium-search-form {
+    display: flex;
+    align-items: center;
+    background: #F4F6F8;
+    border: 1px solid #D1D6E0;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 42px;
+    width: 220px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-search-form:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(103, 155, 48, 0.15);
+    background: var(--white);
+    width: 260px;
+}
+.premium-search-input {
+    flex: 1;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 0 0 16px !important;
+    font-family: var(--font-body);
+    font-size: 0.85rem !important;
+    color: var(--navy) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 100%;
+}
+.premium-search-input::placeholder {
+    color: #9aabb8;
+    font-weight: 500;
+}
+.premium-search-btn {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 14px !important;
+    color: var(--navy) !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    height: 100%;
+}
+.premium-search-btn:hover {
+    color: var(--green) !important;
+}
+
+/* --- 3. Footer Layout & Typography Fixes --- */
+.footer-brand-col .footer-logo-wrap {
+    display: inline-block;
+    margin-bottom: 24px;
+}
+.footer-brand-col .footer-logo-img {
+    max-height: 85px;
+    width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/* Override broken horizontal layout from global .footer-col p { display: flex } */
+.footer-col .footer-contact-list li {
+    display: block !important;
+    font-size: 0.9rem;
+    color: #B0B8C4;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5;
+    font-family: var(--font-body);
+}
+.footer-col .footer-contact-list li.fc-bold {
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px !important;
+    font-family: var(--font-heading);
+}
+.footer-contact-list a {
+    color: #B0B8C4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.footer-contact-list a:hover {
+    color: var(--green-bright);
+}
+
+/* Hide search bar on mobile — hamburger menu takes priority */
+@media (max-width: 980px) {
+    .header-search-wrap { display: none; }
 }

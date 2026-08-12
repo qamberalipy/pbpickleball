@@ -5,78 +5,22 @@
     <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
         <source src="<?php echo get_template_directory_uri(); ?>/media/front-page-hero-video.mp4" type="video/mp4">
     </video>
-    
+
     <div class="hero-container">
         <div class="hero-content">
             <h2 class="hero-subtitle">WELCOME TO</h2>
-            <h1>PB PICKLEBALL<br><span class="highlight">ACADEMY</span></h1>
-            <h3 class="hero-tagline type-effect"></h3>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                BOOK YOUR FIRST LESSON
-            </a>
+            <h1>PB <span class="highlight">ACADEMY</span></h1>
+            <h3 class="hero-tagline">Learn Pickleball. Play With Confidence. Have Fun.</h3>
+            <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy provides beginner-friendly pickleball instruction with a special focus on making the game comfortable, social, and enjoyable for adults and seniors.</p>
+            <div class="hero-buttons" style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Hero Typing Animation Engine -->
-<script>
-(function () {
-    'use strict';
 
-    /* ── Config ── */
-    var PHRASE      = 'Beginners Welcome. Friends for Life.';
-    var SPEED_MS    = 80;   /* ~80 ms per character — legible for 60+ users */
-    var START_DELAY = 600;  /* wait for hero fade-in before typing begins   */
-
-    /* ── DOM ── */
-    var tagline = document.querySelector('.hero-tagline.type-effect');
-    if (!tagline) return;
-
-    /* Inject the blinking cursor element */
-    var cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    cursor.setAttribute('aria-hidden', 'true');
-    cursor.textContent = '|';
-
-    /* Text node that grows as we type */
-    var textNode = document.createTextNode('');
-    tagline.appendChild(textNode);
-    tagline.appendChild(cursor);
-
-    /* ── State ── */
-    var index = 0;
-
-    /* ── Typing loop ── */
-    function typeNext() {
-        if (index < PHRASE.length) {
-            textNode.nodeValue += PHRASE.charAt(index);
-            index++;
-            setTimeout(typeNext, SPEED_MS);
-        }
-        /* When done: leave cursor blinking — no loop, no removal. */
-    }
-
-    /* Respect prefers-reduced-motion: show full text instantly */
-    var prefersReduced = window.matchMedia &&
-                         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    setTimeout(function () {
-        if (prefersReduced) {
-            textNode.nodeValue = PHRASE;
-        } else {
-            typeNext();
-        }
-    }, START_DELAY);
-
-})();
-</script>
 
 
 <!-- Features Section -->
