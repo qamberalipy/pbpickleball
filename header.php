@@ -7,7 +7,7 @@
     <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <?php wp_head(); ?>
     <link rel="icon" type="image/png" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon-96x96.png" sizes="96x96" />
@@ -54,32 +54,45 @@
 
             <!-- Main Navigation -->
             <nav id="mainNav">
+                
+                <!-- MOBILE SEARCH BAR (Hidden on Desktop) -->
+                <div class="mobile-search-wrap">
+                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
+                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </form>
+                </div>
+
                 <ul class="nav-links">
                     <li><a href="<?php echo home_url('/'); ?>" <?php if (is_front_page() || is_home() || is_page('home')) echo 'class="active"'; ?>>HOME</a></li>
-                    <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT PBA</a></li>
-                    <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>LESSONS &amp; PROGRAMS</a></li>
-                    <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>OUR INSTRUCTORS</a></li>
-                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>WHAT'S PB</a></li>
-                    <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
-                    <li><a href="<?php echo home_url('/page-court-directory/'); ?>" <?php if (is_page('court-directory')) echo 'class="active"'; ?>>COURT DIRECTORY</a></li>
+                    <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT</a></li>
+                    <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>INSTRUCTORS</a></li>
+                    <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>PROGRAMS</a></li>
+                    <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>BOOK NOW</a></li>
+                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>MANUAL</a></li>
+                    <li><a href="<?php echo home_url('/retreats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
+                    <li><a href="<?php echo home_url('/events/'); ?>" <?php if (is_page('events')) echo 'class="active"'; ?>>EVENTS</a></li>
                     <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
+                    <li><a href="<?php echo home_url('/reviews/'); ?>" <?php if (is_page('reviews')) echo 'class="active"'; ?>>REVIEWS</a></li>
+                    <li><a href="<?php echo home_url('/resources/'); ?>" <?php if (is_page('resources')) echo 'class="active"'; ?>>RESOURCES</a></li>
                     <li><a href="<?php echo home_url('/contact-us/'); ?>" <?php if (is_page('contact-us')) echo 'class="active"'; ?>>CONTACT</a></li>
-                    <li class="nav-btn-item">
-                        <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                            Book a Lesson
-                        </a>
-                    </li>
                 </ul>
             </nav>
 
             <div class="header-right-actions">
+
+                <!-- Search Bar -->
+                <div class="header-search-wrap">
+                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
+                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </form>
+                </div>
+
                 <div class="header-actions">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"

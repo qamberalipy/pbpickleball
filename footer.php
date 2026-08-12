@@ -3,80 +3,78 @@
         <div class="container">
             <div class="footer-grid">
 
-                <div class="footer-col">
-                    <a href="<?php echo home_url('/'); ?>" style="display: inline-block; margin-bottom: 14px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Pickleball Academy" style="max-height: 110px; width: auto;">
+                <!-- Col 1: Branding & Contact -->
+                <div class="footer-col footer-brand-col">
+                    <a href="<?php echo home_url('/'); ?>" class="footer-logo-wrap">
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo-footor.png" alt="PB Academy" class="footer-logo-img">
                     </a>
-                    <p>Pickleball instruction designed for active adults and seniors.</p>
-                </div>
-
-                <div class="footer-col">
-                    <h4>CONTACT US</h4>
-                    <ul>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            1375 E. Gateway Blvd., #545<br>Boynton Beach, FL 33426
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <a href="tel:5618559500">561-855-9500</a>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <a href="mailto:Info@gopbacademy.com">Info@gopbacademy.com</a>
-                        </li>
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                            PBPickleballAcademy.com
-                        </li>
+                    <ul class="footer-contact-list">
+                        <li class="fc-bold">PB ACADEMY</li>
+                        <li><a href="https://gopbacademy.com">GoPBAcademy.com</a></li>
+                        <li><a href="tel:5618559500">561.855.9500</a></li>
+                        <li><a href="mailto:info@gopbacademy.com">info@gopbacademy.com</a></li>
                     </ul>
                 </div>
 
+                <!-- Col 2: Quick Links -->
                 <div class="footer-col">
                     <h4>QUICK LINKS</h4>
                     <div class="footer-links">
                         <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <a href="<?php echo home_url('/our-instructor/'); ?>">About Instructor Charles</a>
-                            <a href="<?php echo home_url('/lessons-programs/'); ?>">Lessons &amp; Programs</a>
-                            <a href="<?php echo home_url('/beginner-manual/'); ?>">Beginner Training Manual</a>
-                            <a href="<?php echo home_url('/treats/'); ?>">Retreats &amp; Pickleball Vacations</a>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <a href="<?php echo home_url('/page-court-directory/'); ?>">Court Directory</a>
+                            <a href="<?php echo home_url('/about-pba/'); ?>">About</a>
+                            <a href="<?php echo home_url('/program-and-lessons/'); ?>">Programs</a>
+                            <a href="<?php echo home_url('/book-a-lesson/'); ?>">Book Now</a>
+                            <a href="<?php echo home_url('/beginner-manual/'); ?>">Manual</a>
+                            <a href="<?php echo home_url('/retreats/'); ?>">Retreats</a>
+                            <a href="<?php echo home_url('/events/'); ?>">Events</a>
                             <a href="<?php echo home_url('/shop/'); ?>">Shop</a>
-                            <a href="<?php echo home_url('/contact-us/'); ?>">Contact Us</a>
-                            <a href="<?php echo home_url('/book-a-lesson/'); ?>">Book a Lesson</a>
-                            <a href="<?php echo home_url('/faq/'); ?>">FAQ</a>
+                            <a href="<?php echo home_url('/reviews/'); ?>">Reviews</a>
+                            <a href="<?php echo home_url('/resources/'); ?>">Resources</a>
+                            <a href="<?php echo home_url('/contact-us/'); ?>">Contact</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Col 3: Legal / Policy Links -->
                 <div class="footer-col">
-                    <h4>STAY CONNECTED</h4>
+                    <h4>LEGAL / POLICY LINKS</h4>
+                    <div class="footer-links">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms &amp; Conditions</a>
+                            <a href="#">Copyright / Intellectual Property</a>
+                            <a href="#">Cancellation &amp; Refund Policy</a>
+                            <a href="#">Shipping / Returns Policy</a>
+                            <a href="#">Accessibility Statement</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 4: Social Media & Stay Connected -->
+                <div class="footer-col">
+                    <h4>SOCIAL MEDIA</h4>
+                    <div class="social-icons" style="margin-bottom: 16px;">
+                        <a href="https://www.facebook.com/gopbacademy" target="_blank" rel="noopener noreferrer" class="social-icon si-fb" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/gopbacademy" target="_blank" rel="noopener noreferrer" class="social-icon si-ig" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@gopbacademy" target="_blank" rel="noopener noreferrer" class="social-icon si-yt" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg>
+                        </a>
+                    </div>
                     <p>Sign up for tips, drills, and pickleball updates!</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
                         <input type="email" placeholder="Your email address" required aria-label="Email address">
                         <button type="submit">SIGN UP</button>
                     </form>
-                    <a href="<?php echo home_url('/join-our-team/'); ?>" class="btn btn-outline join-team-btn" style="margin-top: 15px; width: 100%; max-width: 320px; display: inline-flex; justify-content: center; align-items: center; box-sizing: border-box;">Join Our Team</a>
                 </div>
 
             </div>
 
             <div class="copyright">
-                &copy; <?php echo date('Y'); ?> PB Pickleball Academy. All Rights Reserved.
+                &copy; <?php echo date('Y'); ?> PB Academy. All Rights Reserved.
             </div>
         </div>
     </footer>
