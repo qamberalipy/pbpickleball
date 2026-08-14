@@ -107,11 +107,11 @@ get_header();
             <h3 style="text-align:center; font-family:var(--font-heading); color:var(--navy); font-size:1.4rem; margin-bottom:20px; text-transform:uppercase;">PLAYER DEVELOPMENT PATH</h3>
             <div class="hero-progression" style="background:var(--navy); padding:24px 20px; border-radius:12px; box-shadow:0 10px 30px rgba(11,32,70,0.15);">
                 <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">BEGINNER</span>
-                <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">CORE 4</span>
-                <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">SKILLS & STRATEGY</span>
-                <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">ORGANIZED PLAY</span>
             </div>
         </div>
@@ -180,7 +180,7 @@ get_header();
                     <h3>Skills Clinics</h3>
                     <p>Targeted sessions focusing on specific mechanics like dinking, serving, or drops.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
@@ -193,7 +193,7 @@ get_header();
                     <h3>Strategy Clinics</h3>
                     <p>Elevate your court IQ with advanced positioning and point-construction drills.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
@@ -206,7 +206,7 @@ get_header();
                     <h3>Instructor-Observed Play</h3>
                     <p>Play live games while receiving real-time tactical feedback from a certified coach.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
@@ -219,7 +219,7 @@ get_header();
                     <h3>Tournament Preparation</h3>
                     <p>High-intensity drilling designed to prepare you and your partner for competition.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
@@ -232,7 +232,7 @@ get_header();
                     <h3>Round Robins & Organized Play</h3>
                     <p>Structured, competitive, and social play matched by skill level.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
@@ -245,7 +245,7 @@ get_header();
                     <h3>Special Events & Social Play</h3>
                     <p>Themed play days, mixers, and relaxed events focused purely on community and fun.</p>
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
                     <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
                 </div>
