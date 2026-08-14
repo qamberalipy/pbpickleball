@@ -6870,3 +6870,392 @@ html, body {
         width: 100% !important; /* Stays full width on click */
     }
 }
+
+/* ============================================================
+   ABOUT PAGE REBUILD - CORE NARRATIVE & LISTS
+   ============================================================ */
+
+/* --- 1. Core Narrative Grid --- */
+.about-narrative-section { padding: 80px 20px; }
+.about-narrative-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.about-narrative-grid:last-child { margin-bottom: 0; }
+.about-narrative-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+.about-narrative-content .mt-40 { margin-top: 40px; }
+.about-narrative-content p {
+    font-size: 1.15rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+.about-img-shadow {
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(11,32,70,0.1);
+}
+
+/* --- 2. Target Audience & Promise Lists --- */
+.about-lists-section {
+    background-color: var(--gray-bg);
+    padding: 80px 20px;
+    border-top: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 80px;
+}
+.about-lists-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.about-list-col h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid var(--green);
+    padding-bottom: 12px;
+    display: inline-block;
+}
+.about-ul-basic { list-style: disc; padding-left: 24px; }
+.about-ul-basic li { font-size: 1.15rem; color: var(--navy); margin-bottom: 14px; font-weight: 500; line-height: 1.5; }
+.about-ul-check { list-style: none; padding: 0; }
+.about-ul-check li { display: flex; align-items: flex-start; gap: 14px; font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.5; }
+.about-ul-check li svg { width: 24px; height: 24px; flex-shrink: 0; color: var(--green); margin-top: 2px; stroke-width: 3; }
+
+/* --- 3. About Page Dual-CTA Banner Override --- */
+.acb-about-override {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 30px !important;
+    padding: 60px 30px !important;
+}
+.acb-about-override .acb-text h2 {
+    font-family: var(--font-heading);
+    color: var(--navy);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+.acb-about-override .hero-buttons {
+    width: 100% !important;
+}
+
+/* --- 4. Responsive Handlers --- */
+@media (max-width: 980px) {
+    .about-narrative-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    .ang-reverse { order: -1; }
+}
+
+@media (max-width: 768px) {
+    .about-lists-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+
+/* ============================================================
+   UI POLISH: PROG BAR, IMAGE SCALING & MASCOT GLOW FIX
+   ============================================================ */
+
+/* --- 1. Kill the Cheap Section Glow --- */
+/* Overrides the Mascot JS active-focus class on giant sections */
+section.active-focus {
+    box-shadow: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+}
+
+/* --- 2. Fix Zoomed Narrative Images --- */
+.ang-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.about-img-shadow {
+    border-radius: 12px;
+    width: 100%;
+    max-height: 450px !important; /* Prevents vertical stretching */
+    object-fit: cover !important;
+    object-position: top;
+    box-shadow: 0 15px 40px rgba(11,32,70,0.1) !important;
+}
+
+/* --- 3. Hero Progression Bar (Desktop & Mobile) --- */
+.hero-progression {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
+    margin-top: 20px;
+}
+.prog-badge {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    /* Stack badges vertically on mobile */
+    .hero-progression {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    /* Rotate the arrows 90 degrees so they point DOWN */
+    .prog-arrow {
+        transform: rotate(90deg) !important;
+        margin: 5px 0 !important;
+    }
+    
+    /* Ensure the badges don't span the full width of the screen */
+    .hero-progression .prog-badge {
+        width: 200px !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ============================================================
+   INSTRUCTORS DIRECTORY CARDS (Phase 3)
+   ============================================================ */
+.inst-dir-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.inst-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(11, 32, 70, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.inst-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(11, 32, 70, 0.12);
+    border-color: rgba(103, 155, 48, 0.4);
+}
+.inst-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background: var(--gray-bg);
+    border-bottom: 1px solid var(--gray-light);
+}
+.inst-card-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.inst-header-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    line-height: 1.1;
+}
+.inst-header-text .inst-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.inst-card-body {
+    padding: 24px;
+    flex-grow: 1;
+}
+.inst-intro {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+.inst-data-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.inst-data-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.4;
+}
+.inst-data-list li svg {
+    width: 18px;
+    height: 18px;
+    color: var(--green);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.inst-data-list li strong {
+    font-weight: 700;
+    color: var(--navy);
+}
+.inst-card-footer {
+    padding: 24px;
+    border-top: 1px solid var(--gray-light);
+    background: var(--white);
+    margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+    .inst-dir-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .inst-dir-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============================================================
+   FEATURED INSTRUCTOR & PROFILE (Phase 2)
+   ============================================================ */
+.fi-2col-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    align-items: start;
+    border: 1px solid rgba(11, 32, 70, 0.05);
+}
+.fi-left-col { display: flex; flex-direction: column; gap: 20px; }
+.fi-right-col { display: flex; flex-direction: column; gap: 35px; }
+
+.fi-photo-large {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(11, 32, 70, 0.1);
+}
+.fi-photo-large img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.fi-name-block h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+.fi-name-block h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fi-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border-bottom: 3px solid var(--green);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.fi-text-content {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.fi-icon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.fi-icon-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+}
+.fi-icon-list svg {
+    width: 24px;
+    height: 24px;
+    color: var(--green);
+    flex-shrink: 0;
+    stroke-width: 3;
+}
+
+.fi-philosophy-box {
+    background: #F4F9F0;
+    border-left: 4px solid var(--green);
+    padding: 25px 30px;
+    border-radius: 0 12px 12px 0;
+}
+.fi-philosophy-box p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+    .fi-2col-layout {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
+        gap: 40px;
+    }
+    .fi-icon-list { grid-template-columns: 1fr; }
+}
