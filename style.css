@@ -7259,3 +7259,142 @@ section.active-focus {
     }
     .fi-icon-list { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   PROGRAMS PAGE (PHASES 1 & 2)
+   ============================================================ */
+
+/* 4-Column Grid logic for Lesson Category */
+.lp-lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+/* Progression Bar Divider styling */
+.lp-progression-bar {
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 2px solid var(--gray-light);
+}
+
+/* Responsive handlers for the Lessons Grid */
+@media (max-width: 1100px) {
+    .lp-lessons-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .lp-lessons-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   PROGRAMS PAGE (PHASES 3 & 4)
+   ============================================================ */
+
+/* --- Prominent Core 4 Section --- */
+.lp-core4-section {
+    background-color: var(--navy);
+    padding: 80px 20px;
+    color: var(--white);
+    margin: 60px 0;
+}
+.lp-core4-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.lp-core4-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.lp-core4-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.lp-core4-header h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green-bright);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.lp-core4-header p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Core 4 2x2 Grid */
+.lp-core4-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.core4-lesson {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.core4-num {
+    background: var(--green);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.core4-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.core4-text p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Clinics Grid --- */
+.lp-clinics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* --- Final CTA Section --- */
+.lp-final-cta-section {
+    background: #F4F9F0;
+    border-top: 4px solid var(--green);
+    padding: 80px 20px;
+    margin-top: 60px;
+}
+
+/* --- Responsive Handlers --- */
+@media (max-width: 980px) {
+    .lp-clinics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .lp-core4-grid { grid-template-columns: 1fr; }
+    .lp-clinics-grid { grid-template-columns: 1fr; }
+}
