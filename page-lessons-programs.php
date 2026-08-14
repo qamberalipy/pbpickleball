@@ -13,197 +13,259 @@ add_action( 'wp_enqueue_scripts', function () {
 get_header();
 ?>
 
-<main class="lp-page">
+<main class="lp-page programs-page">
 
-	<!-- 1. TITLE BANNER -->
-	<section class="hero lp-hero-full" data-mascot-msg="Learn at your own pace and improve for life with our expert instructors!">
-		<video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
-			<source src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/pageandprogramhero.mp4" type="video/mp4">
-		</video>
-		<div class="hero-container">
-			<div class="hero-content anim-fade-up">
-				<h1>LESSONS &amp; <span class="highlight">PROGRAMS</span></h1>
-				<h3 class="hero-tagline type-effect"></h3>
-				<a href="<?php echo esc_url( home_url( '/book-a-lesson/' ) ); ?>" class="btn btn-green">
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-					Book Your First Lesson
-				</a>
-			</div>
-		</div>
-	</section>
+    <!-- ============================================================
+         PHASE 1: HERO & INTRO
+         ============================================================ -->
+    <section class="hero lp-hero-full" data-mascot-msg="Explore our programs and find the perfect fit for your game!">
+        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/pageandprogramhero.mp4" type="video/mp4"></video>
+        <!-- Slow down video playback to 50% for a calm, senior-friendly ambiance -->
+        <script>document.addEventListener("DOMContentLoaded", function() { var v = document.querySelector('.lp-hero-full .hero-video-bg'); if(v) v.playbackRate = 0.5; });</script>
+        
+        <div class="hero-container">
+            <div class="hero-content anim-fade-up">
+                <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PROGRAMS</span></h1>
+                <h3 class="hero-tagline" style="margin-top: 15px; font-weight: 700; letter-spacing: 1px;">Learn. Practice. Play. Improve.</h3>
+                <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">Whether someone has never picked up a paddle or wants to improve their existing game, PB Academy offers structured programs designed to help players learn at their own pace while building skills, confidence and enjoyment of pickleball.</p>
+            </div>
+        </div>
+    </section>
 
-	<!-- 2 & 3. PROGRAMS + SIDEBAR -->
-	<section class="lp-programs container" data-mascot-msg="We offer programs for everyone, from absolute beginners to advanced players.">
-		<h2 class="lp-section-title anim-fade-up">OUR PROGRAMS</h2>
+    <!-- ============================================================
+         PHASE 2: LESSONS CATEGORY & PROGRESSION BAR
+         ============================================================ -->
+    <section class="container" style="padding: 80px 20px;">
+        <h2 class="lp-section-title">PROGRAM CATEGORY 1 — LESSONS</h2>
+        
+        <!-- 4-Column Grid for Lessons (Avoids orphaned cards) -->
+        <div class="lp-lessons-grid anim-fade-up">
+            
+            <!-- Card 1: Private -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-private.jpg" alt="Private Lessons" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <span class="lp-card-tag">1-ON-1</span>
+                    <h3>Private Lessons</h3>
+                    <p>Personalized instruction tailored completely to your pace and goals.</p>
+                    <div class="lp-meta">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 1 Player</span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                </div>
+            </div>
 
-		<div class="lp-programs-layout">
-			<div class="lp-cards-grid">
+            <!-- Card 2: Semi-Private -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-semiprivate.jpg" alt="Semi-Private Lessons" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <span class="lp-card-tag">2 PLAYERS</span>
+                    <h3>Semi-Private Lessons</h3>
+                    <p>Learn alongside a friend or partner with focused, shared instruction.</p>
+                    <div class="lp-meta">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 2 Players</span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                </div>
+            </div>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/beginner-01.png" alt="Beginner pickleball players high-fiving on court" loading="lazy">
-					<div class="lp-card-body">
-						<h3>BEGINNER 101</h3>
-						<p class="lp-card-tag">Start Here!</p>
-						<p>Perfect for first-time players. Learn the basics, rules, strokes, and how to play with confidence.</p>
-						<div class="lp-meta">
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>1 – 4 Players</span>
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 Hour</span>
-						</div>
-						<a href="<?php echo esc_url( home_url( '/book-a-lesson/?type=beginner' ) ); ?>" class="btn btn-green lp-card-btn">Book Now</a>
-					</div>
-				</article>
+            <!-- Card 3: Small Group -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-smallgroup.jpg" alt="Small Group Lessons" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <span class="lp-card-tag">3-4 PLAYERS</span>
+                    <h3>Small Group Lessons</h3>
+                    <p>Perfect for a group of friends wanting to learn and practice together.</p>
+                    <div class="lp-meta">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 3-4 Players</span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                </div>
+            </div>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/group-lesson.png" alt="Group of players practicing together" loading="lazy">
-					<div class="lp-card-body">
-						<h3>GROUP LESSONS</h3>
-						<p class="lp-card-tag">Learn &amp; Have Fun Together!</p>
-						<p>Small group classes that focus on skills, drills, and game play in a fun, supportive environment.</p>
-						<div class="lp-meta">
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>3 – 8 Players</span>
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 Hour</span>
-						</div>
-						<a href="<?php echo esc_url( home_url( '/book-a-lesson/?type=group' ) ); ?>" class="btn btn-green lp-card-btn">Book Now</a>
-					</div>
-				</article>
+            <!-- Card 4: Group -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-group.jpg" alt="Group Lessons" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <span class="lp-card-tag">5+ PLAYERS</span>
+                    <h3>Group Lessons</h3>
+                    <p>A fun, social environment to learn the game and meet new players.</p>
+                    <div class="lp-meta">
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60-90 Mins</span>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 5+ Players</span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                </div>
+            </div>
+        </div>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/private-lessons.png" alt="Instructor giving a private one on one lesson" loading="lazy">
-					<div class="lp-card-body">
-						<h3>PRIVATE LESSONS</h3>
-						<p class="lp-card-tag">Personalized Just for You!</p>
-						<p>One-on-one instruction tailored to your goals. Advance faster with undivided attention.</p>
-						<div class="lp-meta">
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>1 on 1</span>
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 Hour</span>
-						</div>
-						<a href="<?php echo esc_url( home_url( '/book-a-lesson/?type=private' ) ); ?>" class="btn btn-green lp-card-btn">Book Now</a>
-					</div>
-				</article>
+        <!-- Player Development Progression Visual -->
+        <div class="lp-progression-bar anim-fade-up">
+            <h3 style="text-align:center; font-family:var(--font-heading); color:var(--navy); font-size:1.4rem; margin-bottom:20px; text-transform:uppercase;">PLAYER DEVELOPMENT PATH</h3>
+            <div class="hero-progression" style="background:var(--navy); padding:24px 20px; border-radius:12px; box-shadow:0 10px 30px rgba(11,32,70,0.15);">
+                <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">BEGINNER</span>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">CORE 4</span>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">SKILLS & STRATEGY</span>
+                <svg class="prog-arrow" width="24" height="24" style="flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="btn btn-outline-white prog-badge" style="background:rgba(255,255,255,0.05);">ORGANIZED PLAY</span>
+            </div>
+        </div>
+    </section>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:450ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/play-improve.png" alt="Players enjoying supervised open play" loading="lazy">
-					<div class="lp-card-body">
-						<h3>PLAY &amp; IMPROVE</h3>
-						<p class="lp-card-tag">Practice. Play. Improve.</p>
-						<p>Supervised open play with tips and coaching. Great way to meet new friends and get better!</p>
-						<div class="lp-meta">
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>4 – 8 Players</span>
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1.5 Hours</span>
-						</div>
-						<a href="<?php echo esc_url( home_url( '/book-a-lesson/?type=play-improve' ) ); ?>" class="btn btn-green lp-card-btn">Book Now</a>
-					</div>
-				</article>
+    <!-- ============================================================
+         PHASE 3: PBA CORE 4 (PROMINENT FEATURE)
+         ============================================================ -->
+    <section class="lp-core4-section">
+        <div class="container lp-core4-container anim-fade-up">
+            <div class="lp-core4-header">
+                <h2>PBA CORE 4</h2>
+                <h4>The Complete 4-Lesson Beginner Package</h4>
+                <p>Core 4 is PB Academy's structured beginner program designed to take someone from learning the fundamentals to actually playing the game with greater confidence.</p>
+            </div>
+            
+            <div class="lp-core4-grid">
+                <div class="core4-lesson">
+                    <span class="core4-num">1</span>
+                    <div class="core4-text">
+                        <h3>LESSON 1 — GET STARTED</h3>
+                        <p>Introduction, safety, equipment, court basics and fundamental skills.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">2</span>
+                    <div class="core4-text">
+                        <h3>LESSON 2 — PLAY THE GAME</h3>
+                        <p>Serving, returning, scoring, side-out, ball in/out and basic rules.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">3</span>
+                    <div class="core4-text">
+                        <h3>LESSON 3 — PLAY BETTER</h3>
+                        <p>Developing shots, movement, positioning and better control.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">4</span>
+                    <div class="core4-text">
+                        <h3>LESSON 4 — PLAY TO WIN</h3>
+                        <p>Strategy, partner communication, point construction and supervised play.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="#" class="btn btn-outline-white">LEARN MORE</a>
+                <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-green">BOOK CORE 4</a>
+            </div>
+        </div>
+    </section>
 
-				<article class="lp-card anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/country-court.png" alt="Country club clubhouse with pickleball courts" loading="lazy">
-					<div class="lp-card-body">
-						<h3>COUNTRY CLUB &amp; HOA</h3>
-						<p class="lp-card-tag">We Bring Pickleball to You!</p>
-						<p>Programs designed for country clubs, HOAs, and communities. Clinics, leagues, and management available.</p>
-						<div class="lp-meta">
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Custom Groups</span>
-							<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Custom</span>
-						</div>
-						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-navy lp-card-btn">Learn More</a>
-					</div>
-				</article>
-			</div>
+    <!-- ============================================================
+         PHASE 4: CLINICS, PLAY & FINAL CTA
+         ============================================================ -->
+    <section class="container" style="padding: 80px 20px;">
+        <h2 class="lp-section-title">PROGRAM CATEGORY 3 — CLINICS & PLAY</h2>
+        
+        <div class="lp-clinics-grid anim-fade-up">
+            <!-- Clinic 1 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-skills.jpg" alt="Skills Clinics" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Skills Clinics</h3>
+                    <p>Targeted sessions focusing on specific mechanics like dinking, serving, or drops.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
 
-			<!-- 4. SIDEBAR -->
-			<aside class="lp-sidebar">
-				<div class="lp-sidebar-card anim-fade-up">
-					<h3>CHOOSE WHAT'S BEST FOR YOU</h3>
+            <!-- Clinic 2 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-strategy.jpg" alt="Strategy Clinics" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Strategy Clinics</h3>
+                    <p>Elevate your court IQ with advanced positioning and point-construction drills.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
 
-					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
-						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-						<div><strong>Beginner Focused</strong><p>Programs designed specifically for new players.</p></div>
-					</div>
-					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
-						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
-						<div><strong>Step-by-Step Progression</strong><p>Build your skills with a proven learning path.</p></div>
-					</div>
-					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
-						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
-						<div><strong>Fun &amp; Social</strong><p>Make new friends while staying active.</p></div>
-					</div>
-					<div class="lp-feature anim-fade-up anim-stagger" style="--stagger-delay:450ms;">
-						<span class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-						<div><strong>Safe &amp; Supportive</strong><p>Safety first with patient, encouraging instructors.</p></div>
-					</div>
-				</div>
+            <!-- Clinic 3 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-practice.jpg" alt="Instructor-Observed Practice" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Instructor-Observed Play</h3>
+                    <p>Play live games while receiving real-time tactical feedback from a certified coach.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
 
-				<!-- 6. CALL CTA -->
-				<div class="lp-sidebar-call anim-fade-up">
-					<span class="lp-call-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/></svg></span>
-					<p class="lp-call-label">Prefer to Call?</p>
-					<a href="tel:5618559500" class="lp-call-number">561-855-9500</a>
-					<p class="lp-call-note">We're happy to help!</p>
-				</div>
-			</aside>
-		</div>
-	</section>
+            <!-- Clinic 4 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-tournament.jpg" alt="Tournament Preparation" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Tournament Preparation</h3>
+                    <p>High-intensity drilling designed to prepare you and your partner for competition.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
 
-	<!-- 7. FLEXIBLE SCHEDULING STRIP -->
-	<section class="lp-strip container anim-fade-up" data-mascot-msg="Don't worry about gear—we provide paddles and balls for all lessons!">
-		<div class="lp-strip-item anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
-			<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-			<div><strong>Flexible Scheduling</strong><span>Lessons available 7 days a week. Morning, afternoon &amp; evening options.</span></div>
-		</div>
-		<div class="lp-strip-item anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
-			<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
-			<div><strong>All Equipment Provided</strong><span>Paddles and balls are provided for all lessons.</span></div>
-		</div>
-		<a href="<?php echo esc_url( home_url( '/book-a-lesson/' ) ); ?>" class="lp-strip-cta anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
-			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-			<div><strong>Book Your Lesson Now</strong><span>Spots fill up fast – reserve today!</span></div>
-			<svg class="lp-strip-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-		</a>
-	</section>
+            <!-- Clinic 5 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-roundrobin.jpg" alt="Round Robins" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Round Robins & Organized Play</h3>
+                    <p>Structured, competitive, and social play matched by skill level.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
 
-	<!-- 8. TESTIMONIALS -->
-	<section class="lp-testimonials container anim-fade-up" data-mascot-msg="Listen to what our amazing students have achieved on the court.">
-	
-		<h2 class="lp-section-title">WHAT OUR STUDENTS SAY</h2>
+            <!-- Clinic 6 -->
+            <div class="lp-card">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-social.jpg" alt="Special Events" onerror="this.style.display='none'">
+                <div class="lp-card-body">
+                    <h3>Special Events & Social Play</h3>
+                    <p>Themed play days, mixers, and relaxed events focused purely on community and fun.</p>
+                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
+                    </div>
+                    <a href="<?php echo home_url('/book-now/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<div class="lp-testimonial-grid">
-			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
-				<img src="https://i.pravatar.cc/150?img=32" alt="Photo of Linda M." class="lp-avatar" loading="lazy">
-				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
-				<p>&ldquo;Charles made learning pickleball easy and enjoyable. I was playing confidently after just a few lessons!&rdquo;</p>
-				<strong>Linda M.</strong>
-				<span>Boynton Beach, FL</span>
-				<div class="lp-stars" aria-label="5 out of 5 stars">★★★★★</div>
-			</div>
-
-			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
-				<img src="https://i.pravatar.cc/150?img=54" alt="Photo of Robert T." class="lp-avatar" loading="lazy">
-				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
-				<p>&ldquo;Patient, knowledgeable, and always encouraging. I highly recommend PB Pickleball Academy.&rdquo;</p>
-				<strong>Robert T.</strong>
-				<span>Delray Beach, FL</span>
-				<div class="lp-stars" aria-label="5 out of 5 stars">★★★★★</div>
-			</div>
-
-			<div class="lp-testimonial anim-fade-up anim-stagger" style="--stagger-delay:300ms;">
-				<img src="https://i.pravatar.cc/150?img=47" alt="Photo of Susan K." class="lp-avatar" loading="lazy">
-				<svg class="lp-quote-mark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7H4a1 1 0 00-1 1v6a1 1 0 001 1h4v3H4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2zm11 0h-5a1 1 0 00-1 1v6a1 1 0 001 1h4v3h-4v2h5a2 2 0 002-2v-9a2 2 0 00-2-2z"/></svg>
-				<p>&ldquo;I never thought I could learn a new sport in my 60s. Now I play every week!&rdquo;</p>
-				<strong>Susan K.</strong>
-				<span>Lantana, FL</span>
-				<div class="lp-stars" aria-label="5 out of 5 stars">★★★★★</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- 9. BOTTOM BANNER -->
-	<section class="lp-bottom-banner anim-fade-up" data-mascot-msg="Every lesson. Every student. Every time. We're here for you.">
-		<div class="lp-bottom-bg" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop');"></div>
-		<div class="lp-bottom-overlay">
-			<h2>Every Lesson.<br>Every Student.<br>Every Time.</h2>
-			<p>We're Here for You.</p>
-		</div>
-	</section>
+    <!-- ============================================================
+         FINAL CTA: NOT SURE WHERE TO START?
+         ============================================================ -->
+    <section class="lp-final-cta-section anim-fade-up">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 15px;">Not Sure Where to Start?</h2>
+            <p style="font-size: 1.15rem; color: var(--gray-text); max-width: 600px; margin: 0 auto 30px; line-height: 1.6;">Answer a few simple questions or contact PB Academy and we'll help you choose the appropriate program.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-navy">HELP ME CHOOSE</a>
+                <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-green">CONTACT US</a>
+            </div>
+        </div>
+    </section>
 
 </main>
 
