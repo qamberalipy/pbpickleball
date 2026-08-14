@@ -16,14 +16,14 @@ get_header();
                 <h2 class="hero-subtitle">MORE THAN A GAME</h2>
                 <h1>ABOUT <br><span class="highlight">PBA</span></h1>
                 <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-top: 15px; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy is a pickleball instruction and player-development academy designed to make learning pickleball simple, structured, welcoming and fun.</p>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
-                    <span class="btn btn-outline-white" style="cursor: default;">LEARN</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white" style="cursor: default;">PRACTICE</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white" style="cursor: default;">PLAY</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white" style="cursor: default;">CONNECT</span>
+                <div class="hero-progression">
+                    <span class="btn btn-outline-white prog-badge">LEARN</span>
+                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span class="btn btn-outline-white prog-badge">PRACTICE</span>
+                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span class="btn btn-outline-white prog-badge">PLAY</span>
+                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span class="btn btn-outline-white prog-badge">CONNECT</span>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@ get_header();
                 <p>The Academy brings together instruction, structured programs, clinics, organized play, events, educational resources, our Beginner Manual, retreats and a growing pickleball community.</p>
             </div>
             <div class="ang-image ang-reverse">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles.jpg" alt="Charles Azoulay" class="about-img-shadow">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles2.jpg" alt="Charles Azoulay" class="about-img-shadow">
             </div>
         </div>
     </section>
