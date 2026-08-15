@@ -13,9 +13,7 @@ get_header();
          PHASE 1: HERO SECTION
          ============================================================ -->
     <section class="hero instructors-hero-full" data-mascot-msg="Meet the passionate professionals who make learning pickleball a breeze!">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/instructors-hero-bg.mp4" type="video/mp4"></video>
-        <!-- Slow down video playback to 50% for a calm, senior-friendly ambiance -->
-        <script>document.addEventListener("DOMContentLoaded", function() { var v = document.querySelector('.instructors-hero-full .hero-video-bg'); if(v) v.playbackRate = 0.5; });</script>
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/instructors-hero-bg.png" alt="PB Academy Instructors" aria-hidden="true">
         
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
