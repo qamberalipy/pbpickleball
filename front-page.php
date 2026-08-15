@@ -2,9 +2,7 @@
 
 <!-- Hero Section -->
 <section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and book your first lesson today.">
-    <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
-        <source src="<?php echo get_template_directory_uri(); ?>/media/front-page-hero-video.mp4" type="video/mp4">
-    </video>
+    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/hero-bg.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
         <div class="hero-content">

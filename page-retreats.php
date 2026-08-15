@@ -6,162 +6,120 @@ get_header(); ?>
 
 <main class="retreats-page">
 
-    <!-- 1. REDESIGNED HERO SECTION -->
-    <section class="hero retreat-hero-full" data-mascot-msg="Combine your passion for pickleball with unforgettable luxury vacations!">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.mp4" type="video/mp4"></video>
+    <!-- ============================================================
+         PHASE 1: REDESIGNED HERO SECTION (Static Image)
+         ============================================================ -->
+    <section class="hero retreat-hero-full" data-mascot-msg="Combine your passion for pickleball with unforgettable vacations!">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/retreat-hero-bg.webp" alt="Pickleball Retreats" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
-            
-            <div class="hero-content anim-fade-right">
-                <h2 class="hero-subtitle">PLAY. EXPLORE. CONNECT.</h2>
-                <h1>RETREATS &amp;<br><span class="highlight">CRUISES</span></h1>
-                <h3 class="hero-tagline type-effect"></h3>
-                
-                <div class="ct-hero-tags">
-                    <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                        Daily Pickleball
-                    </span>
-                    <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        New Friends
-                    </span>
-                    <span class="ct-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Epic Destinations
-                    </span>
-                </div>
+            <div class="hero-content anim-fade-up">
+                <h2 class="hero-subtitle">Play. Learn. Travel. Connect.</h2>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PICKLEBALL RETREATS</span></h1>
+                <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">PB Academy Retreats bring together pickleball instruction, organized play, travel, relaxation and social activities in carefully selected destinations. The experience should especially appeal to adults and seniors who enjoy pickleball but also want to meet people, travel and have fun.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- 2. Upcoming Retreats & Cruises (Grid Section) -->
-    <section class="r-section r-upcoming bg-gray" data-mascot-msg="Check out our upcoming retreats and secure your spot before they sell out.">
+    <!-- ============================================================
+         PHASE 2: UPCOMING RETREATS (Data-Heavy Cards)
+         ============================================================ -->
+    <section class="r-section r-upcoming bg-gray" id="upcoming" data-mascot-msg="Check out our upcoming retreats and secure your spot before they sell out.">
         <div class="container">
-            <h2 class="r-section-title anim-fade-up">UPCOMING RETREATS & CRUISES</h2>
+            <h2 class="r-section-title anim-fade-up">UPCOMING RETREATS</h2>
             
             <div class="r-grid r-grid--upcoming anim-fade-up">
                 <!-- Card 1 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')">
+                        <span class="r-card__badge">Booking Now</span>
+                    </div>
                     <div class="r-card__content">
-                        <h3 class="r-card__title">Punta Cana Paradise Retreat</h3>
-                        <p class="r-card__location">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gray-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            Dominican Republic
+                        <h3 class="r-card__title" style="margin-bottom: 5px;">Punta Cana Paradise Retreat</h3>
+                        <p class="r-card__location" style="margin-bottom: 20px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <strong>Destination:</strong> Dominican Republic
                         </p>
-                        <ul class="r-card__features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Daily Pickleball Clinics</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> All-Inclusive Resort</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Beachfront Play</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Social Mixers</li>
+                        
+                        <ul class="r-card-data-grid">
+                            <li><strong>Resort/Hotel:</strong> Grand Bavaro Luxury</li>
+                            <li><strong>Dates:</strong> Oct 12 - 18, 2026</li>
+                            <li><strong>Duration:</strong> 6 Days / 5 Nights</li>
+                            <li><strong>Courts:</strong> 8 Dedicated Courts</li>
+                            <li><strong>Skill Level:</strong> All Levels (2.5 - 4.0+)</li>
+                            <li><strong>Max Participants:</strong> 24 Players</li>
+                            <li><strong>Instructors:</strong> Charles Azoulay & Team</li>
+                            <li><strong>Package Price:</strong> From $2,499 pp</li>
+                            <li><strong>Availability:</strong> <span style="color: var(--green); font-weight: bold;">Available</span></li>
                         </ul>
-                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+
+                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
+                            <a href="#" class="btn btn-green" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">RESERVE / JOIN RETREAT</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Card 2 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')">
+                        <span class="r-card__badge" style="background: var(--accent-orange); color: var(--navy);">Only 4 Spots Left</span>
+                    </div>
                     <div class="r-card__content">
-                        <h3 class="r-card__title">Caribbean Explorer Cruise</h3>
-                        <p class="r-card__location">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gray-text)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            Miami to Bahamas
+                        <h3 class="r-card__title" style="margin-bottom: 5px;">Aruba Sun & Sand Retreat</h3>
+                        <p class="r-card__location" style="margin-bottom: 20px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <strong>Destination:</strong> Palm Beach, Aruba
                         </p>
-                        <ul class="r-card__features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> On-board Courts</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Island Excursions</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> VIP Dining</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Pro Exhibitions</li>
+                        
+                        <ul class="r-card-data-grid">
+                            <li><strong>Resort/Hotel:</strong> Aruba Marriott Resort</li>
+                            <li><strong>Dates:</strong> Jan 10 - 15, 2027</li>
+                            <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
+                            <li><strong>Courts:</strong> 6 Dedicated Courts</li>
+                            <li><strong>Skill Level:</strong> Intermediate (3.0 - 4.0)</li>
+                            <li><strong>Max Participants:</strong> 16 Players</li>
+                            <li><strong>Instructors:</strong> Sarah Jenkins</li>
+                            <li><strong>Package Price:</strong> From $2,199 pp</li>
+                            <li><strong>Availability:</strong> <span style="color: var(--accent-orange); font-weight: bold;">Limited</span></li>
                         </ul>
-                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+
+                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
+                            <a href="#" class="btn btn-green" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">RESERVE / JOIN RETREAT</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Card 3 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')">
+                        <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Waitlist Available</span>
+                    </div>
                     <div class="r-card__content">
-                        <h3 class="r-card__title">Aruba Sun & Sand Retreat</h3>
-                        <p class="r-card__location">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gray-text)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            Palm Beach, Aruba
+                        <h3 class="r-card__title" style="margin-bottom: 5px;">Caribbean Explorer Cruise</h3>
+                        <p class="r-card__location" style="margin-bottom: 20px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <strong>Destination:</strong> Miami to Bahamas
                         </p>
-                        <ul class="r-card__features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced Coaching</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Luxury Villas</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Sunset Sails</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Spa Access</li>
+                        
+                        <ul class="r-card-data-grid">
+                            <li><strong>Resort/Hotel:</strong> Celebrity Apex Ship</li>
+                            <li><strong>Dates:</strong> March 5 - 12, 2027</li>
+                            <li><strong>Duration:</strong> 8 Days / 7 Nights</li>
+                            <li><strong>Courts:</strong> 4 On-Board Courts</li>
+                            <li><strong>Skill Level:</strong> All Levels Welcome</li>
+                            <li><strong>Max Participants:</strong> 32 Players</li>
+                            <li><strong>Instructors:</strong> Charles & Team</li>
+                            <li><strong>Package Price:</strong> From $1,899 pp</li>
+                            <li><strong>Availability:</strong> <span style="color: var(--navy); font-weight: bold;">Waitlist Only</span></li>
                         </ul>
-                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+
+                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
+                            <a href="#" class="btn btn-navy" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">JOIN WAITLIST</a>
+                        </div>
                     </div>
                 </article>
-
-                <!-- Card 4 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 450ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')"></div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title">Grecian Odyssey Retreat</h3>
-                        <p class="r-card__location">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gray-text)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            Santorini, Greece
-                        </p>
-                        <ul class="r-card__features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Mediterranean Views</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Cultural Tours</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Daily Match Play</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wine Tasting</li>
-                        </ul>
-                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-green">LEARN MORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                    </div>
-                </article>
-
-                <!-- Card 5 (CTA) -->
-                <article class="r-card r-card--cta anim-fade-up anim-stagger" style="--stagger-delay: 600ms;">
-                    <div class="r-card__cta-content">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="r-cta-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle><path d="M12 22V10"></path></svg>
-                        <h3>INTERESTED IN A FUTURE TRIP?</h3>
-                        <p>Join our waitlist to get early access to new destinations, special pricing, and exclusive updates before they sell out.</p>
-                        <a href="<?php echo site_url('/contact-us/'); ?>" class="btn btn-navy">JOIN THE LIST</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Bottom Trust Bar -->
-            <div class="r-trust-bar anim-fade-up">
-                <div class="r-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <div class="r-trust-text">
-                        <h4>Safe & Well Organized</h4>
-                        <p>We handle all the details so you can relax.</p>
-                    </div>
-                </div>
-                <div class="r-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                    <div class="r-trust-text">
-                        <h4>Expert Coaching</h4>
-                        <p>Learn from certified, top-rated pros.</p>
-                    </div>
-                </div>
-                <div class="r-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <div class="r-trust-text">
-                        <h4>Community & Friendship</h4>
-                        <p>Connect with players who share your passion.</p>
-                    </div>
-                </div>
-                <div class="r-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <div class="r-trust-text">
-                        <h4>Fun & Relaxation</h4>
-                        <p>The perfect balance of active play and downtime.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="r-contact-banner anim-fade-up">
-                <p>HAVE A DESTINATION IN MIND? <a href="/contact" class="btn btn-outline-white">CONTACT US</a></p>
             </div>
         </div>
     </section>
@@ -299,6 +257,13 @@ get_header(); ?>
                 </div>
             </div>
             
+            <!-- TRAVEL COMPANION CALLOUT (Phase 3) -->
+            <div class="r-companion-banner anim-fade-up" style="background: var(--white); border: 2px dashed var(--green); border-radius: var(--radius); padding: 40px; text-align: center; margin-bottom: 80px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="width: 48px; height: 48px; margin-bottom: 15px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Bring Your Favorite Travel Companion</h3>
+                <p style="font-size: 1.1rem; color: var(--gray-text); line-height: 1.6; margin: 0; max-width: 850px; margin-left: auto; margin-right: auto;">A spouse, partner, or travel companion does <strong>not necessarily have to play pickleball</strong> to enjoy the retreat. With luxury resort amenities, beautiful beaches, cultural excursions, and relaxing pools, there is plenty for everyone to enjoy while you are on the courts!</p>
+            </div>
+
             <!-- Reusable Component: Daily Schedule -->
             <div class="r-schedule-component anim-fade-up" data-mascot-msg="A perfect balance of intensive training, open play, and relaxing downtime.">
                 <h3 class="r-subsection-title">Sample Daily Schedule</h3>
@@ -409,21 +374,98 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- 6. Global CTA Footer -->
-    <section class="r-global-cta anim-fade-up" data-mascot-msg="Play hard. Relax more. Book your dream pickleball getaway today!">
-        <div class="r-global-cta__bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');"></div>
-        <div class="r-global-cta__overlay"></div>
-        <div class="container r-global-cta__content">
-            <h2>READY TO BOOK?</h2>
-            <p class="r-global-cta__sub">Spots fill up fast!</p>
-            <p class="r-global-cta__tagline">Play Hard. Relax More. Make Memories That Last.</p>
-            <div class="r-global-cta__actions">
-                <a href="#upcoming" class="btn btn-green">VIEW UPCOMING TRIPS</a>
-                <a href="/contact" class="btn btn-outline-white">CONTACT SUPPORT</a>
+    <!-- ============================================================
+         PHASE 3: COMING SOON / INTEREST LIST FORM
+         ============================================================ -->
+    <section class="r-interest-section" id="interest-list" style="padding: 80px 20px; background-color: var(--gray-bg); border-top: 1px solid var(--gray-light);">
+        <div class="container">
+            <div class="r-interest-card anim-fade-up" style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 50px; box-shadow: 0 15px 40px rgba(11, 32, 70, 0.08);">
+                <div class="r-ic-header" style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 10px;">PB ACADEMY RETREATS — COMING SOON</h2>
+                    <p style="font-size: 1.1rem; color: var(--gray-text); max-width: 700px; margin: 0 auto;">Join the retreat interest list to get early access to new destinations, special pricing, and exclusive updates before they sell out to the public.</p>
+                </div>
+
+                <!-- Reusing the robust .ct-form framework from style.css -->
+                <form class="r-interest-form ct-form" action="#" method="post" novalidate>
+                    <div class="ct-form-row">
+                        <div class="ct-form-group">
+                            <label for="ri-name">Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="ri-name" name="ri_name" required>
+                        </div>
+                        <div class="ct-form-group">
+                            <label for="ri-email">Email Address <span aria-hidden="true">*</span></label>
+                            <input type="email" id="ri-email" name="ri_email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="ct-form-row">
+                        <div class="ct-form-group">
+                            <label for="ri-phone">Phone Number <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="ri-phone" name="ri_phone" required>
+                        </div>
+                        <div class="ct-form-group">
+                            <label for="ri-level">Pickleball Level <span aria-hidden="true">*</span></label>
+                            <select id="ri-level" name="ri_level" required>
+                                <option value="" disabled selected>Select your level...</option>
+                                <option value="Beginner (Never Played)">Beginner (Never Played)</option>
+                                <option value="Novice (Played a Few Times)">Novice (Played a Few Times)</option>
+                                <option value="Intermediate (2.5 - 3.5)">Intermediate (2.5 - 3.5)</option>
+                                <option value="Advanced (4.0+)">Advanced (4.0+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="ct-form-row">
+                        <div class="ct-form-group">
+                            <label for="ri-dest">Preferred Destinations</label>
+                            <input type="text" id="ri-dest" name="ri_dest" placeholder="e.g., Caribbean, Europe, Mexico...">
+                        </div>
+                        <div class="ct-form-group">
+                            <label for="ri-months">Preferred Travel Months</label>
+                            <input type="text" id="ri-months" name="ri_months" placeholder="e.g., January, Fall, Any...">
+                        </div>
+                    </div>
+                    
+                    <div class="ct-form-row">
+                        <div class="ct-form-group">
+                            <label for="ri-companion">Traveling Alone or With Someone?</label>
+                            <select id="ri-companion" name="ri_companion">
+                                <option value="Traveling Alone">Traveling Alone</option>
+                                <option value="With Spouse/Partner">With Spouse/Partner</option>
+                                <option value="With Friend(s)">With Friend(s)</option>
+                                <option value="With a Group">With a Group</option>
+                            </select>
+                        </div>
+                        <div class="ct-form-group">
+                            <label for="ri-companion-play">Does Your Companion Play Pickleball?</label>
+                            <select id="ri-companion-play" name="ri_companion_play">
+                                <option value="N/A (Traveling Alone)" selected>N/A (Traveling Alone)</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-green ct-submit-btn" style="width: 100%; justify-content: center; padding: 18px; font-size: 1rem; margin-top: 15px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 8px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        JOIN THE RETREAT INTEREST LIST
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
 </main>
+
+<style>
+@media (max-width: 768px) {
+    .r-interest-card {
+        padding: 35px 25px !important;
+    }
+    .r-companion-banner {
+        padding: 30px 20px !important;
+    }
+}
+</style>
 
 <?php get_footer(); ?>

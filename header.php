@@ -72,7 +72,7 @@
                     <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>PROGRAMS</a></li>
                     <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>BOOK NOW</a></li>
                     <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>MANUAL</a></li>
-                    <li><a href="<?php echo home_url('/retreats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
+                    <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
                     <li><a href="<?php echo home_url('/events/'); ?>" <?php if (is_page('events')) echo 'class="active"'; ?>>EVENTS</a></li>
                     <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
                     <li><a href="<?php echo home_url('/reviews/'); ?>" <?php if (is_page('reviews')) echo 'class="active"'; ?>>REVIEWS</a></li>

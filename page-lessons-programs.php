@@ -19,9 +19,7 @@ get_header();
          PHASE 1: HERO & INTRO
          ============================================================ -->
     <section class="hero lp-hero-full" data-mascot-msg="Explore our programs and find the perfect fit for your game!">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/pageandprogramhero.mp4" type="video/mp4"></video>
-        <!-- Slow down video playback to 50% for a calm, senior-friendly ambiance -->
-        <script>document.addEventListener("DOMContentLoaded", function() { var v = document.querySelector('.lp-hero-full .hero-video-bg'); if(v) v.playbackRate = 0.5; });</script>
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/pageandprogramhero.jpg" alt="PB Academy Programs and Lessons" aria-hidden="true">
         
         <div class="hero-container">
             <div class="hero-content anim-fade-up">

@@ -7,57 +7,38 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'pba-book-lesson', get_template_directory_uri() . '/book-lesson.css', array(), '1.0.0' );
 } );
 
-$bl_errors  = array();
-$bl_success = false;
+$bl_errors  = array();$bl_success = false;
 
 if ( isset( $_POST['bl_submit'] ) ) {
 
-	if ( ! isset( $_POST['bl_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['bl_nonce'] ), 'pba_book_lesson' ) ) {
-		$bl_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pba' );
-	} elseif ( ! empty( $_POST['bl_hp'] ) ) {
-		// Honeypot triggered — silently accept without emailing.
-		$bl_success = true;
+	if ( ! isset( $_POST['bl_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['bl_nonce'] ), 'pba_book_lesson' ) ) {$bl_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pba' );
+	} elseif ( ! empty( $_POST['bl_hp'] ) ) {$bl_success = true;
 	} else {
-		$name         = isset( $_POST['bl_name'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_name'] ) ) : '';
-		$email        = isset( $_POST['bl_email'] ) ? sanitize_email( wp_unslash( $_POST['bl_email'] ) ) : '';
-		$phone        = isset( $_POST['bl_phone'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_phone'] ) ) : '';
-		$lesson_type  = isset( $_POST['bl_lesson_type'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_lesson_type'] ) ) : '';
-		$skill_level  = isset( $_POST['bl_skill_level'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_skill_level'] ) ) : '';
-		$pref_date    = isset( $_POST['bl_date'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_date'] ) ) : '';
-		$pref_time    = isset( $_POST['bl_time'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_time'] ) ) : '';
-		$participants = isset( $_POST['bl_participants'] ) ? absint( $_POST['bl_participants'] ) : 1;
+		$name         = isset($_POST['bl_name'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_name'] ) ) : '';$email        = isset( $_POST['bl_email'] ) ? sanitize_email( wp_unslash( $_POST['bl_email'] ) ) : '';
+		$phone        = isset($_POST['bl_phone'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_phone'] ) ) : '';$lesson_type  = isset( $_POST['bl_lesson_type'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_lesson_type'] ) ) : '';
+		$instructor   = isset($_POST['bl_instructor'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_instructor'] ) ) : '';$location     = isset( $_POST['bl_location'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_location'] ) ) : '';
+		$skill_level  = isset($_POST['bl_skill_level'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_skill_level'] ) ) : '';$pref_date    = isset( $_POST['bl_date'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_date'] ) ) : '';
+		$pref_time    = isset($_POST['bl_time'] ) ? sanitize_text_field( wp_unslash( $_POST['bl_time'] ) ) : '';$participants = isset( $_POST['bl_participants'] ) ? absint( $_POST['bl_participants'] ) : 1;
 		$message      = isset( $_POST['bl_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['bl_message'] ) ) : '';
 
-		if ( '' === $name ) {
-			$bl_errors[] = __( 'Please enter your name.', 'pba' );
-		}
-		if ( '' === $email || ! is_email( $email ) ) {
-			$bl_errors[] = __( 'Please enter a valid email address.', 'pba' );
-		}
-		if ( '' === $phone ) {
-			$bl_errors[] = __( 'Please enter your phone number.', 'pba' );
-		}
-		if ( '' === $lesson_type ) {
-			$bl_errors[] = __( 'Please select a lesson type.', 'pba' );
-		}
-		if ( '' === $skill_level ) {
-			$bl_errors[] = __( 'Please select your skill level.', 'pba' );
-		}
-		if ( '' === $pref_date ) {
-			$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
-		}
-		if ( $participants < 1 ) {
-			$participants = 1;
-		}
+		if ( '' === $name )$bl_errors[] = __( 'Please enter your name.', 'pba' );
+		if ( '' === $email || ! is_email( $email ) )$bl_errors[] = __( 'Please enter a valid email address.', 'pba' );
+		if ( '' === $phone )$bl_errors[] = __( 'Please enter your phone number.', 'pba' );
+		if ( '' === $lesson_type )$bl_errors[] = __( 'Please select a program or lesson type.', 'pba' );
+		if ( '' === $instructor )$bl_errors[] = __( 'Please select an instructor preference.', 'pba' );
+		if ( '' === $location )$bl_errors[] = __( 'Please select a location.', 'pba' );
+		if ( '' === $skill_level )$bl_errors[] = __( 'Please select your skill level.', 'pba' );
+		if ( '' === $pref_date )$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
+		if ( $participants < 1 )$participants = 1;
 
-		if ( empty( $bl_errors ) ) {
-			$to      = 'contact@gopbacademy.com';
-			$subject = sprintf( __( 'New Lesson Booking Request from %s', 'pba' ), $name );
-			$body    = "New lesson booking request:\n\n"
+		if ( empty( $bl_errors ) ) {$to      = 'contact@gopbacademy.com';
+			$subject = sprintf( __( 'New Booking Request from %s', 'pba' ), $name );$body    = "New booking request details:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
 				. "Phone: {$phone}\n"
-				. "Lesson Type: {$lesson_type}\n"
+				. "Program: {$lesson_type}\n"
+				. "Instructor: {$instructor}\n"
+				. "Location: {$location}\n"
 				. "Skill Level: {$skill_level}\n"
 				. "Preferred Date: {$pref_date}\n"
 				. "Preferred Time: {$pref_time}\n"
@@ -66,13 +47,12 @@ if ( isset( $_POST['bl_submit'] ) ) {
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
 				'From: PB Academy <noreply@gopbacademy.com>',
-				'Reply-To: ' . $name . ' <' . $email . '>',
+				'Reply-To: ' . $name . ' <' .$email . '>',
 			);
 
-			$bl_success = (bool) wp_mail( $to, $subject, $body, $headers );
+			$bl_success = (bool) wp_mail( $to,$subject, $body,$headers );
 
-			if ( ! $bl_success ) {
-				$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
+			if ( ! $bl_success ) {$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
 			}
 		}
 	}
@@ -174,54 +154,114 @@ get_header();
 							<input type="tel" id="bl-phone" name="bl_phone" autocomplete="tel" required aria-required="true" value="<?php echo isset( $phone ) ? esc_attr( $phone ) : ''; ?>">
 						</div>
 						<div class="bl-form-group">
-							<label for="bl-participants">Participants</label>
+							<label for="bl-participants">Number of Participants</label>
 							<input type="number" id="bl-participants" name="bl_participants" min="1" max="12" value="<?php echo isset( $participants ) ? esc_attr( $participants ) : '1'; ?>">
 						</div>
 					</div>
 
 					<div class="bl-form-row">
 						<div class="bl-form-group">
-							<label for="bl-lesson-type">Lesson Type <span aria-hidden="true">*</span></label>
+							<label for="bl-lesson-type">Program or Lesson <span aria-hidden="true">*</span></label>
 							<select id="bl-lesson-type" name="bl_lesson_type" required aria-required="true">
-								<option value="" disabled <?php selected( empty( $lesson_type ) ); ?>>Select a lesson type…</option>
-								<option value="private">Private Lesson</option>
-								<option value="semi-private">Semi-Private Lesson</option>
-								<option value="group">Group Clinic</option>
-								<option value="beginner">Beginner Clinic</option>
+								<option value="" disabled selected>Select a program…</option>
+								<optgroup label="Lessons">
+									<option value="Private Lessons">Private Lessons</option>
+									<option value="Semi-Private Lessons">Semi-Private Lessons</option>
+									<option value="Small Group Lessons">Small Group Lessons</option>
+									<option value="Group Lessons">Group Lessons</option>
+								</optgroup>
+								<optgroup label="PBA Core 4">
+									<option value="PBA Core 4">PBA Core 4 (Beginner Package)</option>
+								</optgroup>
+								<optgroup label="Clinics & Play">
+									<option value="Skills Clinics">Skills Clinics</option>
+									<option value="Strategy Clinics">Strategy Clinics</option>
+									<option value="Instructor-Observed Practice & Play">Instructor-Observed Practice & Play</option>
+									<option value="Tournament Preparation">Tournament Preparation</option>
+									<option value="Round Robins">Round Robins</option>
+									<option value="Organized Play">Organized Play</option>
+									<option value="Special Events">Special Events</option>
+								</optgroup>
+								<optgroup label="Specialty">
+									<option value="Retreats">Retreats</option>
+								</optgroup>
 							</select>
 						</div>
 						<div class="bl-form-group">
-							<label for="bl-skill-level">Skill Level <span aria-hidden="true">*</span></label>
+							<label for="bl-skill-level">Player Level <span aria-hidden="true">*</span></label>
 							<select id="bl-skill-level" name="bl_skill_level" required aria-required="true">
-								<option value="" disabled <?php selected( empty( $skill_level ) ); ?>>Select your level…</option>
-								<option value="beginner">Beginner</option>
-								<option value="intermediate">Intermediate</option>
-								<option value="advanced">Advanced</option>
+								<option value="" disabled selected>Select your level…</option>
+								<option value="Beginner (Never Played)">Beginner (Never Played)</option>
+								<option value="Novice (Played a Few Times)">Novice (Played a Few Times)</option>
+								<option value="Intermediate (2.5 - 3.5)">Intermediate (2.5 - 3.5)</option>
+								<option value="Advanced (4.0+)">Advanced (4.0+)</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="bl-form-row">
 						<div class="bl-form-group">
-							<label for="bl-date">Preferred Date <span aria-hidden="true">*</span></label>
+							<label for="bl-instructor">Instructor <span aria-hidden="true">*</span></label>
+							<select id="bl-instructor" name="bl_instructor" required aria-required="true">
+								<option value="First Available Instructor" selected>First Available Instructor</option>
+								<option value="Charles Azoulay">Charles Azoulay</option>
+								<option value="Sarah Jenkins">Sarah Jenkins</option>
+								<option value="David Chen">David Chen</option>
+								<option value="Jessica Lee">Jessica Lee</option>
+								<option value="Michael Thompson">Michael Thompson</option>
+								<option value="Elena Rodriguez">Elena Rodriguez</option>
+								<option value="Marcus Johnson">Marcus Johnson</option>
+							</select>
+						</div>
+						<div class="bl-form-group">
+							<label for="bl-location">Location <span aria-hidden="true">*</span></label>
+							<select id="bl-location" name="bl_location" required aria-required="true">
+								<option value="" disabled selected>Select a location…</option>
+								<option value="Boynton Beach">Boynton Beach</option>
+								<option value="Boca Raton">Boca Raton</option>
+								<option value="Delray Beach">Delray Beach</option>
+								<option value="Wellington">Wellington</option>
+								<option value="Lake Worth">Lake Worth</option>
+								<option value="Jupiter">Jupiter</option>
+								<option value="Palm Beach Gardens">Palm Beach Gardens</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="bl-form-row">
+						<div class="bl-form-group">
+							<label for="bl-date">Date <span aria-hidden="true">*</span></label>
 							<input type="date" id="bl-date" name="bl_date" required aria-required="true" value="<?php echo isset( $pref_date ) ? esc_attr( $pref_date ) : ''; ?>">
 						</div>
 						<div class="bl-form-group">
-							<label for="bl-time">Preferred Time</label>
+							<label for="bl-time">Available Time</label>
 							<input type="time" id="bl-time" name="bl_time" value="<?php echo isset( $pref_time ) ? esc_attr( $pref_time ) : ''; ?>">
 						</div>
 					</div>
 
 					<div class="bl-form-row">
 						<div class="bl-form-group bl-form-group--full">
-							<label for="bl-message">Message</label>
-							<textarea id="bl-message" name="bl_message" rows="4" placeholder="Tell us about your goals or anything we should know…"><?php echo isset( $message ) ? esc_textarea( $message ) : ''; ?></textarea>
+							<label for="bl-message">Comments or Requests</label>
+							<textarea id="bl-message" name="bl_message" rows="3" placeholder="Tell us about your goals or anything we should know before the session…"><?php echo isset( $message ) ? esc_textarea( $message ) : ''; ?></textarea>
 						</div>
+					</div>
+
+					<!-- Real-Time Reservation Summary -->
+					<div id="booking-summary" class="bl-summary-box" style="display: none;">
+						<h3 class="bl-summary-title">Reservation Summary</h3>
+						<ul class="bl-summary-list">
+							<li><strong>Program:</strong> <span id="sum-program">—</span></li>
+							<li><strong>Instructor:</strong> <span id="sum-instructor">First Available Instructor</span></li>
+							<li><strong>Location:</strong> <span id="sum-location">—</span></li>
+							<li><strong>Date:</strong> <span id="sum-date">—</span></li>
+							<li><strong>Time:</strong> <span id="sum-time">—</span></li>
+							<li><strong>Participants:</strong> <span id="sum-participants">1</span></li>
+						</ul>
 					</div>
 
 					<button type="submit" name="bl_submit" value="1" class="btn btn-green bl-submit-btn">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-						Book My Lesson
+						Complete Booking
 					</button>
 				</form>
 			</div>
@@ -365,6 +405,61 @@ get_header();
 			field.classList.toggle( 'bl-invalid', ! valid );
 		} );
 	} );
+
+	// Real-Time Reservation Summary Logic
+	var summaryBox = document.getElementById('booking-summary');
+	var fields = {
+		program: document.getElementById('bl-lesson-type'),
+		instructor: document.getElementById('bl-instructor'),
+		location: document.getElementById('bl-location'),
+		date: document.getElementById('bl-date'),
+		time: document.getElementById('bl-time'),
+		participants: document.getElementById('bl-participants')
+	};
+	var outputs = {
+		program: document.getElementById('sum-program'),
+		instructor: document.getElementById('sum-instructor'),
+		location: document.getElementById('sum-location'),
+		date: document.getElementById('sum-date'),
+		time: document.getElementById('sum-time'),
+		participants: document.getElementById('sum-participants')
+	};
+
+	function updateSummary() {
+		var hasData = false;
+		if (fields.program && fields.program.value) { outputs.program.textContent = fields.program.value; hasData = true; }
+		if (fields.instructor && fields.instructor.value) { outputs.instructor.textContent = fields.instructor.value; }
+		if (fields.location && fields.location.value) { outputs.location.textContent = fields.location.value; hasData = true; }
+		if (fields.date && fields.date.value) { 
+			// Format date nicely if possible, else raw
+			var d = new Date(fields.date.value + 'T00:00:00');
+			outputs.date.textContent = isNaN(d) ? fields.date.value : d.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' }); 
+			hasData = true; 
+		}
+		if (fields.time && fields.time.value) { 
+			var t = fields.time.value.split(':');
+			var hours = parseInt(t[0], 10);
+			var ampm = hours >= 12 ? 'PM' : 'AM';
+			hours = hours % 12;
+			hours = hours ? hours : 12;
+			outputs.time.textContent = hours + ':' + t[1] + ' ' + ampm;
+			hasData = true; 
+		}
+		if (fields.participants && fields.participants.value) { outputs.participants.textContent = fields.participants.value; }
+
+		// Show summary box only if the user has started filling out key dropdowns
+		if (hasData) {
+			summaryBox.style.display = 'block';
+		}
+	}
+
+	// Attach listeners to all relevant fields
+	Object.keys(fields).forEach(function(key) {
+		if (fields[key]) {
+			fields[key].addEventListener('change', updateSummary);
+			fields[key].addEventListener('input', updateSummary);
+		}
+	});
 })();
 </script>
 

@@ -9,9 +9,7 @@
 
     <!-- 1. Hero Section -->
     <section class="hero shop-hero-full" data-mascot-msg="Gear up and play your best! We've hand-selected the perfect equipment for your game.">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
-            <source src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/shop-hero.mp4" type="video/mp4">
-        </video>
+        <div class="shop-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1920&auto=format&fit=crop');"></div>
         
         <!-- FIX: Restored global hero-container to pull text above the overlay -->
         <div class="hero-container">
@@ -292,5 +290,17 @@
     </section>
 
 </main>
+
+<style>
+.shop-hero-full .shop-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+</style>
 
 <?php get_footer(); ?>

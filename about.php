@@ -9,8 +9,7 @@ get_header();
 
     <!-- Hero Section -->
     <section class="hero about-hero-full" data-mascot-msg="We teach. We play. We care. Welcome to the PBA family!">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true"><source src="<?php echo get_template_directory_uri(); ?>/media/about-hero.mp4" type="video/mp4"></video>
-        <script>document.addEventListener("DOMContentLoaded", function() { var v = document.querySelector('.about-hero-full .hero-video-bg'); if(v) v.playbackRate = 0.5; });</script>
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/about-hero-bg.webp" alt="About PB Academy" aria-hidden="true">
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
                 <h2 class="hero-subtitle">MORE THAN A GAME</h2>

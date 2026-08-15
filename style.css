@@ -7398,3 +7398,79 @@ section.active-focus {
     .lp-core4-grid { grid-template-columns: 1fr; }
     .lp-clinics-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   CONTACT PAGE: COMMUNITY BANNER (Phase 3)
+   ============================================================ */
+.ct-community-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.15);
+    margin-top: 20px;
+}
+.ct-cb-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+.ct-cb-text p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.5;
+    max-width: 700px;
+}
+.ct-cb-action {
+    flex-shrink: 0;
+}
+
+@media (max-width: 980px) {
+    .ct-community-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+    }
+}
+
+/* ============================================================
+   RETREATS PAGE: DATA GRIDS (Phase 2)
+   ============================================================ */
+.r-card-data-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+.r-card-data-grid li {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 6px;
+}
+.r-card-data-grid li:last-child {
+    border-bottom: none;
+}
+.r-card-data-grid li strong {
+    color: var(--navy);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+    .r-card__actions {
+        flex-direction: column;
+    }
+}
