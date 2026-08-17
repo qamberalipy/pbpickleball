@@ -226,6 +226,7 @@
             }
 
             updateCarousel();
+            
             startAutoPlay();
         })();
 
