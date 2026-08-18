@@ -14,6 +14,17 @@
                 <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
             </div>
+            <!-- Quick-Jump Anchor Bar (Phase 3) -->
+            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                <span class="qj-label">Jump to section:</span>
+                <div class="qj-links">
+                    <a href="#features" class="qj-link">Why Choose Us</a>
+                    <a href="#programs" class="qj-link">Programs</a>
+                    <a href="#manual" class="qj-link">Manual</a>
+                    <a href="#reviews" class="qj-link">Reviews</a>
+                    <a href="#founder" class="qj-link">Our Story</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -22,7 +33,7 @@
 
 
 <!-- Features Section -->
-<section class="features" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
+<section id="features" class="features" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
     <div class="container features-grid">
         <div class="feature-item">
             <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
@@ -48,7 +59,7 @@
 </section>
 
 <!-- Programs Section -->
-<section class="programs" data-mascot-msg="Explore our programs — from private coaching to beginner clinics and retreats!">
+<section id="programs" class="programs" data-mascot-msg="Explore our programs — from private coaching to beginner clinics and retreats!">
     <div class="container">
         <h2 class="section-title">PROGRAMS WE OFFER</h2>
         <div class="programs-grid">
@@ -93,7 +104,7 @@
 </section>
 
 <!-- Beginner Manual Banner -->
-<section class="manual-banner" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
+<section id="manual" class="manual-banner" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
     <div class="container manual-banner-inner">
         <div class="manual-img-left">
             <img src="<?php echo get_template_directory_uri(); ?>/media/manual-book.png" alt="Beginner Training Manual Book">
@@ -122,7 +133,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials-section" data-mascot-msg="See what our students have to say about Coach Charles and the academy.">
+<section id="reviews" class="testimonials-section" data-mascot-msg="See what our students have to say about Coach Charles and the academy.">
     <div class="container">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">WHAT STUDENTS SAY</h2>
         
@@ -201,7 +212,7 @@
 </section>
 
 <!-- Founder & Looking Ahead Section -->
-<section class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Pickleball Academy is headed next!" aria-labelledby="founderHeading">
+<section id="founder" class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Pickleball Academy is headed next!" aria-labelledby="founderHeading">
     <div class="container">
         <div class="founder-grid">
 
