@@ -1068,12 +1068,12 @@ header .header-actions {
 
 .founder-photo {
     flex-shrink: 0;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: contain;
+    width: 220px;       /* Increased width for portrait */
+    height: 280px;      /* Taller height for a professional rectangular shape */
+    border-radius: 12px; /* Soft square corners instead of a 50% circle */
+    object-fit: cover;  /* Ensures the image fills the rectangle perfectly without stretching */
     border: 4px solid var(--green);
-    box-shadow: 0 8px 20px rgba(11,32,70,0.15);
+    box-shadow: 0 10px 30px rgba(11,32,70,0.15);
 }
 
 .founder-info h4 {
