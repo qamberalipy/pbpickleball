@@ -7499,25 +7499,24 @@ header .container.header-content {
 }
 
 /* ============================================================
-   CLIENT REQUEST: HERO QUICK-JUMP ANCHORS (Theme Integrated)
+   CLIENT REQUEST: HERO QUICK-JUMP ANCHORS (Minimal & Single Row)
    ============================================================ */
 .hero-quick-jump {
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    /* Replaced creepy black with premium Theme Navy (Dark Blue) */
-    background: rgba(11, 32, 70, 0.85); 
+    gap: 20px;
+    background: rgba(11, 32, 70, 0.8); /* Sleek, dark semi-transparent blue */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 24px 40px;
-    border-radius: 16px;
+    padding: 12px 30px; /* Minimal padding for a slim pill look */
+    border-radius: 50px; /* Perfect outer pill shape */
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.4);
-    width: fit-content;
-    max-width: 95%; /* Prevents horizontal overflow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: fit-content; /* Shrink-wraps the container tightly around the buttons */
+    max-width: 98%; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -7525,70 +7524,78 @@ header .container.header-content {
 .qj-label {
     color: var(--white);
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 800;
+    white-space: nowrap; /* Prevents text breaking */
+    margin: 0;
     opacity: 0.9;
 }
 
 .qj-links {
     display: flex;
-    gap: 12px;
-    /* FORCES STRICT SINGLE ROW ON DESKTOP */
-    flex-wrap: nowrap; 
+    gap: 10px;
+    flex-wrap: nowrap; /* STRICTLY locks buttons into one horizontal row */
     justify-content: center;
-    width: 100%;
+    align-items: center;
 }
 
 .qj-link {
     color: var(--white);
-    /* Replaced solid black with Navy Light so buttons pop from container */
-    background: var(--navy-light); 
+    background: rgba(255, 255, 255, 0.12); /* Subtle semi-transparent inner pills */
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 14px 24px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 30px; /* Inner pill shape */
     transition: all 0.25s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Ensures text inside buttons never breaks into two lines */
-    white-space: nowrap; 
+    white-space: nowrap; /* Never let button text stack */
+    flex: 0 0 auto; /* Prevents buttons from stretching out */
 }
 
 .qj-link:hover {
     background: var(--green);
     color: var(--white);
     border-color: var(--green-bright);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(103, 155, 48, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(103, 155, 48, 0.35);
 }
 
-/* Tablet Responsiveness */
-@media (max-width: 1024px) {
+/* Tablet Scaling to guarantee single row doesn't overflow */
+@media (max-width: 1100px) {
+    .hero-quick-jump {
+        gap: 12px;
+        padding: 12px 20px;
+    }
     .qj-links {
-        flex-wrap: wrap; /* Allows safe wrapping on smaller tablets */
+        gap: 6px;
+    }
+    .qj-link {
+        padding: 10px 14px;
+        font-size: 0.7rem;
     }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-quick-jump {
+        flex-direction: column;
         width: 100%;
         padding: 20px 15px;
         border-radius: 16px;
     }
     .qj-links {
-        flex-direction: column; /* Stacks buttons vertically on phones */
-        flex-wrap: nowrap;
-        gap: 10px;
+        flex-direction: column; /* Vertical stack only on mobile phones */
+        width: 100%;
     }
     .qj-link {
-        width: 100%; /* Full width for easy thumb tapping */
+        width: 100%;
         text-align: center;
-        padding: 16px;
-        font-size: 1rem;
+        padding: 14px;
+        font-size: 0.85rem;
     }
 }
