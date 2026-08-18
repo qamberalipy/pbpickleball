@@ -16,7 +16,7 @@
             </div>
             <!-- Quick-Jump Anchor Bar (Phase 3) -->
             <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
-                <span class="qj-label">JUMP TO SECTION:</span>
+                <span class="qj-label">Click To View More:</span>
                 <div class="qj-links">
                     <a href="#features" class="qj-link">Why Choose Us</a>
                     <a href="#programs" class="qj-link">Programs</a>
