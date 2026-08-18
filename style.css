@@ -7474,3 +7474,26 @@ section.active-focus {
         flex-direction: column;
     }
 }
+
+/* ============================================================
+   CLIENT REQUEST: SINGLE-ROW NAV BAR (Phase 1)
+   ============================================================ */
+header .container.header-content {
+    max-width: 1700px !important; /* Forces the header to be wider than the rest of the site */
+    width: 98%;
+    padding: 0 15px;
+}
+
+/* Intelligent compression for screens between tablet and massive monitors */
+@media (min-width: 981px) and (max-width: 1550px) {
+    .header-content { gap: 8px !important; }
+    .nav-links { gap: 4px !important; }
+    .nav-links li a { 
+        padding: 8px 4px !important; 
+        font-size: 0.75rem !important; 
+        letter-spacing: -0.2px !important; 
+    }
+    .logo-title { font-size: 1.15rem !important; }
+    .header-search-wrap .search-form { width: 140px !important; }
+    .premium-search-input { padding-left: 10px !important; font-size: 0.75rem !important; }
+}

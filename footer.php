@@ -306,10 +306,10 @@
     </script>
 
 
-    <!-- ===== Mascot Scroll Companion ===== -->
-    <div id="mascot-companion" role="complementary" aria-label="PB Academy Guide">
+    <!-- ===== Mascot Greet & Disappear ===== -->
+    <div id="mascot-companion" role="complementary" aria-label="PB Academy Guide" style="transition: opacity 0.8s ease, transform 0.8s ease;">
         <div id="mascot-bubble">
-            <p id="mascot-text">Welcome to PB Academy! Scroll down to explore.</p>
+            <p id="mascot-text">Welcome to PB Academy!</p>
         </div>
         <img
             src="<?php echo get_template_directory_uri(); ?>/media/mascot.png"
@@ -321,110 +321,41 @@
 
     <script>
         /* ================================================================
-           PB PICKLEBALL ACADEMY — Mascot Scroll Companion Guide Engine
-           Dependency-free Vanilla JS | IntersectionObserver API
+           PB PICKLEBALL ACADEMY — Mascot "Greet & Disappear" Engine
            ================================================================ */
         (function () {
             'use strict';
 
-            /* ── DOM refs ── */
-            var bubble   = document.getElementById('mascot-bubble');
-            var textEl   = document.getElementById('mascot-text');
-            var sections = Array.from(document.querySelectorAll('section[data-mascot-msg]'));
+            var companion = document.getElementById('mascot-companion');
+            var bubble    = document.getElementById('mascot-bubble');
+            var textEl    = document.getElementById('mascot-text');
 
-            if (!bubble || !textEl || sections.length === 0) return;
+            if (!companion || !bubble || !textEl) return;
 
-            /* ── State ── */
-            var currentMsg  = '';
-            var hideTimer   = null;
-            var isAnimating = false;
-
-            /* ────────────────────────────────────────────────
-               showBubble(msg)
-               Fades bubble out → swaps text → fades back in.
-               200 ms total per transition, per spec.
-            ──────────────────────────────────────────────── */
-            function showBubble(msg) {
-                /* Skip duplicate messages that are already visible */
-                if (msg === currentMsg && bubble.style.opacity === '1') return;
-
-                /* Cancel any pending auto-hide */
-                clearTimeout(hideTimer);
-
-                if (isAnimating) return; /* don't stack transitions */
-                isAnimating = true;
-
-                /* PHASE 1 — fade OUT (200 ms) */
-                bubble.style.opacity = '0';
-
-                setTimeout(function () {
-                    /* PHASE 2 — swap text while invisible */
-                    textEl.textContent = msg;
-                    currentMsg = msg;
-
-                    /* PHASE 3 — fade IN (200 ms) */
-                    bubble.style.opacity = '1';
-                    isAnimating = false;
-
-                    /* Auto-hide after 6 s of inactivity */
-                    hideTimer = setTimeout(function () {
-                        bubble.style.opacity = '0';
-                    }, 6000);
-                }, 200);
-            }
-
-            /* ────────────────────────────────────────────────
-               setActiveSection(section)
-               Applies .active-focus to the intersecting section
-               and strips it from every other section.
-            ──────────────────────────────────────────────── */
-            function setActiveSection(activeEl) {
-                sections.forEach(function (s) {
-                    if (s === activeEl) {
-                        s.classList.add('active-focus');
-                    } else {
-                        s.classList.remove('active-focus');
-                    }
-                });
-            }
-
-            /* ────────────────────────────────────────────────
-               IntersectionObserver
-               Threshold 0.35 — triggers when 35 % of a section
-               is visible in the viewport.
-            ──────────────────────────────────────────────── */
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        var msg = entry.target.getAttribute('data-mascot-msg');
-
-                        /* Update speech bubble */
-                        if (msg) showBubble(msg);
-
-                        /* Highlight the active section */
-                        setActiveSection(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.35
-            });
-
-            /* Observe every qualifying section */
-            sections.forEach(function (s) { io.observe(s); });
-
-            /* ────────────────────────────────────────────────
-               Welcome message — shown 800 ms after page load
-            ──────────────────────────────────────────────── */
-            var welcomeMsg = textEl.textContent.trim();
-            bubble.style.opacity = '0'; /* start hidden */
-
+            // 1. Initial State
+            bubble.style.opacity = '0';
+            
+            // 2. Slide in & Greet after 800ms
             setTimeout(function () {
-                showBubble(welcomeMsg);
+                textEl.textContent = "Welcome to PB Academy! Let's get playing.";
+                bubble.style.opacity = '1';
             }, 800);
+
+            // 3. Disappear completely after 7 seconds
+            setTimeout(function () {
+                bubble.style.opacity = '0'; // Hide bubble
+                companion.style.transform = 'translateY(50px)'; // Slide down slightly
+                companion.style.opacity = '0'; // Fade out entire mascot
+                companion.style.pointerEvents = 'none'; // Prevent invisible clicks
+                
+                // 4. Remove from DOM to keep memory clean
+                setTimeout(function() {
+                    companion.remove();
+                }, 1000);
+            }, 7000);
 
         })();
     </script>
-
 
     <?php wp_footer(); ?>
 </body>
