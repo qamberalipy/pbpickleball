@@ -16,7 +16,7 @@
             </div>
             <!-- Quick-Jump Anchor Bar (Phase 3) -->
             <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
-                <span class="qj-label">Jump to section:</span>
+                <span class="qj-label">Click To View More:</span>
                 <div class="qj-links">
                     <a href="#features" class="qj-link">Why Choose Us</a>
                     <a href="#programs" class="qj-link">Programs</a>
@@ -220,10 +220,10 @@
                 <p class="founder-col-title">Our Story</p>
                 <h3 id="founderHeading">Meet Our Founder</h3>
                 <div class="founder-profile">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles.jpg" alt="Charles Azoulay – Founder &amp; Lead Instructor" class="founder-photo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles2.jpg" alt="Charles Azoulay – Founder &amp; Lead Instructor" class="founder-photo">
                     <div class="founder-info">
                         <h4>Charles Azoulay</h4>
-                        <p class="founder-role">Founder &amp; Lead Instructor</p>
+                        <p class="founder-role">Founder</p>
                         <ul class="founder-achievements">
                             <li><span class="fa-check">✓</span> Founded PB Pickleball Academy for active adult beginners</li>
                             <li><span class="fa-check">✓</span> Background in teaching — patient, clear, and encouraging</li>
