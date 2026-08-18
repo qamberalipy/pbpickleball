@@ -220,7 +220,7 @@
                 <p class="founder-col-title">Our Story</p>
                 <h3 id="founderHeading">Meet Our Founder</h3>
                 <div class="founder-profile">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles.jpg" alt="Charles Azoulay – Founder &amp; Lead Instructor" class="founder-photo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles2.jpg" alt="Charles Azoulay – Founder &amp; Lead Instructor" class="founder-photo">
                     <div class="founder-info">
                         <h4>Charles Azoulay</h4>
                         <p class="founder-role">Founder &amp; Lead Instructor</p>

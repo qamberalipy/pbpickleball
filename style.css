@@ -1068,12 +1068,12 @@ header .header-actions {
 
 .founder-photo {
     flex-shrink: 0;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: contain;
+    width: 220px;       /* Increased width */
+    height: 280px;      /* Taller height for a professional portrait rectangle */
+    border-radius: 12px; /* Soft square corners instead of 50% circle */
+    object-fit: cover;  /* Ensures the image fills the rectangle perfectly without stretching */
     border: 4px solid var(--green);
-    box-shadow: 0 8px 20px rgba(11,32,70,0.15);
+    box-shadow: 0 10px 30px rgba(11,32,70,0.15);
 }
 
 .founder-info h4 {
@@ -7499,77 +7499,96 @@ header .container.header-content {
 }
 
 /* ============================================================
-   CLIENT REQUEST: HERO QUICK-JUMP ANCHORS (Phase 3)
+   CLIENT REQUEST: HERO QUICK-JUMP ANCHORS (Theme Integrated)
    ============================================================ */
 .hero-quick-jump {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    background: rgba(11, 32, 70, 0.45);
+    gap: 16px;
+    /* Replaced creepy black with premium Theme Navy (Dark Blue) */
+    background: rgba(11, 32, 70, 0.85); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 12px 24px;
-    border-radius: 50px;
+    padding: 24px 40px;
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.4);
     width: fit-content;
+    max-width: 95%; /* Prevents horizontal overflow */
     margin-left: auto;
     margin-right: auto;
 }
 
 .qj-label {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--white);
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    opacity: 0.9;
 }
 
 .qj-links {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 12px;
+    /* FORCES STRICT SINGLE ROW ON DESKTOP */
+    flex-wrap: nowrap; 
     justify-content: center;
+    width: 100%;
 }
 
 .qj-link {
     color: var(--white);
+    /* Replaced solid black with Navy Light so buttons pop from container */
+    background: var(--navy-light); 
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    padding: 14px 24px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Ensures text inside buttons never breaks into two lines */
+    white-space: nowrap; 
 }
 
 .qj-link:hover {
     background: var(--green);
     color: var(--white);
     border-color: var(--green-bright);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(103, 155, 48, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(103, 155, 48, 0.4);
 }
 
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+    .qj-links {
+        flex-wrap: wrap; /* Allows safe wrapping on smaller tablets */
+    }
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-quick-jump {
-        flex-direction: column;
+        width: 100%;
+        padding: 20px 15px;
         border-radius: 16px;
-        padding: 16px;
+    }
+    .qj-links {
+        flex-direction: column; /* Stacks buttons vertically on phones */
+        flex-wrap: nowrap;
         gap: 10px;
     }
-    .qj-label { 
-        margin-bottom: 2px; 
-    }
     .qj-link {
-        font-size: 0.65rem;
-        padding: 6px 12px;
+        width: 100%; /* Full width for easy thumb tapping */
+        text-align: center;
+        padding: 16px;
+        font-size: 1rem;
     }
 }
