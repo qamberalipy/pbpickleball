@@ -69,7 +69,7 @@ get_header();
                 <p>The Academy brings together instruction, structured programs, clinics, organized play, events, educational resources, our Beginner Manual, retreats and a growing pickleball community.</p>
             </div>
             <div class="ang-image ang-reverse">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/about-founder-charles2.jpg" alt="Charles Azoulay" class="about-img-shadow">
+                <img src="<?php echo get_template_directory_uri(); ?>/media/about-section-pic.jpeg" alt="Charles Azoulay" class="about-img-shadow">
             </div>
         </div>
     </section>

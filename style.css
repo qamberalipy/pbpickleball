@@ -2560,9 +2560,11 @@ header .header-actions {
    CONTACT PAGE STYLES
    ============================================================ */
 
-/* Page wrapper */
+/* Page wrapper - Pale Green Dot Grid */
 .contact-page {
-    background-color: var(--gray-bg);
+    background-color: #F4F9F0;
+    background-image: radial-gradient(rgba(103, 155, 48, 0.08) 2px, transparent 2px);
+    background-size: 30px 30px;
 }
 
 /* ---------------------------------------------------------------
@@ -2613,39 +2615,72 @@ header .header-actions {
 }
 
 /* ---------------------------------------------------------------
-   2. CONTACT SPLIT — Info + Form
+   2. CONTACT SPLIT — Info + Form (COLOR OVERHAUL)
    --------------------------------------------------------------- */
 .contact-split {
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 .contact-split-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 30px;
+    gap: 40px;
     align-items: stretch;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
-/* Shared card base */
-.ct-info-card,
+/* LEFT: Info Card (Navy Gradient) */
+.ct-info-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 50px rgba(11, 32, 70, 0.2);
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay on the Navy card */
+.ct-info-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+}
+
+/* RIGHT: Form Card (Heavy Border & Deep Shadow) */
 .ct-form-card {
     background-color: var(--white);
-    border: 1px solid rgba(11, 32, 70, 0.05);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.05);
+    border: none;
+    border-top: 8px solid var(--green);
+    border-radius: 20px;
+    padding: 50px 60px;
+    box-shadow: 0 25px 60px rgba(11, 32, 70, 0.08);
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 }
 
 .ct-card-header {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 2;
 }
 
-.ct-section-title {
+/* Fix text colors inside the Navy Info Card */
+.ct-info-card .ct-section-title {
+    color: var(--white);
+}
+.ct-form-card .ct-section-title {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 900;
     color: var(--navy);
     text-transform: uppercase;
@@ -2660,100 +2695,109 @@ header .header-actions {
     margin-bottom: 14px;
 }
 
-.ct-card-intro {
-    font-size: 0.9rem;
-    color: var(--gray-text);
+.ct-info-card .ct-card-intro {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
 }
+.ct-form-card .ct-card-intro p {
+    font-size: 1rem;
+    color: var(--gray-text);
+}
 
-/* Contact list */
+/* Contact list inside Navy Card */
 .ct-contact-list {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    margin-bottom: 32px;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
 }
 
 .ct-contact-item {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 12px;
     border: 1px solid transparent;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ct-contact-item:hover {
-    background-color: #F4F9F0;
-    border-color: rgba(103, 155, 48, 0.45);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(11, 32, 70, 0.18);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .ct-contact-item:hover .ct-ci-icon svg {
-    transform: scale(1.2);
-    stroke: var(--navy);
-    transition: transform 0.3s ease, stroke 0.3s ease;
+    transform: scale(1.15);
+    stroke: var(--green-bright);
 }
 
 .ct-ci-icon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
-    background: var(--gray-bg);
+    background: rgba(103, 155, 48, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--green);
-    border: 1px solid rgba(103, 155, 48, 0.15);
+    color: var(--green-bright);
+    border: 1px solid rgba(103, 155, 48, 0.3);
 }
 
 .ct-ci-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--green);
+    width: 22px;
+    height: 22px;
+    stroke: var(--green-bright);
+    transition: transform 0.3s ease;
 }
 
 .ct-ci-label {
     display: block;
     font-family: var(--font-heading);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 3px;
+    color: var(--green-bright);
+    margin-bottom: 4px;
 }
 
 .ct-ci-value {
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--navy);
+    color: var(--white);
     line-height: 1.5;
     text-decoration: none;
     transition: color 0.2s;
 }
 
-.ct-ci-value:hover { color: var(--green); }
+.ct-ci-value:hover { color: var(--green-bright); }
 
-/* Social strip */
+/* Social strip inside Navy Card */
 .ct-social-strip {
-    border-top: 1px solid var(--gray-light);
-    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 25px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
 }
 
 .ct-social-label {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--navy);
+    color: var(--white);
     margin: 0;
 }
 
@@ -2763,8 +2807,8 @@ header .header-actions {
 }
 
 .ct-social-link {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2777,6 +2821,16 @@ header .header-actions {
 .ct-social-link.si-fb { background: #3b5998; }
 .ct-social-link.si-ig { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
 .ct-social-link.si-yt { background: #ff0000; }
+
+/* Responsive adjustments for new padding */
+@media (max-width: 768px) {
+    .ct-info-card {
+        padding: 40px 25px;
+    }
+    .ct-form-card {
+        padding: 40px 25px;
+    }
+}
 
 /* Form */
 .ct-form {
@@ -7571,5 +7625,203 @@ header .container.header-content {
     .qj-link {
         font-size: 0.65rem;
         padding: 6px 12px;
+    }
+}
+
+/* ============================================================
+   GLOBAL BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Fixed to the Left as requested */
+    z-index: 9998;
+    background-color: var(--green);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top-btn.btt-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(11, 32, 70, 0.3);
+}
+
+.back-to-top-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 15px;
+        left: 15px; /* Kept on the left for mobile */
+        width: 42px;
+        height: 42px;
+    }
+    .back-to-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ============================================================
+   CORE 4 PROMO STRIP & MODAL SYSTEM
+   ============================================================ */
+/* 1. Promo Strip */
+.c4-promo-strip {
+    background: linear-gradient(135deg, var(--green-bright) 0%, var(--green) 100%);
+    padding: 30px 0;
+    border-bottom: 4px solid var(--navy);
+}
+.c4-promo-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.c4-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.c4-promo-text h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--white);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+.c4-promo-text h2 strong {
+    color: var(--navy);
+}
+.c4-promo-text p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+}
+.c4-promo-actions {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* 2. Modal System */
+.pba-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999; /* Ensure it is above everything */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+.pba-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+.pba-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 32, 70, 0.85); /* Deep navy glass effect */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.pba-modal-content {
+    position: relative;
+    background: var(--white);
+    width: 95%;
+    max-width: 1000px;
+    max-height: 90vh;
+    border-radius: 12px;
+    overflow-y: auto;
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+.pba-modal.is-open .pba-modal-content {
+    transform: translateY(0);
+}
+.pba-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+.pba-modal-close:hover {
+    background: var(--green);
+}
+.core4-flyer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Mobile Breakpoints */
+@media (max-width: 980px) {
+    .c4-promo-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .c4-promo-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    .c4-promo-actions {
+        flex-direction: column;
+    }
+    .c4-promo-actions .btn {
+        width: 100%;
     }
 }

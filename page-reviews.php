@@ -8,7 +8,7 @@ get_header(); ?>
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="See what real PB Academy players have to say!">
-        <img class="hero-video-bg" src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?q=80&w=1600&auto=format&fit=crop" alt="PB Academy Reviews" aria-hidden="true" style="object-fit: cover;">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/review-hero-banner.webp" alt="PB Academy Reviews" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <h2 class="hero-subtitle">Real Players. Real Progress. Real Fun.</h2>

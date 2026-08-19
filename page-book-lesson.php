@@ -65,7 +65,7 @@ get_header();
 
 	<!-- 1. Hero -->
 	<section class="bl-hero anim-fade-up">
-		<div class="bl-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1600&auto=format&fit=crop');"></div>
+		<div class="bl-hero__bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/book-a-lesson.webp');"></div>
 		<div class="bl-hero__overlay"></div>
 		<div class="container bl-hero__container">
 			<h2 class="bl-hero__eyebrow">BOOK YOUR SESSION</h2>
@@ -92,27 +92,35 @@ get_header();
 	</section>
 
 	<!-- 2. Benefits -->
-	<section id="benefits" class="bl-section bg-gray">
+	<section id="benefits" class="bl-section bl-benefits-section" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
 		<div class="container">
-			<h2 class="bl-section-title anim-fade-up">WHY BOOK WITH US?</h2>
-			<div class="bl-benefits-grid anim-fade-up">
+			<h2 class="bl-section-title anim-fade-up is-visible" style="color: var(--white);">WHY BOOK WITH US?</h2>
+			<div class="bl-benefits-grid anim-fade-up is-visible">
 				<div class="bl-benefit">
-					<svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="1.8"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+					<div class="bl-benefit-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
+					</div>
 					<h3>Expert Instruction</h3>
 					<p>Learn from certified coaches focused on your progress and technique.</p>
 				</div>
 				<div class="bl-benefit">
-					<svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+					<div class="bl-benefit-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+					</div>
 					<h3>Flexible Times</h3>
 					<p>Morning, evening, and weekend slots to fit your schedule.</p>
 				</div>
 				<div class="bl-benefit">
-					<svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+					<div class="bl-benefit-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+					</div>
 					<h3>Any Group Size</h3>
 					<p>Book solo, with a partner, or bring the whole group.</p>
 				</div>
 				<div class="bl-benefit">
-					<svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path fill="none" stroke="var(--white,#fff)" stroke-width="2" d="M9 12l2 2 4-4"/></svg>
+					<div class="bl-benefit-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path fill="none" stroke="currentColor" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
+					</div>
 					<h3>Fast Confirmation</h3>
 					<p>We personally confirm every booking request quickly.</p>
 				</div>
@@ -122,9 +130,9 @@ get_header();
 
 
 	<!-- 4. Booking Form -->
-	<section class="bl-section bg-gray" id="bl-form">
+	<section class="bl-section bl-form-section" id="bl-form">
 		<div class="container">
-			<div class="bl-form-card anim-fade-up">
+			<div class="bl-form-card anim-fade-up is-visible">
 				<div class="bl-card-header">
 					<h2 class="bl-section-title">Reserve Your Lesson</h2>
 					<p>Fill out the form below and we'll confirm your session by phone or email.</p>
@@ -296,9 +304,9 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 					</div>
-					<p>&#8220;I went from never touching a paddle to playing confidently in a few weeks.&#8221;</p>
+					<p>&#8220;I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.&#8221;</p>
 					<footer>
-						<span class="bl-testimonial__name">Karen M.</span>
+						<span class="bl-testimonial__name">Harvey M.</span>
 						<span class="bl-testimonial__location">Boynton Beach</span>
 					</footer>
 				</blockquote>
@@ -314,9 +322,9 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 					</div>
-					<p>&#8220;Booking was easy and the semi-private session with my husband was exactly what we needed.&#8221;</p>
+					<p>&#8220;Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.&#8221;</p>
 					<footer>
-						<span class="bl-testimonial__name">Daniel R.</span>
+						<span class="bl-testimonial__name">Danita M.</span>
 						<span class="bl-testimonial__location">Delray Beach</span>
 					</footer>
 				</blockquote>
@@ -332,9 +340,9 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 					</div>
-					<p>&#8220;Great energy, real feedback, and a schedule that actually worked around my week.&#8221;</p>
+					<p>&#8220;I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.&#8221;</p>
 					<footer>
-						<span class="bl-testimonial__name">Priya S.</span>
+						<span class="bl-testimonial__name">Lisa P.</span>
 						<span class="bl-testimonial__location">Boca Raton</span>
 					</footer>
 				</blockquote>

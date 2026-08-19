@@ -22,7 +22,8 @@
 .bl-hero__overlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%);
+	/* background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%); */
+	background: rgb(10 12 15 / 45%) !important;
 }
 
 .bl-hero__container {
@@ -96,55 +97,118 @@
 	margin-bottom: 40px;
 }
 
-/* 2. Benefits */
+/* ---------------------------------------------------------------
+   2. BENEFITS (COLORFUL NAVY UPGRADE)
+   --------------------------------------------------------------- */
+.bl-benefits-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    position: relative;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+/* Subtle pattern overlay to make the navy background premium */
+.bl-benefits-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+}
 .bl-benefits-grid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 2;
 }
-
 .bl-benefit {
-	background: var(--white, #fff);
-	border-radius: 12px;
-	padding: 28px 22px;
-	text-align: center;
-	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    background: var(--white);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid var(--green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.bl-benefit svg {
-	width: 40px;
-	height: 40px;
-	margin-bottom: 14px;
+.bl-benefit:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
-
+.bl-benefit-icon {
+    width: 65px;
+    height: 65px;
+    background: rgba(103, 155, 48, 0.15);
+    color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.bl-benefit:hover .bl-benefit-icon {
+    transform: scale(1.1);
+    background: var(--green);
+    color: var(--white);
+}
+.bl-benefit-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: currentColor;
+}
 .bl-benefit h3 {
-	font-size: 17px;
-	margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-
 .bl-benefit p {
-	font-size: 14px;
-	color: var(--gray-text, #6b7280);
-	line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+    margin: 0;
 }
 
-/* 3. Booking form */
+/* ---------------------------------------------------------------
+   3. BOOKING FORM (VIBRANT GREEN DOT-GRID)
+   --------------------------------------------------------------- */
+.bl-form-section {
+    background-color: #F4F9F0; /* Replaces the boring gray with fresh pale green */
+    background-image: radial-gradient(rgba(103, 155, 48, 0.08) 2px, transparent 2px);
+    background-size: 30px 30px;
+    position: relative;
+}
 .bl-form-card {
-	max-width: 860px;
-	margin: 0 auto;
-	background: var(--white, #fff);
-	border-radius: 16px;
-	padding: 40px;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 50px 60px;
+    box-shadow: 0 25px 60px rgba(11, 32, 70, 0.08);
+    border-top: 8px solid var(--green); /* Heavy colorful accent */
+    position: relative;
+    z-index: 2;
 }
-
 .bl-card-header {
-	text-align: center;
-	margin-bottom: 28px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.bl-card-header .bl-section-title {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+.bl-card-header p {
+    font-size: 1.05rem;
+    color: var(--gray-text);
 }
 
-.bl-card-header p {
-	color: var(--gray-text, #6b7280);
+/* Responsive updates for the heavily padded card */
+@media (max-width: 768px) {
+    .bl-form-card {
+        padding: 40px 25px;
+    }
 }
 
 .bl-alert {
@@ -261,7 +325,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 28px;
-	align-items: start;
+	align-items: stretch; /* CRITICAL FIX: Forces all boxes in the row to be equal height */
 }
 
 .bl-testimonial {
@@ -275,6 +339,7 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	height: 100%; /* CRITICAL FIX: Ensures the background box actually stretches */
 	transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
