@@ -23,6 +23,16 @@ get_header(); ?>
                         </button>
                     </form>
                 </div>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#topics" class="qj-link">Getting Started</a>
+                        <a href="#courts" class="qj-link">Court Directory</a>
+                        <a href="#shop-articles" class="qj-link">Shop & Articles</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

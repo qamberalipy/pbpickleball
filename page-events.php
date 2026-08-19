@@ -14,6 +14,16 @@ get_header(); ?>
                 <h2 class="hero-subtitle">Play. Socialize. Connect.</h2>
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">EVENTS</span></h1>
                 <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Clinics, round robins, organized play and social gatherings — discover what's happening in the PB Academy community and reserve your spot.</p>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#upcoming" class="qj-link">Upcoming Events</a>
+                        <a href="#calendar" class="qj-link">Event Calendar</a>
+                        <a href="#past-events" class="qj-link">Past Events</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

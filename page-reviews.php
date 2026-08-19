@@ -14,6 +14,15 @@ get_header(); ?>
                 <h2 class="hero-subtitle">Real Players. Real Progress. Real Fun.</h2>
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">WHAT OUR PLAYERS <br><span class="highlight">ARE SAYING</span></h1>
                 <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Hear directly from students who have learned, improved and had fun with PB Academy.</p>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#reviews" class="qj-link">Student Reviews</a>
+                        <a href="#leave-review" class="qj-link">Leave A Review</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

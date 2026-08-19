@@ -77,11 +77,22 @@ get_header();
 				<div class="bl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Flexible Scheduling</span></div>
 			</div>
 			<a href="#bl-form" class="btn btn-green bl-hero__cta">RESERVE MY SPOT</a>
+
+			<!-- Quick-Jump Anchor Bar -->
+			<div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+			    <span class="qj-label">Click To View More:</span>
+			    <div class="qj-links">
+			        <a href="#benefits" class="qj-link">Benefits</a>
+			        <a href="#bl-form" class="qj-link">Book Now</a>
+			        <a href="#testimonials" class="qj-link">Testimonials</a>
+			        <a href="#faqs" class="qj-link">FAQs</a>
+			    </div>
+			</div>
 		</div>
 	</section>
 
 	<!-- 2. Benefits -->
-	<section class="bl-section bg-gray">
+	<section id="benefits" class="bl-section bg-gray">
 		<div class="container">
 			<h2 class="bl-section-title anim-fade-up">WHY BOOK WITH US?</h2>
 			<div class="bl-benefits-grid anim-fade-up">
@@ -269,7 +280,7 @@ get_header();
 	</section>
 
 	<!-- 5. Testimonials -->
-	<section class="bl-section">
+	<section id="testimonials" class="bl-section">
 		<div class="container">
 			<h2 class="bl-section-title anim-fade-up">WHAT PLAYERS SAY</h2>
 			<div class="bl-testimonial-grid anim-fade-up">
@@ -333,7 +344,7 @@ get_header();
 	</section>
 
 	<!-- 6. FAQs -->
-	<section class="bl-section bg-gray">
+	<section id="faqs" class="bl-section bg-gray">
 		<div class="container">
 			<h2 class="bl-section-title anim-fade-up">FREQUENTLY ASKED QUESTIONS</h2>
 			<div class="bl-faq anim-fade-up">

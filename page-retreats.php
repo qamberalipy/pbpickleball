@@ -16,6 +16,17 @@ get_header(); ?>
                 <h2 class="hero-subtitle">Play. Learn. Travel. Connect.</h2>
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PICKLEBALL RETREATS</span></h1>
                 <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">PB Academy Retreats bring together pickleball instruction, organized play, travel, relaxation and social activities in carefully selected destinations. The experience should especially appeal to adults and seniors who enjoy pickleball but also want to meet people, travel and have fun.</p>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#upcoming" class="qj-link">Upcoming Retreats</a>
+                        <a href="#retreats-info" class="qj-link">About Retreats</a>
+                        <a href="#cruises-info" class="qj-link">About Cruises</a>
+                        <a href="#interest-list" class="qj-link">Join Interest List</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -125,7 +136,7 @@ get_header(); ?>
     </section>
 
     <!-- 3. Retreats Deep Dive Section -->
-    <section class="r-section r-deep-dive" data-mascot-msg="A curated vacation experience designed entirely around your favorite sport.">
+    <section id="retreats-info" class="r-section r-deep-dive" data-mascot-msg="A curated vacation experience designed entirely around your favorite sport.">
         <div class="container">
             <div class="r-intro-block anim-fade-up">
                 <h2>What is a Pickleball Retreat?</h2>
@@ -314,7 +325,7 @@ get_header(); ?>
     </section>
 
     <!-- 4. Cruises Deep Dive Section -->
-    <section class="r-section r-deep-dive bg-gray">
+    <section id="cruises-info" class="r-section r-deep-dive bg-gray">
         <div class="container">
             <div class="r-intro-block anim-fade-up">
                 <h2>What is a Pickleball Cruise?</h2>

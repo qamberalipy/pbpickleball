@@ -75,6 +75,15 @@ get_header();
                         Beginners Welcome
                     </span>
                 </div>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#contact-info" class="qj-link">Contact Info</a>
+                        <a href="#community" class="qj-link">Community</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -82,7 +91,7 @@ get_header();
     <!-- ============================================================
          PHASE 2: MAIN CONTACT SPLIT (Info + Refactored Form)
          ============================================================ -->
-    <section class="contact-split container anim-fade-up" data-mascot-msg="Fill out the form below and our team will get right back to you.">
+    <section id="contact-info" class="contact-split container anim-fade-up" data-mascot-msg="Fill out the form below and our team will get right back to you.">
         <div class="contact-split-grid">
 
             <!-- LEFT: Get In Touch (Phone, Email, Web) -->
@@ -212,7 +221,7 @@ get_header();
     <!-- ============================================================
          PHASE 3: COMMUNITY / HOA CALLOUT
          ============================================================ -->
-    <section class="container" style="padding-bottom: 80px;">
+    <section id="community" class="container" style="padding-bottom: 80px;">
         <div class="ct-community-banner anim-fade-up">
             <div class="ct-cb-text">
                 <h2>INTERESTED IN BRINGING PB ACADEMY TO YOUR COMMUNITY?</h2>
