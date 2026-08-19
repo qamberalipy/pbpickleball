@@ -17,12 +17,22 @@
             <div class="hero-content">
                 <h1>PICKLEBALL COURT DIRECTORY</h1>
                 <h3 class="hero-tagline type-effect"></h3>
+                
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#stats" class="qj-link">Quick Stats</a>
+                        <a href="#find-a-court" class="qj-link">Find A Court</a>
+                        <a href="#surfaces-guide" class="qj-link">Surfaces Guide</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 3. Stats Section -->
-    <section class="cd-stats-search" data-mascot-msg="We track hundreds of locations, from public parks to private clubs.">
+    <section id="stats" class="cd-stats-search" data-mascot-msg="We track hundreds of locations, from public parks to private clubs.">
         <div class="container">
             <div class="cd-stats-grid anim-fade-up is-visible">
                 <!-- Stat 1 -->

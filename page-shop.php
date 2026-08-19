@@ -35,12 +35,22 @@
                         Expert Support
                     </div>
                 </div>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#categories" class="qj-link">Categories</a>
+                        <a href="#featured" class="qj-link">Featured Products</a>
+                        <a href="#contact" class="qj-link">Contact</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 2. Category Nav Strip -->
-    <section class="shop-cats" data-mascot-msg="From premium paddles to court shoes, explore our top categories.">
+    <section id="categories" class="shop-cats" data-mascot-msg="From premium paddles to court shoes, explore our top categories.">
         <div class="shop-container">
             <div class="shop-cats__grid">
                 <a href="#" class="anim-fade-up anim-stagger shop-cat-card" style="--stagger-delay: 0ms;">
@@ -83,7 +93,7 @@
     </section>
 
     <!-- 3. Featured Products Section -->
-    <section class="shop-featured" data-mascot-msg="Check out our featured products, tested and approved by PBA pros!">
+    <section id="featured" class="shop-featured" data-mascot-msg="Check out our featured products, tested and approved by PBA pros!">
         <div class="shop-container">
             <div class="shop-featured__header">
                 <div class="shop-featured__title-wrap">
@@ -231,7 +241,7 @@
     </section>
 
     <!-- 4. Motivational CTA Banner -->
-    <section class="shop-cta" data-mascot-msg="Questions about gear? Give us a call, we are happy to help!">
+    <section id="contact" class="shop-cta" data-mascot-msg="Questions about gear? Give us a call, we are happy to help!">
         <div class="shop-container">
             <div class="shop-cta__wrap">
                 <div class="shop-cta__left">

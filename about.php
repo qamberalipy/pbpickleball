@@ -24,12 +24,23 @@ get_header();
                     <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     <span class="btn btn-outline-white prog-badge">CONNECT</span>
                 </div>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#who-we-are" class="qj-link">Who We Are</a>
+                        <a href="#who-we-serve" class="qj-link">Who We Serve</a>
+                        <a href="#get-started" class="qj-link">Get Started</a>
+                        <a href="#contact" class="qj-link">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Core Narrative Section -->
-    <section class="about-narrative-section container" data-mascot-msg="Learning pickleball should never feel intimidating.">
+    <section id="who-we-are" class="about-narrative-section container" data-mascot-msg="Learning pickleball should never feel intimidating.">
         
         <!-- Row 1: Image Left, Text Right -->
         <div class="about-narrative-grid anim-fade-up is-visible">
@@ -64,7 +75,7 @@ get_header();
     </section>
 
     <!-- Target Audience & Promise Section -->
-    <section class="about-lists-section">
+    <section id="who-we-serve" class="about-lists-section">
         <div class="about-lists-grid">
             <!-- Column 1 -->
             <div class="about-list-col anim-fade-up is-visible">
@@ -96,7 +107,7 @@ get_header();
     </section>
 
     <!-- Specific About Page CTA Bar -->
-    <section class="about-cta-banner container anim-scale-in is-visible">
+    <section id="get-started" class="about-cta-banner container anim-scale-in is-visible">
         <div class="acb-inner acb-about-override">
             <div class="acb-text">
                 <h2>Ready to Start Playing?</h2>
@@ -109,7 +120,7 @@ get_header();
     </section>
 
     <!-- Dark Blue Pre-Footer Bar -->
-    <section class="about-prefooter" data-mascot-msg="Need help? Give us a call at 561-855-9500.">
+    <section id="contact" class="about-prefooter" data-mascot-msg="Need help? Give us a call at 561-855-9500.">
         <div class="container prefooter-grid">
             <div class="pf-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>

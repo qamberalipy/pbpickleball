@@ -18,12 +18,22 @@ get_header();
             <div class="hero-content anim-fade-up">
                 <h1>BEGINNER<br><span class="highlight">TRAINING MANUAL</span></h1>
                 <h3 class="hero-tagline type-effect"></h3>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#samples" class="qj-link">Sample Pages</a>
+                        <a href="#download" class="qj-link">Get Your Free Copy</a>
+                        <a href="#benefits" class="qj-link">Benefits</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 2. SAMPLE PAGES -->
-    <section class="bm-samples container anim-fade-up" data-mascot-msg="Take a sneak peek inside the manual. Everything you need to play with confidence.">
+    <section id="samples" class="bm-samples container anim-fade-up" data-mascot-msg="Take a sneak peek inside the manual. Everything you need to play with confidence.">
         <h2 class="lp-section-title">INSIDE VOLUME 1 – SAMPLE PAGES</h2>
         <div class="bm-samples-grid">
             <?php
@@ -50,7 +60,7 @@ get_header();
     </section>
 
     <!-- 3. DOWNLOAD FORM SECTION -->
-    <section class="bm-purchase-section container anim-fade-up" data-mascot-msg="Enter your email to get instant, free access to the complete guide.">
+    <section id="download" class="bm-purchase-section container anim-fade-up" data-mascot-msg="Enter your email to get instant, free access to the complete guide.">
         <div class="bm-purchase-container">
             
             <!-- Left Side: Value Proposition -->
@@ -106,7 +116,7 @@ get_header();
     </section>
 
     <!-- 4. BOTTOM BANNER: Trust & Features -->
-    <section class="bm-bottom anim-fade-up" data-mascot-msg="Real results for active adults. The more you learn, the more you enjoy the game!">
+    <section id="benefits" class="bm-bottom anim-fade-up" data-mascot-msg="Real results for active adults. The more you learn, the more you enjoy the game!">
         <div class="container bm-bottom-container">
             
             <!-- Left Side: Instructor Quote -->

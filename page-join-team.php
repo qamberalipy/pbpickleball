@@ -140,6 +140,14 @@ get_header();
                     </ul>
                 </div>
             </div>
+
+            <!-- Quick-Jump Anchor Bar -->
+            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                <span class="qj-label">Click To View More:</span>
+                <div class="qj-links">
+                    <a href="#jt-form" class="qj-link">Application Form</a>
+                </div>
+            </div>
         </div>
     </section>
 

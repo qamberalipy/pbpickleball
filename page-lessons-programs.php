@@ -26,6 +26,16 @@ get_header();
                 <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PROGRAMS</span></h1>
                 <h3 class="hero-tagline" style="margin-top: 15px; font-weight: 700; letter-spacing: 1px;">Learn. Practice. Play. Improve.</h3>
                 <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">Whether someone has never picked up a paddle or wants to improve their existing game, PB Academy offers structured programs designed to help players learn at their own pace while building skills, confidence and enjoyment of pickleball.</p>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#lessons" class="qj-link">Lessons</a>
+                        <a href="#core-4" class="qj-link">PBA Core 4</a>
+                        <a href="#clinics" class="qj-link">Clinics & Play</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -33,7 +43,7 @@ get_header();
     <!-- ============================================================
          PHASE 2: LESSONS CATEGORY & PROGRESSION BAR
          ============================================================ -->
-    <section class="container" style="padding: 80px 20px;">
+    <section id="lessons" class="container" style="padding: 80px 20px;">
         <h2 class="lp-section-title">PROGRAM CATEGORY 1 — LESSONS</h2>
         
         <!-- 4-Column Grid for Lessons (Avoids orphaned cards) -->
@@ -118,7 +128,7 @@ get_header();
     <!-- ============================================================
          PHASE 3: PBA CORE 4 (PROMINENT FEATURE)
          ============================================================ -->
-    <section class="lp-core4-section">
+    <section id="core-4" class="lp-core4-section">
         <div class="container lp-core4-container anim-fade-up">
             <div class="lp-core4-header">
                 <h2>PBA CORE 4</h2>
@@ -167,7 +177,7 @@ get_header();
     <!-- ============================================================
          PHASE 4: CLINICS, PLAY & FINAL CTA
          ============================================================ -->
-    <section class="container" style="padding: 80px 20px;">
+    <section id="clinics" class="container" style="padding: 80px 20px;">
         <h2 class="lp-section-title">PROGRAM CATEGORY 3 — CLINICS & PLAY</h2>
         
         <div class="lp-clinics-grid anim-fade-up">

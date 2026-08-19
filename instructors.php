@@ -20,6 +20,16 @@ get_header();
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;">MEET OUR PB ACADEMY <br><span class="highlight">INSTRUCTORS</span></h1>
                 <h3 class="hero-tagline" style="margin-top: 15px; margin-bottom: 25px; font-weight: 700;">Friendly. Experienced. Patient. Passionate About Pickleball.</h3>
                 <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy instructors are selected to provide welcoming, structured and easy-to-understand instruction.</p>
+
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#featured" class="qj-link">Featured Instructor</a>
+                        <a href="#all-instructors" class="qj-link">Instructor Directory</a>
+                        <a href="#join-team" class="qj-link">Join Our Team</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -28,7 +38,7 @@ get_header();
          PHASE 2: FEATURED INSTRUCTOR (CHARLES AZOULAY)
          ============================================================ -->
 
-    <section class="container featured-instructor-section" style="padding: 80px 20px 40px;" data-mascot-msg="Coach Charles brings years of expertise to help you master the fundamentals.">
+    <section id="featured" class="container featured-instructor-section" style="padding: 80px 20px 40px;" data-mascot-msg="Coach Charles brings years of expertise to help you master the fundamentals.">
         <div class="fi-2col-layout anim-fade-up">
             
             <!-- Left Column: Photo & Massive CTA -->
@@ -85,7 +95,7 @@ get_header();
     <!-- ============================================================
          PHASE 3: INSTRUCTOR DIRECTORY GRID
          ============================================================ -->
-    <section class="container inst-grid-section" style="padding: 0 20px 80px;" data-mascot-msg="Find the perfect instructor for your skill level and schedule.">
+    <section id="all-instructors" class="container inst-grid-section" style="padding: 0 20px 80px;" data-mascot-msg="Find the perfect instructor for your skill level and schedule.">
         <div class="inst-dir-grid">
             
             <!-- Instructor Card 1 -->
@@ -262,7 +272,7 @@ get_header();
     <!-- ============================================================
          PHASE 4: WANT TO JOIN OUR TEAM? (CTA Banner)
          ============================================================ -->
-    <section class="container join-team-section" style="padding-bottom: 80px;" data-mascot-msg="Passionate about pickleball? We are always looking for great instructors!">
+    <section id="join-team" class="container join-team-section" style="padding-bottom: 80px;" data-mascot-msg="Passionate about pickleball? We are always looking for great instructors!">
         <div class="join-cta-banner anim-fade-up">
             <div class="jcb-left">
                 <h2>Want to Join Our Team?</h2>

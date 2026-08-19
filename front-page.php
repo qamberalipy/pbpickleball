@@ -143,64 +143,25 @@
             <div class="carousel-track-wrapper">
                 <div class="carousel-track" id="testimonialTrack">
                     
+                    <!-- Testimonial 1 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah M.">
-                        <p>Coach Charles completely changed my game. His tips on dinking and kitchen play helped me win my first local tournament. Unbelievable coaching!</p>
-                        <span class="t-author">- Sarah M., Boynton Beach</span>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Danita M.">
+                        <p>Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.</p>
+                        <span class="t-author">- Danita M.</span>
                     </div>
 
+                    <!-- Testimonial 2 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David L.">
-                        <p>As an active adult, I was worried about injuries, but Charles emphasizes proper form and safety. My 3rd shot drop has never been better!</p>
-                        <span class="t-author">- David L., Delray Beach</span>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Harvey M.">
+                        <p>I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.</p>
+                        <span class="t-author">- Harvey M.</span>
                     </div>
 
+                    <!-- Testimonial 3 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Linda K.">
-                        <p>Learning the kitchen strategies from Coach Charles was a game-changer. He breaks down complex techniques into simple, repeatable steps.</p>
-                        <span class="t-author">- Linda K., Lantana</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Robert T.">
-                        <p>The beginner clinic was exactly what I needed. We focused on mastering the dink and court positioning. Great instruction and a fun group!</p>
-                        <span class="t-author">- Robert T., West Palm Beach</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mary J.">
-                        <p>My partner and I took lessons to improve our 3rd shot drops and team communication. Charles is a fantastic instructor who really cares.</p>
-                        <span class="t-author">- Mary J., Boca Raton</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="James P.">
-                        <p>My serve and return of serve have improved dramatically. The coaching here focuses on the details that make a huge difference in match play.</p>
-                        <span class="t-author">- James P., Wellington</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Susan W.">
-                        <p>As an active senior, I really appreciate the focus on mobility and smart placement over power. Mastering the soft game has been incredibly rewarding.</p>
-                        <span class="t-author">- Susan W., Lake Worth</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael B.">
-                        <p>The private lessons helped me fix my backhand mechanics and understand when to speed up the ball at the kitchen line. Amazing, patient instructor!</p>
-                        <span class="t-author">- Michael B., Boynton Beach</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily R.">
-                        <p>Fun, engaging, and professional. Charles taught me how to reset the point with a soft block instead of just banging the ball. Highly recommend!</p>
-                        <span class="t-author">- Emily R., Delray Beach</span>
-                    </div>
-
-                    <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="John D.">
-                        <p>If you want to learn proper pickleball techniques like the 3rd shot drop and dinking without picking up bad habits, this is the academy to join.</p>
-                        <span class="t-author">- John D., Palm Beach Gardens</span>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Lisa P.">
+                        <p>I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.</p>
+                        <span class="t-author">- Lisa P.</span>
                     </div>
 
                 </div>
@@ -210,7 +171,6 @@
         </div>
     </div>
 </section>
-
 <!-- Founder & Looking Ahead Section -->
 <section id="founder" class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Pickleball Academy is headed next!" aria-labelledby="founderHeading">
     <div class="container">
