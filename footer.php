@@ -357,6 +357,44 @@
         })();
     </script>
 
+<!-- PBA Core 4 Global Modal -->
+<div id="core4Modal" class="pba-modal" aria-hidden="true">
+    <div class="pba-modal-overlay" data-modal-close></div>
+    <div class="pba-modal-content" role="dialog" aria-modal="true" aria-labelledby="core4ModalTitle">
+        <button class="pba-modal-close" data-modal-close aria-label="Close modal">&times;</button>
+        <div class="pba-modal-body">
+            <img src="<?php echo get_template_directory_uri(); ?>/media/core4.jpeg" alt="PBA Core 4 Lesson Plan" class="core4-flyer-img">
+        </div>
+    </div>
+</div>
+
+<script>
+    /* Modal Trigger Engine */
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('core4Modal');
+        var openBtns = document.querySelectorAll('[data-modal-target="core4Modal"]');
+        var closeBtns = document.querySelectorAll('[data-modal-close]');
+
+        if(!modal) return;
+
+        openBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('is-open');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        closeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            });
+        });
+    });
+</script>
+
     <!-- Global Back to Top Button -->
     <button id="globalBackToTop" class="back-to-top-btn" aria-label="Scroll to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

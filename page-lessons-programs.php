@@ -39,7 +39,19 @@ get_header();
             </div>
         </div>
     </section>
-
+<section class="c4-promo-strip">
+    <div class="container c4-promo-inner anim-fade-up">
+        <div class="c4-promo-text">
+            <span class="c4-badge">FEATURED PROGRAM</span>
+            <h2>MASTER THE GAME WITH <strong>PBA CORE 4</strong></h2>
+            <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
+        </div>
+        <div class="c4-promo-actions">
+            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW CURRICULUM</button>
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">BOOK NOW</a>
+        </div>
+    </div>
+</section>
     <!-- ============================================================
          PHASE 2: LESSONS CATEGORY & PROGRESSION BAR
          ============================================================ -->
