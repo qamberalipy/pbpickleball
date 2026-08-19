@@ -65,7 +65,7 @@ get_header();
 
 	<!-- 1. Hero -->
 	<section class="bl-hero anim-fade-up">
-		<div class="bl-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=1600&auto=format&fit=crop');"></div>
+		<div class="bl-hero__bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/book-a-lesson.webp');"></div>
 		<div class="bl-hero__overlay"></div>
 		<div class="container bl-hero__container">
 			<h2 class="bl-hero__eyebrow">BOOK YOUR SESSION</h2>

@@ -7573,3 +7573,64 @@ header .container.header-content {
         padding: 6px 12px;
     }
 }
+
+/* ============================================================
+   GLOBAL BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Fixed to the Left as requested */
+    z-index: 9998;
+    background-color: var(--green);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top-btn.btt-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(11, 32, 70, 0.3);
+}
+
+.back-to-top-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 15px;
+        left: 15px; /* Kept on the left for mobile */
+        width: 42px;
+        height: 42px;
+    }
+    .back-to-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}

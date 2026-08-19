@@ -22,7 +22,8 @@
 .bl-hero__overlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%);
+	/* background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%); */
+	background: rgb(10 12 15 / 45%) !important;
 }
 
 .bl-hero__container {

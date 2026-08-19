@@ -13,7 +13,7 @@ get_header();
          PHASE 1: HERO SECTION
          ============================================================ -->
     <section class="hero instructors-hero-full" data-mascot-msg="Meet the passionate professionals who make learning pickleball a breeze!">
-        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/instructors-hero-bg.png" alt="PB Academy Instructors" aria-hidden="true">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/our-instructor-hero.webp" alt="PB Academy Instructors" aria-hidden="true">
         
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
