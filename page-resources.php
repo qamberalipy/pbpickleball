@@ -130,7 +130,7 @@ get_header(); ?>
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1613918431703-aa2d2e5e1a3e?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1778180883807-19962eda4d99?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Public</span>
                     </div>
                     <div class="r-card__content">
@@ -154,7 +154,7 @@ get_header(); ?>
                 </article>
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1622279457486-28f993f78f8f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Private</span>
                     </div>
                     <div class="r-card__content">
@@ -178,7 +178,7 @@ get_header(); ?>
                 </article>
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1591491634026-a3e0709c3d3f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1762423570127-c36ff11b883f?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Public</span>
                     </div>
                     <div class="r-card__content">
