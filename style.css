@@ -8053,14 +8053,14 @@ header .container.header-content {
     width: 280px;
 }
 
-/* Arrow points UP at the browser UI */
+/* Arrow points UP at the browser UI on Desktop */
 .dl-arrow {
     width: 45px;
     height: 45px;
     color: var(--green);
     animation: bounceUp 1.2s ease-in-out infinite;
     margin-bottom: 10px;
-    transform: rotate(180deg); /* Points Upwards */
+    transform: rotate(0deg); /* FIXED: Base SVG already points UP */
 }
 
 @keyframes slideInDown {
@@ -8069,8 +8069,8 @@ header .container.header-content {
 }
 
 @keyframes bounceUp {
-    0%, 100% { transform: translateY(0) rotate(180deg); }
-    50% { transform: translateY(-12px) rotate(180deg); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(0deg); } /* Bounces Upward */
 }
 
 @media (max-width: 768px) {
@@ -8081,12 +8081,18 @@ header .container.header-content {
         transform: translateX(50%);
         animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    /* Point down on mobile since downloads appear at bottom of screen usually */
-    .dl-arrow { transform: rotate(0deg); }
-    @keyframes bounceUp {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(12px) rotate(0deg); }
+    
+    /* Points DOWN on mobile (Mobile downloads usually appear at bottom) */
+    .dl-arrow { 
+        transform: rotate(180deg); 
+        animation: bounceDownMobile 1.2s ease-in-out infinite;
     }
+    
+    @keyframes bounceDownMobile {
+        0%, 100% { transform: translateY(0) rotate(180deg); }
+        50% { transform: translateY(12px) rotate(180deg); } /* Bounces Downward */
+    }
+    
     @keyframes slideInUp {
         from { opacity: 0; transform: translate(50%, 40px); }
         to { opacity: 1; transform: translate(50%, 0); }
