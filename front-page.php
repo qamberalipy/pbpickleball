@@ -158,24 +158,21 @@
             <div class="carousel-track-wrapper">
                 <div class="carousel-track" id="testimonialTrack">
                     
-                    <!-- Testimonial 1 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Danita M.">
-                        <p>Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M.">
+                        <p>&#8220;Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.&#8221;</p>
                         <span class="t-author">- Danita M.</span>
                     </div>
 
-                    <!-- Testimonial 2 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Harvey M.">
-                        <p>I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M.">
+                        <p>&#8220;I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.&#8221;</p>
                         <span class="t-author">- Harvey M.</span>
                     </div>
 
-                    <!-- Testimonial 3 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Lisa P.">
-                        <p>I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P.">
+                        <p>&#8220;I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.&#8221;</p>
                         <span class="t-author">- Lisa P.</span>
                     </div>
 

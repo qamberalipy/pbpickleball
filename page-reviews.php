@@ -34,9 +34,8 @@ get_header(); ?>
 
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
-                <!-- Review 1 -->
                 <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms; max-width: none;">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Margaret R.">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M.">
                     <div class="cd-stars" style="margin-bottom: 12px;">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
@@ -44,29 +43,25 @@ get_header(); ?>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p>"I never thought I'd feel comfortable on a pickleball court at 68 years old. The instructors were so patient and made everything easy to follow."</p>
-                    <div class="t-author">Margaret R. — Boca Raton, FL</div>
-                    <div style="margin-top: 10px; font-size: 0.75rem; color: var(--gray-text);">PBA Core 4 &middot; Sept 2026</div>
+                    <p>"Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free."</p>
+                    <div class="t-author">Danita M.</div>
                 </article>
 
-                <!-- Review 2 -->
                 <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms; max-width: none;">
-                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop" alt="Dennis K.">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M.">
                     <div class="cd-stars" style="margin-bottom: 12px;">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg class="empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p>"Charles is an incredible instructor — clear, encouraging, and genuinely invested in helping you improve. The round robins are the highlight of my week."</p>
-                    <div class="t-author">Dennis K. — Delray Beach, FL</div>
-                    <div style="margin-top: 10px; font-size: 0.75rem; color: var(--gray-text);">Private Lessons &middot; Aug 2026</div>
+                    <p>"I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week."</p>
+                    <div class="t-author">Harvey M.</div>
                 </article>
 
-                <!-- Review 3 -->
                 <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms; max-width: none;">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Linda P.">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P.">
                     <div class="cd-stars" style="margin-bottom: 12px;">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
@@ -74,9 +69,8 @@ get_header(); ?>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p>"The Beginner Manual paired with the Core 4 lessons made everything click. I finally understand the rules and I'm actually enjoying playing now!"</p>
-                    <div class="t-author">Linda P. — Boynton Beach, FL</div>
-                    <div style="margin-top: 10px; font-size: 0.75rem; color: var(--gray-text);">Beginner Manual &middot; Jul 2026</div>
+                    <p>"I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy."</p>
+                    <div class="t-author">Lisa P.</div>
                 </article>
 
             </div>
