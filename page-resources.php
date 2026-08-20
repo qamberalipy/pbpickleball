@@ -46,74 +46,74 @@ get_header(); ?>
 
                 <!-- NOTE: Added 'resource-trigger' class and removed target="_blank" -->
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Player Levels & Skills.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.2-1.5 4-3.5 4.6V14h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2v-2.4C9 11 7.5 9.2 7.5 7A5 5 0 0 1 12 2z"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ca.png" alt="bar chart">
                     <h4>Player Levels & Skills</h4>
                     <p>Understand skill ratings from 2.0 to 5.0 and where you fit as you improve.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Choosing the Right Paddle.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M6 2l12 12-4 4L2 6l4-4zm10 14l4 4-2 2-4-4 2-2z"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3d3.png" alt="paddle & ball">
                     <h4>Choosing the Right Paddle</h4>
                     <p>Weight, grip size and material basics to help you pick your first paddle.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Indoor vs. Outdoor Balls.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3be.png" alt="ball">
                     <h4>Indoor vs. Outdoor Balls</h4>
                     <p>Why ball type matters and how to choose the right one for your court.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Shoes & Court Safety.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 18h16M6 18V9l6-5 6 5v9"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f45f.png" alt="shoe">
                     <h4>Shoes & Court Safety</h4>
                     <p>Proper court footwear to prevent slips and support quick lateral moves.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Hydration & Sun Safety.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png" alt="droplet">
                     <h4>Hydration & Sun Safety</h4>
                     <p>Simple tips to stay safe and comfortable playing outdoors.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Eye Protection.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f576-fe0f.png" alt="sunglasses">
                     <h4>Eye Protection</h4>
                     <p>Why safety glasses matter and what to look for in the right pair.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Court Types & Surfaces.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3df-fe0f.png" alt="stadium">
                     <h4>Court Types & Surfaces</h4>
                     <p>Learn the differences between indoor, outdoor and hybrid court surfaces.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Handling a Court Emergency.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2z"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a8.png" alt="siren">
                     <h4>Handling a Court Emergency</h4>
                     <p>What to do if you or another player experiences an injury on the court.</p>
                 </a>
 
                 <!-- NO RESOURCE TRIGGER HERE: This just scrolls down -->
                 <a href="#courts" class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cd.png" alt="pin">
                     <h4>Where to Play</h4>
                     <p>Find courts near you — see our full Court Directory below.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Basic rule.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cb.png" alt="clipboard">
                     <h4>Basic Rules</h4>
                     <p>The essential rules every new player needs to know before stepping on court.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Scoring.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f522.png" alt="numbers">
                     <h4>Scoring</h4>
                     <p>A simple breakdown of how scoring and side-outs work.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Pickleball Terminology.png" class="program-card resource-trigger">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png" alt="open book">
                     <h4>Pickleball Terminology</h4>
                     <p>Kitchen, dink, dead ball and other common terms explained simply.</p>
                 </a>

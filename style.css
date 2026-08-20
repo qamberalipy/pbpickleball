@@ -765,8 +765,8 @@ header .header-actions {
 }
 
 .program-icon {
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 20px;
     fill: var(--green);
     flex-shrink: 0;
