@@ -32,7 +32,7 @@ get_header();
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
                         <a href="#lessons" class="qj-link">Lessons</a>
-                        <a href="#core-4" class="qj-link">PBA Core 4</a>
+                        <a href="#core-4" class="qj-link qj-link--highlight">PBA Core 4</a>
                         <a href="#clinics" class="qj-link">Clinics & Play</a>
                     </div>
                 </div>
@@ -42,13 +42,13 @@ get_header();
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
         <div class="c4-promo-text">
-            <span class="c4-badge">FEATURED PROGRAM</span>
-            <h2>MASTER THE GAME WITH <strong>PBA CORE 4</strong></h2>
+            <span class="c4-badge">FEATURED PROGRAM</span><span class="popular-tag">Most Popular</span>
+            <h2>MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span></h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
-            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW CURRICULUM</button>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">BOOK NOW</a>
+            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
         </div>
     </div>
 </section>
@@ -72,7 +72,7 @@ get_header();
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 1 Player</span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@ get_header();
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 2 Players</span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@ get_header();
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 3-4 Players</span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -117,7 +117,7 @@ get_header();
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60-90 Mins</span>
                         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 5+ Players</span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">LEARN MORE / BOOK NOW</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
         </div>
@@ -181,7 +181,7 @@ get_header();
             
             <div class="hero-buttons" style="margin-top: 40px;">
                 <a href="#" class="btn btn-outline-white">LEARN MORE</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK CORE 4</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
             </div>
         </div>
     </section>
@@ -202,7 +202,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -215,7 +215,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -228,7 +228,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -241,7 +241,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -254,7 +254,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
 
@@ -267,7 +267,7 @@ get_header();
                     <div class="lp-meta" style="flex-direction: column; gap: 6px;">
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
                     </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">VIEW DATES & BOOK</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
                 </div>
             </div>
         </div>

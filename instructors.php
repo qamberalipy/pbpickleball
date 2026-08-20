@@ -51,7 +51,7 @@ get_header();
                     <h4>PB Academy Founder & Lead Instructor</h4>
                 </div>
                 <div style="margin-top: 10px;">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green" style="width: 100%; font-size: 0.95rem; padding: 18px 20px; text-align: center; white-space: normal; line-height: 1.4;">BOOK A SESSION WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green" style="width: 100%; font-size: 0.95rem; padding: 18px 20px; text-align: center; white-space: normal; line-height: 1.4;">REGISTER NOW</a>
                 </div>
             </div>
             
@@ -121,7 +121,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>
@@ -149,7 +149,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>
@@ -177,7 +177,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>
@@ -205,7 +205,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>
@@ -233,7 +233,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>
@@ -261,7 +261,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">BOOK WITH THIS INSTRUCTOR</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
                     <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
                 </div>
             </div>

@@ -11,7 +11,7 @@
             <h3 class="hero-tagline">Learn Pickleball. Play With Confidence. Have Fun.</h3>
             <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy provides beginner-friendly pickleball instruction with a special focus on making the game comfortable, social, and enjoyable for adults and seniors.</p>
             <div class="hero-buttons" style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
             </div>
             <!-- Quick-Jump Anchor Bar (Phase 3) -->
@@ -36,13 +36,13 @@
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
         <div class="c4-promo-text">
-            <span class="c4-badge">FEATURED PROGRAM</span>
-            <h2>MASTER THE GAME WITH <strong>PBA CORE 4</strong></h2>
+            <span class="c4-badge">FEATURED PROGRAM</span><span class="popular-tag">Most Popular</span>
+            <h2>MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span></h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
-            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW CURRICULUM</button>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">BOOK NOW</a>
+            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
         </div>
     </div>
 </section>
@@ -158,24 +158,21 @@
             <div class="carousel-track-wrapper">
                 <div class="carousel-track" id="testimonialTrack">
                     
-                    <!-- Testimonial 1 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Danita M.">
-                        <p>Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M.">
+                        <p>&#8220;Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.&#8221;</p>
                         <span class="t-author">- Danita M.</span>
                     </div>
 
-                    <!-- Testimonial 2 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Harvey M.">
-                        <p>I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M.">
+                        <p>&#8220;I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.&#8221;</p>
                         <span class="t-author">- Harvey M.</span>
                     </div>
 
-                    <!-- Testimonial 3 -->
                     <div class="t-card">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Lisa P.">
-                        <p>I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.</p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P.">
+                        <p>&#8220;I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.&#8221;</p>
                         <span class="t-author">- Lisa P.</span>
                     </div>
 
@@ -253,7 +250,7 @@
                     <line x1="8" y1="2" x2="8" y2="6"/>
                     <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
-                BOOK YOUR LESSON
+                REGISTER NOW
             </a>
             <span class="cta-or-text">or call 561-855-9500</span>
         </div>

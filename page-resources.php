@@ -232,13 +232,13 @@ get_header(); ?>
 
             <h2 class="r-section-title anim-fade-up">EDUCATIONAL ARTICLES & TIPS</h2>
             <div class="r-grid r-grid--upcoming anim-fade-up">
-                <div class="r-grid-img" style="background-image:url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop');">
+                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/5BeginnerTipsforYourFirst.png');">
                     <span>5 Beginner Tips for Your First Game</span>
                 </div>
-                <div class="r-grid-img" style="background-image:url('https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?q=80&w=800&auto=format&fit=crop');">
+                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/UnderstandingtheKitchenRule.png');">
                     <span>Understanding the Kitchen Rule</span>
                 </div>
-                <div class="r-grid-img" style="background-image:url('https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?q=80&w=800&auto=format&fit=crop');">
+                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/HowtoChooseYourFirstPaddle.png');">
                     <span>How to Choose Your First Paddle</span>
                 </div>
             </div>
@@ -261,7 +261,7 @@ get_header(); ?>
             <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy coach.</p>
             <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">EXPLORE PROGRAMS</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
             </div>
         </div>
     </section>

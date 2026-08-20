@@ -124,7 +124,7 @@ get_header(); ?>
     </section>
 
     <!-- EVENT CALENDAR -->
-    <section class="r-section" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
+    <section class="r-section pattern-bg" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">EVENT CALENDAR</h2>
             <div class="anim-fade-up" style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 40px; box-shadow: 0 15px 40px rgba(11,32,70,0.08); text-align:center;">
@@ -140,7 +140,7 @@ get_header(); ?>
     </section>
 
     <!-- PAST EVENTS -->
-    <section class="r-section bg-gray" id="past-events" data-mascot-msg="See the fun our community has already had together.">
+    <!-- <section class="r-section bg-gray" id="past-events" data-mascot-msg="See the fun our community has already had together.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">PAST EVENTS</h2>
             <div class="r-grid r-grid--upcoming anim-fade-up">
@@ -155,7 +155,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA -->
     <section class="r-section" style="padding: 70px 20px; text-align:center;">
@@ -164,7 +164,7 @@ get_header(); ?>
             <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Contact PB Academy and we'll help you find the right event for your skill level and schedule.</p>
             <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
                 <a href="<?php echo home_url('/contact-us/'); ?>" class="btn btn-outline">CONTACT US</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
             </div>
         </div>
     </section>

@@ -84,15 +84,6 @@
             <div class="header-right-actions">
 
                 <!-- Search Bar -->
-                <div class="header-search-wrap">
-                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
-                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </button>
-                    </form>
-                </div>
-
                 <div class="header-actions">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -102,9 +93,18 @@
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
-                        Book a Lesson
+                        Register Now
                     </a>
                 </div>
+                <div class="header-search-wrap">
+                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
+                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </form>
+                </div>
+
 
                 <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav"
                     aria-label="Toggle navigation menu">
