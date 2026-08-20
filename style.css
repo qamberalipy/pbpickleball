@@ -7709,6 +7709,9 @@ header .container.header-content {
     align-items: center;
     gap: 30px;
 }
+.hl-pba{color:var(--accent-orange);font-weight:900}
+.hl-core4{color:var(--navy);font-weight:900}
+.popular-tag{background:var(--accent-orange);color:var(--navy);font-size:0.7rem;font-weight:800;padding:4px 10px;border-radius:20px;margin-left:8px;text-transform:uppercase;display:inline-block}
 .c4-badge {
     display: inline-block;
     background: var(--navy);
@@ -7908,6 +7911,8 @@ header .container.header-content {
     align-items: center;
     gap: 30px;
 }
+
+.popular-tag{background:var(--accent-orange);color:var(--navy);font-size:0.7rem;font-weight:800;padding:4px 10px;border-radius:20px;margin-left:8px;text-transform:uppercase;display:inline-block}
 .c4-badge {
     display: inline-block;
     background: var(--navy);

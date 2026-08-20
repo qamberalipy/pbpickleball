@@ -42,12 +42,12 @@ get_header();
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
         <div class="c4-promo-text">
-            <span class="c4-badge">FEATURED PROGRAM</span>
-            <h2>MASTER THE GAME WITH <strong>PBA CORE 4</strong></h2>
+            <span class="c4-badge">FEATURED PROGRAM</span><span class="popular-tag">Most Popular</span>
+            <h2>MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span></h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
-            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW CURRICULUM</button>
+            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
             <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
         </div>
     </div>

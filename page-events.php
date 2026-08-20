@@ -124,7 +124,7 @@ get_header(); ?>
     </section>
 
     <!-- EVENT CALENDAR -->
-    <section class="r-section" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
+    <section class="r-section pattern-bg" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">EVENT CALENDAR</h2>
             <div class="anim-fade-up" style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 40px; box-shadow: 0 15px 40px rgba(11,32,70,0.08); text-align:center;">
