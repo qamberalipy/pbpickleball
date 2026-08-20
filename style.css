@@ -7595,6 +7595,7 @@ header .container.header-content {
     justify-content: center;
 }
 
+.qj-link--highlight{background: var(--accent-orange) !important;;color:var(--navy)!important;font-weight:800;border-radius:20px;padding:6px 14px}
 .qj-link {
     color: var(--white);
     font-family: var(--font-heading);
@@ -7627,6 +7628,7 @@ header .container.header-content {
     .qj-label { 
         margin-bottom: 2px; 
     }
+    .qj-link--highlight{background:var(--accent-orange);color:var(--navy)!important;font-weight:800;border-radius:20px;padding:6px 14px}
     .qj-link {
         font-size: 0.65rem;
         padding: 6px 12px;

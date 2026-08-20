@@ -140,7 +140,7 @@ get_header(); ?>
     </section>
 
     <!-- PAST EVENTS -->
-    <section class="r-section bg-gray" id="past-events" data-mascot-msg="See the fun our community has already had together.">
+    <!-- <section class="r-section bg-gray" id="past-events" data-mascot-msg="See the fun our community has already had together.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">PAST EVENTS</h2>
             <div class="r-grid r-grid--upcoming anim-fade-up">
@@ -155,7 +155,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA -->
     <section class="r-section" style="padding: 70px 20px; text-align:center;">

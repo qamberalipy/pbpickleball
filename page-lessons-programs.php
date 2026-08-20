@@ -32,7 +32,7 @@ get_header();
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
                         <a href="#lessons" class="qj-link">Lessons</a>
-                        <a href="#core-4" class="qj-link">PBA Core 4</a>
+                        <a href="#core-4" class="qj-link qj-link--highlight">PBA Core 4</a>
                         <a href="#clinics" class="qj-link">Clinics & Play</a>
                     </div>
                 </div>
