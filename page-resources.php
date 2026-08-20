@@ -76,13 +76,13 @@ get_header(); ?>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Eye Protection.png" class="program-card resource-trigger">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f576-fe0f.png" alt="sunglasses">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f576.png" alt="sunglasses">
                     <h4>Eye Protection</h4>
                     <p>Why safety glasses matter and what to look for in the right pair.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Court Types & Surfaces.png" class="program-card resource-trigger">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3df-fe0f.png" alt="stadium">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3df.png" alt="stadium">
                     <h4>Court Types & Surfaces</h4>
                     <p>Learn the differences between indoor, outdoor and hybrid court surfaces.</p>
                 </a>
