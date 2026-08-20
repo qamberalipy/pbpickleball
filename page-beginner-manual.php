@@ -54,7 +54,7 @@ get_header();
 ?>
 
 
-<main class="bm-page">
+<main >
 
     <!-- 1. HERO: manual intro + book mockup + "What You'll Learn" -->
     <section class="hero bm-hero-full" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
@@ -65,7 +65,7 @@ get_header();
                 <h3 class="hero-tagline type-effect"></h3>
 
                 <!-- Quick-Jump Anchor Bar -->
-                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s; background: var(--navy) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;">
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
                         <a href="#samples" class="qj-link">Sample Pages</a>
