@@ -11,9 +11,7 @@ get_header();
 
     <!-- 1. HERO: manual intro + book mockup + "What You'll Learn" -->
     <section class="hero bm-hero-full" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
-        <video class="hero-video-bg" autoplay loop muted playsinline aria-hidden="true">
-            <source src="<?php echo esc_url( get_template_directory_uri() ); ?>/media/beginner-manual-hero.mp4" type="video/mp4">
-        </video>
+        <div class="hero-video-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero-banner.webp');"></div>
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <h1>BEGINNER<br><span class="highlight">TRAINING MANUAL</span></h1>

@@ -8,7 +8,7 @@ get_header(); ?>
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="See what's happening at PB Academy and join the fun!">
-        <img class="hero-video-bg" src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1600&auto=format&fit=crop" alt="PB Academy Events" aria-hidden="true" style="object-fit: cover;">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/event-hero-banner.webp" alt="PB Academy Events" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <h2 class="hero-subtitle">Play. Socialize. Connect.</h2>

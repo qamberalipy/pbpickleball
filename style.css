@@ -798,6 +798,13 @@ header .header-actions {
     line-height: 1.5;
 }
 
+a.program-card {
+    text-decoration: none !important;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+}
+
 .program-card .btn-outline {
     width: 100%;
     padding: 12px 0;
