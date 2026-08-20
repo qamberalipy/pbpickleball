@@ -9,7 +9,7 @@
 
     <!-- 1. Hero Section -->
     <section class="hero shop-hero-full" data-mascot-msg="Gear up and play your best! We've hand-selected the perfect equipment for your game.">
-        <div class="shop-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="shop-hero__bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/shop-hero-banner.webp');"></div>
         
         <!-- FIX: Restored global hero-container to pull text above the overlay -->
         <div class="hero-container">
@@ -40,7 +40,7 @@
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
-                        <a href="#categories" class="qj-link">Categories</a>
+                        <!-- <a href="#categories" class="qj-link">Categories</a> -->
                         <a href="#featured" class="qj-link">Featured Products</a>
                         <a href="#contact" class="qj-link">Contact</a>
                     </div>
@@ -50,7 +50,7 @@
     </section>
 
     <!-- 2. Category Nav Strip -->
-    <section id="categories" class="shop-cats" data-mascot-msg="From premium paddles to court shoes, explore our top categories.">
+    <!-- <section id="categories" class="shop-cats" data-mascot-msg="From premium paddles to court shoes, explore our top categories.">
         <div class="shop-container">
             <div class="shop-cats__grid">
                 <a href="#" class="anim-fade-up anim-stagger shop-cat-card" style="--stagger-delay: 0ms;">
@@ -90,7 +90,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 3. Featured Products Section -->
     <section id="featured" class="shop-featured" data-mascot-msg="Check out our featured products, tested and approved by PBA pros!">

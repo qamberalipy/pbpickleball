@@ -44,77 +44,79 @@ get_header(); ?>
 
             <div class="programs-grid anim-fade-up" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.2-1.5 4-3.5 4.6V14h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2v-2.4C9 11 7.5 9.2 7.5 7A5 5 0 0 1 12 2z"/></svg>
+                <!-- NOTE: Added 'resource-trigger' class and removed target="_blank" -->
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Player Levels & Skills.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ca.png" alt="bar chart">
                     <h4>Player Levels & Skills</h4>
                     <p>Understand skill ratings from 2.0 to 5.0 and where you fit as you improve.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M6 2l12 12-4 4L2 6l4-4zm10 14l4 4-2 2-4-4 2-2z"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Choosing the Right Paddle.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3d3.png" alt="paddle & ball">
                     <h4>Choosing the Right Paddle</h4>
                     <p>Weight, grip size and material basics to help you pick your first paddle.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Indoor vs. Outdoor Balls.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3be.png" alt="ball">
                     <h4>Indoor vs. Outdoor Balls</h4>
                     <p>Why ball type matters and how to choose the right one for your court.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 18h16M6 18V9l6-5 6 5v9"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Shoes & Court Safety.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f45f.png" alt="shoe">
                     <h4>Shoes & Court Safety</h4>
                     <p>Proper court footwear to prevent slips and support quick lateral moves.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Hydration & Sun Safety.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png" alt="droplet">
                     <h4>Hydration & Sun Safety</h4>
                     <p>Simple tips to stay safe and comfortable playing outdoors.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Eye Protection.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f576.png" alt="sunglasses">
                     <h4>Eye Protection</h4>
                     <p>Why safety glasses matter and what to look for in the right pair.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Court Types & Surfaces.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3df.png" alt="stadium">
                     <h4>Court Types & Surfaces</h4>
                     <p>Learn the differences between indoor, outdoor and hybrid court surfaces.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2z"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Handling a Court Emergency.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a8.png" alt="siren">
                     <h4>Handling a Court Emergency</h4>
                     <p>What to do if you or another player experiences an injury on the court.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <!-- NO RESOURCE TRIGGER HERE: This just scrolls down -->
+                <a href="#courts" class="program-card">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cd.png" alt="pin">
                     <h4>Where to Play</h4>
                     <p>Find courts near you — see our full Court Directory below.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Basic rule.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cb.png" alt="clipboard">
                     <h4>Basic Rules</h4>
                     <p>The essential rules every new player needs to know before stepping on court.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Scoring.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f522.png" alt="numbers">
                     <h4>Scoring</h4>
                     <p>A simple breakdown of how scoring and side-outs work.</p>
-                </div>
+                </a>
 
-                <div class="program-card">
-                    <svg class="program-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Pickleball Terminology.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png" alt="open book">
                     <h4>Pickleball Terminology</h4>
                     <p>Kitchen, dink, dead ball and other common terms explained simply.</p>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -128,7 +130,7 @@ get_header(); ?>
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1613918431703-aa2d2e5e1a3e?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1778180883807-19962eda4d99?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Public</span>
                     </div>
                     <div class="r-card__content">
@@ -152,7 +154,7 @@ get_header(); ?>
                 </article>
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1622279457486-28f993f78f8f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Private</span>
                     </div>
                     <div class="r-card__content">
@@ -176,7 +178,7 @@ get_header(); ?>
                 </article>
 
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1591491634026-a3e0709c3d3f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1762423570127-c36ff11b883f?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Public</span>
                     </div>
                     <div class="r-card__content">
@@ -244,7 +246,7 @@ get_header(); ?>
     </section>
 
     <!-- MANUAL CALLOUT -->
-    <section class="r-section" style="padding: 70px 20px; text-align:center;">
+    <section class="r-section pattern-bg " style="padding: 70px 20px; text-align:center;">
         <div class="container anim-fade-up" style="max-width:750px;">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Want The Complete Beginner Reference?</h2>
             <p style="font-size: 1.05rem; color: var(--gray-text); margin-bottom: 30px;">Explore the PB Academy Beginner Manual — Volume 1 for a full, structured guide to learning the game.</p>
@@ -253,7 +255,7 @@ get_header(); ?>
     </section>
 
     <!-- READY TO PRACTICE CTA -->
-    <section class="r-section bg-gray" style="padding: 70px 20px; text-align:center;">
+    <section class="r-section bg-gray " style="padding: 70px 20px; text-align:center;">
         <div class="container anim-fade-up">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Ready To Practice This On The Court?</h2>
             <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy coach.</p>
@@ -278,6 +280,52 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Dynamic Resource Modal -->
+    <div id="dynamicResourceModal" class="pba-modal" aria-hidden="true">
+        <div class="pba-modal-overlay" data-dynamic-close></div>
+        <div class="pba-modal-content" role="dialog" aria-modal="true" style="background: transparent; box-shadow: none; display: flex; justify-content: center;">
+            <button class="pba-modal-close" data-dynamic-close aria-label="Close modal" style="top: 0; right: 0; z-index: 100;">&times;</button>
+            <div class="pba-modal-body" style="padding: 0; max-height: 90vh; overflow-y: auto;">
+                <!-- The img src will be injected here by JS -->
+                <img id="dynamicResourceImage" src="" alt="PB Academy Resource" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('dynamicResourceModal');
+            var modalImg = document.getElementById('dynamicResourceImage');
+            var triggers = document.querySelectorAll('.resource-trigger');
+            var closeBtns = document.querySelectorAll('[data-dynamic-close]');
+
+            if(!modal || !modalImg) return;
+
+            // Open modal and inject image
+            triggers.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var targetImage = this.getAttribute('href');
+                    modalImg.setAttribute('src', targetImage);
+                    modal.classList.add('is-open');
+                    document.body.style.overflow = 'hidden'; // Stop background scrolling
+                });
+            });
+
+            // Close modal and clear image
+            closeBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                    // Slight delay before clearing src so it doesn't blink out during fade
+                    setTimeout(function() {
+                        modalImg.setAttribute('src', '');
+                    }, 300);
+                });
+            });
+        });
+    </script>
 </main>
 
 <?php get_footer(); ?>

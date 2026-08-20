@@ -8,7 +8,7 @@ get_header(); ?>
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="See what's happening at PB Academy and join the fun!">
-        <img class="hero-video-bg" src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1600&auto=format&fit=crop" alt="PB Academy Events" aria-hidden="true" style="object-fit: cover;">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/event-hero-banner.webp" alt="PB Academy Events" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <h2 class="hero-subtitle">Play. Socialize. Connect.</h2>
@@ -37,7 +37,7 @@ get_header(); ?>
 
                 <!-- Card 1 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1613918431703-aa2d2e5e1a3e?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Open</span>
                     </div>
                     <div class="r-card__content">
@@ -65,7 +65,7 @@ get_header(); ?>
 
                 <!-- Card 2 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1591491634026-a3e0709c3d3f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1693142518820-78d7a05f1546?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge" style="background: var(--accent-orange); color: var(--navy);">Only 3 Spots Left</span>
                     </div>
                     <div class="r-card__content">
@@ -93,7 +93,7 @@ get_header(); ?>
 
                 <!-- Card 3 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1622279457486-28f993f78f8f?q=80&w=800&auto=format&fit=crop');">
+                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1778180883807-19962eda4d99?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Sold Out</span>
                     </div>
                     <div class="r-card__content">

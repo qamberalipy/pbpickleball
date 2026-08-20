@@ -28,7 +28,7 @@ get_header(); ?>
     </section>
 
     <!-- REVIEW CARDS -->
-    <section class="r-section bg-gray" id="reviews">
+    <section class="r-section bg-gray pattern-bg" id="reviews">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">STUDENT REVIEWS</h2>
 

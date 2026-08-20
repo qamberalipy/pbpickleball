@@ -1,7 +1,7 @@
 /* Beginner Manual page — reuses --green, --gray-text, --navy, .container,
    .btn, .highlight, .lp-check-list, .lp-section-title, anim-fade-* */
 
-.bm-page { --navy: var(--navy, #0f2a4a); color: #222; }
+/* .bm-page { color: #222; } */
 
 .bm-hero { 
     position: relative;

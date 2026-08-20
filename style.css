@@ -765,8 +765,8 @@ header .header-actions {
 }
 
 .program-icon {
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 20px;
     fill: var(--green);
     flex-shrink: 0;
@@ -796,6 +796,13 @@ header .header-actions {
     margin-bottom: 25px; 
     flex-grow: 1; 
     line-height: 1.5;
+}
+
+a.program-card {
+    text-decoration: none !important;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
 }
 
 .program-card .btn-outline {
@@ -7562,9 +7569,7 @@ header .container.header-content {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    background:var(--navy);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--navy) !important; /* Forces solid blue globally */
     padding: 12px 24px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -7816,6 +7821,201 @@ header .container.header-content {
         width: 100%;
         justify-content: center;
     }
+    
+    .qj-link {
+        font-size: 0.65rem;
+        padding: 6px 12px;
+    }
+}
+
+/* ============================================================
+   GLOBAL BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Fixed to the Left as requested */
+    z-index: 9998;
+    background-color: var(--green);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top-btn.btt-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(11, 32, 70, 0.3);
+}
+
+.back-to-top-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 15px;
+        left: 15px; /* Kept on the left for mobile */
+        width: 42px;
+        height: 42px;
+    }
+    .back-to-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ============================================================
+   CORE 4 PROMO STRIP & MODAL SYSTEM
+   ============================================================ */
+/* 1. Promo Strip */
+.c4-promo-strip {
+    background: linear-gradient(135deg, var(--green-bright) 0%, var(--green) 100%);
+    padding: 30px 0;
+    border-bottom: 4px solid var(--navy);
+}
+.c4-promo-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.c4-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.c4-promo-text h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--white);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+.c4-promo-text h2 strong {
+    color: var(--navy);
+}
+.c4-promo-text p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+}
+.c4-promo-actions {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* 2. Modal System */
+.pba-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999; /* Ensure it is above everything */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+.pba-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+.pba-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 32, 70, 0.85); /* Deep navy glass effect */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.pba-modal-content {
+    position: relative;
+    background: var(--white);
+    width: 95%;
+    max-width: 1000px;
+    max-height: 90vh;
+    border-radius: 12px;
+    overflow-y: auto;
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+.pba-modal.is-open .pba-modal-content {
+    transform: translateY(0);
+}
+.pba-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+.pba-modal-close:hover {
+    background: var(--green);
+}
+.core4-flyer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Mobile Breakpoints */
+@media (max-width: 980px) {
+    .c4-promo-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .c4-promo-actions {
+        width: 100%;
+        justify-content: center;
+    }
 }
 @media (max-width: 600px) {
     .c4-promo-actions {
@@ -7824,4 +8024,83 @@ header .container.header-content {
     .c4-promo-actions .btn {
         width: 100%;
     }
+}
+
+/* ============================================================
+   MANUAL DOWNLOAD ANIMATION (FIXED UI)
+   ============================================================ */
+.dl-pointer-overlay {
+    position: fixed;
+    top: 20px;
+    right: 30px; /* Aligned near Chrome/Safari download buttons */
+    z-index: 999999;
+    animation: slideInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    pointer-events: none; /* Lets users click through it if needed */
+}
+
+.dl-pointer-box {
+    background: var(--white);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 3px solid var(--green);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 280px;
+}
+
+/* Arrow points UP at the browser UI on Desktop */
+.dl-arrow {
+    width: 45px;
+    height: 45px;
+    color: var(--green);
+    animation: bounceUp 1.2s ease-in-out infinite;
+    margin-bottom: 10px;
+    transform: rotate(0deg); /* FIXED: Base SVG already points UP */
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceUp {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(0deg); } /* Bounces Upward */
+}
+
+@media (max-width: 768px) {
+    .dl-pointer-overlay {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    
+    /* Points DOWN on mobile (Mobile downloads usually appear at bottom) */
+    .dl-arrow { 
+        transform: rotate(180deg); 
+        animation: bounceDownMobile 1.2s ease-in-out infinite;
+    }
+    
+    @keyframes bounceDownMobile {
+        0%, 100% { transform: translateY(0) rotate(180deg); }
+        50% { transform: translateY(12px) rotate(180deg); } /* Bounces Downward */
+    }
+    
+    @keyframes slideInUp {
+        from { opacity: 0; transform: translate(50%, 40px); }
+        to { opacity: 1; transform: translate(50%, 0); }
+    }
+}
+
+/* ============================================================
+   REVIEWS BACKGROUND PATTERN
+   ============================================================ */
+.pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%230B2046' stroke-width='2.5' fill='none' stroke-opacity='0.14'%3E%3Ccircle cx='40' cy='40' r='20' stroke-dasharray='4,4' transform='rotate(-15 40 40)'/%3E%3Cpath d='M130,80 C130,60 160,60 160,80 L160,110 C160,130 130,130 130,110 Z M140,130 L140,150 L150,150 L150,130 Z' transform='rotate(10 145 105)'/%3E%3Cpath d='M60,150 L80,150 C90,150 95,145 95,135 L85,130 C75,130 65,135 60,140 Z M60,140 C55,145 55,150 60,150 Z' transform='rotate(25 75 140)'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
 }
