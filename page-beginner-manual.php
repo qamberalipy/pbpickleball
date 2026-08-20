@@ -3,6 +3,53 @@
  * Template Name: Beginner Manual Download
  */
 
+$bm_errors  = array();
+$bm_success = false;
+$manual_url = get_template_directory_uri() . '/media/Beginner-Manual-lock.pdf';
+
+if ( isset( $_POST['bm_submit'] ) ) {
+
+    // 1. Security Check (Nonce)
+    if ( ! isset( $_POST['bm_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['bm_nonce'] ), 'pba_manual_form' ) ) {
+        $bm_errors[] = __( 'Security check failed. Please refresh the page and try again.', 'pba' );
+    } 
+    // 2. Spam Check (Honeypot)
+    elseif ( ! empty( $_POST['bm_hp'] ) ) {
+        $bm_success = true; 
+    } 
+    // 3. Process Valid Form
+    else {
+        $name  = isset( $_POST['dl_name'] ) ? sanitize_text_field( wp_unslash( $_POST['dl_name'] ) ) : '';
+        $email = isset( $_POST['dl_email'] ) ? sanitize_email( wp_unslash( $_POST['dl_email'] ) ) : '';
+
+        if ( '' === $name ) { $bm_errors[] = __( 'Please enter your first name.', 'pba' ); }
+        if ( '' === $email || ! is_email( $email ) ) { $bm_errors[] = __( 'Please enter a valid email address.', 'pba' ); }
+
+        if ( empty( $bm_errors ) ) {
+            
+            // Email 1: To the Admin (contact@gopbacademy.com)
+            $admin_to      = 'contact@gopbacademy.com';
+            $admin_subject = sprintf( __( 'New Manual Download from %s', 'pba' ), $name );
+            $admin_body    = "A new user has requested the Beginner Manual.\n\nName: {$name}\nEmail: {$email}\n\nThe file they received: {$manual_url}";
+            wp_mail( $admin_to, $admin_subject, $admin_body );
+
+            // Email 2: To the User (So they don't lose the link)
+            $user_subject = "Your Free PB Academy Beginner Manual";
+            $user_body    = "Hi {$name},\n\nThanks for requesting our Beginner Manual! If your download didn't start automatically, you can access the PDF directly using the link below:\n\n{$manual_url}\n\nSee you on the court!\n- PB Academy";
+            $user_headers = array(
+                'Content-Type: text/plain; charset=UTF-8', 
+                'From: PB Academy <noreply@gopbacademy.com>'
+            );
+            
+            $bm_success = (bool) wp_mail( $email, $user_subject, $user_body, $user_headers );
+
+            if ( ! $bm_success ) {
+                $bm_errors[] = __( 'Sorry, something went wrong sending your request. Please try again later.', 'pba' );
+            }
+        }
+    }
+}
+
 get_header();
 ?>
 
@@ -85,26 +132,79 @@ get_header();
                     <h3>Download Your Free Manual</h3>
                     <p>Enter your details below to get instant access.</p>
                     
-                    <form id="manual-download-form" class="bm-download-form">
-                        <div class="bm-form-group">
-                            <input type="text" id="dl-first-name" placeholder="Your First Name" required>
-                        </div>
-                        <div class="bm-form-group">
-                            <input type="email" id="dl-email" placeholder="Your Email Address" required>
-                        </div>
-                        <button type="submit" class="bm-btn-order" id="dl-btn">
-                            GET YOUR MANUAL NOW
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                        </button>
-                    </form>
+                    <div id="manual-download-form" style="scroll-margin-top: 100px;">
+                        
+                        <?php if ( $bm_success ) : ?>
+                            <!-- Beautiful Inline Success State (Replaces the Form) -->
+                            <div class="bm-success-state" style="text-align: center; padding: 20px 0;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2" style="margin-bottom: 15px;">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <h3 style="color: white; font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px;">Check Your Downloads!</h3>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">Your manual is downloading now. We've also sent a backup copy to your email address.</p>
+                            </div>
 
-                    <!-- Success Message -->
-                    <div id="dl-success-msg" style="display:none; color: var(--green-bright, #78B036); margin-top: 15px; font-weight: 700; font-size: 0.9rem;">
-                        Success! Your download is starting...
+                            <!-- JS to append the fixed pointer to the BODY, escaping the CSS trap -->
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // 1. Create and inject the overlay directly into the body
+                                    var pointer = document.createElement('div');
+                                    pointer.className = 'dl-pointer-overlay';
+                                    pointer.innerHTML = '<div class="dl-pointer-box"><svg class="dl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><h3 style="color: var(--navy); margin: 0 0 5px; font-family: var(--font-heading); font-weight: 900; text-transform: uppercase;">Download Starting!</h3><p style="color: var(--gray-text); margin: 0; font-family: var(--font-body); font-size: 0.85rem;">Check the top right of your browser.</p></div>';
+                                    document.body.appendChild(pointer);
+
+                                    // 2. Trigger the PDF download
+                                    var link = document.createElement('a');
+                                    link.href = '<?php echo $manual_url; ?>';
+                                    link.download = 'Beginner-Manual-lock.pdf';
+                                    document.body.appendChild(link);
+                                    link.click();
+                                    document.body.removeChild(link);
+
+                                    // 3. Remove popup after 6 seconds
+                                    setTimeout(function() {
+                                        pointer.style.opacity = '0';
+                                        pointer.style.transition = 'opacity 0.5s ease';
+                                        setTimeout(function() { pointer.remove(); }, 500);
+                                    }, 6000);
+                                });
+                            </script>
+
+                        <?php else : ?>
+
+                            <?php if ( ! empty( $bm_errors ) ) : ?>
+                                <div class="jt-alert jt-alert--error" role="alert">
+                                    <ul>
+                                        <?php foreach ( $bm_errors as $bm_error ) : ?>
+                                            <li><?php echo esc_html( $bm_error ); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Secure Form -->
+                            <form class="bm-download-form" method="post" action="<?php echo esc_url( get_permalink() . '#manual-download-form' ); ?>" novalidate>
+                                <?php wp_nonce_field( 'pba_manual_form', 'bm_nonce' ); ?>
+                                <input type="text" name="bm_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                                <div class="bm-form-group">
+                                    <input type="text" id="dl-first-name" name="dl_name" placeholder="Your First Name" required value="<?php echo isset($name) ? esc_attr($name) : ''; ?>">
+                                </div>
+                                <div class="bm-form-group">
+                                    <input type="email" id="dl-email" name="dl_email" placeholder="Your Email Address" required value="<?php echo isset($email) ? esc_attr($email) : ''; ?>">
+                                </div>
+                                <button type="submit" name="bm_submit" value="1" class="bm-btn-order" id="dl-btn">
+                                    GET YOUR MANUAL NOW
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </form>
+
+                        <?php endif; ?>
                     </div>
 
                 </div>
@@ -168,39 +268,6 @@ get_header();
 
 </main>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const downloadForm = document.getElementById('manual-download-form');
-    if (downloadForm) {
-        downloadForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop normal form submission
 
-            // Hide the button to prevent multiple clicks and show success message
-            const submitBtn = document.getElementById('dl-btn');
-            submitBtn.style.display = 'none';
-            document.getElementById('dl-success-msg').style.display = 'block';
-
-            // Create a temporary link to force the PDF download
-            const pdfUrl = '<?php echo esc_url( get_template_directory_uri() ); ?>/media/beginner-manual.pdf';
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'PBA-Beginner-Manual-Volume-1.pdf';
-            link.target = '_blank';
-            
-            // Append, click, and remove the link
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // (Optional) Reset the form after a few seconds if you want
-            setTimeout(() => {
-                submitBtn.style.display = 'flex';
-                document.getElementById('dl-success-msg').style.display = 'none';
-                downloadForm.reset();
-            }, 5000);
-        });
-    }
-});
-</script>
 
 <?php get_footer(); ?>
