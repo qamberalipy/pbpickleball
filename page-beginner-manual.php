@@ -60,12 +60,12 @@ get_header();
     <section class="hero bm-hero-full" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">
         <div class="hero-video-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero-banner.webp');"></div>
         <div class="hero-container">
-            <div class="hero-content anim-fade-up">
+            <div class="hero-content">
                 <h1>BEGINNER<br><span class="highlight">TRAINING MANUAL</span></h1>
                 <h3 class="hero-tagline type-effect"></h3>
 
                 <!-- Quick-Jump Anchor Bar -->
-                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s; background: var(--navy) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;">
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
                         <a href="#samples" class="qj-link">Sample Pages</a>

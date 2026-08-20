@@ -7569,9 +7569,7 @@ header .container.header-content {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    background:var(--navy);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--navy) !important; /* Forces solid blue globally */
     padding: 12px 24px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -8097,4 +8095,12 @@ header .container.header-content {
         from { opacity: 0; transform: translate(50%, 40px); }
         to { opacity: 1; transform: translate(50%, 0); }
     }
+}
+
+/* ============================================================
+   REVIEWS BACKGROUND PATTERN
+   ============================================================ */
+.pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%230B2046' stroke-width='2.5' fill='none' stroke-opacity='0.14'%3E%3Ccircle cx='40' cy='40' r='20' stroke-dasharray='4,4' transform='rotate(-15 40 40)'/%3E%3Cpath d='M130,80 C130,60 160,60 160,80 L160,110 C160,130 130,130 130,110 Z M140,130 L140,150 L150,150 L150,130 Z' transform='rotate(10 145 105)'/%3E%3Cpath d='M60,150 L80,150 C90,150 95,145 95,135 L85,130 C75,130 65,135 60,140 Z M60,140 C55,145 55,150 60,150 Z' transform='rotate(25 75 140)'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
 }

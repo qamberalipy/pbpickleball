@@ -246,7 +246,7 @@ get_header(); ?>
     </section>
 
     <!-- MANUAL CALLOUT -->
-    <section class="r-section" style="padding: 70px 20px; text-align:center;">
+    <section class="r-section pattern-bg " style="padding: 70px 20px; text-align:center;">
         <div class="container anim-fade-up" style="max-width:750px;">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Want The Complete Beginner Reference?</h2>
             <p style="font-size: 1.05rem; color: var(--gray-text); margin-bottom: 30px;">Explore the PB Academy Beginner Manual — Volume 1 for a full, structured guide to learning the game.</p>
@@ -255,7 +255,7 @@ get_header(); ?>
     </section>
 
     <!-- READY TO PRACTICE CTA -->
-    <section class="r-section bg-gray" style="padding: 70px 20px; text-align:center;">
+    <section class="r-section bg-gray " style="padding: 70px 20px; text-align:center;">
         <div class="container anim-fade-up">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Ready To Practice This On The Court?</h2>
             <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy coach.</p>
