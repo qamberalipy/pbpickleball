@@ -261,7 +261,7 @@ get_header(); ?>
             <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy coach.</p>
             <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">EXPLORE PROGRAMS</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
             </div>
         </div>
     </section>

@@ -11,7 +11,7 @@
             <h3 class="hero-tagline">Learn Pickleball. Play With Confidence. Have Fun.</h3>
             <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy provides beginner-friendly pickleball instruction with a special focus on making the game comfortable, social, and enjoyable for adults and seniors.</p>
             <div class="hero-buttons" style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
             </div>
             <!-- Quick-Jump Anchor Bar (Phase 3) -->
@@ -42,7 +42,7 @@
         </div>
         <div class="c4-promo-actions">
             <button class="btn btn-navy" data-modal-target="core4Modal">VIEW CURRICULUM</button>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">BOOK NOW</a>
+            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
         </div>
     </div>
 </section>
@@ -250,7 +250,7 @@
                     <line x1="8" y1="2" x2="8" y2="6"/>
                     <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
-                BOOK YOUR LESSON
+                REGISTER NOW
             </a>
             <span class="cta-or-text">or call 561-855-9500</span>
         </div>

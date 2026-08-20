@@ -114,7 +114,7 @@ get_header();
             </div>
             <div class="hero-buttons">
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-navy">EXPLORE PROGRAMS</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">BOOK A SESSION</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
             </div>
         </div>
     </section>

@@ -7838,19 +7838,22 @@ header .container.header-content {
     z-index: 9998;
     background-color: var(--green);
     color: var(--white);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
+    width: auto;
+    padding: 12px 20px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border: none;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY(15px);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(11, 32, 70, 0.25);
 }
 
 .back-to-top-btn.btt-visible {
@@ -7860,7 +7863,7 @@ header .container.header-content {
 }
 
 .back-to-top-btn:hover {
-    background-color: var(--navy);
+    background-color: var(--green-bright);
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(11, 32, 70, 0.3);
 }
@@ -7880,8 +7883,9 @@ header .container.header-content {
     .back-to-top-btn {
         bottom: 15px;
         left: 15px; /* Kept on the left for mobile */
-        width: 42px;
-        height: 42px;
+        width: auto;
+        height: auto;
+        padding: 10px 16px;
     }
     .back-to-top-btn svg {
         width: 20px;
