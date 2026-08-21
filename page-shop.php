@@ -166,7 +166,7 @@
                             <h3 class="shop-card__title">PBA Pro Backpack</h3>
                             <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
                             <div class="shop-card__bottom">
-                                <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
+                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/bags-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
                             </div>
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                     </div>
 
                     <!-- Card 6 (Shirt) -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 500ms;">
+                    <!-- <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 500ms;">
                         <div class="shop-card__image-wrap">
                             <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBA Performance Shirt" class="shop-card__image">
                         </div>
@@ -199,7 +199,7 @@
                                 <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

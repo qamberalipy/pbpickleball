@@ -58,7 +58,7 @@ get_header();
         <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/contact-hero-bg.webp" alt="Contact PB Academy" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h2 class="hero-subtitle">QUESTIONS? WE'RE HERE TO HELP.</h2>
+                
                 <h1>CONTACT <br><span class="highlight">PB ACADEMY</span></h1>
                 
                 <div class="ct-hero-tags" style="margin-top: 25px;">
