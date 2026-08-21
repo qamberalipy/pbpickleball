@@ -7705,15 +7705,37 @@ header .container.header-content {
     padding: 30px 0;
     border-bottom: 4px solid var(--navy);
 }
+/* 1. Make the inner container relative to trap the absolute tag */
 .c4-promo-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    position: relative; /* CRITICAL: Traps the badge inside this container */
 }
 .hl-pba{color:var(--accent-orange);font-weight:900}
 .hl-core4{color:var(--navy);font-weight:900}
-.popular-tag{background:var(--accent-orange);color:var(--navy);font-size:0.7rem;font-weight:800;padding:4px 10px;border-radius:20px;margin-left:8px;text-transform:uppercase;display:inline-block}
+
+/* 2. Pin the badge to the top right corner */
+.popular-tag {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent-orange);
+    color: var(--navy);
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(242, 169, 0, 0.4);
+    /* THIS IS THE MAGIC: Forces it to act like a superscript badge next to the text */
+    vertical-align: super;
+    transform: translateY(-20%);
+    margin-left: 0px;
+    white-space: nowrap;
+}
 .c4-badge {
     display: inline-block;
     background: var(--navy);
