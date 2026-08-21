@@ -207,7 +207,7 @@ get_header(); ?>
 
     <!-- WHERE TO SHOP + ARTICLES -->
     <section class="r-section bg-gray" id="shop-articles">
-        <div class="container">
+        <!-- <div class="container">
             <h2 class="r-section-title anim-fade-up">WHERE TO SHOP</h2>
             <div class="programs-grid anim-fade-up" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:70px;">
                 <div class="program-card">
@@ -228,19 +228,19 @@ get_header(); ?>
                     <p>A short list of reputable online stores for pickleball equipment.</p>
                     <a href="#" class="btn btn-outline">VIEW GUIDE</a>
                 </div>
-            </div>
+            </div> -->
 
             <h2 class="r-section-title anim-fade-up">EDUCATIONAL ARTICLES & TIPS</h2>
             <div class="r-grid r-grid--upcoming anim-fade-up">
-                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/5BeginnerTipsforYourFirst.png');">
-                    <span>5 Beginner Tips for Your First Game</span>
-                </div>
-                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/UnderstandingtheKitchenRule.png');">
-                    <span>Understanding the Kitchen Rule</span>
-                </div>
-                <div class="r-grid-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/HowtoChooseYourFirstPaddle.png');">
-                    <span>How to Choose Your First Paddle</span>
-                </div>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/5BeginnerTipsforYourFirst.png" class="r-grid-img resource-trigger" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/5BeginnerTipsforYourFirst.png');">
+                    <span>Safety On The Court</span>
+                </a>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/UnderstandingtheKitchenRule.png" class="r-grid-img resource-trigger" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/UnderstandingtheKitchenRule.png');">
+                    <span>Kitchen (NVZ) Faults</span>
+                </a>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/HowtoChooseYourFirstPaddle.png" class="r-grid-img resource-trigger" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/HowtoChooseYourFirstPaddle.png');">
+                    <span>How to Choose Your Right Paddle</span>
+                </a>
             </div>
         </div>
     </section>
