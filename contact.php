@@ -24,7 +24,7 @@ if ( isset( $_POST['ct_submit'] ) ) {
 		if ( '' === $category ) {$ct_errors[] = __( 'Please select what we can help you with.', 'pba' );
 		}
 
-		if ( empty( $ct_errors ) ) {$to      = 'contact@gopbacademy.com';
+		if ( empty( $ct_errors ) ) {$to      = 'support@gopbacademy.com';
 			$subject = sprintf( __( 'New Contact Form Submission from %s', 'pba' ), $name );$body    = "New contact form submission:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"

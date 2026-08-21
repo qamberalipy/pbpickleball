@@ -1,4 +1,29 @@
 <?php
+$tips_errors  = array();
+$tips_success = false;
+
+if ( isset( $_POST['tips_submit'] ) ) {
+    if ( ! isset( $_POST['tips_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['tips_nonce'] ), 'pba_tips_form' ) ) {
+        $tips_errors[] = __( 'Security check failed. Please refresh and try again.', 'pba' );
+    } elseif ( ! empty( $_POST['tips_hp'] ) ) {
+        $tips_success = true;
+    } else {
+        $email = isset($_POST['tips_email']) ? sanitize_email(wp_unslash($_POST['tips_email'])) : '';
+
+        if ( '' === $email || ! is_email( $email ) ) $tips_errors[] = 'Please enter a valid email address.';
+
+        if ( empty( $tips_errors ) ) {
+            $to      = 'support@gopbacademy.com';
+            $subject = 'New Newsletter Signup (Tips & Updates)';
+            $body    = "A new user has requested to join the Tips & Updates newsletter:\n\nEmail: {$email}";
+            $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: PB Academy <noreply@gopbacademy.com>');
+
+            $tips_success = (bool) wp_mail( $to, $subject, $body, $headers );
+            if ( ! $tips_success ) $tips_errors[] = 'Sorry, your request failed to send. Please try again.';
+        }
+    }
+}
+
 /**
  * Template Name: Resources
  */
@@ -272,10 +297,23 @@ get_header(); ?>
             <div class="r-interest-card anim-fade-up" style="max-width: 700px; margin: 0 auto; background: var(--gray-bg); border-radius: 16px; padding: 45px; text-align:center; box-shadow: 0 15px 40px rgba(11,32,70,0.08);">
                 <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 10px;">GET PB ACADEMY TIPS & UPDATES</h2>
                 <p style="font-size: 1rem; color: var(--gray-text); margin-bottom: 25px;">Sign up for helpful pickleball tips, resource updates and Academy news.</p>
-                <form class="ct-form" action="#" method="post" novalidate style="display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap;">
-                    <input type="email" name="tips_email" placeholder="Your email address" required style="flex:1; min-width:220px; padding:14px 16px; border-radius:6px; border:1px solid var(--gray-light);">
-                    <button type="submit" class="btn btn-green" style="padding:14px 24px;">SIGN UP</button>
-                </form>
+<?php if ( $tips_success ) : ?>
+    <div class="jt-alert jt-alert--success" role="status" style="margin-bottom: 20px;">
+        Thanks for subscribing! You're on the list.
+    </div>
+<?php elseif ( ! empty( $tips_errors ) ) : ?>
+    <div class="jt-alert jt-alert--error" role="alert" style="margin-bottom: 20px;">
+        <?php foreach ( $tips_errors as $error ) echo esc_html( $error ); ?>
+    </div>
+<?php endif; ?>
+
+<form class="ct-form" action="<?php echo esc_url( get_permalink() . '#email-signup' ); ?>" method="post" novalidate style="display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap;" id="email-signup">
+    <?php wp_nonce_field( 'pba_tips_form', 'tips_nonce' ); ?>
+    <input type="text" name="tips_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <input type="email" name="tips_email" placeholder="Your email address" required style="flex:1; min-width:220px; padding:14px 16px; border-radius:6px; border:1px solid var(--gray-light);" value="<?php echo isset($email) && !$tips_success ? esc_attr($email) : ''; ?>">
+    <button type="submit" name="tips_submit" value="1" class="btn btn-green" style="padding:14px 24px;">SIGN UP</button>
+</form>
             </div>
         </div>
     </section>

@@ -31,7 +31,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		if ( '' === $pref_date )$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
 		if ( $participants < 1 )$participants = 1;
 
-		if ( empty( $bl_errors ) ) {$to      = 'contact@gopbacademy.com';
+		if ( empty( $bl_errors ) ) {$to      = 'support@gopbacademy.com';
 			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );$body    = "New registration request details:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
