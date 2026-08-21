@@ -31,8 +31,8 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		if ( '' === $pref_date )$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
 		if ( $participants < 1 )$participants = 1;
 
-		if ( empty( $bl_errors ) ) {$to      = 'contact@gopbacademy.com';
-			$subject = sprintf( __( 'New Booking Request from %s', 'pba' ), $name );$body    = "New booking request details:\n\n"
+		if ( empty( $bl_errors ) ) {$to      = 'support@gopbacademy.com';
+			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );$body    = "New registration request details:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
 				. "Phone: {$phone}\n"
@@ -68,8 +68,8 @@ get_header();
 		<div class="bl-hero__bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/book-a-lesson.webp');"></div>
 		<div class="bl-hero__overlay"></div>
 		<div class="container bl-hero__container">
-			<h2 class="bl-hero__eyebrow">BOOK YOUR SESSION</h2>
-			<h1 class="bl-hero__title">Book a Pickleball Lesson</h1>
+			<h2 class="bl-hero__eyebrow">REGISTER FOR YOUR SESSION</h2>
+			<h1 class="bl-hero__title">Register for a Pickleball Lesson</h1>
 			<p class="bl-hero__intro">Private, semi-private, and group coaching for every skill level. Reserve your spot in minutes — we'll confirm your session personally.</p>
 			<div class="bl-hero__strip">
 				<div class="bl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Certified Coaches</span></div>
@@ -83,7 +83,7 @@ get_header();
 			    <span class="qj-label">Click To View More:</span>
 			    <div class="qj-links">
 			        <a href="#benefits" class="qj-link">Benefits</a>
-			        <a href="#bl-form" class="qj-link">Book Now</a>
+			        <a href="#bl-form" class="qj-link">Register Now</a>
 			        <a href="#testimonials" class="qj-link">Testimonials</a>
 			        <a href="#faqs" class="qj-link">FAQs</a>
 			    </div>
@@ -94,7 +94,7 @@ get_header();
 	<!-- 2. Benefits -->
 	<section id="benefits" class="bl-section bl-benefits-section" data-mascot-msg="We specialize in safe, friendly, and patient instruction for active adults!">
 		<div class="container">
-			<h2 class="bl-section-title anim-fade-up is-visible" style="color: var(--white);">WHY BOOK WITH US?</h2>
+			<h2 class="bl-section-title anim-fade-up is-visible" style="color: var(--white);">WHY REGISTER WITH US?</h2>
 			<div class="bl-benefits-grid anim-fade-up is-visible">
 				<div class="bl-benefit">
 					<div class="bl-benefit-icon">
@@ -115,14 +115,14 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 					</div>
 					<h3>Any Group Size</h3>
-					<p>Book solo, with a partner, or bring the whole group.</p>
+					<p>Register solo, with a partner, or bring the whole group.</p>
 				</div>
 				<div class="bl-benefit">
 					<div class="bl-benefit-icon">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path fill="none" stroke="currentColor" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
 					</div>
-					<h3>Fast Confirmation</h3>
-					<p>We personally confirm every booking request quickly.</p>
+					<h3>Fast Registration Confirmation</h3>
+					<p>We personally confirm every registration request quickly.</p>
 				</div>
 			</div>
 		</div>
@@ -280,7 +280,7 @@ get_header();
 
 					<button type="submit" name="bl_submit" value="1" class="btn btn-green bl-submit-btn">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-						Complete Booking
+						Complete Registration
 					</button>
 				</form>
 			</div>
@@ -366,7 +366,7 @@ get_header();
 					<p>Yes, just contact us at least 24 hours in advance and we'll help you find a new time.</p>
 				</details>
 				<details class="bl-faq-item">
-					<summary>How soon will I hear back after booking?</summary>
+					<summary>How soon will I hear back after registering?</summary>
 					<p>We confirm most requests within one business day by phone or email.</p>
 				</details>
 			</div>
@@ -381,7 +381,7 @@ get_header();
 			<h2>READY TO PLAY?</h2>
 			<p class="bl-global-cta__tagline">Reserve your lesson today — spots fill up fast.</p>
 			<div class="bl-global-cta__actions">
-				<a href="#bl-form" class="btn btn-green">BOOK A LESSON</a>
+				<a href="#bl-form" class="btn btn-green">REGISTER FOR A LESSON</a>
 				<a href="tel:5618559500" class="btn btn-outline-white">CALL 561-855-9500</a>
 			</div>
 		</div>

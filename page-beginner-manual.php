@@ -28,7 +28,7 @@ if ( isset( $_POST['bm_submit'] ) ) {
         if ( empty( $bm_errors ) ) {
             
             // Email 1: To the Admin (contact@gopbacademy.com)
-            $admin_to      = 'contact@gopbacademy.com';
+            $admin_to      = 'support@gopbacademy.com';
             $admin_subject = sprintf( __( 'New Manual Download from %s', 'pba' ), $name );
             $admin_body    = "A new user has requested the Beginner Manual.\n\nName: {$name}\nEmail: {$email}\n\nThe file they received: {$manual_url}";
             wp_mail( $admin_to, $admin_subject, $admin_body );

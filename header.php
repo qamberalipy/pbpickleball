@@ -70,7 +70,7 @@
                     <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT</a></li>
                     <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>INSTRUCTORS</a></li>
                     <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page('lessons-programs')) echo 'class="active"'; ?>>PROGRAMS</a></li>
-                    <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>BOOK NOW</a></li>
+                    <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>REGISTER NOW</a></li>
                     <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>MANUAL</a></li>
                     <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page('retreats')) echo 'class="active"'; ?>>RETREATS</a></li>
                     <li><a href="<?php echo home_url('/events/'); ?>" <?php if (is_page('events')) echo 'class="active"'; ?>>EVENTS</a></li>

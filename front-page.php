@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and book your first lesson today.">
+<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
     <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/hero-bg.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
@@ -35,9 +35,15 @@
 <!-- Core 4 Promotional Strip -->
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
+
         <div class="c4-promo-text">
-            <span class="c4-badge">FEATURED PROGRAM</span><span class="popular-tag">Most Popular</span>
-            <h2>MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span></h2>
+            <span class="c4-badge">FEATURED PROGRAM</span>
+            <h2>
+                MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span> 
+                <span class="popular-tag">
+                    Most Popular
+                </span>
+            </h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
@@ -224,7 +230,7 @@
 </section>
 
 <!-- Redesigned CTA Bar -->
-<section class="cta-bar" data-mascot-msg="Ready to play? Reserve your spot or call us directly at 561-855-9500!" aria-label="Book a lesson call to action">
+<section class="cta-bar" data-mascot-msg="Ready to play? Reserve your spot or call us directly at 561-855-9500!" aria-label="Register for a lesson call to action">
     <div class="container cta-container">
 
         <div class="cta-left">

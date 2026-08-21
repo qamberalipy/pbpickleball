@@ -38,7 +38,7 @@ if ( isset( $_POST['jt_submit'] ) ) {
 		}
 
 		if ( empty( $jt_errors ) ) {
-			$to      = 'contact@gopbacademy.com';
+			$to      = 'support@gopbacademy.com';
 			$subject = sprintf( __( 'New Instructor Application: %s %s', 'pba' ), $first_name, $last_name );
 			$body    = "New Instructor Application Received:\n\n"
 				. "Name: {$first_name} {$last_name}\n"

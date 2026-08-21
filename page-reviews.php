@@ -1,4 +1,48 @@
 <?php
+$rev_errors  = array();
+$rev_success = false;
+
+if ( isset( $_POST['rev_submit'] ) ) {
+    if ( ! isset( $_POST['rev_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['rev_nonce'] ), 'pba_review_form' ) ) {
+        $rev_errors[] = __( 'Security check failed. Please refresh and try again.', 'pba' );
+    } elseif ( ! empty( $_POST['rev_hp'] ) ) {
+        $rev_success = true; // Honeypot catch
+    } else {
+        $name       = isset($_POST['rev_name']) ? sanitize_text_field(wp_unslash($_POST['rev_name'])) : '';
+        $email      = isset($_POST['rev_email']) ? sanitize_email(wp_unslash($_POST['rev_email'])) : '';
+        $program    = isset($_POST['rev_program']) ? sanitize_text_field(wp_unslash($_POST['rev_program'])) : '';
+        $instructor = isset($_POST['rev_instructor']) ? sanitize_text_field(wp_unslash($_POST['rev_instructor'])) : '';
+        $rating     = isset($_POST['rev_rating']) ? sanitize_text_field(wp_unslash($_POST['rev_rating'])) : '';
+        $comments   = isset($_POST['rev_comments']) ? sanitize_textarea_field(wp_unslash($_POST['rev_comments'])) : '';
+        $permission = isset($_POST['rev_permission']) ? 'Yes' : 'No';
+
+        if ( '' === $name ) $rev_errors[] = 'Please enter your name.';
+        if ( '' === $email || ! is_email( $email ) ) $rev_errors[] = 'Please enter a valid email address.';
+        if ( '' === $rating ) $rev_errors[] = 'Please select a star rating.';
+        if ( '' === $comments ) $rev_errors[] = 'Please write your review.';
+
+        if ( empty( $rev_errors ) ) {
+            $to      = 'support@gopbacademy.com';
+            $subject = sprintf( 'New Student Review from %s', $name );
+            $body    = "New Review Submitted:\n\nName: {$name}\nEmail: {$email}\nProgram: {$program}\nInstructor: {$instructor}\nRating: {$rating} Stars\nPermission to Publish: {$permission}\n\nReview:\n{$comments}";
+            $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: PB Academy <noreply@gopbacademy.com>', 'Reply-To: ' . $name . ' <' . $email . '>');
+
+            $attachments = array();
+            if ( ! empty( $_FILES['rev_photo']['name'] ) ) {
+                if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
+                $upload_overrides = array( 'test_form' => false );
+                $movefile = wp_handle_upload( $_FILES['rev_photo'], $upload_overrides );
+                if ( $movefile && ! isset( $movefile['error'] ) ) {
+                    $attachments[] = $movefile['file'];
+                }
+            }
+
+            $rev_success = (bool) wp_mail( $to, $subject, $body, $headers, $attachments );
+            if ( ! $rev_success ) $rev_errors[] = 'Sorry, your review failed to send. Please try again.';
+        }
+    }
+}
+
 /**
  * Template Name: Reviews
  */
@@ -91,69 +135,85 @@ get_header(); ?>
                     <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 600px; margin: 0 auto;">Your feedback helps other players feel confident joining PB Academy.</p>
                 </div>
 
-                <form class="r-interest-form ct-form" action="#" method="post" novalidate>
-                    <div class="ct-form-row">
-                        <div class="ct-form-group">
-                            <label for="rev-name">Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="rev-name" name="rev_name" required>
-                        </div>
-                        <div class="ct-form-group">
-                            <label for="rev-email">Email <span aria-hidden="true">*</span></label>
-                            <input type="email" id="rev-email" name="rev_email" required>
-                        </div>
-                    </div>
+<!-- Success/Error Messages -->
+<?php if ( $rev_success ) : ?>
+    <div class="jt-alert jt-alert--success" role="status" style="margin-bottom: 30px;">
+        Thank you! Your review has been submitted successfully.
+    </div>
+<?php elseif ( ! empty( $rev_errors ) ) : ?>
+    <div class="jt-alert jt-alert--error" role="alert" style="margin-bottom: 30px;">
+        <ul>
+            <?php foreach ( $rev_errors as $error ) echo '<li>' . esc_html( $error ) . '</li>'; ?>
+        </ul>
+    </div>
+<?php endif; ?>
 
-                    <div class="ct-form-row">
-                        <div class="ct-form-group">
-                            <label for="rev-program">Program / Service <span aria-hidden="true">*</span></label>
-                            <select id="rev-program" name="rev_program" required>
-                                <option value="" disabled selected>Select a program...</option>
-                                <option value="Private Lessons">Private Lessons</option>
-                                <option value="Group Lessons">Group Lessons</option>
-                                <option value="PBA Core 4">PBA Core 4</option>
-                                <option value="Clinics">Clinics</option>
-                                <option value="Events">Events</option>
-                                <option value="Retreats">Retreats</option>
-                                <option value="Beginner Manual">Beginner Manual</option>
-                            </select>
-                        </div>
-                        <div class="ct-form-group">
-                            <label for="rev-instructor">Instructor (if applicable)</label>
-                            <input type="text" id="rev-instructor" name="rev_instructor" placeholder="e.g., Charles Azoulay">
-                        </div>
-                    </div>
+<form class="r-interest-form ct-form" action="<?php echo esc_url( get_permalink() . '#leave-review' ); ?>" method="post" enctype="multipart/form-data" novalidate>
+    <?php wp_nonce_field( 'pba_review_form', 'rev_nonce' ); ?>
+    <input type="text" name="rev_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-                    <div class="ct-form-group">
-                        <label for="rev-rating">Star Rating <span aria-hidden="true">*</span></label>
-                        <select id="rev-rating" name="rev_rating" required>
-                            <option value="" disabled selected>Select a rating...</option>
-                            <option value="5">5 Stars</option>
-                            <option value="4">4 Stars</option>
-                            <option value="3">3 Stars</option>
-                            <option value="2">2 Stars</option>
-                            <option value="1">1 Star</option>
-                        </select>
-                    </div>
+    <div class="ct-form-row">
+        <div class="ct-form-group">
+            <label for="rev-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="rev-name" name="rev_name" required value="<?php echo isset($name) && !$rev_success ? esc_attr($name) : ''; ?>">
+        </div>
+        <div class="ct-form-group">
+            <label for="rev-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="rev-email" name="rev_email" required value="<?php echo isset($email) && !$rev_success ? esc_attr($email) : ''; ?>">
+        </div>
+    </div>
 
-                    <div class="ct-form-group">
-                        <label for="rev-comments">Your Review <span aria-hidden="true">*</span></label>
-                        <textarea id="rev-comments" name="rev_comments" rows="5" required placeholder="Tell us about your experience..."></textarea>
-                    </div>
+    <div class="ct-form-row">
+        <div class="ct-form-group">
+            <label for="rev-program">Program / Service <span aria-hidden="true">*</span></label>
+            <select id="rev-program" name="rev_program" required>
+                <option value="" disabled <?php selected(empty($program) || $rev_success); ?>>Select a program...</option>
+                <option value="Private Lessons">Private Lessons</option>
+                <option value="Group Lessons">Group Lessons</option>
+                <option value="PBA Core 4">PBA Core 4</option>
+                <option value="Clinics">Clinics</option>
+                <option value="Events">Events</option>
+                <option value="Retreats">Retreats</option>
+                <option value="Beginner Manual">Beginner Manual</option>
+            </select>
+        </div>
+        <div class="ct-form-group">
+            <label for="rev-instructor">Instructor (if applicable)</label>
+            <input type="text" id="rev-instructor" name="rev_instructor" placeholder="e.g., Charles Azoulay" value="<?php echo isset($instructor) && !$rev_success ? esc_attr($instructor) : ''; ?>">
+        </div>
+    </div>
 
-                    <div class="ct-form-group">
-                        <label for="rev-photo">Optional Photo</label>
-                        <input type="file" id="rev-photo" name="rev_photo" accept="image/*">
-                    </div>
+    <div class="ct-form-group" style="margin-bottom: 16px;">
+        <label for="rev-rating">Star Rating <span aria-hidden="true">*</span></label>
+        <select id="rev-rating" name="rev_rating" required>
+            <option value="" disabled <?php selected(empty($rating) || $rev_success); ?>>Select a rating...</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+        </select>
+    </div>
 
-                    <div class="ct-form-group" style="flex-direction: row; align-items: center; gap: 10px;">
-                        <input type="checkbox" id="rev-permission" name="rev_permission" style="width:auto;">
-                        <label for="rev-permission" style="margin:0;">I give PB Academy permission to publicly display my review and photo (if provided).</label>
-                    </div>
+    <div class="ct-form-group" style="margin-bottom: 16px;">
+        <label for="rev-comments">Your Review <span aria-hidden="true">*</span></label>
+        <textarea id="rev-comments" name="rev_comments" rows="5" required placeholder="Tell us about your experience..."><?php echo isset($comments) && !$rev_success ? esc_textarea($comments) : ''; ?></textarea>
+    </div>
 
-                    <button type="submit" class="btn btn-green ct-submit-btn" style="width: 100%; justify-content: center; padding: 18px; font-size: 1rem; margin-top: 15px;">
-                        SUBMIT REVIEW
-                    </button>
-                </form>
+    <div class="ct-form-group" style="margin-bottom: 16px;">
+        <label for="rev-photo">Optional Photo</label>
+        <input type="file" id="rev-photo" name="rev_photo" accept="image/*" style="padding: 10px; background: transparent; border: 1px dashed var(--gray-light);">
+    </div>
+
+    <div class="ct-form-group" style="flex-direction: row; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <input type="checkbox" id="rev-permission" name="rev_permission" style="width:auto; cursor: pointer;">
+        <label for="rev-permission" style="margin:0; text-transform: none; font-family: var(--font-body); cursor: pointer;">I give PB Academy permission to publicly display my review and photo (if provided).</label>
+    </div>
+
+    <button type="submit" name="rev_submit" value="1" class="btn btn-green ct-submit-btn" style="width: 100%; justify-content: center; padding: 18px; font-size: 1rem; margin-top: 15px;">
+        SUBMIT REVIEW
+    </button>
+</form>
             </div>
         </div>
     </section>
