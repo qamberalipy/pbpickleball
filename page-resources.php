@@ -52,13 +52,13 @@ get_header(); ?>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Choosing the Right Paddle.png" class="program-card resource-trigger">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3d3.png" alt="paddle & ball">
+                    <img class="program-icon" src="<?php echo get_template_directory_uri(); ?>/media/paddle-icon.png" alt="paddle & ball">
                     <h4>Choosing the Right Paddle</h4>
                     <p>Weight, grip size and material basics to help you pick your first paddle.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Indoor vs. Outdoor Balls.png" class="program-card resource-trigger">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3be.png" alt="ball">
+                    <img class="program-icon" src="<?php echo get_template_directory_uri(); ?>/media/pickleball-icon.png" alt="ball">
                     <h4>Indoor vs. Outdoor Balls</h4>
                     <p>Why ball type matters and how to choose the right one for your court.</p>
                 </a>
@@ -94,15 +94,15 @@ get_header(); ?>
                 </a>
 
                 <!-- NO RESOURCE TRIGGER HERE: This just scrolls down -->
-                <a href="#courts" class="program-card">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cd.png" alt="pin">
-                    <h4>Where to Play</h4>
-                    <p>Find courts near you — see our full Court Directory below.</p>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/servefaults.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/solid/circle-xmark.svg" alt="pin">
+                    <h4>Serve Faults</h4>
+                    <p>Learn what makes a serve legal and when it results in a fault.</p>
                 </a>
 
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Basic rule.png" class="program-card resource-trigger">
                     <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cb.png" alt="clipboard">
-                    <h4>Basic Rules</h4>
+                    <h4>Two Bounce Rule</h4>
                     <p>The essential rules every new player needs to know before stepping on court.</p>
                 </a>
 
@@ -112,10 +112,10 @@ get_header(); ?>
                     <p>A simple breakdown of how scoring and side-outs work.</p>
                 </a>
 
-                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Pickleball Terminology.png" class="program-card resource-trigger">
-                    <img class="program-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png" alt="open book">
-                    <h4>Pickleball Terminology</h4>
-                    <p>Kitchen, dink, dead ball and other common terms explained simply.</p>
+                <a href="<?php echo get_template_directory_uri(); ?>/media/resources/walldrills.png" class="program-card resource-trigger">
+                    <img class="program-icon" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/solid/table-cells-large.svg" alt="open book">
+                    <h4>Wall Drills</h4>
+                    <p>Wall drills help you improve control, consistency, and technique.</p> 
                 </a>
 
             </div>
@@ -250,7 +250,7 @@ get_header(); ?>
         <div class="container anim-fade-up" style="max-width:750px;">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Want The Complete Beginner Reference?</h2>
             <p style="font-size: 1.05rem; color: var(--gray-text); margin-bottom: 30px;">Explore the PB Academy Beginner Manual — Volume 1 for a full, structured guide to learning the game.</p>
-            <a href="<?php echo home_url('/beginner-manual/'); ?>" class="btn btn-green">EXPLORE THE BEGINNER MANUAL</a>
+            <a href="<?php echo home_url('/beginner-manual/#download'); ?>" class="btn btn-green">EXPLORE THE BEGINNER MANUAL</a>
         </div>
     </section>
 

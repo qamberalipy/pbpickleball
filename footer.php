@@ -23,7 +23,7 @@
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <a href="<?php echo home_url('/about-pba/'); ?>">About</a>
                             <a href="<?php echo home_url('/program-and-lessons/'); ?>">Programs</a>
-                            <a href="<?php echo home_url('/book-a-lesson/'); ?>">Book Now</a>
+                            <a href="<?php echo home_url('/book-a-lesson/'); ?>">Register Now</a>
                             <a href="<?php echo home_url('/beginner-manual/'); ?>">Manual</a>
                             <a href="<?php echo home_url('/retreats/'); ?>">Retreats</a>
                             <a href="<?php echo home_url('/events/'); ?>">Events</a>

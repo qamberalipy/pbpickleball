@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and book your first lesson today.">
+<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
     <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/hero-bg.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
@@ -224,7 +224,7 @@
 </section>
 
 <!-- Redesigned CTA Bar -->
-<section class="cta-bar" data-mascot-msg="Ready to play? Reserve your spot or call us directly at 561-855-9500!" aria-label="Book a lesson call to action">
+<section class="cta-bar" data-mascot-msg="Ready to play? Reserve your spot or call us directly at 561-855-9500!" aria-label="Register for a lesson call to action">
     <div class="container cta-container">
 
         <div class="cta-left">

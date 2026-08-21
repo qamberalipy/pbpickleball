@@ -42,7 +42,7 @@ get_header(); ?>
                 <!-- Card 1 -->
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')">
-                        <span class="r-card__badge">Booking Now</span>
+                        <span class="r-card__badge">Register Now</span>
                     </div>
                     <div class="r-card__content">
                         <h3 class="r-card__title" style="margin-bottom: 5px;">Punta Cana Paradise Retreat</h3>
