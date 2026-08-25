@@ -5843,7 +5843,7 @@ header .header-actions {
     position: relative; overflow: hidden; background-color: var(--navy); min-height: 80vh; padding: 120px 20px; display: flex; align-items: center; justify-content: center; flex-direction: column;
 }
 .bm-hero-full::before {
-    content: ''; position: absolute; inset: 0; background-color: rgb(10 12 15 / 45%); z-index: 1; width: 100%;
+    content: ''; position: absolute; inset: 0;  z-index: 1; width: 100%;
 }
 .bm-hero-full .hero-content {
     color: var(--white);
@@ -8235,6 +8235,48 @@ header .container.header-content {
 @media (max-width: 768px) {
     .about-hero-full .hero-container,
     .instructors-hero-full .hero-container {
+        padding-bottom: 30px !important;
+    }
+}
+/* ============================================================
+   ABOUT & INSTRUCTORS HERO: BOTTOM ALIGN QUICK JUMP
+   ============================================================ */
+
+/* Force the containers to align content to the bottom */
+.about-hero-full .hero-container,
+.instructors-hero-full .hero-container,
+.bm-hero-full .hero-container {
+    align-items: flex-end !important; /* Pushes content to the floor */
+    padding-bottom: 50px !important; /* Keeps it slightly off the edge */
+    min-height: 100%; /* Ensures flex-end has room to push */
+}
+
+/* Center the content wrapper horizontally and push it down */
+.about-hero-full .hero-content,
+.instructors-hero-full .hero-content,
+.bm-hero-full .hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto !important; /* Guarantees it stays at the bottom */
+}
+
+/* Ensure the Quick Jump bar itself behaves as a neat, centered block */
+.about-hero-full .hero-quick-jump,
+.instructors-hero-full .hero-quick-jump,
+.bm-hero-full .hero-quick-jump {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0 !important; /* Removes extra bottom spacing */
+    box-shadow: 0 15px 40px rgba(11, 32, 70, 0.4) !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-hero-full .hero-container,
+    .instructors-hero-full .hero-container,
+    .bm-hero-full .hero-container {
         padding-bottom: 30px !important;
     }
 }

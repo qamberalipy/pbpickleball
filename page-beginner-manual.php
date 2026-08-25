@@ -61,8 +61,8 @@ get_header();
         <div class="hero-video-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/media/beginner-manual-hero-banner.webp');"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <h1>BEGINNER<br><span class="highlight">TRAINING MANUAL</span></h1>
-                <h3 class="hero-tagline type-effect"></h3>
+                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">BEGINNER</span><br><span class="highlight" style="text-shadow: 0 2px 1px rgb(0 0 0 / 70%) !important;">TRAINING MANUAL</span></h1>
+             
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
