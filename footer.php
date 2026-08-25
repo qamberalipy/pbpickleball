@@ -337,7 +337,7 @@
             
             // 2. Slide in & Greet after 800ms
             setTimeout(function () {
-                textEl.textContent = "Welcome to PB Academy! Let's get playing.";
+                textEl.textContent = "Hi!";
                 bubble.style.opacity = '1';
             }, 800);
 

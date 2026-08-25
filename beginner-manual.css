@@ -355,6 +355,10 @@
 }
 
 @media (max-width: 640px) {
+    #bm-span{
+        text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
+    color: black !important;
+    }
     .bm-samples-grid { grid-template-columns: repeat(2, 1fr); }
     .bm-features-wrap { grid-template-columns: 1fr; }
 }

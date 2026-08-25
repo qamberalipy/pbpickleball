@@ -45,9 +45,10 @@ get_header();
         <div class="c4-promo-text">
             <span class="c4-badge">FEATURED PROGRAM</span>
             <h2>
-                MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span> 
-                <span class="popular-tag">
-                    Most Popular
+                MASTER THE GAME WITH <span class="hl-pba">PBA</span> 
+                <span class="core4-wrapper">
+                    <span class="hl-core4">CORE 4</span>
+                    <span class="popular-tag">👑 Most Popular</span>
                 </span>
             </h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
@@ -58,9 +59,55 @@ get_header();
         </div>
     </div>
 </section>
+
     <!-- ============================================================
          PHASE 2: LESSONS CATEGORY & PROGRESSION BAR
          ============================================================ -->
+             <section id="core-4" class="lp-core4-section">
+        <div class="container lp-core4-container anim-fade-up">
+            <div class="lp-core4-header">
+                <h2>PBA CORE 4</h2>
+                <h4>The Complete 4-Lesson Beginner Package</h4>
+                <p>Core 4 is PB Academy's structured beginner program designed to take someone from learning the fundamentals to actually playing the game with greater confidence.</p>
+            </div>
+            
+            <div class="lp-core4-grid">
+                <div class="core4-lesson">
+                    <span class="core4-num">1</span>
+                    <div class="core4-text">
+                        <h3>LESSON 1 — GET STARTED</h3>
+                        <p>Introduction, safety, equipment, court basics and fundamental skills.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">2</span>
+                    <div class="core4-text">
+                        <h3>LESSON 2 — PLAY THE GAME</h3>
+                        <p>Serving, returning, scoring, side-out, ball in/out and basic rules.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">3</span>
+                    <div class="core4-text">
+                        <h3>LESSON 3 — PLAY BETTER</h3>
+                        <p>Developing shots, movement, positioning and better control.</p>
+                    </div>
+                </div>
+                <div class="core4-lesson">
+                    <span class="core4-num">4</span>
+                    <div class="core4-text">
+                        <h3>LESSON 4 — PLAY TO WIN</h3>
+                        <p>Strategy, partner communication, point construction and supervised play.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="#" class="btn btn-outline-white">LEARN MORE</a>
+                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
+            </div>
+        </div>
+    </section>
     <section id="lessons" class="container" style="padding: 80px 20px;">
         <h2 class="lp-section-title">PROGRAM CATEGORY 1 — LESSONS</h2>
         
@@ -146,51 +193,7 @@ get_header();
     <!-- ============================================================
          PHASE 3: PBA CORE 4 (PROMINENT FEATURE)
          ============================================================ -->
-    <section id="core-4" class="lp-core4-section">
-        <div class="container lp-core4-container anim-fade-up">
-            <div class="lp-core4-header">
-                <h2>PBA CORE 4</h2>
-                <h4>The Complete 4-Lesson Beginner Package</h4>
-                <p>Core 4 is PB Academy's structured beginner program designed to take someone from learning the fundamentals to actually playing the game with greater confidence.</p>
-            </div>
-            
-            <div class="lp-core4-grid">
-                <div class="core4-lesson">
-                    <span class="core4-num">1</span>
-                    <div class="core4-text">
-                        <h3>LESSON 1 — GET STARTED</h3>
-                        <p>Introduction, safety, equipment, court basics and fundamental skills.</p>
-                    </div>
-                </div>
-                <div class="core4-lesson">
-                    <span class="core4-num">2</span>
-                    <div class="core4-text">
-                        <h3>LESSON 2 — PLAY THE GAME</h3>
-                        <p>Serving, returning, scoring, side-out, ball in/out and basic rules.</p>
-                    </div>
-                </div>
-                <div class="core4-lesson">
-                    <span class="core4-num">3</span>
-                    <div class="core4-text">
-                        <h3>LESSON 3 — PLAY BETTER</h3>
-                        <p>Developing shots, movement, positioning and better control.</p>
-                    </div>
-                </div>
-                <div class="core4-lesson">
-                    <span class="core4-num">4</span>
-                    <div class="core4-text">
-                        <h3>LESSON 4 — PLAY TO WIN</h3>
-                        <p>Strategy, partner communication, point construction and supervised play.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-buttons" style="margin-top: 40px;">
-                <a href="#" class="btn btn-outline-white">LEARN MORE</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ============================================================
          PHASE 4: CLINICS, PLAY & FINAL CTA

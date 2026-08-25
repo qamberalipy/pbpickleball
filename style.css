@@ -7353,7 +7353,7 @@ section.active-focus {
     background-color: var(--navy);
     padding: 80px 20px;
     color: var(--white);
-    margin: 60px 0;
+    /* margin: 60px 0; */
 }
 .lp-core4-container {
     max-width: 1000px;
@@ -8182,6 +8182,10 @@ header .container.header-content {
     width: fit-content !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
+#bm-span{
+    text-shadow: 0 2px 1px rgb(0 0 0 / 70%) !important;
+    color: black !important;
+}
 
 /* 5. Mobile Adjustments */
 @media (max-width: 768px) {
@@ -8283,5 +8287,76 @@ header .container.header-content {
     .bm-hero-full .hero-container,
     .retreat-hero-full .hero-container {
         padding-bottom: 30px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE SPACING FIXES (REMOVE PADDING/MARGIN)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Remove padding entirely */
+    .testimonials-section,
+    .founder-section,
+    .programs {
+        padding: 0 !important;
+    }
+
+    /* Remove vertical padding, keep 20px horizontal so text doesn't touch screen edges */
+    .about-narrative-section {
+        padding: 20px 20px !important; 
+    }
+
+    /* Remove vertical padding AND bottom margin */
+    .about-lists-section {
+        padding: 0 20px !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+    #all-instructors{
+        padding: 0 20px 20px !important;
+    }
+    #clinics ,#lessons,#leave-review,#interest-list{
+        padding: 20px 20px !important;
+    }
+    .popular-tag {
+                font-size: 0.4rem;
+        margin-top: 7px;
+    }
+    #bm-span{
+        text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
+    color: black !important;
+    }
+    
+}
+
+/* ============================================================
+   RESOURCES: "GETTING STARTED TOPICS" GRID RESPONSIVENESS
+   ============================================================ */
+
+/* Desktop: 4 columns */
+#topics .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet Landscape: 3 columns */
+@media (max-width: 1200px) {
+    #topics .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet Portrait & Large Mobile: 2 columns */
+@media (max-width: 768px) {
+    #topics .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile: 1 column */
+@media (max-width: 480px) {
+    #topics .programs-grid {
+        grid-template-columns: 1fr;
     }
 }
