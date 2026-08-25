@@ -12,7 +12,9 @@ get_header(); ?>
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <!-- <h2 class="hero-subtitle">Play. Socialize. Connect.</h2> -->
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span><br><span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important">EVENTS</span></h1>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">
+                    <span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span><br>
+                    <span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important;color: black!important">EVENTS</span></h1>
                 <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Clinics, round robins, organized play and social gatherings — discover what's happening in the PB Academy community and reserve your spot.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->
@@ -124,7 +126,7 @@ get_header(); ?>
     </section>
 
     <!-- EVENT CALENDAR -->
-    <section class="r-section pattern-bg" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
+    <!-- <section class="r-section pattern-bg" id="calendar" data-mascot-msg="See everything happening this month at a glance.">
         <div class="container">
             <h2 class="r-section-title anim-fade-up">EVENT CALENDAR</h2>
             <div class="anim-fade-up" style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 40px; box-shadow: 0 15px 40px rgba(11,32,70,0.08); text-align:center;">
@@ -137,7 +139,7 @@ get_header(); ?>
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- PAST EVENTS -->
     <!-- <section class="r-section bg-gray" id="past-events" data-mascot-msg="See the fun our community has already had together.">
