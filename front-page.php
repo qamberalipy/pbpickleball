@@ -43,9 +43,10 @@
         <div class="c4-promo-text">
             <span class="c4-badge">FEATURED PROGRAM</span>
             <h2>
-                MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span> 
-                <span class="popular-tag">
-                    Most Popular
+                MASTER THE GAME WITH <span class="hl-pba">PBA</span> 
+                <span class="core4-wrapper">
+                    <span class="hl-core4">CORE 4</span>
+                    <span class="popular-tag">👑 Most Popular</span>
                 </span>
             </h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>

@@ -11,9 +11,9 @@ get_header(); ?>
         <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/event-hero-banner.webp" alt="PB Academy Events" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h2 class="hero-subtitle">Play. Socialize. Connect.</h2>
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">EVENTS</span></h1>
-                <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Clinics, round robins, organized play and social gatherings — discover what's happening in the PB Academy community and reserve your spot.</p>
+                <!-- <h2 class="hero-subtitle">Play. Socialize. Connect.</h2> -->
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span><br><span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important">EVENTS</span></h1>
+                <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Clinics, round robins, organized play and social gatherings — discover what's happening in the PB Academy community and reserve your spot.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">

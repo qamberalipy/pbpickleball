@@ -14,10 +14,10 @@
         <!-- FIX: Restored global hero-container to pull text above the overlay -->
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h1>PBA SHOP</h1>
-                <h3 class="hero-tagline type-effect"></h3>
+                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PBA </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">SHOP</span></h1>
                 
-                <div class="shop-hero__features">
+                
+                <!-- <div class="shop-hero__features">
                     <div class="shop-hero__feature">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         Quality Products
@@ -34,7 +34,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                         Expert Support
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
