@@ -64,31 +64,26 @@ get_header();
 <main class="book-lesson-page">
 
 	<!-- 1. Hero -->
-	<section class="bl-hero anim-fade-up">
-		<div class="bl-hero__bg" style="background-image:url('<?php echo get_template_directory_uri(); ?>/media/book-a-lesson.webp');"></div>
-		<div class="bl-hero__overlay"></div>
-		<div class="container bl-hero__container">
-			<h2 class="bl-hero__eyebrow">REGISTER FOR YOUR SESSION</h2>
-			<h1 class="bl-hero__title">Register for a Pickleball Lesson</h1>
-			<p class="bl-hero__intro">Private, semi-private, and group coaching for every skill level. Reserve your spot in minutes — we'll confirm your session personally.</p>
-			<div class="bl-hero__strip">
-				<div class="bl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Certified Coaches</span></div>
-				<div class="bl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg><span>All Skill Levels</span></div>
-				<div class="bl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green,#2e7d32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Flexible Scheduling</span></div>
-			</div>
-			<a href="#bl-form" class="btn btn-green bl-hero__cta">RESERVE MY SPOT</a>
-
-			<!-- Quick-Jump Anchor Bar -->
-			<div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
-			    <span class="qj-label">Click To View More:</span>
-			    <div class="qj-links">
-			        <a href="#benefits" class="qj-link">Benefits</a>
-			        <a href="#bl-form" class="qj-link">Register Now</a>
-			        <a href="#testimonials" class="qj-link">Testimonials</a>
-			        <a href="#faqs" class="qj-link">FAQs</a>
-			    </div>
-			</div>
-		</div>
+	<section class="hero bl-hero-full" data-mascot-msg="Reserve your spot in minutes!">
+	    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/book-a-lesson.webp" alt="Book a Lesson" aria-hidden="true">
+	    
+	    <div class="hero-container">
+	        <div class="hero-content anim-fade-up">
+	           
+	            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; "><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">Register for a </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">Pickleball Lesson</span></h1>
+	            
+	            <!-- Quick-Jump Anchor Bar -->
+	            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+	                <span class="qj-label">Click To View More:</span>
+	                <div class="qj-links">
+	                    <a href="#benefits" class="qj-link">Benefits</a>
+	                    <a href="#bl-form" class="qj-link">Register Now</a>
+	                    <a href="#testimonials" class="qj-link">Testimonials</a>
+	                    <a href="#faqs" class="qj-link">FAQs</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 	</section>
 
 	<!-- 2. Benefits -->
