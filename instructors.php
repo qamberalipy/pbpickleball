@@ -13,13 +13,13 @@ get_header();
          PHASE 1: HERO SECTION
          ============================================================ -->
     <section class="hero instructors-hero-full" data-mascot-msg="Meet the passionate professionals who make learning pickleball a breeze!">
-        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/our-instructor-hero.webp" alt="PB Academy Instructors" aria-hidden="true">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-our-instructor-hero.webp" alt="PB Academy Instructors" aria-hidden="true" style="object-position: center center !important;">
         
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;">MEET OUR PB ACADEMY <br><span class="highlight">INSTRUCTORS</span></h1>
+                <!-- <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;">MEET OUR PB ACADEMY <br><span class="highlight">INSTRUCTORS</span></h1>
                 <h3 class="hero-tagline" style="margin-top: 15px; margin-bottom: 25px; font-weight: 700;">Friendly. Experienced. Patient. Passionate About Pickleball.</h3>
-                <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy instructors are selected to provide welcoming, structured and easy-to-understand instruction.</p>
+                <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy instructors are selected to provide welcoming, structured and easy-to-understand instruction.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
