@@ -67,7 +67,7 @@ get_header(); ?>
         <div class="container">
             <h2 class="r-section-title anim-fade-up">GETTING STARTED TOPICS</h2>
 
-            <div class="programs-grid anim-fade-up" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+            <div class="programs-grid anim-fade-up">
 
                 <!-- NOTE: Added 'resource-trigger' class and removed target="_blank" -->
                 <a href="<?php echo get_template_directory_uri(); ?>/media/resources/Player Levels & Skills.png" class="program-card resource-trigger">

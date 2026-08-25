@@ -8328,3 +8328,35 @@ header .container.header-content {
     }
     
 }
+
+/* ============================================================
+   RESOURCES: "GETTING STARTED TOPICS" GRID RESPONSIVENESS
+   ============================================================ */
+
+/* Desktop: 4 columns */
+#topics .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet Landscape: 3 columns */
+@media (max-width: 1200px) {
+    #topics .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet Portrait & Large Mobile: 2 columns */
+@media (max-width: 768px) {
+    #topics .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile: 1 column */
+@media (max-width: 480px) {
+    #topics .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
