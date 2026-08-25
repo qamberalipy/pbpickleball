@@ -8204,6 +8204,7 @@ header .container.header-content {
    ============================================================ */
 
 /* Force the containers to align content to the bottom */
+
 .about-hero-full .hero-container,
 .instructors-hero-full .hero-container {
     align-items: flex-end !important; /* Pushes content to the floor */

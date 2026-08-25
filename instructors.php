@@ -15,7 +15,7 @@ get_header();
     <section class="hero instructors-hero-full" data-mascot-msg="Meet the passionate professionals who make learning pickleball a breeze!">
         <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-our-instructor-hero.webp" alt="PB Academy Instructors" aria-hidden="true" style="object-position: center center !important;">
         
-        <div class="hero-container">
+        <div class="hero-container" style="padding-bottom: 10px !important;">
             <div class="hero-content anim-fade-right">
                 <!-- <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;">MEET OUR PB ACADEMY <br><span class="highlight">INSTRUCTORS</span></h1>
                 <h3 class="hero-tagline" style="margin-top: 15px; margin-bottom: 25px; font-weight: 700;">Friendly. Experienced. Patient. Passionate About Pickleball.</h3>
