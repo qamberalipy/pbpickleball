@@ -1645,11 +1645,7 @@ footer {
         min-height: 480px;
     }
 
-    .hero::before {
-        
-        /* background: rgb(29 37 52 / 45%);  */
-        background: rgb(10 12 15 / 45%);/* slightly heavier wash on small screens */
-    }
+    
 
     .hero-container {
         flex-direction: column;

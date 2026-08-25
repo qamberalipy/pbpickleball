@@ -40,14 +40,14 @@ get_header(); ?>
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PLAYER </span><br><span class="highlight" style="text-shadow: 0 2px 40px rgb(0 0 0 / 70%) !important;">RESOURCES</span></h1>
                 <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Helpful guides on rules, equipment, safety and where to play — built especially for beginners, adults and seniors.</p> -->
 
-                <div class="mobile-search-wrap" style="max-width: 500px; margin: 30px auto 0;">
+                <!-- <div class="mobile-search-wrap" style="max-width: 500px; margin: 30px auto 0;">
                     <form role="search" class="premium-search-form" onsubmit="return false;">
                         <input type="search" class="premium-search-input" placeholder="Search resources (e.g. scoring, paddles...)" aria-label="Search resources" />
                         <button type="submit" class="premium-search-btn" aria-label="Submit Search">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </button>
                     </form>
-                </div>
+                </div> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
