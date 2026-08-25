@@ -3,86 +3,54 @@
 
 /* .bm-page { color: #222; } */
 
-.bm-hero { 
-    position: relative;
-    padding: 6rem 0 5.5rem; 
-    /* Stable external Pexels URL */
-    background: url('https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
-    background-color: var(--navy);
-    overflow: hidden;
+/* 1. Simplify the wrapper (Let the global .hero class handle the layout) */
+.bm-hero-full {
+    position: relative; 
+    overflow: hidden; 
+    background-color: var(--navy); 
+    min-height: 80vh; 
 }
 
-.bm-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+/* 2. Force the div background image to display correctly */
+.bm-hero-full .hero-video-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(11, 32, 70, 0.95) 0%, rgba(11, 32, 70, 0.8) 50%, rgba(11, 32, 70, 0.2) 100%);
-    z-index: 1;
-    display: block;
 }
 
-.bm-hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-.bm-hero-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1.5fr 300px; 
-    gap: 2.5rem; 
-    align-items: center; 
-}
-
-@media (max-width: 1024px) {
-    .bm-hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .bm-hero-left { margin: 0 auto; }
-    .bm-check-list { display: inline-block; text-align: left; }
-    .bm-book-badge { position: relative; margin: -20px auto 0; bottom: auto; left: auto; transform: none; }
-    .bm-hero::before { background: rgba(11, 32, 70, 0.92); }
-}
-
-.bm-hero-left h1 { font-family: "Montserrat", sans-serif; color: var(--white); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin-bottom: 0.5rem; font-weight: 900; }
-.bm-hero-sub { color: var(--green-bright); font-style: italic; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
-.bm-hero-text { color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; max-width: 42ch; line-height: 1.6; }
-.bm-check-list { font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px; font-weight: 600; color: var(--white); margin-bottom: 0; padding: 0; }
-.bm-check-list li { display: flex; align-items: center; gap: 10px; }
-.bm-check-list li::before { 
-    content: '✓'; 
-    display: inline-flex; justify-content: center; align-items: center; 
-    width: 20px; height: 20px; background-color: var(--green); color: #fff; 
-    border-radius: 50%; font-size: 0.7rem; font-weight: bold; flex-shrink: 0; 
-}
-
-.bm-hero-center { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
-.bm-book-cover { 
-    width: 100%; 
-    max-width: 650px; 
-    height: auto; 
-    display: block; 
-}
-
-.bm-book-badge {
+/* High-Contrast Dark Filter */
+.bm-hero-full::before {
+    content: ''; 
     position: absolute; 
-    bottom: 5%; 
-    left: 45%;
-    transform: translateX(-50%);
-    z-index: 2;
-    background: var(--green); 
-    color: #fff; 
-    border-radius: 50%;
-    width: 110px; 
-    height: 110px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    font-size: 0.72rem; 
-    font-weight: 800; 
-    text-align: center; 
-    line-height: 1.2;
-    padding: 0.5rem;
-    box-shadow: 0 10px 20px rgba(103, 155, 48, 0.3);
+    inset: 0; 
+
+    z-index: 1; 
+    width: 100%;
+}
+
+/* Center alignment and deep drop shadows for contrast */
+.bm-hero-full .hero-content {
+    color: var(--white);
+    text-align: center;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+}
+
+/* Two-Color Heading Styles */
+.bm-hero-full .hero-content h1 {
+    font-family: var(--font-heading, "Montserrat", sans-serif); 
+    font-size: clamp(2rem, 4vw, 2.8rem); 
+    font-weight: 900; 
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+    line-height: 1.1; 
+    margin-bottom: 0.5rem; 
+}
+
+.bm-hero-full .hero-content h1 .highlight {
+    color: var(--green, #679B30);
 }
 
 .bm-sidebar { 
@@ -379,7 +347,6 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .bm-hero-grid { grid-template-columns: 1fr; }
     .bm-samples-grid { grid-template-columns: repeat(3, 1fr); }
     .bm-strip { grid-template-columns: 1fr; }
     .bm-bottom-container { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
@@ -389,6 +356,5 @@
 
 @media (max-width: 640px) {
     .bm-samples-grid { grid-template-columns: repeat(2, 1fr); }
-    .bm-hero-left h1 { font-size: 1.8rem; }
     .bm-features-wrap { grid-template-columns: 1fr; }
 }

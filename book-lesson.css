@@ -4,85 +4,46 @@
    --gray-text, --white, .container, .btn, bg-gray, anim-fade-up, etc.)
    ========================================================================== */
 
-/* 1. Hero */
-.bl-hero {
-	position: relative;
-	padding: 120px 0 90px;
-	color: var(--white, #fff);
-	overflow: hidden;
+/* ==========================================================================
+   1. HERO (MATCHES PROGRAMS PAGE LAYOUT)
+   ========================================================================== */
+
+.bl-hero-full {
+    min-height: 80vh;
+    background-color: var(--navy);
 }
 
-.bl-hero__bg {
-	position: absolute;
-	inset: 0;
-	background-size: cover;
-	background-position: center;
+
+
+/* Stretch container to full height */
+.bl-hero-full .hero-container {
+    align-items: stretch !important;
+    padding-bottom: 40px !important; /* Floor padding */
 }
 
-.bl-hero__overlay {
-	position: absolute;
-	inset: 0;
-	/* background: linear-gradient(180deg, rgba(10, 30, 45, 0.85) 0%, rgba(10, 30, 45, 0.7) 100%); */
-	background: rgb(10 12 15 / 45%) !important;
+/* Turn content into a vertical column */
+.bl-hero-full .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Keeps the headings perfectly centered */
+    height: 100% !important;
 }
 
-.bl-hero__container {
-	position: relative;
-	z-index: 1;
-	max-width: 760px;
-	text-align: center;
-	margin: 0 auto;
+/* The Magic Spring: Pushes the Quick Jump bar to the floor */
+.bl-hero-full .hero-quick-jump {
+    margin-top: 40px !important; /* Forces it to the bottom */
+    margin-bottom: 0 !important;
+    margin-left: auto !important; /* Keeps it horizontally centered */
+    margin-right: auto !important;
 }
 
-.bl-hero__eyebrow {
-	letter-spacing: 2px;
-	font-size: 14px;
-	font-weight: 700;
-	color: var(--green-bright, #6fd66f);
-	margin-bottom: 12px;
-}
-
-.bl-hero__title {
-	font-size: clamp(28px, 5vw, 52px);
-	line-height: 1.1;
-	margin-bottom: 16px;
-	word-break: break-word;
-}
-
-.bl-hero__intro {
-	font-size: clamp(15px, 2.5vw, 18px);
-	line-height: 1.6;
-	opacity: 0.92;
-	margin-bottom: 28px;
-}
-
-.bl-hero__strip {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 16px 24px;
-	margin-bottom: 32px;
-}
-
-.bl-strip__item {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	font-size: 14px;
-	font-weight: 600;
-	white-space: nowrap;
-}
-
-.bl-strip__item svg {
-	width: 20px;
-	height: 20px;
-	flex-shrink: 0;
-}
-
-.bl-hero__cta {
-	display: inline-block;
-	min-height: 48px;
-	line-height: 1.2;
+@media (max-width: 768px) {
+    .bl-hero-full {
+        min-height: 60vh;
+    }
+    .bl-hero-full .hero-container {
+        padding-bottom: 20px !important;
+    }
 }
 
 /* Shared section rhythm */

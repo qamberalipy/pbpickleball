@@ -36,9 +36,9 @@ get_header(); ?>
         <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/resource-hero-banner.webp" alt="PB Academy Player Resources" aria-hidden="true" style="object-fit: cover;">
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h2 class="hero-subtitle">Learn. Prepare. Play With Confidence.</h2>
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PLAYER <br><span class="highlight">RESOURCES</span></h1>
-                <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Helpful guides on rules, equipment, safety and where to play — built especially for beginners, adults and seniors.</p>
+                <!-- <h2 class="hero-subtitle">Learn. Prepare. Play With Confidence.</h2> -->
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PLAYER </span><br><span class="highlight" style="text-shadow: 0 2px 40px rgb(0 0 0 / 70%) !important;">RESOURCES</span></h1>
+                <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Helpful guides on rules, equipment, safety and where to play — built especially for beginners, adults and seniors.</p> -->
 
                 <div class="mobile-search-wrap" style="max-width: 500px; margin: 30px auto 0;">
                     <form role="search" class="premium-search-form" onsubmit="return false;">

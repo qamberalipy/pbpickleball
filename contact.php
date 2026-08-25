@@ -59,9 +59,9 @@ get_header();
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 
-                <h1>CONTACT <br><span class="highlight">PB ACADEMY</span></h1>
+                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">CONTACT </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span></h1>
                 
-                <div class="ct-hero-tags" style="margin-top: 25px;">
+                <!-- <div class="ct-hero-tags" style="margin-top: 25px;">
                     <span class="ct-tag">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)">
                             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/>
@@ -74,7 +74,7 @@ get_header();
                         </svg>
                         Beginners Welcome
                     </span>
-                </div>
+                </div> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">

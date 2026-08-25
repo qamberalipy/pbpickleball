@@ -1,21 +1,22 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
-    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/hero-bg.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
+<section class="hero home-hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
+    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
         <div class="hero-content">
-            <h2 class="hero-subtitle">WELCOME TO</h2>
-            <h1>PB <span class="highlight">ACADEMY</span></h1>
-            <h3 class="hero-tagline">Learn Pickleball. Play With Confidence. Have Fun.</h3>
-            <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy provides beginner-friendly pickleball instruction with a special focus on making the game comfortable, social, and enjoyable for adults and seniors.</p>
-            <div class="hero-buttons" style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+            
+            <!-- Text is baked into the image, so HTML text is removed -->
+
+            <!-- Centered Buttons inside a protective wrapper -->
+            <!-- <div class="hero-buttons anim-fade-up">
                 <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
-            </div>
-            <!-- Quick-Jump Anchor Bar (Phase 3) -->
-            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
+            </div> -->
+
+            <!-- Quick-Jump Anchor Bar -->
+            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 0.3s;">
                 <span class="qj-label">Click To View More:</span>
                 <div class="qj-links">
                     <a href="#features" class="qj-link">Why Choose Us</a>
@@ -23,8 +24,11 @@
                     <a href="#manual" class="qj-link">Manual</a>
                     <a href="#reviews" class="qj-link">Reviews</a>
                     <a href="#founder" class="qj-link">Our Story</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="qj-link " style="border-color: var(--green); color: var(--white);">Register Now</a>
+                    <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="qj-link " style="border-color: var(--green); color: var(--white);">Explore Programs</a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -39,9 +43,10 @@
         <div class="c4-promo-text">
             <span class="c4-badge">FEATURED PROGRAM</span>
             <h2>
-                MASTER THE GAME WITH <span class="hl-pba">PBA</span> <span class="hl-core4">CORE 4</span> 
-                <span class="popular-tag">
-                    Most Popular
+                MASTER THE GAME WITH <span class="hl-pba">PBA</span> 
+                <span class="core4-wrapper">
+                    <span class="hl-core4">CORE 4</span>
+                    <span class="popular-tag">👑 Most Popular</span>
                 </span>
             </h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>

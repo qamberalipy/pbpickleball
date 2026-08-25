@@ -23,9 +23,9 @@ get_header();
         
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PROGRAMS</span></h1>
-                <h3 class="hero-tagline" style="margin-top: 15px; font-weight: 700; letter-spacing: 1px;">Learn. Practice. Play. Improve.</h3>
-                <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">Whether someone has never picked up a paddle or wants to improve their existing game, PB Academy offers structured programs designed to help players learn at their own pace while building skills, confidence and enjoyment of pickleball.</p>
+                <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);">PB ACADEMY</span><br><span class="highlight">PROGRAMS</span></h1>
+                <!-- <h3 class="hero-tagline" style="margin-top: 15px; font-weight: 700; letter-spacing: 1px;">Learn. Practice. Play. Improve.</h3> -->
+                <!-- <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">Whether someone has never picked up a paddle or wants to improve their existing game, PB Academy offers structured programs designed to help players learn at their own pace while building skills, confidence and enjoyment of pickleball.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
