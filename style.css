@@ -8319,8 +8319,9 @@ header .container.header-content {
         padding: 20px 20px !important;
     }
     .popular-tag {
-                font-size: 0.4rem;
-        margin-top: 7px;
+        font-size: 0.25rem;
+        margin-top: 14px;
+        padding: 2px 8px 2px 4px !important;
     }
     #bm-span{
         text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
@@ -8358,5 +8359,41 @@ header .container.header-content {
 @media (max-width: 480px) {
     #topics .programs-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   MOBILE UI FIX: COMPACT QUICK-JUMP SIZING
+   ============================================================ */
+@media (max-width: 768px) {
+    /* 1. Shrink the main container padding and gaps */
+    .hero-quick-jump {
+        padding: 5px 5px !important;
+        border-radius: 12px !important;
+        gap: 6px !important;
+        width: 100% !important; /* Prevents edge touching */
+                background: #051e41d6 !important;
+    }
+    
+    /* 2. Shrink the top label */
+    .hero-quick-jump .qj-label {
+        font-size: 0.6rem !important;
+        margin-bottom: 2px !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    /* 3. Tightly pack the button rows */
+    .hero-quick-jump .qj-links {
+        gap: 6px !important;
+    }
+    
+    /* 4. Shrink the buttons themselves (less padding, smaller text) */
+    .hero-quick-jump .qj-link,
+    .hero-quick-jump .qj-link--highlight {
+        font-size: 0.35rem !important;
+        padding: 5px 5px !important;
+        border-radius: 20px !important;
+        letter-spacing: 0px !important;
+
     }
 }
