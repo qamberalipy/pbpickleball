@@ -561,7 +561,7 @@ header .header-actions {
     line-height: 1;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 16px;
+    margin-bottom: 65px;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -1643,10 +1643,10 @@ footer {
 
     .hero {
         min-height: 480px;
-    }
+    }   
 
     .hero-video-bg-front{
-        object-position: 84% 0%;
+        object-position: 78% 0%;
     }
 
     .hero-container {
@@ -6151,7 +6151,7 @@ header .header-actions {
 
 @media (max-width: 640px) {
     .bm-samples-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } 
-    .hero-content h1 { font-size: 3rem!important; }
+    .hero-content h1 { font-size: 2.5rem!important; }
     .bm-features-wrap { grid-template-columns: 1fr; }
 }
 
@@ -8456,7 +8456,7 @@ header .container.header-content {
         width: 60% !important;
         max-width: 60% !important;
         text-align: left !important;
-        margin: 95px 0 auto 0 !important;
+        margin: 140px 0 auto 0 !important;
         font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
         line-height: 1.05 !important;
         letter-spacing: -0.5px !important;

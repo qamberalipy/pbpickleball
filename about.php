@@ -9,7 +9,7 @@ get_header();
 
     <!-- Hero Section -->
     <section class="hero about-hero-full" data-mascot-msg="We teach. We play. We care. Welcome to the PBA family!">
-        <img class="hero-video-bg hero-video-bg-about" src="<?php echo get_template_directory_uri(); ?>/media/about-hero-bg.webp" alt="About PB Academy" aria-hidden="true" style="">
+        <img class="hero-video-bg hero-video-bg-about" src="<?php echo get_template_directory_uri(); ?>/media/about-hero-bg.jpg" alt="About PB Academy" aria-hidden="true" style="">
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
                 <h1 class="about-hero-title anim-fade-up">
