@@ -2,18 +2,15 @@
 
 <!-- Hero Section -->
 <section class="hero home-hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
-    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
+    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.webp" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
-        <div class="hero-content">
+        <div class="hero-content anim-fade-up">
             
-            <!-- Text is baked into the image, so HTML text is removed -->
-
-            <!-- Centered Buttons inside a protective wrapper -->
-            <!-- <div class="hero-buttons anim-fade-up">
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
-                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
-            </div> -->
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px;">
+                <span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">WELCOME TO</span><br>
+                <span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important;color: black!important">PB ACADEMY</span>
+            </h1>
 
             <!-- Quick-Jump Anchor Bar -->
             <div class="hero-quick-jump anim-fade-up" style="animation-delay: 0.3s;">
