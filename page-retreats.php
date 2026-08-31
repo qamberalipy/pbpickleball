@@ -10,12 +10,13 @@ get_header(); ?>
          PHASE 1: REDESIGNED HERO SECTION (Static Image)
          ============================================================ -->
     <section class="hero retreat-hero-full" data-mascot-msg="Combine your passion for pickleball with unforgettable vacations!" style="padding: 40px 19px!important;  ">
-        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-retreat-hero-bg.webp" alt="Pickleball Retreats" aria-hidden="true" style="object-fit: cover; " >
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-retreat-hero-bg.jpg" alt="Pickleball Retreats" aria-hidden="true" style="object-fit: cover; " >
         <div class="hero-container" style="padding-bottom: 0px !important;">
             <div class="hero-content anim-fade-up">
-                <!-- <h2 class="hero-subtitle">Play. Learn. Travel. Connect.</h2> -->
-                <!-- <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">PB ACADEMY <br><span class="highlight">PICKLEBALL RETREATS</span></h1> -->
-                <!-- <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">PB Academy Retreats bring together pickleball instruction, organized play, travel, relaxation and social activities in carefully selected destinations. The experience should especially appeal to adults and seniors who enjoy pickleball but also want to meet people, travel and have fun.</p> -->
+                <h1 class="retreat-hero-title anim-fade-up">
+                    <span class="retreat-hero-sub">RETREATS WITH</span><br>
+                    <span class="retreat-hero-main highlight">PB ACADEMY</span>
+                </h1>
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
