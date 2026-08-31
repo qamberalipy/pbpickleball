@@ -1,19 +1,16 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero home-hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
-    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
+<section class="hero home-hero " data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
+    <img class="hero-video-bg hero-video-bg-front" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.webp" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
-        <div class="hero-content">
+        <div class="hero-content anim-fade-up">
             
-            <!-- Text is baked into the image, so HTML text is removed -->
-
-            <!-- Centered Buttons inside a protective wrapper -->
-            <!-- <div class="hero-buttons anim-fade-up">
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
-                <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline-white">EXPLORE PROGRAMS</a>
-            </div> -->
+            <h1 class="home-hero-title">
+                <span class="home-hero-sub">WELCOME TO</span><br>
+                <span class="home-hero-main highlight">PB ACADEMY</span>
+            </h1>
 
             <!-- Quick-Jump Anchor Bar -->
             <div class="hero-quick-jump anim-fade-up" style="animation-delay: 0.3s;">
