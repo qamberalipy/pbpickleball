@@ -8527,16 +8527,16 @@ header .container.header-content {
         text-align: left !important;
     }
 
-    /* 2. Right 60% Large Title */
+    /* 2. Right Aligned Large Title */
     .about-hero-title {
-        width: 60% !important;
-        max-width: 60% !important;
-        text-align: right !important;          /* Swapped from left to right */
-        margin: 130px 1px auto auto !important;   /* Added 'auto' to the left margin to push it right */
+        width: auto !important;
+        max-width: 90% !important;             /* Increased to let "ACADEMY" fit */
+        text-align: right !important;          
+        margin: 180px 0 auto auto !important;  /* Reset right margin to 0 to respect parent container padding */
         font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
         line-height: 1.05 !important;
         letter-spacing: -0.5px !important;
-        align-self: flex-end !important;       /* Swapped from flex-start to flex-end */
+        align-self: flex-end !important;       
     }
     .hero-video-bg-about{
         object-position: 12% 0% !important

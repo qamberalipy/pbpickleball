@@ -14,7 +14,7 @@ get_header();
             <div class="hero-content anim-fade-right">
                 <h1 class="about-hero-title anim-fade-up">
                     <span class="about-hero-sub">ABOUT</span><br>
-                    <span class="about-hero-main highlight">PB </span>
+                    <span class="about-hero-main highlight">PB </span><br>
                         <span class="about-hero-main highlight">ACADEMY</span>
                 </h1>
 
