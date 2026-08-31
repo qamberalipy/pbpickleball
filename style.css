@@ -1645,7 +1645,7 @@ footer {
         min-height: 480px;
     }
 
-    .hero-video-bg{
+    .hero-video-bg-front{
         object-position: 84% 0%;
     }
 
@@ -6151,7 +6151,7 @@ header .header-actions {
 
 @media (max-width: 640px) {
     .bm-samples-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } 
-    .hero-content h1 { font-size: 1.8rem; }
+    .hero-content h1 { font-size: 3rem!important; }
     .bm-features-wrap { grid-template-columns: 1fr; }
 }
 
@@ -7726,8 +7726,8 @@ header .container.header-content {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ff0206!important;
-    color: var(--navy);
+    background: #000000!important;
+    color:#FFFFFF!important;
     font-family: var(--font-heading);
     font-size: 0.65rem;
     font-weight: 900;
@@ -7735,7 +7735,7 @@ header .container.header-content {
     border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(242, 169, 0, 0.4);
+   
     white-space: nowrap;
     z-index: 10;
 }
@@ -8321,9 +8321,9 @@ header .container.header-content {
         padding: 20px 20px !important;
     }
     .popular-tag {
-        font-size: 0.25rem;
-        margin-top: 14px;
-        padding: 2px 8px 2px 4px !important;
+        font-size: 0.4rem;
+        margin-top: 4px;
+        padding: 5px 14px 5px 14px !important;
     }
     #bm-span{
         text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
@@ -8374,7 +8374,7 @@ header .container.header-content {
         border-radius: 12px !important;
         gap: 6px !important;
         width: 100% !important; /* Prevents edge touching */
-                background: #051e41d6 !important;
+         background: #051e41ed !important;
     }
     
     /* 2. Shrink the top label */
@@ -8392,10 +8392,84 @@ header .container.header-content {
     /* 4. Shrink the buttons themselves (less padding, smaller text) */
     .hero-quick-jump .qj-link,
     .hero-quick-jump .qj-link--highlight {
-        font-size: 0.35rem !important;
-        padding: 5px 5px !important;
+        font-size: 0.65rem !important;
+        padding: 5px 15px !important;   
         border-radius: 20px !important;
         letter-spacing: 0px !important;
 
+    }
+}
+
+/* ============================================================
+   FRONT PAGE HERO TITLE & MOBILE LAYOUT (ISOLATED)
+   ============================================================ */
+/* Desktop / Global: Centered styling */
+.home-hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.home-hero-title .home-hero-sub {
+    color: var(--navy);
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.7) !important;
+}
+.home-hero-title .home-hero-main {
+    color: black !important;
+    text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    /* 1. Ensure the hero container has full vertical space */
+    .home-hero {
+        min-height: 560px !important;
+        display: flex !important;
+        align-items: stretch !important;
+    }
+
+    .home-hero .hero-container {
+        padding: 24px 16px 20px !important;
+        height: auto !important;
+        min-height: 560px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .home-hero .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 2. Left 60% Large Title in Yellow Sky Area */
+    .home-hero-title {
+        width: 60% !important;
+        max-width: 60% !important;
+        text-align: left !important;
+        margin: 95px 0 auto 0 !important;
+        font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.5px !important;
+        align-self: flex-start !important;
+    }
+
+    /* 3. Keep Quick Jump bar permanently anchored to the bottom */
+    .home-hero .hero-quick-jump {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+        width: 100% !important;
     }
 }

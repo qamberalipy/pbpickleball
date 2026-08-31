@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
 <!-- Hero Section -->
-<section class="hero home-hero" data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
-    <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.webp" alt="PB Academy Pickleball Courts" aria-hidden="true">
+<section class="hero home-hero " data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
+    <img class="hero-video-bg hero-video-bg-front" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.webp" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
     <div class="hero-container">
         <div class="hero-content anim-fade-up">
             
-            <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px;">
-                <span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">WELCOME TO</span><br>
-                <span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important;color: black!important">PB ACADEMY</span>
+            <h1 class="home-hero-title">
+                <span class="home-hero-sub">WELCOME TO</span><br>
+                <span class="home-hero-main highlight">PB ACADEMY</span>
             </h1>
 
             <!-- Quick-Jump Anchor Bar -->
