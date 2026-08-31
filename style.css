@@ -561,7 +561,7 @@ header .header-actions {
     line-height: 1;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 16px;
+    margin-bottom: 65px;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -1643,10 +1643,10 @@ footer {
 
     .hero {
         min-height: 480px;
-    }
+    }   
 
     .hero-video-bg-front{
-        object-position: 84% 0%;
+        object-position: 78% 0%;
     }
 
     .hero-container {
@@ -6151,7 +6151,7 @@ header .header-actions {
 
 @media (max-width: 640px) {
     .bm-samples-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } 
-    .hero-content h1 { font-size: 3rem!important; }
+    .hero-content h1 { font-size: 2.5rem!important; }
     .bm-features-wrap { grid-template-columns: 1fr; }
 }
 
@@ -8456,7 +8456,7 @@ header .container.header-content {
         width: 60% !important;
         max-width: 60% !important;
         text-align: left !important;
-        margin: 95px 0 auto 0 !important;
+        margin: 140px 0 auto 0 !important;
         font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
         line-height: 1.05 !important;
         letter-spacing: -0.5px !important;
@@ -8465,6 +8465,84 @@ header .container.header-content {
 
     /* 3. Keep Quick Jump bar permanently anchored to the bottom */
     .home-hero .hero-quick-jump {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+        width: 100% !important;
+    }
+}
+
+/* ============================================================
+   ABOUT PAGE HERO TITLE & MOBILE LAYOUT (ISOLATED)
+   ============================================================ */
+/* Desktop / Global: Centered styling */
+.about-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.about-hero-title .about-hero-sub {
+    color: var(--navy);
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.7) !important;
+}
+.about-hero-title .about-hero-main {
+    color: black !important;
+    text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
+}
+.hero-video-bg-about{
+    object-position: center center !important;
+}
+/* Mobile Screen Adjustments (Top-Left 60% Bounding Box) */
+@media (max-width: 768px) {
+    /* 1. Ensure the hero container has full vertical space */
+    .about-hero-full {
+        min-height: 560px !important;
+        display: flex !important;
+        align-items: stretch !important;
+    }
+
+    .about-hero-full .hero-container {
+        padding: 24px 16px 20px !important;
+        height: auto !important;
+        min-height: 560px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .about-hero-full .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 2. Right Aligned Large Title */
+    .about-hero-title {
+        width: auto !important;
+        max-width: 90% !important;             /* Increased to let "ACADEMY" fit */
+        text-align: right !important;          
+        margin: 180px 0 auto auto !important;  /* Reset right margin to 0 to respect parent container padding */
+        font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.5px !important;
+        align-self: flex-end !important;       
+    }
+    .hero-video-bg-about{
+        object-position: 12% 0% !important
+    }
+    /* 3. Keep Quick Jump bar permanently anchored to the bottom */
+    .about-hero-full .hero-quick-jump {
         margin-top: auto !important;
         margin-bottom: 0 !important;
         margin-left: auto !important;
