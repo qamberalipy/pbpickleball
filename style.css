@@ -8473,3 +8473,81 @@ header .container.header-content {
         width: 100% !important;
     }
 }
+
+/* ============================================================
+   ABOUT PAGE HERO TITLE & MOBILE LAYOUT (ISOLATED)
+   ============================================================ */
+/* Desktop / Global: Centered styling */
+.about-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.about-hero-title .about-hero-sub {
+    color: var(--navy);
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.7) !important;
+}
+.about-hero-title .about-hero-main {
+    color: black !important;
+    text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
+}
+.hero-video-bg-about{
+    object-position: center center !important;
+}
+/* Mobile Screen Adjustments (Top-Left 60% Bounding Box) */
+@media (max-width: 768px) {
+    /* 1. Ensure the hero container has full vertical space */
+    .about-hero-full {
+        min-height: 560px !important;
+        display: flex !important;
+        align-items: stretch !important;
+    }
+
+    .about-hero-full .hero-container {
+        padding: 24px 16px 20px !important;
+        height: auto !important;
+        min-height: 560px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .about-hero-full .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 2. Right 60% Large Title */
+    .about-hero-title {
+        width: 60% !important;
+        max-width: 60% !important;
+        text-align: right !important;          /* Swapped from left to right */
+        margin: 130px 1px auto auto !important;   /* Added 'auto' to the left margin to push it right */
+        font-size: clamp(2rem, 7.5vw, 2.7rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.5px !important;
+        align-self: flex-end !important;       /* Swapped from flex-start to flex-end */
+    }
+    .hero-video-bg-about{
+        object-position: 12% 0% !important
+    }
+    /* 3. Keep Quick Jump bar permanently anchored to the bottom */
+    .about-hero-full .hero-quick-jump {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+        width: 100% !important;
+    }
+}

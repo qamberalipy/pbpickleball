@@ -9,21 +9,14 @@ get_header();
 
     <!-- Hero Section -->
     <section class="hero about-hero-full" data-mascot-msg="We teach. We play. We care. Welcome to the PBA family!">
-        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-about-hero-bg.webp" alt="About PB Academy" aria-hidden="true" style="object-position: center center !important;">
+        <img class="hero-video-bg hero-video-bg-about" src="<?php echo get_template_directory_uri(); ?>/media/about-hero-bg.webp" alt="About PB Academy" aria-hidden="true" style="">
         <div class="hero-container">
             <div class="hero-content anim-fade-right">
-                <!-- <h2 class="hero-subtitle">MORE THAN A GAME</h2>
-                <h1>ABOUT <br><span class="highlight">PBA</span></h1>
-                <p class="hero-intro-text" style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; margin-top: 15px; margin-bottom: 30px; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">PB Academy is a pickleball instruction and player-development academy designed to make learning pickleball simple, structured, welcoming and fun.</p>
-                <div class="hero-progression">
-                    <span class="btn btn-outline-white prog-badge">LEARN</span>
-                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white prog-badge">PRACTICE</span>
-                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white prog-badge">PLAY</span>
-                    <svg class="prog-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span class="btn btn-outline-white prog-badge">CONNECT</span>
-                </div> -->
+                <h1 class="about-hero-title anim-fade-up">
+                    <span class="about-hero-sub">ABOUT</span><br>
+                    <span class="about-hero-main highlight">PB </span>
+                        <span class="about-hero-main highlight">ACADEMY</span>
+                </h1>
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
