@@ -8418,6 +8418,10 @@ header .container.header-content {
     color: black !important;
     text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
 }
+ .program-hero-main{
+        text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
+        color: #000000 !important;
+    }
 
 /* Mobile Screen Adjustments */
 @media (max-width: 768px) {
@@ -8426,6 +8430,13 @@ header .container.header-content {
         min-height: 560px !important;
         display: flex !important;
         align-items: stretch !important;
+    }
+    .home-hero-main{
+        text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
+    }
+    .program-hero-main{
+        text-shadow: 0px 1px 17px rgb(255 255 255 / 70%) !important;
+        color: #000000 !important;
     }
 
     .home-hero .hero-container {

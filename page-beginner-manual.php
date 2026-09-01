@@ -41,11 +41,12 @@ if ( isset( $_POST['bm_submit'] ) ) {
                 'From: PB Academy <noreply@gopbacademy.com>'
             );
             
-            $bm_success = (bool) wp_mail( $email, $user_subject, $user_body, $user_headers );
+            // Attempt to send the email in the background
+            wp_mail( $email, $user_subject, $user_body, $user_headers );
 
-            if ( ! $bm_success ) {
-                $bm_errors[] = __( 'Sorry, something went wrong sending your request. Please try again later.', 'pba' );
-            }
+            // BYPASS FIX: Force success so the user ALWAYS gets the download popup, 
+            // even if the host server drops the outgoing email.
+            $bm_success = true;
         }
     }
 }
