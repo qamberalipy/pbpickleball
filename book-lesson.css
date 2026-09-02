@@ -725,3 +725,84 @@
         gap: 12px;
     }
 }
+
+/* ============================================================
+   PREMIUM FORM REDESIGN (Soft-Fill & Vibrant Focus)
+   ============================================================ */
+/* 1. Remove the old dot background and let the pba-bg-pattern shine */
+.bl-form-section {
+    background-image: none !important; 
+    background-color: transparent !important;
+}
+
+/* 2. Upgrade the Form Card Container */
+.bl-form-card {
+    border-top: 8px solid var(--accent-orange) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 30px 60px rgba(11, 32, 70, 0.08), 0 0 0 1px rgba(11, 32, 70, 0.03) !important;
+}
+
+/* 3. Modern Soft-Fill Inputs */
+.bl-form-group label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy) !important;
+    margin-bottom: 8px !important;
+}
+
+.bl-form-group input,
+.bl-form-group select,
+.bl-form-group textarea {
+    background: rgba(11, 32, 70, 0.03) !important; /* Soft gray-blue tint */
+    border: 2px solid rgba(11, 32, 70, 0.05) !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+    color: var(--navy) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 4. Glowing Focus State (Pops up and turns white with green border) */
+.bl-form-group input:focus,
+.bl-form-group select:focus,
+.bl-form-group textarea:focus {
+    background: var(--white) !important;
+    border-color: var(--green) !important;
+    box-shadow: 0 10px 25px rgba(103, 155, 48, 0.15) !important;
+    transform: translateY(-2px); /* Physically lifts off the page */
+}
+
+/* 5. Vibrant Summary Box Upgrade */
+.bl-summary-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+    border-left: 6px solid var(--accent-orange) !important;
+    border-radius: 16px !important;
+    padding: 30px 35px !important;
+}
+.bl-summary-title {
+    color: var(--accent-orange) !important;
+    font-size: 1.4rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-bottom: 15px !important;
+}
+.bl-summary-list li {
+    font-size: 1.05rem !important;
+}
+.bl-summary-list li strong {
+    color: var(--green-bright) !important;
+}
+
+/* 6. Massive Submit Button */
+.bl-submit-btn {
+    font-size: 1rem !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 20px rgba(103, 155, 48, 0.3) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 15px !important;
+}
+.bl-submit-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(103, 155, 48, 0.4) !important;
+}

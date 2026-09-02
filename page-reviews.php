@@ -127,10 +127,13 @@ get_header(); ?>
     </section>
 
     <!-- LEAVE A REVIEW FORM -->
-    <section class="r-interest-section" id="leave-review" style="padding: 80px 20px; background-color: var(--white); border-top: 1px solid var(--gray-light);">
+    <section class="r-interest-section pba-bg-pattern" id="leave-review" style="padding: 80px 20px; border-top: 1px solid var(--gray-light);">
         <div class="container">
-            <div class="r-interest-card anim-fade-up" style="max-width: 800px; margin: 0 auto; background: var(--gray-bg); border-radius: 16px; padding: 50px; box-shadow: 0 15px 40px rgba(11,32,70,0.08);">
+            <!-- Swapped inline styles for the new ct-premium-card class -->
+            <div class="r-interest-card anim-fade-up ct-premium-card">
+                
                 <div style="text-align:center; margin-bottom: 40px;">
+                    <span style="display: inline-block; background: rgba(242, 169, 0, 0.15); color: var(--accent-orange); font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; letter-spacing: 1px; margin-bottom: 15px;">We Value Your Feedback</span>
                     <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 10px;">SHARE YOUR EXPERIENCE</h2>
                     <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 600px; margin: 0 auto;">Your feedback helps other players feel confident joining PB Academy.</p>
                 </div>
