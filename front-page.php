@@ -43,7 +43,10 @@
                 MASTER THE GAME WITH <span class="hl-pba">PBA</span> 
                 <span class="core4-wrapper">
                     <span class="hl-core4">CORE 4</span>
-                    <span class="popular-tag">👑 Most Popular</span>
+                    <svg class="c4-crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent-orange)" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="2 5 6 16 18 16 22 5 16 10 12 2 8 10"></polygon>
+                        <line x1="6" y1="20" x2="18" y2="20"></line>
+                    </svg>
                 </span>
             </h2>
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>

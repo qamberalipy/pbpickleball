@@ -8798,3 +8798,38 @@ header .container.header-content {
         width: 100% !important;
     }
 }
+
+/* ============================================================
+   CORE 4 CROWN FIX (Replaces bulky popular tag)
+   ============================================================ */
+.core4-wrapper {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap; /* Prevents CORE 4 from breaking into two lines */
+}
+
+.c4-crown {
+    position: absolute;
+    top: -18px;
+    right: -24px;
+    width: 36px;
+    height: 36px;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 4px 6px rgba(11, 32, 70, 0.2));
+    animation: crownHover 3s ease-in-out infinite;
+    pointer-events: none; /* Prevents it from blocking clicks */
+}
+
+@keyframes crownHover {
+    0%, 100% { transform: rotate(15deg) translateY(0); }
+    50%      { transform: rotate(15deg) translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+    .c4-crown {
+        width: 28px;
+        height: 28px;
+        top: -14px;
+        right: -18px;
+    }
+}
