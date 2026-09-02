@@ -125,12 +125,13 @@ get_header();
 
 
 	<!-- 4. Booking Form -->
-	<section class="bl-section bl-form-section" id="bl-form">
+	<section class="bl-section bl-form-section pba-bg-pattern" id="bl-form">
 		<div class="container">
 			<div class="bl-form-card anim-fade-up is-visible">
-				<div class="bl-card-header">
-					<h2 class="bl-section-title">Reserve Your Lesson</h2>
-					<p>Fill out the form below and we'll confirm your session by phone or email.</p>
+				<div class="bl-card-header" style="text-align: center; margin-bottom: 40px;">
+					<span style="display: inline-block; background: rgba(242, 169, 0, 0.15); color: var(--accent-orange); font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; letter-spacing: 1px; margin-bottom: 15px;">Let's Get Started</span>
+					<h2 class="bl-section-title" style="margin-bottom: 12px; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1;">RESERVE YOUR LESSON</h2>
+					<p style="font-size: 1.1rem; color: var(--gray-text); max-width: 600px; margin: 0 auto;">Fill out the form below and our team will confirm your session directly.</p>
 				</div>
 
 				<?php if ( $bl_success ) : ?>
