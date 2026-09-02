@@ -48,7 +48,7 @@ if ( isset( $_POST['rev_submit'] ) ) {
  */
 get_header(); ?>
 
-<main class="reviews-page">
+<main class="reviews-page pba-bg-pattern">
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="See what real PB Academy players have to say!">

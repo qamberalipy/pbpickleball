@@ -55,7 +55,7 @@ get_header();
 ?>
 
 
-<main >
+<main class="pba-bg-pattern">
 
     <!-- 1. HERO: manual intro + book mockup + "What You'll Learn" -->
     <section class="hero bm-hero-full" data-mascot-msg="Grab Volume 1 of our Beginner Training Manual to fast-track your court skills!">

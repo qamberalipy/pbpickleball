@@ -5,7 +5,7 @@ Template Name: About Us Page
 get_header(); 
 ?>
 
-<main class="about-page">
+<main class="about-page pba-bg-pattern">
 
     <!-- Hero Section -->
     <section class="hero about-hero-full" data-mascot-msg="We teach. We play. We care. Welcome to the PBA family!">
@@ -68,7 +68,7 @@ get_header();
     </section>
 
     <!-- Target Audience & Promise Section -->
-    <section id="who-we-serve" class="about-lists-section">
+    <section id="who-we-serve" class="about-lists-section pba-bg-pattern">
         <div class="about-lists-grid">
             <!-- Column 1 -->
             <div class="about-list-col anim-fade-up is-visible">

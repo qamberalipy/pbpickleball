@@ -13,7 +13,7 @@ add_action( 'wp_enqueue_scripts', function () {
 get_header();
 ?>
 
-<main class="lp-page programs-page">
+<main class="lp-page programs-page pba-bg-pattern">
 
     <!-- ============================================================
          PHASE 1: HERO & INTRO

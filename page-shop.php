@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-<main class="shop-landing">
+<main class="shop-landing pba-bg-pattern">
 
     <!-- 1. Hero Section -->
     <section class="hero shop-hero-full" data-mascot-msg="Gear up and play your best! We've hand-selected the perfect equipment for your game.">

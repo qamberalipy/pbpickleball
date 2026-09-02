@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<main class="retreats-page">
+<main class="retreats-page pba-bg-pattern">
 
     <!-- ============================================================
          PHASE 1: REDESIGNED HERO SECTION (Static Image)
