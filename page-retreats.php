@@ -15,7 +15,7 @@ get_header(); ?>
             <div class="hero-content anim-fade-up">
                 <h1 class="retreat-hero-title anim-fade-up">
                     <span class="retreat-hero-sub">RETREATS WITH</span><br>
-                    <span class="retreat-hero-main highlight">PB ACADEMY</span>
+                    <span class="retreat-hero-main highlight program-hero-main">PB ACADEMY</span>
                 </h1>
 
                 <!-- Quick-Jump Anchor Bar -->

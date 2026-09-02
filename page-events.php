@@ -14,7 +14,7 @@ get_header(); ?>
                 <!-- <h2 class="hero-subtitle">Play. Socialize. Connect.</h2> -->
                 <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;">
                     <span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span><br>
-                    <span class="highlight" style="text-shadow: 0 2px -1px rgb(255 255 255 / 70%)!important;color: black!important">EVENTS</span></h1>
+                    <span class="highlight program-hero-main" style="">EVENTS</span></h1>
                 <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Clinics, round robins, organized play and social gatherings — discover what's happening in the PB Academy community and reserve your spot.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->

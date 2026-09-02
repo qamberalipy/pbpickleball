@@ -86,18 +86,17 @@ get_header();
         <div class="bm-samples-grid">
             <?php
             $bm_samples = array(
-                array( 'title' => 'The Court', 'sub' => 'Get to know the court.', 'page' => 8, 'img' => 'court.png.jpg' ),
-                array( 'title' => 'Grips', 'sub' => 'Choose the right grip.', 'page' => 16, 'img' => 'grips.jpg' ),
-                array( 'title' => '3rd Shot Drop', 'sub' => 'A smart way to take control.', 'page' => 32, 'img' => '3d-shot.jpg' ),
-                array( 'title' => 'Moving to the Kitchen', 'sub' => 'After you serve…', 'page' => 38, 'img' => 'move-to-kitchen.jpg' ),
-                array( 'title' => 'Returning a Shot', 'sub' => '4 smart ways to place it.', 'page' => 42, 'img' => 'return-ashot.jpg' ),
-                array( 'title' => 'You Got This!', 'sub' => 'Practice. Play. Improve.', 'page' => 71, 'img' => 'let-go.jpg' ),
+                array( 'title' => 'The Court', 'sub' => 'Get to know the court.', 'page' => 8, 'img' => 'thecourt.png' ),
+                array( 'title' => 'The Grips', 'sub' => 'Choose the right grip.', 'page' => 16, 'img' => 'thegrips.jpeg' ),
+                array( 'title' => 'Shot Selection', 'sub' => 'A smart way to take control.', 'page' => 32, 'img' => 'shotselection.png' ),
+                array( 'title' => 'Moving to the Kitchen', 'sub' => 'After you serve…', 'page' => 38, 'img' => 'movingtowardthekitchen.png' ),
+                array( 'title' => 'Stretching', 'sub' => 'Stay flexible, Play your Best', 'page' => 42, 'img' => 'thestreatching.jpeg' ),
+                array( 'title' => 'Play Doubles!', 'sub' => 'Master the game of doubles.', 'page' => 71, 'img' => 'playdoubles.png' ),
             );
             foreach ( $bm_samples as $i => $s ) :
                 ?>
                 <div class="bm-sample-card anim-fade-up anim-stagger" style="--stagger-delay:<?php echo esc_attr( $i * 150 ); ?>ms;">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/media/' . $s['img'] ); ?>" alt="<?php echo esc_attr( $s['title'] . ' sample page' ); ?>" loading="lazy">
-                    <span class="bm-page-num"><?php echo esc_html( $s['page'] ); ?></span>
                     <div class="bm-sample-body">
                         <h3><?php echo esc_html( $s['title'] ); ?></h3>
                         <p><?php echo esc_html( $s['sub'] ); ?></p>

@@ -19,7 +19,7 @@ get_header();
             <div class="hero-content anim-fade-up">
                 <h1 class="inst-hero-title anim-fade-up">
                     <span class="inst-hero-sub">MEET OUR</span><br>
-                    <span class="inst-hero-main highlight">PBA INSTRUCTORS</span>
+                    <span class="inst-hero-main highlight program-hero-main">PBA INSTRUCTORS</span>
                 </h1>
 
                 <!-- Quick-Jump Anchor Bar -->
