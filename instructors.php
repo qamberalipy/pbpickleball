@@ -166,7 +166,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
 
@@ -194,7 +194,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
 
@@ -222,7 +222,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
 
@@ -250,7 +250,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
 
@@ -278,7 +278,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
 
@@ -306,7 +306,7 @@ get_header();
                 </div>
                 <div class="inst-card-footer">
                     <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a>
+                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
                 </div>
             </div>
             
@@ -317,12 +317,12 @@ get_header();
          PHASE 3.5: INSTRUCTOR GUIDE DOWNLOAD
          ============================================================ -->
     <section id="instructor-guide" class="bm-purchase-section container anim-fade-up im-theme" data-mascot-msg="Want to teach? Download our free guide to see what it takes!" style="margin-bottom: 80px;">
-        <div class="bm-purchase-container" style="border-top: 5px solid var(--accent-orange);">
+        <div class="bm-purchase-container" style="border: 2px solid var(--accent-orange);">
             
             <!-- Left Side: Value Proposition -->
             <div class="bm-purchase-content">
                 <span class="bm-purchase-eyebrow" style="color: var(--accent-orange);">Coach The PBA Way</span>
-                <h2>Get The Instructor Playbook</h2>
+                <h2>Get The Instructor Manual</h2>
                 <p>Curious about what it takes to be a PB Academy Coach? Download our free overview guide covering our teaching philosophy, core drill structures, and certification paths.</p>
                 
                 <div class="bm-purchase-features">
