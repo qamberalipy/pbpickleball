@@ -61,7 +61,7 @@ if ( isset( $_POST['bl_submit'] ) ) {
 get_header();
 ?>
 
-<main class="book-lesson-page">
+<main class="book-lesson-page pba-bg-pattern">
 
 	<!-- 1. Hero -->
 	<section class="hero bl-hero-full" data-mascot-msg="Reserve your spot in minutes!">

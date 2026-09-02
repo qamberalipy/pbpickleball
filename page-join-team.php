@@ -98,7 +98,7 @@ get_header();
 }
 </style>
 
-<main class="instructors-page">
+<main class="instructors-page pba-bg-pattern">
 
     <!-- ============================================================
          1. HERO SECTION (Upgraded Architecture)

@@ -7,7 +7,7 @@
 
 
 
-<main class="court-directory-page">
+<main class="court-directory-page pba-bg-pattern">
 
 
     <!-- 2. Hero Section -->

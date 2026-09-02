@@ -29,7 +29,7 @@ if ( isset( $_POST['tips_submit'] ) ) {
  */
 get_header(); ?>
 
-<main class="resources-page">
+<main class="resources-page pba-bg-pattern">
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="Everything you need to feel confident on the court!">

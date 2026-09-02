@@ -299,7 +299,7 @@
 }
 </style>
 
-<main class="shop-all-products">
+<main class="shop-all-products pba-bg-pattern">
 
     <!-- 1. Page Header Bar -->
     <header class="shop-header">

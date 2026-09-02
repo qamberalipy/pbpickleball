@@ -48,7 +48,7 @@ if ( isset( $_POST['im_submit'] ) ) {
 get_header();
 ?>
 
-<main class="instructors-page">
+<main class="instructors-page pba-bg-pattern">
 
 
 

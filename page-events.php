@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<main class="events-page">
+<main class="events-page pba-bg-pattern">
 
     <!-- HERO -->
     <section class="hero retreat-hero-full" data-mascot-msg="See what's happening at PB Academy and join the fun!">
