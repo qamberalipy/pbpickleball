@@ -7593,7 +7593,6 @@ header .container.header-content {
     justify-content: center;
 }
 
-.qj-link--highlight{background: var(--accent-orange) !important;;color:var(--navy)!important;font-weight:800;border-radius:20px;padding:6px 14px}
 .qj-link {
     color: var(--white);
     font-family: var(--font-heading);
@@ -7626,7 +7625,7 @@ header .container.header-content {
     .qj-label { 
         margin-bottom: 2px; 
     }
-    .qj-link--highlight{background:var(--accent-orange);color:var(--navy)!important;font-weight:800;border-radius:20px;padding:6px 14px}
+    .qj-link--highlight{background: #000 !important;color:white!important;font-weight:800;border-radius:20px;padding:6px 14px}
     .qj-link {
         font-size: 0.65rem;
         padding: 6px 12px;
@@ -7711,7 +7710,7 @@ header .container.header-content {
     gap: 30px;
     position: relative; /* CRITICAL: Traps the badge inside this container */
 }
-.hl-pba{color:#ff0206;font-weight:900}
+.hl-pba{color:#000000;font-weight:900}
 .hl-core4{color:var(--navy);font-weight:900}
 
 /* Create an anchor point for the badge */
