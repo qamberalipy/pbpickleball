@@ -49,7 +49,7 @@ if ( isset( $_POST['ct_submit'] ) ) {
 get_header();
 ?>
 
-<main class="contact-page">
+<main class="contact-page pba-bg-pattern">
 
     <!-- ============================================================
          PHASE 1: REDESIGNED HERO SECTION (Static Image)

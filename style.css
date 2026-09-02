@@ -2569,7 +2569,7 @@ header .header-actions {
 .contact-page {
     background-color: #F4F9F0;
     background-image: radial-gradient(rgba(103, 155, 48, 0.08) 2px, transparent 2px);
-    background-size: 30px 30px;
+    /* background-size: 30px 30px; */
 }
 
 /* ---------------------------------------------------------------
@@ -8854,4 +8854,62 @@ header .container.header-content {
 /* Optional: Add this class if you want the background to stay fixed while content scrolls over it (Parallax effect) */
 .pba-bg-fixed {
     background-attachment: fixed;
+}
+
+/* ============================================================
+   PREMIUM FORM OVERHAUL (Retreats & Contact Pages)
+   ============================================================ */
+/* Upgrade the outer card wrapper */
+.ct-premium-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 24px !important;
+    padding: 50px 60px !important;
+    box-shadow: 0 30px 60px rgba(11, 32, 70, 0.08), 0 0 0 1px rgba(11, 32, 70, 0.03) !important;
+    border-top: 8px solid var(--accent-orange) !important;
+}
+
+/* Modern Soft-Fill Inputs */
+.ct-form-group input,
+.ct-form-group select,
+.ct-form-group textarea {
+    background: rgba(11, 32, 70, 0.03) !important; /* Soft gray-blue tint */
+    border: 2px solid rgba(11, 32, 70, 0.05) !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+    color: var(--navy) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    padding: 14px 18px !important;
+}
+
+/* Glowing Focus State (Lifts off page) */
+.ct-form-group input:focus,
+.ct-form-group select:focus,
+.ct-form-group textarea:focus {
+    background: var(--white) !important;
+    border-color: var(--green) !important;
+    box-shadow: 0 10px 25px rgba(103, 155, 48, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Massive Submit Button Upgrade */
+.ct-submit-btn {
+    font-size: 1.05rem !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 20px rgba(103, 155, 48, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+.ct-submit-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(103, 155, 48, 0.4) !important;
+    background: var(--green-bright) !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .ct-premium-card {
+        padding: 40px 25px !important;
+    }
 }

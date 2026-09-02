@@ -389,11 +389,14 @@ get_header(); ?>
     <!-- ============================================================
          PHASE 3: COMING SOON / INTEREST LIST FORM
          ============================================================ -->
-    <section class="r-interest-section" id="interest-list" style="padding: 80px 20px; background-color: var(--gray-bg); border-top: 1px solid var(--gray-light);">
+    <section class="r-interest-section pba-bg-pattern" id="interest-list" style="padding: 80px 20px; border-top: 1px solid var(--gray-light);">
         <div class="container">
-            <div class="r-interest-card anim-fade-up" style="max-width: 900px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 50px; box-shadow: 0 15px 40px rgba(11, 32, 70, 0.08);">
+            <!-- Swapped inline styles for the new ct-premium-card class -->
+            <div class="r-interest-card anim-fade-up is-visible ct-premium-card">
+                
                 <div class="r-ic-header" style="text-align: center; margin-bottom: 40px;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 10px;">PB ACADEMY RETREATS — COMING SOON</h2>
+                    <span style="display: inline-block; background: rgba(242, 169, 0, 0.15); color: var(--accent-orange); font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; letter-spacing: 1px; margin-bottom: 15px;">VIP Early Access</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 10px;">RETREATS — COMING SOON</h2>
                     <p style="font-size: 1.1rem; color: var(--gray-text); max-width: 700px; margin: 0 auto;">Join the retreat interest list to get early access to new destinations, special pricing, and exclusive updates before they sell out to the public.</p>
                 </div>
 
