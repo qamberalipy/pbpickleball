@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
+<main class="pba-bg-pattern">
 <!-- Hero Section -->
+
 <section class="hero home-hero " data-mascot-msg="Welcome! Watch our active seniors in action and register for your first lesson today.">
     <img class="hero-video-bg hero-video-bg-front" src="<?php echo get_template_directory_uri(); ?>/media/new-hero.jpg" alt="PB Academy Pickleball Courts" aria-hidden="true">
 
@@ -283,5 +285,5 @@
 
     </div>
 </section>
-
+</main>
 <?php get_footer(); ?>

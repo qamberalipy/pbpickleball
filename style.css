@@ -709,7 +709,7 @@ header .header-actions {
 /* ---------- Programs ---------- */
 .programs { 
     padding: 80px 0; 
-    background-color: var(--gray-bg); 
+    /* background-color: var(--gray-bg);  */
     text-align: center; 
 }
 
@@ -920,7 +920,7 @@ a.program-card {
 /* ---------- Testimonials Carousel ---------- */
 .testimonials-section {
     padding: 80px 0;
-    background-color: var(--gray-bg);
+    /* background-color: var(--gray-bg); */
 }
 
 .carousel-container {
