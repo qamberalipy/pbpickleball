@@ -56,7 +56,7 @@ get_header(); ?>
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <!-- <h2 class="hero-subtitle">Real Players. Real Progress. Real Fun.</h2> -->
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">WHAT OUR PLAYERS </span><br><span class="highlight" style="text-shadow: 0 2px 40px rgb(255 255 255 / 70%)!important;">ARE SAYING</span></h1>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">WHAT OUR PLAYERS </span><br><span class="highlight program-hero-main" style="">ARE SAYING</span></h1>
                 <!-- <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0,0,0,0.7);">Hear directly from students who have learned, improved and had fun with PB Academy.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->

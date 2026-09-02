@@ -59,7 +59,7 @@ get_header();
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 
-                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">CONTACT </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PB ACADEMY</span></h1>
+                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">CONTACT </span><br><span class="highlight program-hero-main" >PB ACADEMY</span></h1>
                 
                 <!-- <div class="ct-hero-tags" style="margin-top: 25px;">
                     <span class="ct-tag">

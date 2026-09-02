@@ -14,7 +14,7 @@
         <!-- FIX: Restored global hero-container to pull text above the overlay -->
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
-                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PBA </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">SHOP</span></h1>
+                <h1><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PBA </span><br><span class="highlight program-hero-main">SHOP</span></h1>
                 
                 
                 <!-- <div class="shop-hero__features">

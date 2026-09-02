@@ -101,51 +101,24 @@ get_header();
 <main class="instructors-page">
 
     <!-- ============================================================
-         1. HERO SECTION (Matches Our Instructors styling)
+         1. HERO SECTION (Upgraded Architecture)
          ============================================================ -->
-    <section class="hero instructors-hero-full">
-        <div class="hero-container">
-            <div class="hero-left anim-fade-right">
-                <h2 class="hero-subtitle">Turn Your Passion Into a Career</h2>
-                <h1>JOIN OUR <br><span class="highlight">TEAM</span></h1>
-                <p>We're always looking for passionate instructors to help grow the game. If you love pickleball and enjoy helping others build their skills and confidence, we want to hear from you!</p>
-                <div class="inst-hero-tagline">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-bright)" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>Inspire. Teach. Play.</span>
-                </div>
-            </div>
-            
-            <div class="hero-right anim-fade-left">
-                <div class="hero-right-header">
-                    <h3>WHY TEACH WITH PBA?</h3>
-                </div>
-                <div class="hero-right-body">
-                    <ul class="hr-list">
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                            Great Community
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                            Flexible Schedule
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-                            Ongoing Training
-                        </li>
-                        <li>
-                            <div class="hr-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-                            Make an Impact
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <section class="hero join-hero-full   instructors-hero-full  " data-mascot-msg="Turn your passion into a career. Join the PBA family!">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/new-our-instructor-hero.webp" alt="Join PB Academy" aria-hidden="true" style="object-position: center top !important;">
+        
+        <div class="hero-container" style="padding-bottom: 10px !important;">
+            <div class="hero-content anim-fade-up">
+                <h1 class="join-hero-title anim-fade-up">
+                    <span class="join-hero-sub">JOIN OUR</span><br>
+                    <span class="join-hero-main highlight program-hero-main">TEAM</span>
+                </h1>
 
-            <!-- Quick-Jump Anchor Bar -->
-            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
-                <span class="qj-label">Click To View More:</span>
-                <div class="qj-links">
-                    <a href="#jt-form" class="qj-link">Application Form</a>
+                <!-- Quick-Jump Anchor Bar -->
+                <div class="hero-quick-jump anim-fade-up" style="animation-delay: 0.3s;">
+                    <span class="qj-label">Click To View More:</span>
+                    <div class="qj-links">
+                        <a href="#jt-form" class="qj-link">Application Form</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,19 +184,48 @@ get_header();
                     <div class="ct-title-line"></div>
                 </div>
 
-				<?php if ( $jt_success ) : ?>
-					<div class="jt-alert jt-alert--success" role="status">
-						<?php esc_html_e( 'Thank you for applying! Your application has been sent to our team. We will be in touch soon.', 'pba' ); ?>
-					</div>
-				<?php elseif ( ! empty( $jt_errors ) ) : ?>
-					<div class="jt-alert jt-alert--error" role="alert">
-						<ul>
-							<?php foreach ( $jt_errors as $jt_error ) : ?>
-								<li><?php echo esc_html( $jt_error ); ?></li>
-							<?php endforeach; ?>
-						</ul>
-					</div>
-				<?php endif; ?>
+                <?php if ( $jt_success ) : ?>
+                    <!-- Success State & Download Trigger -->
+                    <div class="jt-alert jt-alert--success" style="text-align: center; padding: 30px 20px;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="margin-bottom: 15px;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h3 style="color: var(--navy); font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px;">Application Sent!</h3>
+                        <p style="color: var(--gray-text); font-size: 0.95rem;">Thank you for applying. We are downloading the Instructor Manual to your device right now.</p>
+                    </div>
+
+                    <!-- Auto-Download JS -->
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var pointer = document.createElement('div');
+                            pointer.className = 'dl-pointer-overlay';
+                            pointer.innerHTML = '<div class="dl-pointer-box" style="border-color: var(--green);"><svg class="dl-arrow" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><h3 style="color: var(--navy); margin: 0 0 5px; font-family: var(--font-heading); font-weight: 900; text-transform: uppercase;">Download Starting!</h3><p style="color: var(--gray-text); margin: 0; font-family: var(--font-body); font-size: 0.85rem;">Check the top right of your browser.</p></div>';
+                            document.body.appendChild(pointer);
+
+                            var link = document.createElement('a');
+                            link.href = '<?php echo get_template_directory_uri(); ?>/media/Instructor-Manual.pdf';
+                            link.download = 'Instructor-Guide.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            setTimeout(function() {
+                                pointer.style.opacity = '0';
+                                pointer.style.transition = 'opacity 0.5s ease';
+                                setTimeout(function() { pointer.remove(); }, 500);
+                            }, 6000);
+                        });
+                    </script>
+
+                <?php elseif ( ! empty( $jt_errors ) ) : ?>
+                    <div class="jt-alert jt-alert--error" role="alert">
+                        <ul>
+                            <?php foreach ( $jt_errors as $jt_error ) : ?>
+                                <li><?php echo esc_html( $jt_error ); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
 
                 <form class="ct-form" action="<?php echo esc_url( get_permalink() . '#jt-form' ); ?>" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_join_team', 'jt_nonce' ); ?>

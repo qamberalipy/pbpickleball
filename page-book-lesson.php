@@ -70,7 +70,7 @@ get_header();
 	    <div class="hero-container">
 	        <div class="hero-content anim-fade-up">
 	           
-	            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; "><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">Register for a </span><br><span class="highlight" style="text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">Pickleball Lesson</span></h1>
+	            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; "><span style="color: var(--navy);text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">Register for a </span><br><span class="highlight program-hero-main" style="">Pickleball Lesson</span></h1>
 	            
 	            <!-- Quick-Jump Anchor Bar -->
 	            <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">

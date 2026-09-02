@@ -8094,7 +8094,7 @@ header .container.header-content {
     color: var(--green);
     animation: bounceUp 1.2s ease-in-out infinite;
     margin-bottom: 10px;
-    transform: rotate(0deg); /* FIXED: Base SVG already points UP */
+    transform: rotate(180deg); /* FIXED: SVG flipped to point UP */
 }
 
 @keyframes slideInDown {
@@ -8118,7 +8118,7 @@ header .container.header-content {
     
     /* Points DOWN on mobile (Mobile downloads usually appear at bottom) */
     .dl-arrow { 
-        transform: rotate(180deg); 
+        transform: rotate(-180deg); 
         animation: bounceDownMobile 1.2s ease-in-out infinite;
     }
     
@@ -8713,5 +8713,123 @@ header .container.header-content {
         margin-right: auto !important;
         align-self: center !important;
         width: 100% !important;
+    }
+}
+
+/* ============================================================
+   INSTRUCTOR MANUAL: CUSTOM THEME BUTTON
+   ============================================================ */
+/* Instructor Manual Custom Theme Button */
+.im-theme .bm-btn-order:hover {
+    background: #FFB81C !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(242, 169, 0, 0.4) !important;
+}
+
+/* ============================================================
+   JOIN OUR TEAM HERO TITLE & MOBILE LAYOUT (ISOLATED)
+   ============================================================ */
+/* Desktop / Global: Centered styling */
+.join-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.join-hero-title .join-hero-sub {
+    color: var(--navy);
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.7) !important;
+}
+.join-hero-title .join-hero-main {
+    color: black !important;
+    text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    /* 1. Ensure the hero container has full vertical space */
+    .join-hero-full {
+        display: flex !important;
+        align-items: stretch !important;
+        max-height: 65vh;
+    }
+    
+    .join-hero-full .hero-container {
+        padding: 24px 16px 20px !important;
+        height: auto !important;
+        min-height: 331px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .join-hero-full .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 2. Top-Centered Large Title */
+    .join-hero-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 40px 0 auto 0 !important; /* Pushes to top, centers text */
+        font-size: clamp(2.5rem, 9vw, 3rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.5px !important;
+        align-self: center !important;
+    }
+
+    /* 3. Keep Quick Jump bar permanently anchored to the bottom */
+    .join-hero-full .hero-quick-jump {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+        width: 100% !important;
+    }
+}
+
+/* ============================================================
+   CORE 4 CROWN FIX (Replaces bulky popular tag)
+   ============================================================ */
+.core4-wrapper {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap; /* Prevents CORE 4 from breaking into two lines */
+}
+
+.c4-crown {
+    position: absolute;
+    top: -18px;
+    right: -24px;
+    width: 36px;
+    height: 36px;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 4px 6px rgba(11, 32, 70, 0.2));
+    animation: crownHover 3s ease-in-out infinite;
+    pointer-events: none; /* Prevents it from blocking clicks */
+}
+
+@keyframes crownHover {
+    0%, 100% { transform: rotate(15deg) translateY(0); }
+    50%      { transform: rotate(15deg) translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+    .c4-crown {
+        width: 28px;
+        height: 28px;
+        top: -14px;
+        right: -18px;
     }
 }
