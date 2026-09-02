@@ -8715,3 +8715,86 @@ header .container.header-content {
         width: 100% !important;
     }
 }
+
+/* ============================================================
+   INSTRUCTOR MANUAL: CUSTOM THEME BUTTON
+   ============================================================ */
+/* Instructor Manual Custom Theme Button */
+.im-theme .bm-btn-order:hover {
+    background: #FFB81C !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(242, 169, 0, 0.4) !important;
+}
+
+/* ============================================================
+   JOIN OUR TEAM HERO TITLE & MOBILE LAYOUT (ISOLATED)
+   ============================================================ */
+/* Desktop / Global: Centered styling */
+.join-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.join-hero-title .join-hero-sub {
+    color: var(--navy);
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.7) !important;
+}
+.join-hero-title .join-hero-main {
+    color: black !important;
+    text-shadow: 0 2px -1px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    /* 1. Ensure the hero container has full vertical space */
+    .join-hero-full {
+        display: flex !important;
+        align-items: stretch !important;
+        max-height: 65vh;
+    }
+    
+    .join-hero-full .hero-container {
+        padding: 24px 16px 20px !important;
+        height: auto !important;
+        min-height: 331px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .join-hero-full .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        height: 100% !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 2. Top-Centered Large Title */
+    .join-hero-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 40px 0 auto 0 !important; /* Pushes to top, centers text */
+        font-size: clamp(2.5rem, 9vw, 3rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.5px !important;
+        align-self: center !important;
+    }
+
+    /* 3. Keep Quick Jump bar permanently anchored to the bottom */
+    .join-hero-full .hero-quick-jump {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+        width: 100% !important;
+    }
+}

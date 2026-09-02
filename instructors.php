@@ -2,6 +2,49 @@
 /*
 Template Name: Our Instructors
 */
+
+// --- INSTRUCTOR MANUAL FORM LOGIC ---
+$im_errors  = array();
+$im_success = false;
+$inst_manual_url = get_template_directory_uri() . '/media/Instructor-Manual.pdf'; // Update filename when you have the real PDF
+
+if ( isset( $_POST['im_submit'] ) ) {
+    // 1. Security Check
+    if ( ! isset( $_POST['im_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['im_nonce'] ), 'pba_inst_manual_form' ) ) {
+        $im_errors[] = __( 'Security check failed. Please refresh the page.', 'pba' );
+    } 
+    // 2. Spam Check
+    elseif ( ! empty( $_POST['im_hp'] ) ) {
+        $im_success = true; 
+    } 
+    // 3. Process Valid Form
+    else {
+        $name  = isset( $_POST['im_name'] ) ? sanitize_text_field( wp_unslash( $_POST['im_name'] ) ) : '';
+        $email = isset( $_POST['im_email'] ) ? sanitize_email( wp_unslash( $_POST['im_email'] ) ) : '';
+
+        if ( '' === $name ) { $im_errors[] = __( 'Please enter your first name.', 'pba' ); }
+        if ( '' === $email || ! is_email( $email ) ) { $im_errors[] = __( 'Please enter a valid email address.', 'pba' ); }
+
+        if ( empty( $im_errors ) ) {
+            // Email 1: Admin
+            $admin_to      = 'support@gopbacademy.com';
+            $admin_subject = sprintf( __( 'New Instructor Guide Download from %s', 'pba' ), $name );
+            $admin_body    = "A user requested the Instructor Guide.\n\nName: {$name}\nEmail: {$email}";
+            wp_mail( $admin_to, $admin_subject, $admin_body );
+
+            // Email 2: User
+            $user_subject = "Your PB Academy Instructor Guide";
+            $user_body    = "Hi {$name},\n\nThanks for your interest in coaching! Access your guide here:\n\n{$inst_manual_url}\n\n- PB Academy";
+            $user_headers = array('Content-Type: text/plain; charset=UTF-8', 'From: PB Academy <noreply@gopbacademy.com>');
+            
+            // Send email in background
+            wp_mail( $email, $user_subject, $user_body, $user_headers );
+
+            // Force success to trigger JS download
+            $im_success = true;
+        }
+    }
+}
 get_header();
 ?>
 
@@ -267,6 +310,111 @@ get_header();
                 </div>
             </div>
             
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PHASE 3.5: INSTRUCTOR GUIDE DOWNLOAD
+         ============================================================ -->
+    <section id="instructor-guide" class="bm-purchase-section container anim-fade-up im-theme" data-mascot-msg="Want to teach? Download our free guide to see what it takes!" style="margin-bottom: 80px;">
+        <div class="bm-purchase-container" style="border-top: 5px solid var(--accent-orange);">
+            
+            <!-- Left Side: Value Proposition -->
+            <div class="bm-purchase-content">
+                <span class="bm-purchase-eyebrow" style="color: var(--accent-orange);">Coach The PBA Way</span>
+                <h2>Get The Instructor Playbook</h2>
+                <p>Curious about what it takes to be a PB Academy Coach? Download our free overview guide covering our teaching philosophy, core drill structures, and certification paths.</p>
+                
+                <div class="bm-purchase-features">
+                    <div class="bm-pf-item anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>Teaching Frameworks:</strong> Learn how we break down complex shots for beginners.</span>
+                    </div>
+                    <div class="bm-pf-item anim-fade-up anim-stagger" style="--stagger-delay:150ms;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>Career Pathways:</strong> See exactly how to get certified and join our growing roster.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Lead Capture Form -->
+            <div class="bm-purchase-action anim-fade-up anim-stagger" style="--stagger-delay:300ms; background-color: var(--navy-light) !important;">
+                <div class="bm-action-card">
+                    <h3>Download Your Free Guide</h3>
+                    <p>Enter your details below to get instant access.</p>
+                    
+                    <div id="inst-download-form" style="scroll-margin-top: 100px;">
+                        
+                        <?php if ( $im_success ) : ?>
+                            <!-- Success State -->
+                            <div class="bm-success-state" style="text-align: center; padding: 20px 0;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2" style="margin-bottom: 15px;">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <h3 style="color: white; font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px;">Check Your Downloads!</h3>
+                                <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">Your guide is downloading now. We've also emailed you a backup copy.</p>
+                            </div>
+
+                            <!-- Auto-Download JS -->
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    var pointer = document.createElement('div');
+                                    pointer.className = 'dl-pointer-overlay';
+                                    pointer.innerHTML = '<div class="dl-pointer-box" style="border-color: var(--accent-orange);"><svg class="dl-arrow" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><h3 style="color: var(--navy); margin: 0 0 5px; font-family: var(--font-heading); font-weight: 900; text-transform: uppercase;">Download Starting!</h3><p style="color: var(--gray-text); margin: 0; font-family: var(--font-body); font-size: 0.85rem;">Check the top right of your browser.</p></div>';
+                                    document.body.appendChild(pointer);
+
+                                    var link = document.createElement('a');
+                                    link.href = '<?php echo $inst_manual_url; ?>';
+                                    link.download = 'Instructor-Guide.pdf';
+                                    document.body.appendChild(link);
+                                    link.click();
+                                    document.body.removeChild(link);
+
+                                    setTimeout(function() {
+                                        pointer.style.opacity = '0';
+                                        pointer.style.transition = 'opacity 0.5s ease';
+                                        setTimeout(function() { pointer.remove(); }, 500);
+                                    }, 6000);
+                                });
+                            </script>
+
+                        <?php else : ?>
+
+                            <?php if ( ! empty( $im_errors ) ) : ?>
+                                <div class="jt-alert jt-alert--error" role="alert">
+                                    <ul>
+                                        <?php foreach ( $im_errors as $im_error ) : ?>
+                                            <li><?php echo esc_html( $im_error ); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Form -->
+                            <form class="bm-download-form" method="post" action="<?php echo esc_url( get_permalink() . '#inst-download-form' ); ?>" novalidate>
+                                <?php wp_nonce_field( 'pba_inst_manual_form', 'im_nonce' ); ?>
+                                <input type="text" name="im_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                                <div class="bm-form-group">
+                                    <input type="text" id="im-name" name="im_name" placeholder="Your First Name" required value="<?php echo isset($name) ? esc_attr($name) : ''; ?>">
+                                </div>
+                                <div class="bm-form-group">
+                                    <input type="email" id="im-email" name="im_email" placeholder="Your Email Address" required value="<?php echo isset($email) ? esc_attr($email) : ''; ?>">
+                                </div>
+                                <button type="submit" name="im_submit" value="1" class="bm-btn-order" style="background: var(--accent-orange); color: var(--navy); box-shadow: 0 10px 20px rgba(242, 169, 0, 0.25);">
+                                    GET THE GUIDE NOW
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </form>
+
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
