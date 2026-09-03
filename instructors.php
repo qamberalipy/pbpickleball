@@ -6,7 +6,7 @@ Template Name: Our Instructors
 // --- INSTRUCTOR MANUAL FORM LOGIC ---
 $im_errors  = array();
 $im_success = false;
-$inst_manual_url = get_template_directory_uri() . '/media/Instructor-Manual.pdf'; // Update filename when you have the real PDF
+$inst_manual_url = get_template_directory_uri() . '/media/Instructor-Manual-N.pdf'; // Update filename when you have the real PDF
 
 if ( isset( $_POST['im_submit'] ) ) {
     // 1. Security Check
