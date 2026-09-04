@@ -46,17 +46,18 @@ get_header(); ?>
 @media (max-width: 768px) {
     .privacy-document h2 { font-size: 1.3rem; }
     .privacy-document { font-size: 0.95rem; }
+    .privacy-content-section { padding: 40px 15px 60px !important; }
 }
 </style>
 
 <main class="privacy-page pba-bg-pattern">
 
-    <!-- HERO SECTION -->
-    <section class="hero about-hero-full" style="min-height: 35vh; padding-top: 80px;">
+    <!-- HERO SECTION (Mirrored from Resources Page to fix mobile layout) -->
+    <section class="hero retreat-hero-full" style="min-height: 35vh; padding-top: 80px;">
         <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/resource-hero-banner.webp" alt="PB Academy Privacy Policy" aria-hidden="true" style="object-fit: cover; object-position: center;">
         <div class="hero-container" style="padding-bottom: 20px !important;">
             <div class="hero-content anim-fade-up">
-                <h1 class="about-hero-title">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin: 0 auto; text-align: center;">
                     <span style="color: var(--navy); text-shadow: 0 2px 15px rgb(255 255 255 / 70%)!important;">PRIVACY</span><br>
                     <span class="highlight program-hero-main">POLICY</span>
                 </h1>
@@ -65,9 +66,10 @@ get_header(); ?>
     </section>
 
     <!-- CONTENT SECTION -->
-    <section style="padding: 60px 20px 100px;">
+    <section class="privacy-content-section" style="padding: 60px 20px 100px;">
         <div class="container">
-            <div class="ct-premium-card anim-fade-up privacy-document" style="max-width: 1000px;">
+            <!-- Removed anim-fade-up and forced visibility to prevent mobile hiding -->
+            <div class="ct-premium-card privacy-document" style="max-width: 1000px; margin: 0 auto; opacity: 1 !important; transform: none !important; visibility: visible !important;">
                 
                 <p><strong>Effective Date:</strong> September 3, 2026</p>
                 
