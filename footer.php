@@ -40,12 +40,12 @@
                     <h4>LEGAL / POLICY LINKS</h4>
                     <div class="footer-links">
                         <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms &amp; Conditions</a>
-                            <a href="#">Copyright / Intellectual Property</a>
-                            <a href="#">Cancellation &amp; Refund Policy</a>
-                            <a href="#">Shipping / Returns Policy</a>
-                            <a href="#">Accessibility Statement</a>
+                            <a href="<?php echo home_url('/privacy-policy/'); ?>">Privacy Policy</a>
+                            <a href="<?php echo home_url('/terms-and-conditions/'); ?>">Terms &amp; Conditions</a>
+                            <!-- <a href="#">Copyright / Intellectual Property</a> -->
+                            <a href="<?php echo home_url('/cancellation-and-shipping-policies/'); ?>">Cancellation &amp; Refund Policy</a>
+                            <!-- <a href="#">Shipping / Returns Policy</a> -->
+                            <!-- <a href="#">Accessibility Statement</a> -->
                         </div>
                     </div>
                 </div>
