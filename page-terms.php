@@ -18,6 +18,7 @@ get_header(); ?>
 
 <main class="privacy-page pba-bg-pattern">
     <section class="hero retreat-hero-full" style="min-height: 35vh; padding-top: 80px;">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/resource-hero-banner.webp" alt="PB Academy Terms and Conditions" aria-hidden="true" style="object-fit: cover; object-position: center;">
         <div class="hero-container" style="padding-bottom: 20px !important;">
             <div class="hero-content anim-fade-up">
                 <h1 class="retreat-hero-title" style="margin: 0 auto; text-align: center;">

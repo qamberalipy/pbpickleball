@@ -53,6 +53,7 @@ get_header(); ?>
 
     <!-- HERO SECTION -->
     <section class="hero about-hero-full" style="min-height: 35vh; padding-top: 80px;">
+        <img class="hero-video-bg" src="<?php echo get_template_directory_uri(); ?>/media/resource-hero-banner.webp" alt="PB Academy Privacy Policy" aria-hidden="true" style="object-fit: cover; object-position: center;">
         <div class="hero-container" style="padding-bottom: 20px !important;">
             <div class="hero-content anim-fade-up">
                 <h1 class="about-hero-title">
