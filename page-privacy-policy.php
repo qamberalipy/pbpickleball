@@ -65,6 +65,7 @@ get_header(); ?>
         </div>
     </section>
 
+    
     <!-- CONTENT SECTION -->
     <section class="privacy-content-section" style="padding: 60px 20px 100px;">
         <div class="container">
