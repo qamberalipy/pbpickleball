@@ -429,5 +429,9 @@
     </script>
 
     <?php wp_footer(); ?>
+    
+    <!-- Site Search 360 Script -->
+    <script async src="https://js.sitesearch360.com/plugin/bundle/58671.js"></script>
+
 </body>
 </html>
