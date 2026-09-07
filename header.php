@@ -57,9 +57,9 @@
                 
                 <!-- MOBILE SEARCH BAR (Hidden on Desktop) -->
                 <div class="mobile-search-wrap">
-                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
-                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
+                    <form class="premium-search-form" onsubmit="return false;">
+                        <input type="search" id="pba-search-mobile" class="premium-search-input" placeholder="Search..." aria-label="Search" />
+                        <button type="button" class="premium-search-btn" aria-label="Submit Search">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </button>
                     </form>
@@ -97,9 +97,9 @@
                     </a>
                 </div>
                 <div class="header-search-wrap">
-                    <form role="search" method="get" class="premium-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                        <input type="search" class="premium-search-input" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search" />
-                        <button type="submit" class="premium-search-btn" aria-label="Submit Search">
+                    <form class="premium-search-form" onsubmit="return false;">
+                        <input type="search" id="pba-search-desktop" class="premium-search-input" placeholder="Search..." aria-label="Search" />
+                        <button type="button" class="premium-search-btn" aria-label="Submit Search">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </button>
                     </form>
