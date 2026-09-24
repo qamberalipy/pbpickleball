@@ -139,9 +139,8 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </ul>
 
-                                <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
-                                    <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;"><?php echo esc_html($btn_text); ?></a>
+                                <div class="r-card__actions" style="margin-top: auto;">
+                                    <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem;"><?php echo esc_html($btn_text); ?></a>
                                 </div>
                             </div>
                         </article>
