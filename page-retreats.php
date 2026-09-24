@@ -40,98 +40,119 @@ get_header(); ?>
             <h2 class="r-section-title anim-fade-up">UPCOMING RETREATS</h2>
             
             <div class="r-grid r-grid--upcoming anim-fade-up">
-                <!-- Card 1 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop')">
-                        <span class="r-card__badge">Register Now</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Punta Cana Paradise Retreat</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Destination:</strong> Dominican Republic
-                        </p>
+                <?php
+                $delay = 0; // For cascading animations
+                
+                $retreats_query = new WP_Query(array(
+                    'post_type'      => 'pba_retreat',
+                    'posts_per_page' => -1,
+                    'meta_key'       => 'dates', // Order by the text date field
+                    'orderby'        => 'meta_value',
+                    'order'          => 'ASC'
+                ));
+
+                if ( $retreats_query->have_posts() ) :
+                    while ( $retreats_query->have_posts() ) : $retreats_query->the_post(); 
+
+                        // Get ACF Fields
+                        $destination = get_field('destination');
+                        $resort_name = get_field('resort_name');
+                        $dates = get_field('dates');
+                        $duration = get_field('duration');
+                        $skill_level = get_field('skill_level');
+                        $max_participants = get_field('max_participants');
+                        $package_price = get_field('package_price');
+                        $courts = get_field('courts');
+                        $instructors = get_field('instructors');
+                        $reg_link = get_field('registration_button_link');
                         
-                        <ul class="r-card-data-grid">
-                            <li><strong>Resort/Hotel:</strong> Grand Bavaro Luxury</li>
-                            <li><strong>Dates:</strong> Oct 12 - 18, 2026</li>
-                            <li><strong>Duration:</strong> 6 Days / 5 Nights</li>
-                            <li><strong>Courts:</strong> 8 Dedicated Courts</li>
-                            <li><strong>Skill Level:</strong> All Levels (2.5 - 4.0+)</li>
-                            <li><strong>Max Participants:</strong> 24 Players</li>
-                            <li><strong>Instructors:</strong> Charles Azoulay & Team</li>
-                            <li><strong>Package Price:</strong> From $2,499 pp</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--green); font-weight: bold;">Available</span></li>
-                        </ul>
-
-                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
-                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
-                            <a href="#" class="btn btn-green" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">RESERVE / JOIN RETREAT</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=800&auto=format&fit=crop')">
-                        <span class="r-card__badge" style="background: var(--accent-orange); color: var(--navy);">Only 4 Spots Left</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Aruba Sun & Sand Retreat</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Destination:</strong> Palm Beach, Aruba
-                        </p>
+                        // Handle Availability Field (Safeguard against array return format)
+                        $raw_avail = get_field('availability');
+                        $availability = is_array($raw_avail) ? (isset($raw_avail['label']) ? $raw_avail['label'] : $raw_avail[0]) : $raw_avail;
                         
-                        <ul class="r-card-data-grid">
-                            <li><strong>Resort/Hotel:</strong> Aruba Marriott Resort</li>
-                            <li><strong>Dates:</strong> Jan 10 - 15, 2027</li>
-                            <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
-                            <li><strong>Courts:</strong> 6 Dedicated Courts</li>
-                            <li><strong>Skill Level:</strong> Intermediate (3.0 - 4.0)</li>
-                            <li><strong>Max Participants:</strong> 16 Players</li>
-                            <li><strong>Instructors:</strong> Sarah Jenkins</li>
-                            <li><strong>Package Price:</strong> From $2,199 pp</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--accent-orange); font-weight: bold;">Limited</span></li>
-                        </ul>
-
-                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
-                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
-                            <a href="#" class="btn btn-green" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">RESERVE / JOIN RETREAT</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format&fit=crop')">
-                        <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Waitlist Available</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Caribbean Explorer Cruise</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Destination:</strong> Miami to Bahamas
-                        </p>
+                        // Dynamic UI Logic based on Availability
+                        $badge_bg_color = 'var(--green)'; // Default (Available)
+                        $badge_text_color = 'var(--white)';
+                        $avail_text_color = 'var(--green)';
+                        $btn_class = 'btn-green';
+                        $btn_text = 'RESERVE / JOIN RETREAT';
                         
-                        <ul class="r-card-data-grid">
-                            <li><strong>Resort/Hotel:</strong> Celebrity Apex Ship</li>
-                            <li><strong>Dates:</strong> March 5 - 12, 2027</li>
-                            <li><strong>Duration:</strong> 8 Days / 7 Nights</li>
-                            <li><strong>Courts:</strong> 4 On-Board Courts</li>
-                            <li><strong>Skill Level:</strong> All Levels Welcome</li>
-                            <li><strong>Max Participants:</strong> 32 Players</li>
-                            <li><strong>Instructors:</strong> Charles & Team</li>
-                            <li><strong>Package Price:</strong> From $1,899 pp</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--navy); font-weight: bold;">Waitlist Only</span></li>
-                        </ul>
+                        if ($availability === 'Limited') {
+                            $badge_bg_color = 'var(--accent-orange)';
+                            $badge_text_color = 'var(--navy)';
+                            $avail_text_color = 'var(--accent-orange)';
+                        } elseif ($availability === 'Waitlist Only') {
+                            $badge_bg_color = 'var(--navy)';
+                            $badge_text_color = 'var(--white)';
+                            $avail_text_color = 'var(--navy)';
+                            $btn_class = 'btn-navy';
+                            $btn_text = 'JOIN WAITLIST';
+                        } elseif ($availability === 'Sold Out') {
+                            $badge_bg_color = 'var(--navy)';
+                            $badge_text_color = 'var(--white)';
+                            $avail_text_color = 'var(--navy)';
+                            $btn_class = 'btn-navy';
+                            $btn_text = 'SOLD OUT';
+                        }
 
-                        <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
-                            <a href="#" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
-                            <a href="#" class="btn btn-navy" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">JOIN WAITLIST</a>
-                        </div>
-                    </div>
-                </article>
+                        // Get Featured Image
+                        $bg_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                        if(empty($bg_image_url)) {
+                            $bg_image_url = 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop'; // Fallback
+                        }
+                        
+                        // Fallback for Reg Link
+                        if(empty($reg_link)) {
+                            $reg_link = '#';
+                        }
+                        ?>
+
+                        <article class="r-card anim-fade-up" style="transition-delay: <?php echo esc_attr($delay); ?>ms;">
+                            <div class="r-card__image" style="background-image: url('<?php echo esc_url($bg_image_url); ?>')">
+                                <?php if($availability): ?>
+                                    <span class="r-card__badge" style="background: <?php echo esc_attr($badge_bg_color); ?>; color: <?php echo esc_attr($badge_text_color); ?>;"><?php echo esc_html($availability); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <div class="r-card__content">
+                                <h3 class="r-card__title" style="margin-bottom: 5px;"><?php the_title(); ?></h3>
+                                
+                                <?php if($destination): ?>
+                                <p class="r-card__location" style="margin-bottom: 20px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <strong>Destination:</strong> <?php echo esc_html($destination); ?>
+                                </p>
+                                <?php endif; ?>
+                                
+                                <ul class="r-card-data-grid">
+                                    <?php if($resort_name): ?><li><strong>Resort/Hotel:</strong> <?php echo esc_html($resort_name); ?></li><?php endif; ?>
+                                    <?php if($dates): ?><li><strong>Dates:</strong> <?php echo esc_html($dates); ?></li><?php endif; ?>
+                                    <?php if($duration): ?><li><strong>Duration:</strong> <?php echo esc_html($duration); ?></li><?php endif; ?>
+                                    <?php if($courts): ?><li><strong>Courts:</strong> <?php echo esc_html($courts); ?></li><?php endif; ?>
+                                    <?php if($skill_level): ?><li><strong>Skill Level:</strong> <?php echo esc_html($skill_level); ?></li><?php endif; ?>
+                                    <?php if($max_participants): ?><li><strong>Max Participants:</strong> <?php echo esc_html($max_participants); ?> Players</li><?php endif; ?>
+                                    <?php if($instructors): ?><li><strong>Instructors:</strong> <?php echo esc_html($instructors); ?></li><?php endif; ?>
+                                    <?php if($package_price): ?><li><strong>Package Price:</strong> <?php echo esc_html($package_price); ?></li><?php endif; ?>
+                                    
+                                    <?php if($availability): ?>
+                                        <li><strong>Availability:</strong> <span style="color: <?php echo esc_attr($avail_text_color); ?>; font-weight: bold;"><?php echo esc_html($availability); ?></span></li>
+                                    <?php endif; ?>
+                                </ul>
+
+                                <div class="r-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;">VIEW RETREAT</a>
+                                    <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="flex: 1; padding: 12px 10px; font-size: 0.75rem;"><?php echo esc_html($btn_text); ?></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <?php
+                        $delay += 150; 
+                    endwhile;
+                    wp_reset_postdata();
+                else: ?>
+                    <p>New retreats announcing soon!</p>
+                <?php endif; ?>
             </div>
         </div>
     </section>
