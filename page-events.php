@@ -39,89 +39,117 @@ get_header(); ?>
 
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
-                <!-- Card 1 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop');">
-                        <span class="r-card__badge">Open</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Saturday Social Round Robin</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Location:</strong> PB Academy Courts, Boca Raton
-                        </p>
-                        <ul class="r-card-data-grid">
-                            <li><strong>Date:</strong> Sept 6, 2026</li>
-                            <li><strong>Time:</strong> 9:00 AM - 11:30 AM</li>
-                            <li><strong>Type:</strong> Round Robin / Social Play</li>
-                            <li><strong>Level:</strong> All Levels Welcome</li>
-                            <li><strong>Host:</strong> Charles Azoulay</li>
-                            <li><strong>Max Spots:</strong> 24 Players</li>
-                            <li><strong>Cost:</strong> $25 per player</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--green); font-weight: bold;">12 Spots Left</span></li>
-                        </ul>
-                        <div class="r-card__actions" style="display:flex; gap:10px; margin-top:auto;">
-                            <a href="#" class="btn btn-outline" style="flex:1; padding:12px 10px; font-size:0.75rem;">VIEW DETAILS</a>
-                            <a href="#" class="btn btn-green" style="flex:1; padding:12px 10px; font-size:0.75rem;">REGISTER</a>
-                        </div>
-                    </div>
-                </article>
+                <?php
+                $delay = 0; // For cascading animations
 
-                <!-- Card 2 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1693142518820-78d7a05f1546?q=80&w=800&auto=format&fit=crop');">
-                        <span class="r-card__badge" style="background: var(--accent-orange); color: var(--navy);">Only 3 Spots Left</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Beginner Skills Clinic</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Location:</strong> Delray Beach Community Courts
-                        </p>
-                        <ul class="r-card-data-grid">
-                            <li><strong>Date:</strong> Sept 13, 2026</li>
-                            <li><strong>Time:</strong> 10:00 AM - 12:00 PM</li>
-                            <li><strong>Type:</strong> Skills Clinic</li>
-                            <li><strong>Level:</strong> Beginner</li>
-                            <li><strong>Host:</strong> Sarah Jenkins</li>
-                            <li><strong>Max Spots:</strong> 12 Players</li>
-                            <li><strong>Cost:</strong> $35 per player</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--accent-orange); font-weight: bold;">Limited</span></li>
-                        </ul>
-                        <div class="r-card__actions" style="display:flex; gap:10px; margin-top:auto;">
-                            <a href="#" class="btn btn-outline" style="flex:1; padding:12px 10px; font-size:0.75rem;">VIEW DETAILS</a>
-                            <a href="#" class="btn btn-green" style="flex:1; padding:12px 10px; font-size:0.75rem;">REGISTER</a>
-                        </div>
-                    </div>
-                </article>
+                // Query the Events CPT
+                $events_query = new WP_Query(array(
+                    'post_type'      => 'pba_event',
+                    'posts_per_page' => -1,
+                    'meta_key'       => 'date', // Assuming ACF Date picker is used for sorting
+                    'orderby'        => 'meta_value',
+                    'order'          => 'ASC'
+                ));
 
-                <!-- Card 3 -->
-                <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms;">
-                    <div class="r-card__image" style="background-image: url('https://images.unsplash.com/photo-1778180883807-19962eda4d99?q=80&w=800&auto=format&fit=crop');">
-                        <span class="r-card__badge" style="background: var(--navy); color: var(--white);">Sold Out</span>
-                    </div>
-                    <div class="r-card__content">
-                        <h3 class="r-card__title" style="margin-bottom: 5px;">Strategy & Tournament Prep</h3>
-                        <p class="r-card__location" style="margin-bottom: 20px;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <strong>Location:</strong> PB Academy Courts, Boca Raton
-                        </p>
-                        <ul class="r-card-data-grid">
-                            <li><strong>Date:</strong> Sept 20, 2026</li>
-                            <li><strong>Time:</strong> 1:00 PM - 3:30 PM</li>
-                            <li><strong>Type:</strong> Strategy Clinic</li>
-                            <li><strong>Level:</strong> Intermediate / Advanced</li>
-                            <li><strong>Host:</strong> Charles Azoulay</li>
-                            <li><strong>Max Spots:</strong> 16 Players</li>
-                            <li><strong>Cost:</strong> $40 per player</li>
-                            <li><strong>Availability:</strong> <span style="color: var(--navy); font-weight: bold;">Sold Out</span></li>
-                        </ul>
-                        <div class="r-card__actions" style="display:flex; gap:10px; margin-top:auto;">
-                            <a href="#" class="btn btn-outline" style="flex:1; padding:12px 10px; font-size:0.75rem;">VIEW DETAILS</a>
-                            <a href="#" class="btn btn-green" style="flex:1; padding:12px 10px; font-size:0.75rem;">SOLD OUT — JOIN WAITLIST</a>
-                        </div>
-                    </div>
-                </article>
+                if ( $events_query->have_posts() ) :
+                    while ( $events_query->have_posts() ) : $events_query->the_post(); 
+
+                        // Get ACF Fields
+                        $location = get_field('location');
+                        $date = get_field('date');
+                        $time = get_field('time');
+                        $event_type = get_field('event_type');
+                        $level = get_field('level');
+                        $host = get_field('host');
+                        $cost = get_field('cost');
+                        $max_spots = get_field('max_spots');
+                        $reg_link = get_field('registration_button_link');
+                        
+                        // Safeguard for Availability String
+                        $raw_avail = get_field('availability');
+                        $availability = is_array($raw_avail) ? (isset($raw_avail['label']) ? $raw_avail['label'] : $raw_avail[0]) : $raw_avail;
+
+                        // Dynamic UI Logic based on Availability
+                        $badge_bg_color = 'var(--green)'; // Default (Available)
+                        $badge_text_color = 'var(--white)';
+                        $avail_text_color = 'var(--green)';
+                        $btn_class = 'btn-green';
+                        $btn_text = 'REGISTER';
+                        
+                        if ($availability === 'Limited') {
+                            $badge_bg_color = 'var(--accent-orange)';
+                            $badge_text_color = 'var(--navy)';
+                            $avail_text_color = 'var(--accent-orange)';
+                        } elseif ($availability === 'Waitlist Only') {
+                            $badge_bg_color = 'var(--navy)';
+                            $badge_text_color = 'var(--white)';
+                            $avail_text_color = 'var(--navy)';
+                            $btn_class = 'btn-navy';
+                            $btn_text = 'JOIN WAITLIST';
+                        } elseif ($availability === 'Sold Out') {
+                            $badge_bg_color = 'var(--navy)';
+                            $badge_text_color = 'var(--white)';
+                            $avail_text_color = 'var(--navy)';
+                            $btn_class = 'btn-navy';
+                            $btn_text = 'SOLD OUT';
+                        }
+
+                        // Get Featured Image
+                        $bg_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                        if(empty($bg_image_url)) {
+                            $bg_image_url = 'https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop'; // Fallback
+                        }
+                        
+                        // Fallback for Reg Link
+                        if(empty($reg_link)) {
+                            $reg_link = '#';
+                        }
+                        ?>
+
+                        <article class="r-card anim-fade-up" style="transition-delay: <?php echo esc_attr($delay); ?>ms;">
+                            <div class="r-card__image" style="background-image: url('<?php echo esc_url($bg_image_url); ?>');">
+                                <?php if($availability): ?>
+                                    <span class="r-card__badge" style="background: <?php echo esc_attr($badge_bg_color); ?>; color: <?php echo esc_attr($badge_text_color); ?>;"><?php echo esc_html($availability); ?></span>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <div class="r-card__content">
+                                <h3 class="r-card__title" style="margin-bottom: 5px;"><?php the_title(); ?></h3>
+                                
+                                <?php if($location): ?>
+                                <p class="r-card__location" style="margin-bottom: 20px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <strong>Location:</strong> <?php echo esc_html($location); ?>
+                                </p>
+                                <?php endif; ?>
+                                
+                                <ul class="r-card-data-grid">
+                                    <?php if($date): ?><li><strong>Date:</strong> <?php echo esc_html($date); ?></li><?php endif; ?>
+                                    <?php if($time): ?><li><strong>Time:</strong> <?php echo esc_html($time); ?></li><?php endif; ?>
+                                    <?php if($event_type): ?><li><strong>Type:</strong> <?php echo esc_html($event_type); ?></li><?php endif; ?>
+                                    <?php if($level): ?><li><strong>Level:</strong> <?php echo esc_html($level); ?></li><?php endif; ?>
+                                    <?php if($host): ?><li><strong>Host:</strong> <?php echo esc_html($host); ?></li><?php endif; ?>
+                                    <?php if($max_spots): ?><li><strong>Max Spots:</strong> <?php echo esc_html($max_spots); ?></li><?php endif; ?>
+                                    <?php if($cost): ?><li><strong>Cost:</strong> <?php echo esc_html($cost); ?></li><?php endif; ?>
+                                    
+                                    <?php if($availability): ?>
+                                        <li><strong>Availability:</strong> <span style="color: <?php echo esc_attr($avail_text_color); ?>; font-weight: bold;"><?php echo esc_html($availability); ?></span></li>
+                                    <?php endif; ?>
+                                </ul>
+
+                                <div class="r-card__actions" style="margin-top: auto;">
+                                    <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem; text-align: center; justify-content: center; display: flex;"><?php echo esc_html($btn_text); ?></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <?php
+                        $delay += 150; 
+                    endwhile;
+                    wp_reset_postdata();
+                else: ?>
+                    <p>New events announcing soon!</p>
+                <?php endif; ?>
 
             </div>
         </div>
