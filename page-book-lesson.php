@@ -289,56 +289,64 @@ get_header();
 			<h2 class="bl-section-title anim-fade-up">WHAT PLAYERS SAY</h2>
 			<div class="bl-testimonial-grid anim-fade-up">
 
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M." width="64" height="64" loading="lazy">
-					</div>
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					</div>
-					<p>&#8220;Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name">Danita M.</span>
-					</footer>
-				</blockquote>
+<?php
+$reviews_query = new WP_Query(array(
+    'post_type'      => 'pba_review',
+    'posts_per_page' => 3, // Limit to 3 for the grid layout
+    'orderby'        => 'date',
+    'order'          => 'DESC'
+));
+
+if ( $reviews_query->have_posts() ) :
+    while ( $reviews_query->have_posts() ) : $reviews_query->the_post(); 
+
+        $star_rating = (int) get_field('star_rating');
+        $reviewer_name = get_field('reviewer_name');
+        $review_quote = get_field('review_text__quote');
+        
+        // Ensure rating is between 1 and 5
+        $star_rating = max(1, min(5, $star_rating));
+
+        // Get Avatar
+        $avatar_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+        if(empty($avatar_url)) {
+            $avatar_url = get_template_directory_uri() . '/media/male-avatar-1.png'; // Fallback
+        }
+        ?>
 
 				<blockquote class="bl-testimonial">
 					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M." width="64" height="64" loading="lazy">
+						<img class="bl-testimonial__avatar" src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($reviewer_name ? $reviewer_name : get_the_title()); ?>" width="64" height="64" loading="lazy">
 					</div>
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					<div class="bl-testimonial__stars" aria-label="<?php echo esc_attr($star_rating); ?> out of 5 stars">
+                        <?php for($i = 0; $i < $star_rating; $i++): ?>
+						    <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <?php endfor; ?>
 					</div>
-					<p>&#8220;I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.&#8221;</p>
+					<p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
 					<footer>
-						<span class="bl-testimonial__name">Harvey M.</span>
+						<span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
 					</footer>
 				</blockquote>
 
+    <?php 
+    endwhile;
+    wp_reset_postdata();
+else: ?>
 				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P." width="64" height="64" loading="lazy">
-					</div>
 					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
 						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
 					</div>
-					<p>&#8220;I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.&#8221;</p>
+					<p>&#8220;We love PB Academy! The best place to learn pickleball.&#8221;</p>
 					<footer>
-						<span class="bl-testimonial__name">Lisa P.</span>
+						<span class="bl-testimonial__name">The PBA Team</span>
 					</footer>
 				</blockquote>
+<?php endif; ?>
 
 			</div>
 		</div>
