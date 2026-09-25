@@ -179,27 +179,22 @@ get_header();
 							<label for="bl-lesson-type">Program or Lesson <span aria-hidden="true">*</span></label>
 							<select id="bl-lesson-type" name="bl_lesson_type" required aria-required="true">
 								<option value="" disabled selected>Select a program…</option>
-								<optgroup label="Lessons">
-									<option value="Private Lessons">Private Lessons</option>
-									<option value="Semi-Private Lessons">Semi-Private Lessons</option>
-									<option value="Small Group Lessons">Small Group Lessons</option>
-									<option value="Group Lessons">Group Lessons</option>
-								</optgroup>
-								<optgroup label="PBA Core 4">
-									<option value="PBA Core 4">PBA Core 4 (Beginner Package)</option>
-								</optgroup>
-								<optgroup label="Clinics & Play">
-									<option value="Skills Clinics">Skills Clinics</option>
-									<option value="Strategy Clinics">Strategy Clinics</option>
-									<option value="Instructor-Observed Practice & Play">Instructor-Observed Practice & Play</option>
-									<option value="Tournament Preparation">Tournament Preparation</option>
-									<option value="Round Robins">Round Robins</option>
-									<option value="Organized Play">Organized Play</option>
-									<option value="Special Events">Special Events</option>
-								</optgroup>
-								<optgroup label="Specialty">
-									<option value="Retreats">Retreats</option>
-								</optgroup>
+								<?php
+								$programs_query = new WP_Query(array(
+									'post_type'      => 'pba_program',
+									'posts_per_page' => -1,
+									'post_status'    => 'publish',
+									'orderby'        => 'title',
+									'order'          => 'ASC'
+								));
+								if ( $programs_query->have_posts() ) :
+									while ( $programs_query->have_posts() ) : $programs_query->the_post();
+										$program_title = get_the_title();
+										echo '<option value="' . esc_attr( $program_title ) . '">' . esc_html( $program_title ) . '</option>';
+									endwhile;
+									wp_reset_postdata();
+								endif;
+								?>
 							</select>
 						</div>
 						<div class="bl-form-group">
@@ -219,13 +214,22 @@ get_header();
 							<label for="bl-instructor">Instructor <span aria-hidden="true">*</span></label>
 							<select id="bl-instructor" name="bl_instructor" required aria-required="true">
 								<option value="First Available Instructor" selected>First Available Instructor</option>
-								<option value="Charles Azoulay">Charles Azoulay</option>
-								<option value="Sarah Jenkins">Sarah Jenkins</option>
-								<option value="David Chen">David Chen</option>
-								<option value="Jessica Lee">Jessica Lee</option>
-								<option value="Michael Thompson">Michael Thompson</option>
-								<option value="Elena Rodriguez">Elena Rodriguez</option>
-								<option value="Marcus Johnson">Marcus Johnson</option>
+								<?php
+								$instructors_query = new WP_Query(array(
+									'post_type'      => 'pba_instructor',
+									'posts_per_page' => -1,
+									'post_status'    => 'publish',
+									'orderby'        => 'title',
+									'order'          => 'ASC'
+								));
+								if ( $instructors_query->have_posts() ) :
+									while ( $instructors_query->have_posts() ) : $instructors_query->the_post();
+										$instructor_title = get_the_title();
+										echo '<option value="' . esc_attr( $instructor_title ) . '">' . esc_html( $instructor_title ) . '</option>';
+									endwhile;
+									wp_reset_postdata();
+								endif;
+								?>
 							</select>
 						</div>
 						<div class="bl-form-group">
