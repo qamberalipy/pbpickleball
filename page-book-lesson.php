@@ -292,61 +292,42 @@ get_header();
 <?php
 $reviews_query = new WP_Query(array(
     'post_type'      => 'pba_review',
-    'posts_per_page' => 3, // Limit to 3 for the grid layout
+    'posts_per_page' => 3, // Only show 3 for this specific grid
     'orderby'        => 'date',
     'order'          => 'DESC'
 ));
 
 if ( $reviews_query->have_posts() ) :
-    while ( $reviews_query->have_posts() ) : $reviews_query->the_post(); 
+    while ( $reviews_query->have_posts() ) :$reviews_query->the_post(); 
 
         $star_rating = (int) get_field('star_rating');
-        $reviewer_name = get_field('reviewer_name');
-        $review_quote = get_field('review_text__quote');
-        
-        // Ensure rating is between 1 and 5
-        $star_rating = max(1, min(5, $star_rating));
+        $reviewer_name = get_field('reviewer_name');$review_quote = get_field('review_text__quote');
+        $star_rating = max(1, min(5,$star_rating));
 
-        // Get Avatar
         $avatar_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-        if(empty($avatar_url)) {
-            $avatar_url = get_template_directory_uri() . '/media/male-avatar-1.png'; // Fallback
+        if(empty($avatar_url)) {$avatar_url = get_template_directory_uri() . '/media/male-avatar-1.png';
         }
         ?>
 
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($reviewer_name ? $reviewer_name : get_the_title()); ?>" width="64" height="64" loading="lazy">
-					</div>
-					<div class="bl-testimonial__stars" aria-label="<?php echo esc_attr($star_rating); ?> out of 5 stars">
-                        <?php for($i = 0; $i < $star_rating; $i++): ?>
-						    <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <?php endfor; ?>
-					</div>
-					<p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
-					</footer>
-				</blockquote>
+        <blockquote class="bl-testimonial">
+            <div class="bl-testimonial__avatar-wrap">
+                <img class="bl-testimonial__avatar" src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($reviewer_name ? $reviewer_name : get_the_title()); ?>" width="64" height="64" loading="lazy">
+            </div>
+            <div class="bl-testimonial__stars" aria-label="<?php echo esc_attr($star_rating); ?> out of 5 stars" style="display: flex; gap: 3px; justify-content: center; margin-bottom: 14px;">
+                <?php for($i = 1; $i <= 5; $i++): ?>
+                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: <?php echo ($i <=$star_rating) ? 'var(--green)' : '#dddddd'; ?>; stroke: none;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <?php endfor; ?>
+            </div>
+            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <footer>
+                <span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
+            </footer>
+        </blockquote>
 
     <?php 
     endwhile;
     wp_reset_postdata();
-else: ?>
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					</div>
-					<p>&#8220;We love PB Academy! The best place to learn pickleball.&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name">The PBA Team</span>
-					</footer>
-				</blockquote>
-<?php endif; ?>
+endif; ?>
 
 			</div>
 		</div>
