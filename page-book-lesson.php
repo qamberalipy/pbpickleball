@@ -31,8 +31,10 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		if ( '' === $pref_date )$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
 		if ( $participants < 1 )$participants = 1;
 
-		if ( empty( $bl_errors ) ) {$to      = 'support@gopbacademy.com';
-			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );$body    = "New registration request details:\n\n"
+		if ( empty( $bl_errors ) ) {
+			$to      = 'support@gopbacademy.com';
+			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );
+			$body    = "New registration request details:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
 				. "Phone: {$phone}\n"
@@ -47,12 +49,75 @@ if ( isset( $_POST['bl_submit'] ) ) {
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
 				'From: PB Academy <noreply@gopbacademy.com>',
-				'Reply-To: ' . $name . ' <' .$email . '>',
+				'Reply-To: ' . $name . ' <' . $email . '>',
 			);
 
-			$bl_success = (bool) wp_mail( $to,$subject, $body,$headers );
+			$bl_success = (bool) wp_mail( $to, $subject, $body, $headers );
 
-			if ( ! $bl_success ) {$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
+			if ( ! $bl_success ) {
+				$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
+			} else {
+				// Retrieve HubSpot Service Key (from wp-config.php or fallback constant)
+				$hubspot_token = defined( 'PBA_HUBSPOT_TOKEN' ) ? PBA_HUBSPOT_TOKEN : '';
+
+				if ( ! empty( $hubspot_token ) ) {
+					// Split Name safely
+					$name_parts = explode( ' ', trim( $name ), 2 );
+					$first_name = $name_parts[0];
+					$last_name  = isset( $name_parts[1] ) ? $name_parts[1] : '';
+
+					$contact_properties = array(
+						'email'          => $email,
+						'firstname'      => $first_name,
+						'phone'          => $phone,
+						'lifecyclestage' => 'lead'
+					);
+
+					if ( ! empty( $last_name ) ) {
+						$contact_properties['lastname'] = $last_name;
+					}
+
+					$payload = json_encode( array( 'properties' => $contact_properties ) );
+
+					// 1. Attempt to Create New Contact
+					$ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
+					curl_setopt_array( $ch, array(
+						CURLOPT_POST           => true,
+						CURLOPT_POSTFIELDS     => $payload,
+						CURLOPT_HTTPHEADER     => array(
+							'Authorization: Bearer ' . $hubspot_token,
+							'Content-Type: application/json'
+						),
+						CURLOPT_RETURNTRANSFER => true,
+						CURLOPT_TIMEOUT        => 5
+					) );
+
+					$response  = curl_exec( $ch );
+					$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+					curl_close( $ch );
+
+					// 2. If Contact already exists (HTTP 409), Update existing contact record
+					if ( 409 === $http_code && ! empty( $response ) ) {
+						$res_data = json_decode( $response, true );
+						// Extract existing ID from standard HubSpot conflict response
+						if ( ! empty( $res_data['message'] ) && preg_match( '/Existing ID:\s*(\d+)/i', $res_data['message'], $matches ) ) {
+							$existing_id = $matches[1];
+							$patch_ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts/' . $existing_id );
+							curl_setopt_array( $patch_ch, array(
+								CURLOPT_CUSTOMREQUEST  => 'PATCH',
+								CURLOPT_POSTFIELDS     => $payload,
+								CURLOPT_HTTPHEADER     => array(
+									'Authorization: Bearer ' . $hubspot_token,
+									'Content-Type: application/json'
+								),
+								CURLOPT_RETURNTRANSFER => true,
+								CURLOPT_TIMEOUT        => 5
+							) );
+							curl_exec( $patch_ch );
+							curl_close( $patch_ch );
+						}
+					}
+				}
 			}
 		}
 	}
