@@ -142,173 +142,93 @@ get_header();
     <section id="all-instructors" class="container inst-grid-section" style="padding: 0 20px 80px;" data-mascot-msg="Find the perfect instructor for your skill level and schedule.">
         <div class="inst-dir-grid">
             
-            <!-- Instructor Card 1 -->
-            <div class="inst-card anim-fade-up">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-1.png" alt="Sarah Jenkins">
-                    <div class="inst-header-text">
-                        <h3>Sarah Jenkins</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
-                    </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"A former tennis pro bringing elite athletic insights to her lessons, focusing on making the game fun, strategic, and accessible."</p>
-                    
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> PPR Certified Professional</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 6 Years (4.5+ Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> Boca Raton, Delray Beach</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Caloosa Park, Delray Tennis Center</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Advanced Drills, Tournament Prep</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Private, Small Group, Clinics</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Weekday Mornings, Saturdays</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+            <?php
+            $delay = 0; // For cascading animations
+            
+            $instructors_query = new WP_Query(array(
+                'post_type'      => 'pba_instructor',
+                'posts_per_page' => -1, // Get all instructors
+                'order'          => 'ASC' // Orders them by publish date
+            ));
 
-            <!-- Instructor Card 2 -->
-            <div class="inst-card anim-fade-up" style="transition-delay: 100ms;">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/male-avatar-2.png" alt="David Chen">
-                    <div class="inst-header-text">
-                        <h3>David Chen</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
-                    </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"Known for energetic group sessions, David makes learning the fundamentals of the game an absolute blast for seniors and beginners."</p>
+            if ( $instructors_query->have_posts() ) :
+                while ( $instructors_query->have_posts() ) : $instructors_query->the_post(); 
                     
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> IPTPA Level 1</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 4 Years (4.0 Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> Boynton Beach</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Caloosa Park, Private HOAs</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Group Clinics, Beginner Basics</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Core 4, Group Lessons</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Weekday Afternoons, Sundays</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+                    // Get ACF Fields
+                    $title_role = get_field('titlerole');
+                    $intro_quote = get_field('intro_quote');
+                    $credentials = get_field('certifications');
+                    $experience = get_field('years_experience');
+                    $areas_served = get_field('areas_served');
+                    $courts = get_field('courts');
+                    $specialties = get_field('specialties');
+                    $lessons = get_field('lessons');
+                    $availability = get_field('availability');
+                    
+                    // Get Featured Image
+                    $headshot_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                    if(empty($headshot_url)) {
+                        $headshot_url = get_template_directory_uri() . '/media/male-avatar-1.png'; // Fallback
+                    }
+                    ?>
+                    
+                    <div class="inst-card anim-fade-up" style="transition-delay: <?php echo esc_attr($delay); ?>ms;">
+                        <div class="inst-card-header">
+                            <img src="<?php echo esc_url($headshot_url); ?>" alt="<?php the_title_attribute(); ?>">
+                            <div class="inst-header-text">
+                                <h3><?php the_title(); ?></h3>
+                                <?php if($title_role): ?>
+                                    <span class="inst-title"><?php echo esc_html($title_role); ?></span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="inst-card-body">
+                            <?php if($intro_quote): ?>
+                                <p class="inst-intro">"<?php echo esc_html($intro_quote); ?>"</p>
+                            <?php endif; ?>
+                            
+                            <ul class="inst-data-list">
+                                <?php if($credentials): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> <?php echo esc_html($credentials); ?></li>
+                                <?php endif; ?>
 
-            <!-- Instructor Card 3 -->
-            <div class="inst-card anim-fade-up" style="transition-delay: 200ms;">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-2.png" alt="Jessica Lee">
-                    <div class="inst-header-text">
-                        <h3>Jessica Lee</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
-                    </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"Jessica specializes in coaching 50+ players, focusing on safety, mobility, and fostering lifelong enjoyment on the court."</p>
-                    
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> PPR Certified Coach</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 8 Years (4.5 Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> Wellington, Lake Worth</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Wellington Tennis Center</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Senior Programs, Injury Prevention</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Private, Semi-Private</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Mon-Wed Mornings</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+                                <?php if($experience): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> <?php echo esc_html($experience); ?></li>
+                                <?php endif; ?>
 
-            <!-- Instructor Card 4 -->
-            <div class="inst-card anim-fade-up" style="transition-delay: 300ms;">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/male-avatar-1.png" alt="Michael Thompson" onerror="this.style.display='none'">
-                    <div class="inst-header-text">
-                        <h3>Michael Thompson</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
-                    </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"Michael helps intermediate players refine their strategies, perfect their kitchen play, and push past plateaus in their game."</p>
-                    
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> PPR Certified Coach</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 7 Years (5.0 Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> Boca Raton, Parkland</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Patch Reef Park, Private Clubs</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Doubles Strategy, Third Shot Drops</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Private, Strategy Clinics</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Weekday Evenings, Weekends</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+                                <?php if($areas_served): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> <?php echo esc_html($areas_served); ?></li>
+                                <?php endif; ?>
 
-            <!-- Instructor Card 5 -->
-            <div class="inst-card anim-fade-up" style="transition-delay: 400ms;">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/female-avatar-3.png" alt="Elena Rodriguez" onerror="this.style.display='none'">
-                    <div class="inst-header-text">
-                        <h3>Elena Rodriguez</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
-                    </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"Elena brings high energy and patience to the court, designing fun, engaging programs that make mastering the basics effortless."</p>
-                    
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> IPTPA Level 2</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 5 Years (4.5 Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> West Palm Beach, Wellington</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Okeeheelee Park, Public Centers</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Beginner Programs, Core 4</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Core 4 Package, Small Groups</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Daily (Morning &amp; Afternoon)</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+                                <?php if($courts): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> <?php echo esc_html($courts); ?></li>
+                                <?php endif; ?>
 
-            <!-- Instructor Card 6 -->
-            <div class="inst-card anim-fade-up" style="transition-delay: 500ms;">
-                <div class="inst-card-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/male-avatar-3.jpg" alt="Marcus Johnson" onerror="this.src='<?php echo get_template_directory_uri(); ?>/media/male-avatar-1.png'">
-                    <div class="inst-header-text">
-                        <h3>Marcus Johnson</h3>
-                        <span class="inst-title">PB Academy Instructor</span>
+                                <?php if($specialties): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> <?php echo wp_strip_all_tags($specialties); ?></li>
+                                <?php endif; ?>
+
+                                <?php if($lessons): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> <?php echo esc_html($lessons); ?></li>
+                                <?php endif; ?>
+
+                                <?php if($availability): ?>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> <?php echo esc_html($availability); ?></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <div class="inst-card-footer">
+                            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
+                        </div>
                     </div>
-                </div>
-                <div class="inst-card-body">
-                    <p class="inst-intro">"A deeply patient coach who prioritizes safety and court awareness, ensuring every player feels confident and comfortable."</p>
-                    
-                    <ul class="inst-data-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Credentials:</strong> PPR Certified Professional</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Experience:</strong> 3 Years (4.0 Player Level)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <strong>Areas Served:</strong> Jupiter, Palm Beach Gardens</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <strong>Courts:</strong> Jupiter Community Park</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <strong>Specialties:</strong> Novice Players, Mobility Focus</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <strong>Lessons:</strong> Private, Semi-Private</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Availability:</strong> Weekday Mornings</li>
-                    </ul>
-                </div>
-                <div class="inst-card-footer">
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy" style="width: 100%; font-size: 0.85rem; padding: 16px;">REGISTER NOW</a>
-                    <!-- <a href="#" style="display:block; text-align:center; font-size:0.8rem; margin-top:14px; font-weight:700; color:var(--green); text-transform:uppercase; text-decoration:none;">View Full Profile &rarr;</a> -->
-                </div>
-            </div>
+
+                    <?php
+                    $delay += 100; // Increment animation delay for the next card
+                endwhile;
+                wp_reset_postdata();
+            else: ?>
+                <p>New instructors joining soon!</p>
+            <?php endif; ?>
             
         </div>
     </section>

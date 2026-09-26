@@ -78,44 +78,45 @@ get_header(); ?>
 
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
-                <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms; max-width: none;">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M.">
-                    <div class="cd-stars" style="margin-bottom: 12px;">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p>"Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free."</p>
-                    <div class="t-author">Danita M.</div>
-                </article>
+<?php
+$reviews_query = new WP_Query(array(
+    'post_type'      => 'pba_review',
+    'posts_per_page' => 10,
+    'orderby'        => 'date',
+    'order'          => 'DESC'
+));
 
-                <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 150ms; max-width: none;">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M.">
-                    <div class="cd-stars" style="margin-bottom: 12px;">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p>"I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week."</p>
-                    <div class="t-author">Harvey M.</div>
-                </article>
+if ( $reviews_query->have_posts() ) :
+    while ( $reviews_query->have_posts() ) : $reviews_query->the_post(); 
 
-                <article class="t-card anim-fade-up anim-stagger" style="--stagger-delay: 300ms; max-width: none;">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P.">
-                    <div class="cd-stars" style="margin-bottom: 12px;">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p>"I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy."</p>
-                    <div class="t-author">Lisa P.</div>
-                </article>
+        $star_rating = (int) get_field('star_rating');
+        $reviewer_name = get_field('reviewer_name');
+        $review_quote = get_field('review_text__quote');
+        $star_rating = max(1, min(5, $star_rating));
+
+        $avatar_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+        if(empty($avatar_url)) {
+            $avatar_url = get_template_directory_uri() . '/media/male-avatar-1.png'; // Fallback
+        }
+        ?>
+
+        <article class="t-card" style="max-width: none;">
+            <img src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($reviewer_name ? $reviewer_name : get_the_title()); ?>">
+            
+            <div class="cd-stars" style="margin-bottom: 12px; display: flex; justify-content: center; gap: 3px;">
+                <?php for($i = 1; $i <= 5; $i++): ?>
+                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: <?php echo ($i <= $star_rating) ? 'var(--green)' : '#dddddd'; ?>; stroke: none;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                <?php endfor; ?>
+            </div>
+            
+            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <div class="t-author">- <?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></div>
+        </article>
+
+    <?php 
+    endwhile;
+    wp_reset_postdata();
+endif; ?>
 
             </div>
 

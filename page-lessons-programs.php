@@ -113,66 +113,67 @@ get_header();
         
         <!-- 4-Column Grid for Lessons (Avoids orphaned cards) -->
         <div class="lp-lessons-grid anim-fade-up">
-            
-            <!-- Card 1: Private -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-private.jpg" alt="Private Lessons" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <span class="lp-card-tag">1-ON-1</span>
-                    <h3>Private Lessons</h3>
-                    <p>Personalized instruction tailored completely to your pace and goals.</p>
-                    <div class="lp-meta">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 1 Player</span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+<?php
+$lessons_query = new WP_Query(array(
+    'post_type'      => 'pba_program',
+    'posts_per_page' => -1,
+    'meta_key'       => 'program_category',
+    'meta_value'     => 'Lesson',
+    'order'          => 'ASC'
+));
 
-            <!-- Card 2: Semi-Private -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-semiprivate.jpg" alt="Semi-Private Lessons" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <span class="lp-card-tag">2 PLAYERS</span>
-                    <h3>Semi-Private Lessons</h3>
-                    <p>Learn alongside a friend or partner with focused, shared instruction.</p>
-                    <div class="lp-meta">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 2 Players</span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+if ( $lessons_query->have_posts() ) :
+    while ( $lessons_query->have_posts() ) : $lessons_query->the_post(); 
 
-            <!-- Card 3: Small Group -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-smallgroup.jpg" alt="Small Group Lessons" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <span class="lp-card-tag">3-4 PLAYERS</span>
-                    <h3>Small Group Lessons</h3>
-                    <p>Perfect for a group of friends wanting to learn and practice together.</p>
-                    <div class="lp-meta">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 Mins</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 3-4 Players</span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+        $sessions_type = get_field('number_of_sessions'); // Used as the top tag
+        $short_desc = get_field('short_description');
+        $duration = get_field('duration');
+        $capacity = get_field('capacity__group_size');
+        $cost = get_field('cost');
+        $booking_link = get_field('booking_link');
 
-            <!-- Card 4: Group -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/lesson-group.jpg" alt="Group Lessons" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <span class="lp-card-tag">5+ PLAYERS</span>
-                    <h3>Group Lessons</h3>
-                    <p>A fun, social environment to learn the game and meet new players.</p>
-                    <div class="lp-meta">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60-90 Mins</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 5+ Players</span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+        if(empty($img_url)) {
+            $img_url = get_template_directory_uri() . '/media/lesson-private.jpg'; // Fallback
+        }
+        if(empty($booking_link)) {
+            $booking_link = home_url('/book-a-lesson/');
+        }
+        ?>
+
+        <div class="lp-card">
+            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" onerror="this.style.display='none'">
+            <div class="lp-card-body">
+                <?php if($sessions_type): ?>
+                    <span class="lp-card-tag"><?php echo esc_html($sessions_type); ?></span>
+                <?php endif; ?>
+                
+                <h3><?php the_title(); ?></h3>
+                
+                <?php if($short_desc): ?>
+                    <p><?php echo esc_html($short_desc); ?></p>
+                <?php endif; ?>
+
+                <div class="lp-meta">
+                    <?php if($duration): ?>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <?php echo esc_html($duration); ?></span>
+                    <?php endif; ?>
+                    
+                    <?php if($capacity): ?>
+                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <?php echo esc_html($capacity); ?></span>
+                    <?php endif; ?>
                 </div>
+
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
             </div>
+        </div>
+
+    <?php 
+    endwhile;
+    wp_reset_postdata();
+else: ?>
+    <p>New lessons announcing soon!</p>
+<?php endif; ?>
         </div>
 
         <!-- Player Development Progression Visual -->
@@ -202,83 +203,56 @@ get_header();
         <h2 class="lp-section-title">PROGRAM CATEGORY 3 — CLINICS & PLAY</h2>
         
         <div class="lp-clinics-grid anim-fade-up">
-            <!-- Clinic 1 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-skills.jpg" alt="Skills Clinics" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Skills Clinics</h3>
-                    <p>Targeted sessions focusing on specific mechanics like dinking, serving, or drops.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+<?php
+$clinics_query = new WP_Query(array(
+    'post_type'      => 'pba_program',
+    'posts_per_page' => -1,
+    'meta_key'       => 'program_category',
+    'meta_value'     => 'Clinic & Play',
+    'order'          => 'ASC'
+));
 
-            <!-- Clinic 2 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-strategy.jpg" alt="Strategy Clinics" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Strategy Clinics</h3>
-                    <p>Elevate your court IQ with advanced positioning and point-construction drills.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+if ( $clinics_query->have_posts() ) :
+    while ( $clinics_query->have_posts() ) : $clinics_query->the_post(); 
 
-            <!-- Clinic 3 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-practice.jpg" alt="Instructor-Observed Practice" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Instructor-Observed Play</h3>
-                    <p>Play live games while receiving real-time tactical feedback from a certified coach.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+        $short_desc = get_field('short_description');
+        $avail_status = get_field('availability_status');
+        $booking_link = get_field('booking_link');
 
-            <!-- Clinic 4 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-tournament.jpg" alt="Tournament Preparation" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Tournament Preparation</h3>
-                    <p>High-intensity drilling designed to prepare you and your partner for competition.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+        if(empty($img_url)) {
+            $img_url = get_template_directory_uri() . '/media/clinic-skills.jpg'; // Fallback
+        }
+        if(empty($booking_link)) {
+            $booking_link = home_url('/book-a-lesson/');
+        }
+        ?>
 
-            <!-- Clinic 5 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-roundrobin.jpg" alt="Round Robins" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Round Robins & Organized Play</h3>
-                    <p>Structured, competitive, and social play matched by skill level.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
-                </div>
-            </div>
+        <div class="lp-card">
+            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" onerror="this.style.display='none'">
+            <div class="lp-card-body">
+                <h3><?php the_title(); ?></h3>
+                
+                <?php if($short_desc): ?>
+                    <p><?php echo esc_html($short_desc); ?></p>
+                <?php endif; ?>
 
-            <!-- Clinic 6 -->
-            <div class="lp-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/media/clinic-social.jpg" alt="Special Events" onerror="this.style.display='none'">
-                <div class="lp-card-body">
-                    <h3>Special Events & Social Play</h3>
-                    <p>Themed play days, mixers, and relaxed events focused purely on community and fun.</p>
-                    <div class="lp-meta" style="flex-direction: column; gap: 6px;">
-                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong>Upcoming Dates Available</strong></span>
-                    </div>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
+                <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                    <?php if($avail_status): ?>
+                        <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong><?php echo esc_html($avail_status); ?></strong></span>
+                    <?php endif; ?>
                 </div>
+
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
             </div>
+        </div>
+
+    <?php 
+    endwhile;
+    wp_reset_postdata();
+else: ?>
+    <p>New clinics announcing soon!</p>
+<?php endif; ?>
         </div>
     </section>
 

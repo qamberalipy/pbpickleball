@@ -31,8 +31,10 @@ if ( isset( $_POST['bl_submit'] ) ) {
 		if ( '' === $pref_date )$bl_errors[] = __( 'Please choose a preferred date.', 'pba' );
 		if ( $participants < 1 )$participants = 1;
 
-		if ( empty( $bl_errors ) ) {$to      = 'support@gopbacademy.com';
-			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );$body    = "New registration request details:\n\n"
+		if ( empty( $bl_errors ) ) {
+			$to      = 'support@gopbacademy.com';
+			$subject = sprintf( __( 'New Registration Request from %s', 'pba' ), $name );
+			$body    = "New registration request details:\n\n"
 				. "Name: {$name}\n"
 				. "Email: {$email}\n"
 				. "Phone: {$phone}\n"
@@ -47,12 +49,75 @@ if ( isset( $_POST['bl_submit'] ) ) {
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
 				'From: PB Academy <noreply@gopbacademy.com>',
-				'Reply-To: ' . $name . ' <' .$email . '>',
+				'Reply-To: ' . $name . ' <' . $email . '>',
 			);
 
-			$bl_success = (bool) wp_mail( $to,$subject, $body,$headers );
+			$bl_success = (bool) wp_mail( $to, $subject, $body, $headers );
 
-			if ( ! $bl_success ) {$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
+			if ( ! $bl_success ) {
+				$bl_errors[] = __( 'Sorry, something went wrong sending your request. Please call us instead.', 'pba' );
+			} else {
+				// Retrieve HubSpot Service Key (from wp-config.php or fallback constant)
+				$hubspot_token = defined( 'PBA_HUBSPOT_TOKEN' ) ? PBA_HUBSPOT_TOKEN : '';
+
+				if ( ! empty( $hubspot_token ) ) {
+					// Split Name safely
+					$name_parts = explode( ' ', trim( $name ), 2 );
+					$first_name = $name_parts[0];
+					$last_name  = isset( $name_parts[1] ) ? $name_parts[1] : '';
+
+					$contact_properties = array(
+						'email'          => $email,
+						'firstname'      => $first_name,
+						'phone'          => $phone,
+						'lifecyclestage' => 'lead'
+					);
+
+					if ( ! empty( $last_name ) ) {
+						$contact_properties['lastname'] = $last_name;
+					}
+
+					$payload = json_encode( array( 'properties' => $contact_properties ) );
+
+					// 1. Attempt to Create New Contact
+					$ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
+					curl_setopt_array( $ch, array(
+						CURLOPT_POST           => true,
+						CURLOPT_POSTFIELDS     => $payload,
+						CURLOPT_HTTPHEADER     => array(
+							'Authorization: Bearer ' . $hubspot_token,
+							'Content-Type: application/json'
+						),
+						CURLOPT_RETURNTRANSFER => true,
+						CURLOPT_TIMEOUT        => 5
+					) );
+
+					$response  = curl_exec( $ch );
+					$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+					curl_close( $ch );
+
+					// 2. If Contact already exists (HTTP 409), Update existing contact record
+					if ( 409 === $http_code && ! empty( $response ) ) {
+						$res_data = json_decode( $response, true );
+						// Extract existing ID from standard HubSpot conflict response
+						if ( ! empty( $res_data['message'] ) && preg_match( '/Existing ID:\s*(\d+)/i', $res_data['message'], $matches ) ) {
+							$existing_id = $matches[1];
+							$patch_ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts/' . $existing_id );
+							curl_setopt_array( $patch_ch, array(
+								CURLOPT_CUSTOMREQUEST  => 'PATCH',
+								CURLOPT_POSTFIELDS     => $payload,
+								CURLOPT_HTTPHEADER     => array(
+									'Authorization: Bearer ' . $hubspot_token,
+									'Content-Type: application/json'
+								),
+								CURLOPT_RETURNTRANSFER => true,
+								CURLOPT_TIMEOUT        => 5
+							) );
+							curl_exec( $patch_ch );
+							curl_close( $patch_ch );
+						}
+					}
+				}
 			}
 		}
 	}
@@ -179,27 +244,22 @@ get_header();
 							<label for="bl-lesson-type">Program or Lesson <span aria-hidden="true">*</span></label>
 							<select id="bl-lesson-type" name="bl_lesson_type" required aria-required="true">
 								<option value="" disabled selected>Select a program…</option>
-								<optgroup label="Lessons">
-									<option value="Private Lessons">Private Lessons</option>
-									<option value="Semi-Private Lessons">Semi-Private Lessons</option>
-									<option value="Small Group Lessons">Small Group Lessons</option>
-									<option value="Group Lessons">Group Lessons</option>
-								</optgroup>
-								<optgroup label="PBA Core 4">
-									<option value="PBA Core 4">PBA Core 4 (Beginner Package)</option>
-								</optgroup>
-								<optgroup label="Clinics & Play">
-									<option value="Skills Clinics">Skills Clinics</option>
-									<option value="Strategy Clinics">Strategy Clinics</option>
-									<option value="Instructor-Observed Practice & Play">Instructor-Observed Practice & Play</option>
-									<option value="Tournament Preparation">Tournament Preparation</option>
-									<option value="Round Robins">Round Robins</option>
-									<option value="Organized Play">Organized Play</option>
-									<option value="Special Events">Special Events</option>
-								</optgroup>
-								<optgroup label="Specialty">
-									<option value="Retreats">Retreats</option>
-								</optgroup>
+								<?php
+								$programs_query = new WP_Query(array(
+									'post_type'      => 'pba_program',
+									'posts_per_page' => -1,
+									'post_status'    => 'publish',
+									'orderby'        => 'title',
+									'order'          => 'ASC'
+								));
+								if ( $programs_query->have_posts() ) :
+									while ( $programs_query->have_posts() ) : $programs_query->the_post();
+										$program_title = get_the_title();
+										echo '<option value="' . esc_attr( $program_title ) . '">' . esc_html( $program_title ) . '</option>';
+									endwhile;
+									wp_reset_postdata();
+								endif;
+								?>
 							</select>
 						</div>
 						<div class="bl-form-group">
@@ -219,13 +279,22 @@ get_header();
 							<label for="bl-instructor">Instructor <span aria-hidden="true">*</span></label>
 							<select id="bl-instructor" name="bl_instructor" required aria-required="true">
 								<option value="First Available Instructor" selected>First Available Instructor</option>
-								<option value="Charles Azoulay">Charles Azoulay</option>
-								<option value="Sarah Jenkins">Sarah Jenkins</option>
-								<option value="David Chen">David Chen</option>
-								<option value="Jessica Lee">Jessica Lee</option>
-								<option value="Michael Thompson">Michael Thompson</option>
-								<option value="Elena Rodriguez">Elena Rodriguez</option>
-								<option value="Marcus Johnson">Marcus Johnson</option>
+								<?php
+								$instructors_query = new WP_Query(array(
+									'post_type'      => 'pba_instructor',
+									'posts_per_page' => -1,
+									'post_status'    => 'publish',
+									'orderby'        => 'title',
+									'order'          => 'ASC'
+								));
+								if ( $instructors_query->have_posts() ) :
+									while ( $instructors_query->have_posts() ) : $instructors_query->the_post();
+										$instructor_title = get_the_title();
+										echo '<option value="' . esc_attr( $instructor_title ) . '">' . esc_html( $instructor_title ) . '</option>';
+									endwhile;
+									wp_reset_postdata();
+								endif;
+								?>
 							</select>
 						</div>
 						<div class="bl-form-group">
@@ -289,56 +358,45 @@ get_header();
 			<h2 class="bl-section-title anim-fade-up">WHAT PLAYERS SAY</h2>
 			<div class="bl-testimonial-grid anim-fade-up">
 
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t3.jpg" alt="Danita M." width="64" height="64" loading="lazy">
-					</div>
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					</div>
-					<p>&#8220;Coach Charles has a gift for making pickleball easy to understand. His first lesson was simple: 'Keep your eyes on the ball.' That one tip alone improved my game immediately. His classes are fun, encouraging, and stress-free.&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name">Danita M.</span>
-					</footer>
-				</blockquote>
+<?php
+$reviews_query = new WP_Query(array(
+    'post_type'      => 'pba_review',
+    'posts_per_page' => 3, // Only show 3 for this specific grid
+    'orderby'        => 'date',
+    'order'          => 'DESC'
+));
 
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t1.jpg" alt="Harvey M." width="64" height="64" loading="lazy">
-					</div>
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					</div>
-					<p>&#8220;I was nervous about learning pickleball, but Coach Charles made me feel comfortable from day one. He breaks the game down into simple steps and focuses on building confidence. I now look forward to playing every week.&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name">Harvey M.</span>
-					</footer>
-				</blockquote>
+if ( $reviews_query->have_posts() ) :
+    while ( $reviews_query->have_posts() ) :$reviews_query->the_post(); 
 
-				<blockquote class="bl-testimonial">
-					<div class="bl-testimonial__avatar-wrap">
-						<img class="bl-testimonial__avatar" src="<?php echo get_template_directory_uri(); ?>/media/t2.jpg" alt="Lisa P." width="64" height="64" loading="lazy">
-					</div>
-					<div class="bl-testimonial__stars" aria-label="5 out of 5 stars">
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-						<svg viewBox="0 0 24 24" fill="var(--green,#2e7d32)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					</div>
-					<p>&#8220;I thought pickleball was difficult until I took Coach Charles beginner clinic. His explanation of serving and court positioning made everything easy.&#8221;</p>
-					<footer>
-						<span class="bl-testimonial__name">Lisa P.</span>
-					</footer>
-				</blockquote>
+        $star_rating = (int) get_field('star_rating');
+        $reviewer_name = get_field('reviewer_name');$review_quote = get_field('review_text__quote');
+        $star_rating = max(1, min(5,$star_rating));
+
+        $avatar_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+        if(empty($avatar_url)) {$avatar_url = get_template_directory_uri() . '/media/male-avatar-1.png';
+        }
+        ?>
+
+        <blockquote class="bl-testimonial">
+            <div class="bl-testimonial__avatar-wrap">
+                <img class="bl-testimonial__avatar" src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($reviewer_name ? $reviewer_name : get_the_title()); ?>" width="64" height="64" loading="lazy">
+            </div>
+            <div class="bl-testimonial__stars" aria-label="<?php echo esc_attr($star_rating); ?> out of 5 stars" style="display: flex; gap: 3px; justify-content: center; margin-bottom: 14px;">
+                <?php for($i = 1; $i <= 5; $i++): ?>
+                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: <?php echo ($i <=$star_rating) ? 'var(--green)' : '#dddddd'; ?>; stroke: none;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <?php endfor; ?>
+            </div>
+            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <footer>
+                <span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
+            </footer>
+        </blockquote>
+
+    <?php 
+    endwhile;
+    wp_reset_postdata();
+endif; ?>
 
 			</div>
 		</div>
