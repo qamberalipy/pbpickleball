@@ -234,14 +234,7 @@ get_header(); ?>
                                 </ul>
 
                                 <div class="r-card__actions" style="margin-top: auto;">
-                                    <?php 
-                                    $reg_link = trim(get_field('registration_button_link'));
-                                    // Strictly validate that the link is a real URL (prevents ' ' or '#' from breaking the button)
-                                    if ( ! empty( $reg_link ) && filter_var($reg_link, FILTER_VALIDATE_URL) ) : ?>
-                                        <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem; text-align: center; justify-content: center; display: flex;"><?php echo esc_html($btn_text); ?></a>
-                                    <?php else : ?>
-                                        <button type="button" class="btn <?php echo esc_attr($btn_class); ?>" data-modal-target="eventModal" data-event-title="<?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem;"><?php echo esc_html($btn_text); ?></button>
-                                    <?php endif; ?>
+                                    <button type="button" class="btn <?php echo esc_attr($btn_class); ?>" data-modal-target="eventModal" data-event-title="<?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem; text-align: center; justify-content: center; display: flex;"><?php echo esc_html($btn_text); ?></button>
                                 </div>
                             </div>
                         </article>
@@ -307,7 +300,7 @@ get_header(); ?>
     <!-- ============================================================
          EVENT REGISTRATION MODAL
          ============================================================ -->
-    <div id="eventModal" class="pba-modal<?php echo $ev_success ? ' is-open' : ''; ?>" aria-hidden="<?php echo $ev_success ? 'false' : 'true'; ?>">
+    <div id="eventModal" class="pba-modal<?php echo ($ev_success || ! empty($ev_errors)) ? ' is-open' : ''; ?>" aria-hidden="<?php echo ($ev_success || ! empty($ev_errors)) ? 'false' : 'true'; ?>">
         <div class="pba-modal-overlay" data-ev-modal-close></div>
         <div class="pba-modal-content ct-premium-card" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
             <button class="pba-modal-close" data-ev-modal-close aria-label="Close modal">&times;</button>
@@ -315,7 +308,7 @@ get_header(); ?>
             <div style="text-align: center; margin-bottom: 30px;">
                 <span style="display: inline-block; background: rgba(242, 169, 0, 0.15); color: var(--accent-orange); font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; letter-spacing: 1px; margin-bottom: 12px;">Event Registration</span>
                 <h2 id="eventModalTitle" style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 8px;">REGISTER FOR AN EVENT</h2>
-                <p id="ev-modal-event-label" style="font-size: 1rem; color: var(--gray-text); margin: 0;"></p>
+                <p id="ev-modal-event-label" style="font-size: 1rem; color: var(--gray-text); margin: 0;"><?php echo !empty($event_name) ? 'Registering for: ' . esc_html($event_name) : ''; ?></p>
             </div>
 
             <?php if ( $ev_success ) : ?>
@@ -336,7 +329,7 @@ get_header(); ?>
                     </div>
                 <?php endif; ?>
 
-                <form class="ct-form" id="ev-reg-form" action="#eventModal" method="post" novalidate>
+                <form class="ct-form" id="ev-reg-form" action="<?php echo esc_url( get_permalink() ); ?>#upcoming" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_event_form', 'ev_nonce' ); ?>
                     <input type="text" name="ev_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="hidden" id="ev-event-name" name="ev_event_name" value="<?php echo isset( $event_name ) ? esc_attr( $event_name ) : ''; ?>">
