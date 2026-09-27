@@ -91,6 +91,9 @@ if ( isset( $_POST['ev_submit'] ) ) {
 						}
 					}
 				}
+				// Clear fields so the form renders empty on success.
+				$name = $email = $phone = $event_name = '';
+				$_POST = array();
 			}
 
 			if ( ! $ev_success ) {
@@ -162,7 +165,6 @@ get_header(); ?>
                         $host = get_field('host');
                         $cost = get_field('cost');
                         $max_spots = get_field('max_spots');
-                        $reg_link = get_field('registration_button_link');
                         
                         // Safeguard for Availability String
                         $raw_avail = get_field('availability');
@@ -198,11 +200,6 @@ get_header(); ?>
                         if(empty($bg_image_url)) {
                             $bg_image_url = 'https://images.unsplash.com/photo-1747027694225-cbf12dd20826?q=80&w=800&auto=format&fit=crop'; // Fallback
                         }
-                        
-                        // Fallback for Reg Link
-                        if(empty($reg_link)) {
-                            $reg_link = '#';
-                        }
                         ?>
 
                         <article class="r-card anim-fade-up" style="transition-delay: <?php echo esc_attr($delay); ?>ms;">
@@ -237,7 +234,10 @@ get_header(); ?>
                                 </ul>
 
                                 <div class="r-card__actions" style="margin-top: auto;">
-                                    <?php if ( ! empty( $reg_link ) && '#' !== $reg_link ) : ?>
+                                    <?php 
+                                    $reg_link = trim(get_field('registration_button_link'));
+                                    // Strictly validate that the link is a real URL (prevents ' ' or '#' from breaking the button)
+                                    if ( ! empty( $reg_link ) && filter_var($reg_link, FILTER_VALIDATE_URL) ) : ?>
                                         <a href="<?php echo esc_url($reg_link); ?>" class="btn <?php echo esc_attr($btn_class); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem; text-align: center; justify-content: center; display: flex;"><?php echo esc_html($btn_text); ?></a>
                                     <?php else : ?>
                                         <button type="button" class="btn <?php echo esc_attr($btn_class); ?>" data-modal-target="eventModal" data-event-title="<?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; padding: 16px 10px; font-size: 0.85rem;"><?php echo esc_html($btn_text); ?></button>
@@ -336,7 +336,7 @@ get_header(); ?>
                     </div>
                 <?php endif; ?>
 
-                <form class="ct-form" id="ev-reg-form" action="<?php echo esc_url( get_permalink() ); ?>" method="post" novalidate>
+                <form class="ct-form" id="ev-reg-form" action="#eventModal" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_event_form', 'ev_nonce' ); ?>
                     <input type="text" name="ev_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="hidden" id="ev-event-name" name="ev_event_name" value="<?php echo isset( $event_name ) ? esc_attr( $event_name ) : ''; ?>">

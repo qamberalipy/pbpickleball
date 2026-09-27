@@ -89,6 +89,9 @@ if ( isset( $_POST['rev_submit'] ) ) {
                         }
                     }
                 }
+                // Clear fields so the form renders empty on success.
+                $name = $email = $program = $instructor = $rating = $comments = '';
+                $_POST = array();
             }
 
             if ( ! $rev_success ) $rev_errors[] = 'Sorry, your review failed to send. Please try again.';
@@ -205,7 +208,7 @@ endif; ?>
     </div>
 <?php endif; ?>
 
-<form class="r-interest-form ct-form" action="<?php echo esc_url( get_permalink() . '#leave-review' ); ?>" method="post" enctype="multipart/form-data" novalidate>
+<form class="r-interest-form ct-form" action="#leave-review" method="post" enctype="multipart/form-data" novalidate>
     <?php wp_nonce_field( 'pba_review_form', 'rev_nonce' ); ?>
     <input type="text" name="rev_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
 

@@ -89,6 +89,9 @@ if ( isset( $_POST['ct_submit'] ) ) {
 						}
 					}
 				}
+				// Clear fields so the form renders empty on success.
+				$name = $email = $phone = $category = $message = '';
+				$_POST = array();
 			}
 
 			if ( ! $ct_success ) {$ct_errors[] = __( 'Sorry, something went wrong sending your message. Please email us directly or call us.', 'pba' );
@@ -216,7 +219,7 @@ get_header();
                     </div>
                 <?php endif; ?>
 
-                <form class="ct-form" action="<?php echo esc_url( get_permalink() . '#ct-form' ); ?>" method="post" novalidate>
+                <form class="ct-form" action="#ct-form" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_contact_form', 'ct_nonce' ); ?>
                     <input type="text" name="ct_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     

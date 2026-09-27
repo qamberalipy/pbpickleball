@@ -118,6 +118,9 @@ if ( isset( $_POST['bl_submit'] ) ) {
 						}
 					}
 				}
+				// Clear fields so the form renders empty on success.
+				$name = $email = $phone = $lesson_type = $instructor = $location = $skill_level = $pref_date = $pref_time = $participants = $message = '';
+				$_POST = array();
 			}
 		}
 	}
@@ -213,7 +216,7 @@ get_header();
 					</div>
 				<?php endif; ?>
 
-				<form class="bl-form" method="post" action="<?php echo esc_url( get_permalink() . '#bl-form' ); ?>" novalidate>
+				<form class="bl-form" method="post" action="#bl-form" novalidate>
 					<?php wp_nonce_field( 'pba_book_lesson', 'bl_nonce' ); ?>
 					<input type="text" name="bl_hp" value="" class="bl-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
