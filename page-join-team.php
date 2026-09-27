@@ -106,6 +106,9 @@ if ( isset( $_POST['jt_submit'] ) ) {
 						}
 					}
 				}
+				// Clear fields so the form renders empty on success.
+				$first_name = $last_name = $email = $phone = $certification = $experience = $availability = $message = '';
+				$_POST = array();
 			}
 
 			if ( ! $jt_success ) {
@@ -279,7 +282,7 @@ get_header();
                     </div>
                 <?php endif; ?>
 
-                <form class="ct-form" action="<?php echo esc_url( get_permalink() . '#jt-form' ); ?>" method="post" novalidate>
+                <form class="ct-form" action="#jt-form" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_join_team', 'jt_nonce' ); ?>
 					<input type="text" name="jt_hp" value="" class="jt-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
