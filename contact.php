@@ -13,37 +13,44 @@ if ( isset( $_POST['ct_submit'] ) ) {
 		// Honeypot triggered — silently accept without emailing.
 		$ct_success = true;
 	} else {
-		$name     = isset( $_POST['name'] )     ? sanitize_text_field( wp_unslash( $_POST['name'] ) )     : '';
-		$email    = isset($_POST['email'] )    ? sanitize_email( wp_unslash( $_POST['email'] ) )        : '';$phone    = isset( $_POST['phone'] )    ? sanitize_text_field( wp_unslash( $_POST['phone'] ) )    : '';
-		$category = isset($_POST['category'] ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';$message  = isset( $_POST['message'] )  ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
+		$ct_name     = isset( $_POST['ct_name'] )     ? sanitize_text_field( wp_unslash( $_POST['ct_name'] ) )     : '';
+		$ct_email    = isset( $_POST['ct_email'] )    ? sanitize_email( wp_unslash( $_POST['ct_email'] ) )        : '';
+		$ct_phone    = isset( $_POST['ct_phone'] )    ? sanitize_text_field( wp_unslash( $_POST['ct_phone'] ) )    : '';
+		$ct_category = isset( $_POST['ct_category'] ) ? sanitize_text_field( wp_unslash( $_POST['ct_category'] ) ) : '';
+		$ct_message  = isset( $_POST['ct_message'] )  ? sanitize_textarea_field( wp_unslash( $_POST['ct_message'] ) ) : '';
 
-		if ( '' === $name ) {$ct_errors[] = __( 'Please enter your name.', 'pba' );
+		if ( '' === $ct_name ) {
+			$ct_errors[] = __( 'Please enter your name.', 'pba' );
 		}
-		if ( '' === $email || ! is_email( $email ) ) {$ct_errors[] = __( 'Please enter a valid email address.', 'pba' );
+		if ( '' === $ct_email || ! is_email( $ct_email ) ) {
+			$ct_errors[] = __( 'Please enter a valid email address.', 'pba' );
 		}
-		if ( '' === $category ) {$ct_errors[] = __( 'Please select what we can help you with.', 'pba' );
+		if ( '' === $ct_category ) {
+			$ct_errors[] = __( 'Please select what we can help you with.', 'pba' );
 		}
 
-		if ( empty( $ct_errors ) ) {$to      = 'support@gopbacademy.com';
-			$subject = sprintf( __( 'New Contact Form Submission from %s', 'pba' ), $name );$body    = "New contact form submission:\n\n"
-				. "Name: {$name}\n"
-				. "Email: {$email}\n"
-				. "Phone: {$phone}\n"
-				. "Category: {$category}\n\n"
-				. "Message:\n{$message}\n";
+		if ( empty( $ct_errors ) ) {
+			$to      = 'support@gopbacademy.com';
+			$subject = sprintf( __( 'New Contact Form Submission from %s', 'pba' ), $ct_name );
+			$body    = "New contact form submission:\n\n"
+				. "Name: {$ct_name}\n"
+				. "Email: {$ct_email}\n"
+				. "Phone: {$ct_phone}\n"
+				. "Category: {$ct_category}\n\n"
+				. "Message:\n{$ct_message}\n";
 			$headers = array(
 				'Content-Type: text/plain; charset=UTF-8',
 				'From: PB Academy <noreply@gopbacademy.com>',
-				'Reply-To: ' . $name . ' <' .$email . '>',
+				'Reply-To: ' . $ct_name . ' <' . $ct_email . '>',
 			);
 
-			$ct_success = (bool) wp_mail( $to,$subject, $body,$headers );
+			$ct_success = (bool) wp_mail( $to, $subject, $body, $headers );
 
 			// ── HubSpot CRM API Integration ──
 			if ( $ct_success ) {
-				$email_var = $email;
-				$name_var  = $name;
-				$phone_var = $phone;
+				$email_var = $ct_email;
+				$name_var  = $ct_name;
+				$phone_var = $ct_phone;
 
 				$hubspot_token = defined( 'PBA_HUBSPOT_TOKEN' ) ? PBA_HUBSPOT_TOKEN : '';
 				if ( ! empty( $hubspot_token ) && ! empty( $email_var ) ) {
@@ -90,7 +97,7 @@ if ( isset( $_POST['ct_submit'] ) ) {
 					}
 				}
 				// Clear fields so the form renders empty on success.
-				$name = $email = $phone = $category = $message = '';
+				$ct_name = $ct_email = $ct_phone = $ct_category = $ct_message = '';
 				$_POST = array();
 			}
 
@@ -219,48 +226,48 @@ get_header();
                     </div>
                 <?php endif; ?>
 
-                <form class="ct-form" action="#ct-form" method="post" novalidate>
+                <form class="ct-form" action="<?php echo esc_url( get_permalink() ); ?>#ct-form" method="post" novalidate>
                     <?php wp_nonce_field( 'pba_contact_form', 'ct_nonce' ); ?>
                     <input type="text" name="ct_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
                     
                     <div class="ct-form-row">
                         <div class="ct-form-group ct-form-group--full">
                             <label for="ct-name">Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="ct-name" name="name" placeholder="Your full name" required value="<?php echo isset($name) ? esc_attr($name) : ''; ?>">
+                            <input type="text" id="ct-name" name="ct_name" placeholder="Your full name" required value="<?php echo isset($ct_name) ? esc_attr($ct_name) : ''; ?>">
                         </div>
                     </div>
                     <div class="ct-form-row">
                         <div class="ct-form-group">
                             <label for="ct-email">Email Address <span aria-hidden="true">*</span></label>
-                            <input type="email" id="ct-email" name="email" placeholder="you@example.com" required value="<?php echo isset($email) ? esc_attr($email) : ''; ?>">
+                            <input type="email" id="ct-email" name="ct_email" placeholder="you@example.com" required value="<?php echo isset($ct_email) ? esc_attr($ct_email) : ''; ?>">
                         </div>
                         <div class="ct-form-group">
                             <label for="ct-phone">Phone Number</label>
-                            <input type="tel" id="ct-phone" name="phone" placeholder="(561) 855-9500" value="<?php echo isset($phone) ? esc_attr($phone) : ''; ?>">
+                            <input type="tel" id="ct-phone" name="ct_phone" placeholder="(561) 855-9500" value="<?php echo isset($ct_phone) ? esc_attr($ct_phone) : ''; ?>">
                         </div>
                     </div>
                     <div class="ct-form-row">
                         <div class="ct-form-group ct-form-group--full">
                             <label for="ct-category">What can we help you with? <span aria-hidden="true">*</span></label>
-                            <select id="ct-category" name="category" required>
+                            <select id="ct-category" name="ct_category" required>
                                 <option value="" disabled selected>Select a topic...</option>
-                                <option value="Lessons & Programs" <?php selected(isset($category) && $category === 'Lessons & Programs'); ?>>Lessons & Programs</option>
-                                <option value="Core 4" <?php selected(isset($category) && $category === 'Core 4'); ?>>Core 4</option>
-                                <option value="Instructor Question" <?php selected(isset($category) && $category === 'Instructor Question'); ?>>Instructor Question</option>
-                                <option value="Events" <?php selected(isset($category) && $category === 'Events'); ?>>Events</option>
-                                <option value="Retreats" <?php selected(isset($category) && $category === 'Retreats'); ?>>Retreats</option>
-                                <option value="Beginner Manual" <?php selected(isset($category) && $category === 'Beginner Manual'); ?>>Beginner Manual</option>
-                                <option value="Shop / Order" <?php selected(isset($category) && $category === 'Shop / Order'); ?>>Shop / Order</option>
-                                <option value="Community / HOA / Country Club" <?php selected(isset($category) && $category === 'Community / HOA / Country Club'); ?>>Community / HOA / Country Club</option>
-                                <option value="General Question" <?php selected(isset($category) && $category === 'General Question'); ?>>General Question</option>
-                                <option value="Other" <?php selected(isset($category) && $category === 'Other'); ?>>Other</option>
+                                <option value="Lessons & Programs" <?php selected(isset($ct_category) && $ct_category === 'Lessons & Programs'); ?>>Lessons & Programs</option>
+                                <option value="Core 4" <?php selected(isset($ct_category) && $ct_category === 'Core 4'); ?>>Core 4</option>
+                                <option value="Instructor Question" <?php selected(isset($ct_category) && $ct_category === 'Instructor Question'); ?>>Instructor Question</option>
+                                <option value="Events" <?php selected(isset($ct_category) && $ct_category === 'Events'); ?>>Events</option>
+                                <option value="Retreats" <?php selected(isset($ct_category) && $ct_category === 'Retreats'); ?>>Retreats</option>
+                                <option value="Beginner Manual" <?php selected(isset($ct_category) && $ct_category === 'Beginner Manual'); ?>>Beginner Manual</option>
+                                <option value="Shop / Order" <?php selected(isset($ct_category) && $ct_category === 'Shop / Order'); ?>>Shop / Order</option>
+                                <option value="Community / HOA / Country Club" <?php selected(isset($ct_category) && $ct_category === 'Community / HOA / Country Club'); ?>>Community / HOA / Country Club</option>
+                                <option value="General Question" <?php selected(isset($ct_category) && $ct_category === 'General Question'); ?>>General Question</option>
+                                <option value="Other" <?php selected(isset($ct_category) && $ct_category === 'Other'); ?>>Other</option>
                             </select>
                         </div>
                     </div>
                     <div class="ct-form-row">
                         <div class="ct-form-group ct-form-group--full">
                             <label for="ct-message">Message</label>
-                            <textarea id="ct-message" name="message" rows="4" placeholder="How can we assist you today?"><?php echo isset($message) ? esc_textarea($message) : ''; ?></textarea>
+                            <textarea id="ct-message" name="ct_message" rows="4" placeholder="How can we assist you today?"><?php echo isset($ct_message) ? esc_textarea($ct_message) : ''; ?></textarea>
                         </div>
                     </div>
                     <button type="submit" name="ct_submit" value="1" class="btn btn-green ct-submit-btn">
@@ -293,7 +300,7 @@ get_header();
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var commBtn = document.getElementById('trigger-community-contact');
-    var categorySelect = document.getElementById('ct-category');
+    var categorySelect = document.querySelector('select[name="ct_category"]');
     var formSection = document.getElementById('ct-form');
 
     if(commBtn && categorySelect && formSection) {
