@@ -56,6 +56,58 @@ if ( isset( $_POST['jt_submit'] ) ) {
 
 			$jt_success = (bool) wp_mail( $to, $subject, $body, $headers );
 
+			// ── HubSpot CRM API Integration ──
+			if ( $jt_success ) {
+				$email_var = $email;
+				$name_var  = trim( $first_name . ' ' . $last_name );
+				$phone_var = $phone;
+
+				$hubspot_token = defined( 'PBA_HUBSPOT_TOKEN' ) ? PBA_HUBSPOT_TOKEN : '';
+				if ( ! empty( $hubspot_token ) && ! empty( $email_var ) ) {
+					$name_parts = explode( ' ', trim( $name_var ), 2 );
+					$hs_first   = $name_parts[0];
+					$hs_last    = isset( $name_parts[1] ) ? $name_parts[1] : '';
+
+					$contact_properties = array(
+						'email'          => $email_var,
+						'firstname'      => $hs_first,
+						'lifecyclestage' => 'lead',
+					);
+					if ( ! empty( $hs_last ) )  $contact_properties['lastname'] = $hs_last;
+					if ( ! empty( $phone_var ) ) $contact_properties['phone']    = $phone_var;
+
+					$payload = json_encode( array( 'properties' => $contact_properties ) );
+
+					$ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
+					curl_setopt_array( $ch, array(
+						CURLOPT_POST           => true,
+						CURLOPT_POSTFIELDS     => $payload,
+						CURLOPT_HTTPHEADER     => array( 'Authorization: Bearer ' . $hubspot_token, 'Content-Type: application/json' ),
+						CURLOPT_RETURNTRANSFER => true,
+						CURLOPT_TIMEOUT        => 5,
+					) );
+					$hs_response  = curl_exec( $ch );
+					$hs_http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+					curl_close( $ch );
+
+					if ( 409 === $hs_http_code && ! empty( $hs_response ) ) {
+						$hs_data = json_decode( $hs_response, true );
+						if ( ! empty( $hs_data['message'] ) && preg_match( '/Existing ID:\s*(\d+)/i', $hs_data['message'], $hs_matches ) ) {
+							$patch_ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts/' . $hs_matches[1] );
+							curl_setopt_array( $patch_ch, array(
+								CURLOPT_CUSTOMREQUEST  => 'PATCH',
+								CURLOPT_POSTFIELDS     => $payload,
+								CURLOPT_HTTPHEADER     => array( 'Authorization: Bearer ' . $hubspot_token, 'Content-Type: application/json' ),
+								CURLOPT_RETURNTRANSFER => true,
+								CURLOPT_TIMEOUT        => 5,
+							) );
+							curl_exec( $patch_ch );
+							curl_close( $patch_ch );
+						}
+					}
+				}
+			}
+
 			if ( ! $jt_success ) {
 				$jt_errors[] = __( 'Sorry, something went wrong sending your application. Please email us directly.', 'pba' );
 			}
