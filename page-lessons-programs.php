@@ -148,10 +148,11 @@ if ( $lessons_query->have_posts() ) :
     while ( $lessons_query->have_posts() ) : $lessons_query->the_post(); 
         global $product;
 
-        $sessions_type = get_field('number_of_sessions'); 
-        $short_desc = get_field('short_description');
-        $duration = get_field('duration');
-        $capacity = get_field('capacity__group_size');
+        // Bulletproof Fallbacks: Check ACF first, then check WooCommerce Native Fields/Attributes
+        $sessions_type = get_field('number_of_sessions') ?: $product->get_attribute('sessions'); 
+        $short_desc    = get_field('short_description') ?: $product->get_short_description();
+        $duration      = get_field('duration') ?: $product->get_attribute('duration');
+        $capacity      = get_field('capacity__group_size') ?: $product->get_attribute('capacity');
         
         $booking_link = '?add-to-cart=' . get_the_ID();
         $price_html = $product->get_price_html();
@@ -172,7 +173,7 @@ if ( $lessons_query->have_posts() ) :
                 <h3><?php the_title(); ?></h3>
                 
                 <?php if($short_desc): ?>
-                    <p><?php echo esc_html($short_desc); ?></p>
+                    <div class="lp-card-desc"><?php echo wp_kses_post($short_desc); ?></div>
                 <?php endif; ?>
 
                 <div class="lp-meta">
@@ -238,15 +239,19 @@ $clinics_query = new WP_Query(array(
 ));
 
 if ( $clinics_query->have_posts() ) :
-    while ( $clinics_query->have_posts() ) :$clinics_query->the_post(); 
+    while ( $clinics_query->have_posts() ) : $clinics_query->the_post(); 
         global $product;
 
-        $short_desc = get_field('short_description');
-        $avail_status = get_field('availability_status');$booking_link = '?add-to-cart=' . get_the_ID();
-        $price_html =$product->get_price_html();
+        $short_desc   = get_field('short_description') ?: $product->get_short_description();
+        $avail_status = get_field('availability_status') ?: $product->get_attribute('availability');
+        $duration     = get_field('duration') ?: $product->get_attribute('duration');
+        
+        $booking_link = '?add-to-cart=' . get_the_ID();
+        $price_html = $product->get_price_html();
 
         $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-        if(empty($img_url)) {$img_url = get_template_directory_uri() . '/media/clinic-skills.jpg';
+        if(empty($img_url)) {
+            $img_url = get_template_directory_uri() . '/media/clinic-skills.jpg';
         }
         ?>
 
@@ -256,10 +261,13 @@ if ( $clinics_query->have_posts() ) :
                 <h3><?php the_title(); ?></h3>
                 
                 <?php if($short_desc): ?>
-                    <p><?php echo esc_html($short_desc); ?></p>
+                    <div class="lp-card-desc"><?php echo wp_kses_post($short_desc); ?></div>
                 <?php endif; ?>
 
                 <div class="lp-meta" style="flex-direction: column; gap: 6px;">
+                    <?php if($duration): ?>
+                        <span style="color: var(--gray-text); font-weight: normal;"><svg width="18" height="18" style="flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <?php echo esc_html($duration); ?></span>
+                    <?php endif; ?>
                     <?php if($avail_status): ?>
                         <span><svg width="20" height="20" style="flex-shrink: 0; min-width: 20px;" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <strong><?php echo esc_html($avail_status); ?></strong></span>
                     <?php endif; ?>

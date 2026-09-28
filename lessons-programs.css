@@ -256,3 +256,27 @@
         padding: 20px 20px !important;
     }
 }
+
+/* ============================================================
+   PROGRAM CARDS: TEXT OVERFLOW & ALIGNMENT FIXES
+   ============================================================ */
+.lp-card-desc {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    margin-bottom: 12px;
+    /* Strict Overflow Control */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+}
+
+/* Ensure WooCommerce's automatic <p> tags don't break the layout */
+.lp-card-desc p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    color: inherit !important;
+}
