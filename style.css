@@ -9012,7 +9012,7 @@ header .container.header-content {
 /* WooCommerce Global Wrapper Fix */
 .pb-woo-wrapper {
     max-width: 1200px !important;
-    margin: 0 auto !important;
+    margin: 40px auto !important;
     background: transparent !important;
 }
 
