@@ -8917,13 +8917,7 @@ header .container.header-content {
    WOOCOMMERCE: PREMIUM CHECKOUT UI
    ============================================================ */
 .woocommerce-checkout {
-    max-width: 1100px;
-    margin: 60px auto;
-    background: var(--white);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(11, 32, 70, 0.08);
-    border-top: 8px solid var(--green);
+     
 }
 
 .woocommerce-checkout h3 {
@@ -9004,8 +8998,7 @@ header .container.header-content {
 
 @media (max-width: 768px) {
     .woocommerce-checkout {
-        padding: 30px 20px;
-        margin: 30px auto;
+        
     }
 }
 
@@ -9039,4 +9032,4 @@ body.woocommerce-page, body.woocommerce-cart, body.woocommerce-checkout {
     background-color: rgba(200, 40, 40, 0.08) !important;
     color: #b3261e !important;
     padding: 15px 20px !important;
-}
+}
