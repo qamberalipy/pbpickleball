@@ -76,6 +76,14 @@ if ( isset( $_POST['jt_submit'] ) ) {
 					if ( ! empty( $hs_last ) )  $contact_properties['lastname'] = $hs_last;
 					if ( ! empty( $phone_var ) ) $contact_properties['phone']    = $phone_var;
 
+					// Compile form details into the HubSpot 'message' property
+					$hs_message  = "SOURCE: Instructor Application\n";
+					$hs_message .= "Certification: {$certification}\n";
+					$hs_message .= "Experience: {$experience}\n";
+					$hs_message .= "Availability: {$availability}\n";
+					$hs_message .= "Why Join: {$message}";
+					$contact_properties['message'] =$hs_message;
+
 					$payload = json_encode( array( 'properties' => $contact_properties ) );
 
 					$ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
