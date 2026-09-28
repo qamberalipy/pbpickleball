@@ -62,3 +62,20 @@ function pba_custom_checkout_field_update_order_meta( $order_id ) {
         update_post_meta( $order_id, 'Player Skill Level', sanitize_text_field( wp_unslash($_POST['player_skill_level'] ) ) );
     }
 }
+
+// =========================================================================
+// 4. WOOCOMMERCE: GLOBAL STRUCTURAL WRAPPERS
+// =========================================================================
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+add_action( 'woocommerce_before_main_content', 'pba_woo_wrapper_start', 10 );
+function pba_woo_wrapper_start() {
+    echo '<main class="pba-bg-pattern" style="padding: 60px 0; min-height: 70vh;">';
+    echo '<div class="container pb-woo-wrapper">';
+}
+
+add_action( 'woocommerce_after_main_content', 'pba_woo_wrapper_end', 10 );
+function pba_woo_wrapper_end() {
+    echo '</div></main>';
+}

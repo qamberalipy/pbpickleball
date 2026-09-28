@@ -9008,3 +9008,35 @@ header .container.header-content {
         margin: 30px auto;
     }
 }
+
+/* WooCommerce Global Wrapper Fix */
+.pb-woo-wrapper {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    background: transparent !important;
+}
+
+/* Ensure the ugly white background on the footer goes away */
+body.woocommerce-page, body.woocommerce-cart, body.woocommerce-checkout {
+    background-color: var(--gray-bg) !important;
+}
+
+/* Fix Checkout Form Width */
+.woocommerce-checkout .woocommerce {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Make WooCommerce Error/Notice Boxes Match Theme Width */
+.woocommerce-notices-wrapper {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+.woocommerce-error {
+    border-radius: 8px !important;
+    border-left: 5px solid #b3261e !important;
+    background-color: rgba(200, 40, 40, 0.08) !important;
+    color: #b3261e !important;
+    padding: 15px 20px !important;
+}
