@@ -39,6 +39,26 @@ get_header();
             </div>
         </div>
     </section>
+<?php
+// Fetch the "Exclusive" Core 4 Product for dynamic pricing & cart link
+$core4_link = home_url('/contact-us/');
+$core4_btn_text = 'REGISTER NOW';
+$core4_query = new WP_Query(array(
+    'post_type'      => 'product',
+    'posts_per_page' => 1,
+    'tax_query'      => array(
+        array('taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'exclusive')
+    )
+));
+if ($core4_query->have_posts()) {
+    $core4_query->the_post();
+    global $product;
+    $core4_link = '?add-to-cart=' . get_the_ID();
+    $price_html = $product->get_price_html();
+    $core4_btn_text = 'REGISTER NOW' . ($price_html ? ' - ' . wp_strip_all_tags($price_html) : '');
+    wp_reset_postdata();
+}
+?>
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
 
@@ -54,7 +74,7 @@ get_header();
         </div>
         <div class="c4-promo-actions">
             <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
+            <a href="<?php echo esc_url($core4_link); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);"><?php echo esc_html($core4_btn_text); ?></a>
         </div>
     </div>
 </section>
@@ -104,7 +124,7 @@ get_header();
             
             <div class="hero-buttons" style="margin-top: 40px;">
                 <a href="#" class="btn btn-outline-white">LEARN MORE</a>
-                <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
+                <a href="<?php echo esc_url($core4_link); ?>" class="btn btn-green"><?php echo esc_html($core4_btn_text); ?></a>
             </div>
         </div>
     </section>
@@ -115,29 +135,30 @@ get_header();
         <div class="lp-lessons-grid anim-fade-up">
 <?php
 $lessons_query = new WP_Query(array(
-    'post_type'      => 'pba_program',
+    'post_type'      => 'product',
     'posts_per_page' => -1,
-    'meta_key'       => 'program_category',
-    'meta_value'     => 'Lesson',
+    'tax_query'      => array(
+        array('taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'lessons')
+    ),
+    'orderby'        => 'menu_order title',
     'order'          => 'ASC'
 ));
 
 if ( $lessons_query->have_posts() ) :
     while ( $lessons_query->have_posts() ) : $lessons_query->the_post(); 
+        global $product;
 
-        $sessions_type = get_field('number_of_sessions'); // Used as the top tag
+        $sessions_type = get_field('number_of_sessions'); 
         $short_desc = get_field('short_description');
         $duration = get_field('duration');
         $capacity = get_field('capacity__group_size');
-        $cost = get_field('cost');
-        $booking_link = get_field('booking_link');
+        
+        $booking_link = '?add-to-cart=' . get_the_ID();
+        $price_html = $product->get_price_html();
 
         $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
         if(empty($img_url)) {
-            $img_url = get_template_directory_uri() . '/media/lesson-private.jpg'; // Fallback
-        }
-        if(empty($booking_link)) {
-            $booking_link = home_url('/book-a-lesson/');
+            $img_url = get_template_directory_uri() . '/media/lesson-private.jpg';
         }
         ?>
 
@@ -164,7 +185,9 @@ if ( $lessons_query->have_posts() ) :
                     <?php endif; ?>
                 </div>
 
-                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
+                    REGISTER NOW <?php echo $price_html ? ' - ' . wp_strip_all_tags($price_html) : ''; ?>
+                </a>
             </div>
         </div>
 
@@ -205,26 +228,25 @@ else: ?>
         <div class="lp-clinics-grid anim-fade-up">
 <?php
 $clinics_query = new WP_Query(array(
-    'post_type'      => 'pba_program',
+    'post_type'      => 'product',
     'posts_per_page' => -1,
-    'meta_key'       => 'program_category',
-    'meta_value'     => 'Clinic & Play',
+    'tax_query'      => array(
+        array('taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'clinics')
+    ),
+    'orderby'        => 'menu_order title',
     'order'          => 'ASC'
 ));
 
 if ( $clinics_query->have_posts() ) :
-    while ( $clinics_query->have_posts() ) : $clinics_query->the_post(); 
+    while ( $clinics_query->have_posts() ) :$clinics_query->the_post(); 
+        global $product;
 
         $short_desc = get_field('short_description');
-        $avail_status = get_field('availability_status');
-        $booking_link = get_field('booking_link');
+        $avail_status = get_field('availability_status');$booking_link = '?add-to-cart=' . get_the_ID();
+        $price_html =$product->get_price_html();
 
         $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-        if(empty($img_url)) {
-            $img_url = get_template_directory_uri() . '/media/clinic-skills.jpg'; // Fallback
-        }
-        if(empty($booking_link)) {
-            $booking_link = home_url('/book-a-lesson/');
+        if(empty($img_url)) {$img_url = get_template_directory_uri() . '/media/clinic-skills.jpg';
         }
         ?>
 
@@ -243,7 +265,9 @@ if ( $clinics_query->have_posts() ) :
                     <?php endif; ?>
                 </div>
 
-                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">REGISTER NOW</a>
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
+                    REGISTER NOW <?php echo $price_html ? ' - ' . wp_strip_all_tags($price_html) : ''; ?>
+                </a>
             </div>
         </div>
 
