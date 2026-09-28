@@ -61,6 +61,11 @@ if ( isset( $_POST['ev_submit'] ) ) {
 					if ( ! empty( $hs_last ) )  $contact_properties['lastname'] = $hs_last;
 					if ( ! empty( $phone_var ) ) $contact_properties['phone']    = $phone_var;
 
+					// Compile form details into the HubSpot 'message' property
+					$hs_message  = "SOURCE: Event Registration\n";
+					$hs_message .= "Event Name: {$event_name}";
+					$contact_properties['message'] =$hs_message;
+
 					$payload = json_encode( array( 'properties' => $contact_properties ) );
 
 					$ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
