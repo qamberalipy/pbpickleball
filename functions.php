@@ -18,11 +18,26 @@ function pba_add_woocommerce_support() {
 }
 
 // =========================================================================
-// 2. WOOCOMMERCE: SKIP CART & GO DIRECTLY TO CHECKOUT
+// WOOCOMMERCE: SHOP SANDBOX & CART RESTORATION
 // =========================================================================
-add_filter( 'woocommerce_add_to_cart_redirect', 'pba_skip_cart_redirect_checkout' );
-function pba_skip_cart_redirect_checkout() {
-    return wc_get_checkout_url();
+
+// 1. Ensure the old frictionless checkout is completely disabled
+remove_filter( 'woocommerce_add_to_cart_redirect', 'pba_skip_cart_redirect_checkout' );
+
+// 2. Hide Programs/Lessons from the Native Shop Page
+add_action( 'woocommerce_product_query', 'pba_sandbox_shop_page' );
+function pba_sandbox_shop_page( $q ) {
+    if ( ! is_admin() && $q->is_main_query() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+        $tax_query = (array) $q->get( 'tax_query' );
+        $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug',
+            // Add any slugs here that should NOT appear in the physical gear shop
+            'terms'    => array( 'programs', 'lessons', 'clinics', 'exclusive' ),
+            'operator' => 'NOT IN'
+        );
+        $q->set( 'tax_query', $tax_query );
+    }
 }
 
 // =========================================================================
