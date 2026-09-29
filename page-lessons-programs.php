@@ -40,9 +40,9 @@ get_header();
         </div>
     </section>
 <?php
-// Fetch the "Exclusive" Core 4 Product for dynamic pricing & cart link
+// Fetch the "Exclusive" Core 4 Product for dynamic pricing & link
 $core4_link = home_url('/contact-us/');
-$core4_btn_text = 'REGISTER NOW';
+$core4_btn_text = 'VIEW DETAILS & REGISTER';
 $core4_query = new WP_Query(array(
     'post_type'      => 'product',
     'posts_per_page' => 1,
@@ -52,10 +52,7 @@ $core4_query = new WP_Query(array(
 ));
 if ($core4_query->have_posts()) {
     $core4_query->the_post();
-    global $product;
-    $core4_link = '?add-to-cart=' . get_the_ID();
-    $price_html = $product->get_price_html();
-    $core4_btn_text = 'REGISTER NOW' . ($price_html ? ' - ' . wp_strip_all_tags($price_html) : '');
+    $core4_link = get_permalink(); // Routes to the single product page
     wp_reset_postdata();
 }
 ?>
@@ -144,25 +141,23 @@ $lessons_query = new WP_Query(array(
     'order'          => 'ASC'
 ));
 
-<?php
-        if ( $lessons_query->have_posts() ) :
-            while ( $lessons_query->have_posts() ) : $lessons_query->the_post();
-                global $product;
+if ( $lessons_query->have_posts() ) :
+    while ( $lessons_query->have_posts() ) : $lessons_query->the_post();
+        global $product;
 
-                // Unified Data Fetching
-                $short_desc = $product->get_short_description();
-                $duration   = $product->get_attribute('duration') ?: '60 Mins'; // Fallback to 60 mins
-                $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
-                $price_html = $product->get_price_html();
+        // Unified Data Fetching
+        $short_desc = $product->get_short_description();
+        $duration   = $product->get_attribute('duration') ?: '60 Mins';
+        $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
+        $price_html = $product->get_price_html();
 
-                // Native WooCommerce Add to Cart URL (Adds to cart without forcing checkout)
-                $booking_link = '?add-to-cart=' . get_the_ID();
+        $booking_link = get_permalink(); // Routes to the single product page
 
-                $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                if(empty($img_url)) {
-                    $img_url = get_template_directory_uri() . '/media/lesson-private.jpg';
-                }
-        ?>
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+        if(empty($img_url)) {
+            $img_url = get_template_directory_uri() . '/media/lesson-private.jpg';
+        }
+?>
 
         <div class="lp-card">
             <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
@@ -189,16 +184,16 @@ $lessons_query = new WP_Query(array(
 
                 <!-- Unified Button -->
                 <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
-                    REGISTER NOW <?php echo $price_html ? ' - ' . wp_strip_all_tags($price_html) : ''; ?>
+                    VIEW DETAILS &amp; REGISTER
                 </a>
             </div>
         </div>
 
-        <?php
-            endwhile;
-            wp_reset_postdata();
-        endif;
-        ?>
+<?php
+    endwhile;
+    wp_reset_postdata();
+endif;
+?>
         </div>
 
         <!-- Player Development Progression Visual -->
@@ -239,25 +234,23 @@ $clinics_query = new WP_Query(array(
     'order'          => 'ASC'
 ));
 
-<?php
-        if ( $clinics_query->have_posts() ) :
-            while ( $clinics_query->have_posts() ) : $clinics_query->the_post();
-                global $product;
+if ( $clinics_query->have_posts() ) :
+    while ( $clinics_query->have_posts() ) : $clinics_query->the_post();
+        global $product;
 
-                // Unified Data Fetching
-                $short_desc = $product->get_short_description();
-                $duration   = $product->get_attribute('duration') ?: '60 Mins'; // Fallback to 60 mins
-                $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
-                $price_html = $product->get_price_html();
+        // Unified Data Fetching
+        $short_desc = $product->get_short_description();
+        $duration   = $product->get_attribute('duration') ?: '60 Mins';
+        $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
+        $price_html = $product->get_price_html();
 
-                // Native WooCommerce Add to Cart URL (Adds to cart without forcing checkout)
-                $booking_link = '?add-to-cart=' . get_the_ID();
+        $booking_link = get_permalink(); // Routes to the single product page
 
-                $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                if(empty($img_url)) {
-                    $img_url = get_template_directory_uri() . '/media/clinic-skills.jpg';
-                }
-        ?>
+        $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+        if(empty($img_url)) {
+            $img_url = get_template_directory_uri() . '/media/clinic-skills.jpg';
+        }
+?>
 
         <div class="lp-card">
             <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
@@ -284,16 +277,16 @@ $clinics_query = new WP_Query(array(
 
                 <!-- Unified Button -->
                 <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
-                    REGISTER NOW <?php echo $price_html ? ' - ' . wp_strip_all_tags($price_html) : ''; ?>
+                    VIEW DETAILS &amp; REGISTER
                 </a>
             </div>
         </div>
 
-        <?php
-            endwhile;
-            wp_reset_postdata();
-        endif;
-        ?>
+<?php
+    endwhile;
+    wp_reset_postdata();
+endif;
+?>
         </div>
     </section>
 
