@@ -107,99 +107,79 @@
                 <!-- Main Grid -->
                 <div class="shop-products">
 
-                    <!-- Card 1 -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 0ms;">
-                        <div class="shop-card__image-wrap">
-                            <span class="shop-card__badge">Best Seller</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/paddle.png" alt="PBA Signature Paddle" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Paddles</span>
-                            <h3 class="shop-card__title">PBA Signature Paddle</h3>
-                            <div class="shop-card__subtitle">Carbon Fiber Power Core</div>
-                            <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/paddle-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    // Query WooCommerce Products in the "Shop" parent category (excluding lessons/clinics)
+                    $shop_query = new WP_Query(array(
+                        'post_type'      => 'product',
+                        'posts_per_page' => -1,
+                        'tax_query'      => array(
+                            array(
+                                'taxonomy'         => 'product_cat',
+                                'field'            => 'slug',
+                                'terms'            => 'shop', // Matches the 'Shop' parent category
+                                'include_children' => true
+                            )
+                        ),
+                        'orderby'        => 'menu_order title',
+                        'order'          => 'ASC'
+                    ));
 
-                    <!-- Card 2 -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 100ms;">
-                        <div class="shop-card__image-wrap">
-                            <span class="shop-card__badge shop-card__badge--alt">PBA Approved</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/ball.png" alt="PBA Outdoor Balls" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Balls</span>
-                            <h3 class="shop-card__title">PBA Outdoor Balls</h3>
-                            <div class="shop-card__subtitle">Durable 3-Pack</div>
-                            <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/ball-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
-                            </div>
-                        </div>
-                    </div>
+                    if ( $shop_query->have_posts() ) :
+                        while ( $shop_query->have_posts() ) : $shop_query->the_post();
+                            global $product;
 
-                    <!-- Card 3 -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 200ms;">
-                        <div class="shop-card__image-wrap">
-                            <span class="shop-card__badge">New Arrival</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/shoe.png" alt="Court Pro Pickleball Shoes" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Footwear</span>
-                            <h3 class="shop-card__title">Court Pro Shoes</h3>
-                            <div class="shop-card__subtitle">Enhanced Grip &amp; Lateral Support</div>
-                            <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/shoes-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
-                            </div>
-                        </div>
-                    </div>
+                            $price_html       = $product->get_price_html();
+                            $add_to_cart_url  = '?add-to-cart=' . get_the_ID();
+                            $img_url          = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+                            if ( empty( $img_url ) ) {
+                                $img_url = wc_placeholder_img_src();
+                            }
 
-                    <!-- Card 4 (Bag) -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 300ms;">
-                        <div class="shop-card__image-wrap">
-                            <span class="shop-card__badge shop-card__badge--alt">Top Gear</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/bag.png" alt="PBA Pro Backpack" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Bags</span>
-                            <h3 class="shop-card__title">PBA Pro Backpack</h3>
-                            <div class="shop-card__subtitle">Fits 4 Paddles + Accessories</div>
-                            <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/bags-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
-                            </div>
-                        </div>
-                    </div>
+                            // Get the specific sub-category name (e.g., "Bags" instead of "Shop")
+                            $cat_name = 'Gear';
+                            $terms    = get_the_terms( get_the_ID(), 'product_cat' );
+                            if ( $terms && ! is_wp_error( $terms ) ) {
+                                foreach ( $terms as $term ) {
+                                    if ( $term->slug !== 'shop' ) {
+                                        $cat_name = $term->name;
+                                        break;
+                                    }
+                                }
+                            }
+                            ?>
 
-                    <!-- Card 5 -->
-                    <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 400ms;">
-                        <div class="shop-card__image-wrap">
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/glasses.png" alt="Performance Sunglasses" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Eyewear</span>
-                            <h3 class="shop-card__title">Performance Eyewear</h3>
-                            <div class="shop-card__subtitle">Polarized UV Protection</div>
-                            <div class="shop-card__bottom">
-                                <a href="<?php echo get_template_directory_uri(); ?>/media/guide-pdfs/safety-glasses-guide.pdf" class="shop-guide-btn btn-green" target="_blank">View Guide</a>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="anim-fade-up shop-card">
+                                <a href="<?php the_permalink(); ?>" class="shop-card__image-wrap">
+                                    <?php if ( $product->is_on_sale() ) : ?>
+                                        <span class="shop-card__badge shop-card__badge--alt">Sale!</span>
+                                    <?php endif; ?>
+                                    <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="shop-card__image">
 
-                    <!-- Card 6 (Shirt) -->
-                    <!-- <div class="anim-fade-up anim-stagger shop-card" style="--stagger-delay: 500ms;">
-                        <div class="shop-card__image-wrap">
-                            <img src="<?php echo get_template_directory_uri(); ?>/media/product/shirt.png" alt="PBA Performance Shirt" class="shop-card__image">
-                        </div>
-                        <div class="shop-card__content">
-                            <span class="shop-card__category">Apparel</span>
-                            <h3 class="shop-card__title">Performance Tech Tee</h3>
-                            <div class="shop-card__subtitle">Breathable Moisture Wicking</div>
-                            <div class="shop-card__bottom">
-                                <button class="shop-guide-btn btn-disabled" disabled>Guide Coming Soon</button>
+                                    <!-- Hover Action Button -->
+                                    <span class="shop-card__action-btn">View Details</span>
+                                </a>
+
+                                <div class="shop-card__content">
+                                    <span class="shop-card__category"><?php echo esc_html( $cat_name ); ?></span>
+                                    <h3 class="shop-card__title"><?php the_title(); ?></h3>
+
+                                    <!-- Display WooCommerce Price -->
+                                    <div class="shop-card__subtitle" style="font-weight: 800; color: var(--green);"><?php echo $price_html; ?></div>
+
+                                    <div class="shop-card__bottom">
+                                        <a href="<?php echo esc_url( $add_to_cart_url ); ?>" class="shop-guide-btn btn-navy">Add to Cart</a>
+                                    </div>
+                                </div>
                             </div>
+
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else : ?>
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                            <h3 style="font-family: var(--font-heading); color: var(--navy);">New gear arriving soon!</h3>
                         </div>
-                    </div> -->
+                    <?php endif; ?>
 
                 </div>
 
