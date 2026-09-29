@@ -91,13 +91,14 @@
             <div class="header-right-actions">
 
                 <!-- Search Bar -->
-                <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
-                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-outline" style="padding: 10px 15px; border-color: var(--gray-light); color: var(--navy);">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                        Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+                <!-- Cart & Search Actions -->
+                <div class="header-actions" style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-outline" style="padding: 10px 15px; border-color: var(--gray-light); color: var(--navy); background: var(--white); font-size: 0.75rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)
                     </a>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">
-                        REGISTER NOW
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green" style="padding: 10px 18px; font-size: 0.75rem;">
+                        Register Now
                     </a>
                 </div>
                 <div class="header-search-wrap">
