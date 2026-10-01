@@ -49,7 +49,7 @@ get_header();
                 
                 <!-- HUSKY HORIZONTAL FILTER BAR -->
                 <div class="pba-filter-bar" style="width: 100%; background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--gray-light); box-shadow: 0 4px 15px rgba(11,32,70,0.03);">
-                    <?php echo do_shortcode('[woof_front_builder]'); ?>
+                    <?php echo do_shortcode('[woof]'); ?>
                 </div>
             </div>
             
@@ -87,15 +87,19 @@ get_header();
                                 ?>
 
                                 <div class="anim-fade-up shop-card">
-                                    <a href="<?php the_permalink(); ?>" class="shop-card__image-wrap">
-                                        <?php if ( $product->is_on_sale() ) : ?>
-                                            <span class="shop-card__badge shop-card__badge--alt">Sale!</span>
-                                        <?php endif; ?>
-                                        <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="shop-card__image">
+                                    
+                                    <!-- FIXED: Image wrap is now a div, separating the image link from the Quick View button -->
+                                    <div class="shop-card__image-wrap">
+                                        <a href="<?php the_permalink(); ?>" style="display: block; width: 100%; height: 100%;">
+                                            <?php if ( $product->is_on_sale() ) : ?>
+                                                <span class="shop-card__badge shop-card__badge--alt">Sale!</span>
+                                            <?php endif; ?>
+                                            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="shop-card__image">
+                                        </a>
                                         
-                                        <!-- QUICK VIEW MODAL TRIGGER -->
+                                        <!-- QUICK VIEW MODAL TRIGGER (Safely outside the image link) -->
                                         <a href="#" class="shop-card__action-btn woosq-btn" data-id="<?php echo get_the_ID(); ?>" onclick="event.preventDefault();">Quick View</a>
-                                    </a>
+                                    </div>
 
                                     <div class="shop-card__content">
                                         <span class="shop-card__category"><?php echo esc_html( $cat_name ); ?></span>
