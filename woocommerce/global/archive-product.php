@@ -49,7 +49,7 @@ get_header();
                 
                 <!-- HUSKY HORIZONTAL FILTER BAR -->
                 <div class="pba-filter-bar" style="width: 100%; background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--gray-light); box-shadow: 0 4px 15px rgba(11,32,70,0.03);">
-                    <?php echo do_shortcode('[woof]'); ?>
+                    <?php echo do_shortcode('[woof_front_builder]'); ?>
                 </div>
             </div>
             
