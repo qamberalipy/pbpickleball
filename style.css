@@ -9656,7 +9656,7 @@ a.added_to_cart.wc-forward {
 }
 .woocommerce ul.products {
     gap: 20px !important; /* Down from 30px */
-    margin: 20px 0 !important;
+    margin: 85px 0 !important;
 }
 .woocommerce ul.products li.product {
     border-radius: 12px !important; /* Tighter border radius */
