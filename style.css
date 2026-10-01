@@ -9469,7 +9469,7 @@ a.added_to_cart.wc-forward {
     bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--navy);
+    background: var(--navy) !important;
     color: var(--white) !important;
     font-family: var(--font-heading);
     font-size: 0.85rem;
