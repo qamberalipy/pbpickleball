@@ -30,7 +30,7 @@ get_header();
         </div>
     </section>
 
-    <!-- 2. Featured Products Section (Native WooCommerce Loop) -->
+    <!-- 2. Featured Products Section -->
     <section id="featured" class="shop-featured" data-mascot-msg="Check out our featured products, tested and approved by PBA pros!">
         <div class="shop-container">
             
@@ -67,9 +67,8 @@ get_header();
                                 do_action( 'woocommerce_shop_loop' );
 
                                 global $product;
-                                $price_html       = $product->get_price_html();
-                                $add_to_cart_url  = '?add-to-cart=' . get_the_ID();
-                                $img_url          = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+                                $price_html = $product->get_price_html();
+                                $img_url    = get_the_post_thumbnail_url( get_the_ID(), 'large' );
                                 if ( empty( $img_url ) ) {
                                     $img_url = wc_placeholder_img_src();
                                 }
@@ -87,8 +86,6 @@ get_header();
                                 ?>
 
                                 <div class="anim-fade-up shop-card">
-                                    
-                                    <!-- FIXED: Image wrap is now a div, separating the image link from the Quick View button -->
                                     <div class="shop-card__image-wrap">
                                         <a href="<?php the_permalink(); ?>" style="display: block; width: 100%; height: 100%;">
                                             <?php if ( $product->is_on_sale() ) : ?>
@@ -97,8 +94,8 @@ get_header();
                                             <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="shop-card__image">
                                         </a>
                                         
-                                        <!-- QUICK VIEW MODAL TRIGGER (Safely outside the image link) -->
-                                        <a href="#" class="shop-card__action-btn woosq-btn" data-id="<?php echo get_the_ID(); ?>" onclick="event.preventDefault();">Quick View</a>
+                                        <!-- ROUTES DIRECTLY TO FULL PRODUCT PAGE -->
+                                        <a href="<?php the_permalink(); ?>" class="shop-card__action-btn">View Details</a>
                                     </div>
 
                                     <div class="shop-card__content">
@@ -192,47 +189,6 @@ get_header();
         </div>
     </section>
 
-    <!-- 4. Brand Trust Footer Strip -->
-    <section class="shop-brand-footer">
-        <div class="shop-container">
-            <div class="shop-brand-footer__wrap">
-                <div class="shop-brand-footer__logo">
-                    <span>PB Pickleball Academy</span>
-                    <small>Learn. Play. Improve.</small>
-                </div>
-                <div class="shop-brand-footer__props">
-                    <div class="shop-brand-footer__prop">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Beginner Focused
-                    </div>
-                    <div class="shop-brand-footer__prop">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Active Adults
-                    </div>
-                    <div class="shop-brand-footer__prop">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Real Results
-                    </div>
-                    <div class="shop-brand-footer__prop">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Community First
-                    </div>
-                </div>
-                <div class="shop-brand-footer__quote">
-                    "We don't just sell gear. We help you play your best!"
-                </div>
-            </div>
-        </div>
-    </section>
-
 </main>
-
-<style>
-.shop-hero-full .shop-hero__bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-}
-</style>
 
 <?php get_footer(); ?>
