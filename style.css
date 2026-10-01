@@ -9451,3 +9451,48 @@ a.added_to_cart.wc-forward {
 .woosq-product .single_add_to_cart_button:hover {
     background: var(--green) !important;
 }
+
+
+/* ============================================================
+   SHOP UI FIX: QUICK VIEW HOVER BUTTON
+   ============================================================ */
+.shop-card__image-wrap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa 0%, #edf0f4 100%);
+    border-bottom: 1px solid rgba(11, 25, 44, 0.05);
+}
+
+.shop-card__action-btn {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: var(--white) !important;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 30px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    z-index: 10;
+    text-decoration: none !important;
+    box-shadow: 0 8px 20px rgba(11, 32, 70, 0.25);
+}
+
+.shop-card__image-wrap:hover .shop-card__action-btn {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.shop-card__action-btn:hover {
+    background: var(--green) !important;
+    color: var(--navy) !important;
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(103, 155, 48, 0.35);
+}
