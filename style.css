@@ -9586,3 +9586,123 @@ a.added_to_cart.wc-forward {
     color: var(--white);
     border-color: var(--green);
 }
+
+
+/* ============================================================
+   DE-ZOOM & MODERNIZE WOOCOMMERCE UI (SHOP & SINGLE PRODUCT)
+   ============================================================ */
+/* --- 1. SINGLE PRODUCT PAGE SCALE DOWN --- */
+.single-product .product {
+    padding: 30px 40px !important;
+    max-width: 1000px !important; /* Brought down from 1200px */
+    border-radius: 16px !important;
+    margin: 20px auto 60px auto !important;
+}
+.single-product .product_title {
+    font-size: 1.8rem !important; /* Down from 2.5rem */
+    margin-bottom: 8px !important;
+    letter-spacing: -0.5px;
+}
+.single-product .price {
+    font-size: 1.35rem !important; /* Down from 1.8rem */
+    margin-bottom: 15px !important;
+}
+.single-product .woocommerce-product-details__short-description {
+    font-size: 0.95rem !important; /* Down from 1.1rem */
+    margin-bottom: 20px !important;
+    line-height: 1.6;
+}
+/* Quantity & Button Scale */
+.single-product form.cart {
+    gap: 12px !important;
+    padding-bottom: 25px !important;
+    margin-bottom: 25px !important;
+}
+.single-product div.quantity input.qty {
+    height: 44px !important; /* Down from 54px */
+    width: 60px !important;  /* Down from 80px */
+    font-size: 1rem !important;
+    padding: 8px !important;
+    border-radius: 6px !important;
+}
+.single-product .single_add_to_cart_button {
+    padding: 12px 26px !important; /* Down from 16px 36px */
+    font-size: 0.85rem !important; /* Down from 1.1rem */
+    border-radius: 6px !important;
+    height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+/* Tabs Scale */
+.woocommerce-tabs ul.tabs li a {
+    font-size: 0.85rem !important; /* Down from 1rem */
+    padding: 10px 20px !important;
+}
+.woocommerce-tabs .panel {
+    font-size: 0.95rem !important;
+    color: var(--gray-text);
+}
+
+/* --- 2. SHOP PAGE CARDS & GRID SCALE DOWN --- */
+.real-ecommerce-store {
+    padding: 40px 20px !important; /* Tighter section padding */
+}
+.shop-layout-grid {
+    grid-template-columns: 240px 1fr !important; /* Slimmer sidebar */
+    gap: 30px !important; /* Down from 50px */
+}
+.shop-filter-sidebar {
+    padding: 24px !important; /* Down from 30px */
+}
+.woocommerce ul.products {
+    gap: 20px !important; /* Down from 30px */
+    margin: 20px 0 !important;
+}
+.woocommerce ul.products li.product {
+    border-radius: 12px !important; /* Tighter border radius */
+}
+/* Image Scaling */
+.woocommerce ul.products li.product img {
+    height: 170px !important; /* Down from 240px */
+    padding: 20px !important; /* Down from 30px */
+}
+/* Card Text & Button Scaling */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1rem !important; /* Down from 1.15rem */
+    margin: 16px 16px 4px 16px !important;
+}
+.woocommerce ul.products li.product .price {
+    font-size: 0.95rem !important; /* Down from 1.05rem */
+    margin: 0 16px 16px 16px !important;
+}
+.woocommerce ul.products li.product .button {
+    width: calc(100% - 32px) !important;
+    margin: auto 16px 16px 16px !important;
+    padding: 10px !important; /* Down from 14px */
+    font-size: 0.75rem !important; /* Down from 0.85rem */
+    border-radius: 6px !important;
+}
+.woocommerce span.onsale {
+    font-size: 0.65rem !important;
+    padding: 4px 10px !important;
+    top: 10px !important;
+    left: 10px !important;
+}
+.woocommerce-products-header__title.page-title {
+    font-size: 1.8rem !important; /* Down from 2.2rem/2.5rem */
+    letter-spacing: -0.5px;
+}
+
+/* --- 3. MOBILE RESPONSIVENESS PRESERVATION --- */
+@media (max-width: 768px) {
+    .shop-layout-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .single-product .product {
+        padding: 25px 20px !important;
+    }
+    .single-product .product_title {
+        font-size: 1.5rem !important;
+    }
+}

@@ -73,3 +73,12 @@ function pba_custom_checkout_field_update_order_meta( $order_id ) {
     }
 }
 
+
+// =========================================================================
+// WOOCOMMERCE: LIVE AJAX CART COUNT UPDATE
+// =========================================================================
+add_filter( 'woocommerce_add_to_cart_fragments', 'pba_cart_count_fragments', 10, 1 );
+function pba_cart_count_fragments( $fragments ) {
+    $fragments['span.pba-cart-count'] = '<span class="pba-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
+    return $fragments;
+}
