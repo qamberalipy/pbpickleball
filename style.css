@@ -9496,3 +9496,93 @@ a.added_to_cart.wc-forward {
     transform: translateX(-50%) translateY(-3px);
     box-shadow: 0 12px 25px rgba(103, 155, 48, 0.35);
 }
+
+
+/* ============================================================
+   REAL ECOMMERCE STOREFRONT UI
+   ============================================================ */
+/* Responsive Layout */
+@media (max-width: 992px) {
+    .shop-layout-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .shop-filter-sidebar {
+        position: static !important;
+        margin-bottom: 30px;
+    }
+}
+
+/* Husky Filter Plugin Styling */
+.husky-filter-wrap .woof_container {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+}
+.husky-filter-wrap .woof_container:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.husky-filter-wrap h4 {
+    font-family: var(--font-heading);
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.husky-filter-wrap .woof_text_search_container input[type="search"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.husky-filter-wrap .woof_text_search_container input[type="search"]:focus {
+    border-color: var(--green);
+    outline: none;
+}
+
+/* Pagination Styling */
+.pba-pagination-wrapper {
+    margin-top: 50px;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 30px;
+}
+.woocommerce-pagination ul.page-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none !important;
+}
+.woocommerce-pagination ul.page-numbers li {
+    border: none !important;
+}
+.woocommerce-pagination ul.page-numbers li a,
+.woocommerce-pagination ul.page-numbers li span.current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--gray-light);
+    transition: all 0.3s ease;
+}
+.woocommerce-pagination ul.page-numbers li span.current,
+.woocommerce-pagination ul.page-numbers li a:hover {
+    background: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+}
