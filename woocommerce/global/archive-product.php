@@ -49,7 +49,7 @@ get_header();
                 
                 <!-- HUSKY HORIZONTAL FILTER BAR -->
                 <div class="pba-filter-bar" style="width: 100%; background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--gray-light); box-shadow: 0 4px 15px rgba(11,32,70,0.03);">
-                    <?php echo do_shortcode('[woof]'); ?>
+                    <?php echo do_shortcode('[woof_front_builder]'); ?>
                 </div>
             </div>
             
@@ -94,7 +94,7 @@ get_header();
                                         <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="shop-card__image">
                                         
                                         <!-- QUICK VIEW MODAL TRIGGER -->
-                                        <span class="shop-card__action-btn woosq-btn" data-id="<?php echo get_the_ID(); ?>">Quick View</span>
+                                        <a href="#" class="shop-card__action-btn woosq-btn" data-id="<?php echo get_the_ID(); ?>" onclick="event.preventDefault();">Quick View</a>
                                     </a>
 
                                     <div class="shop-card__content">
