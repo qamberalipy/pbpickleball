@@ -433,5 +433,28 @@
     <!-- Site Search 360 Script -->
     <script async src="https://js.sitesearch360.com/plugin/bundle/58671.js"></script>
 
+    <!-- REAL-TIME CART UPDATER -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Listen for WooCommerce AJAX add-to-cart events
+            jQuery(document.body).on('added_to_cart', function() {
+                var cartCounters = document.querySelectorAll('.pba-cart-count');
+                cartCounters.forEach(function(counter) {
+                    var currentCount = parseInt(counter.innerText) || 0;
+                    counter.innerText = currentCount + 1;
+                    
+                    // Add a quick visual pop effect
+                    counter.style.transition = "transform 0.2s, color 0.2s";
+                    counter.style.transform = "scale(1.5)";
+                    counter.style.color = "var(--green)";
+                    setTimeout(function() {
+                        counter.style.transform = "scale(1)";
+                        counter.style.color = "inherit";
+                    }, 300);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
