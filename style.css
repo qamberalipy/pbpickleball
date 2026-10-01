@@ -9740,22 +9740,55 @@ a.added_to_cart.wc-forward {
         white-space: nowrap !important;
     }
 
-    /* --- 3. FIX: CART PAGE CROPPING --- */
+    /* --- 3. FIX: CART PAGE CROPPING (WOOCOMMERCE BLOCK FIX) --- */
     .wp-block-woocommerce-cart,
     .woocommerce-cart-form {
-        padding: 0 !important;
+        padding: 0 10px !important;
         overflow-x: hidden !important;
         max-width: 100vw !important;
+        box-sizing: border-box !important;
     }
-    .wc-block-cart-items td, 
-    .wc-block-cart-items th {
-        padding: 10px 5px !important;
+    
+    /* Override the strict grid that causes the horizontal overflow */
+    .wc-block-cart-items .wc-block-cart-items__row {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 15px 0 !important;
+        gap: 10px !important;
     }
+    
+    /* Image sizing */
+    .wc-block-cart-item__image {
+        width: 80px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Content wrapping */
+    .wc-block-cart-item__product {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    /* Hide the bulky description in mobile cart */
     .wc-block-components-product-details__short-description {
-        display: none !important; /* Hides bulky description in mobile cart */
+        display: none !important; 
     }
-    .wc-block-components-quantity-selector {
-        margin-top: 8px !important;
+    
+    /* Center the quantity and delete buttons */
+    .wc-block-cart-item__quantity {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Total price alignment */
+    .wc-block-cart-item__total {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        margin-top: 5px !important;
     }
     
     /* --- 4. SHOP GRID SCALE DOWN --- */
