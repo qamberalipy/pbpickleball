@@ -9755,6 +9755,7 @@ a.added_to_cart.wc-forward {
         flex-direction: column !important;
         padding: 15px 0 !important;
         gap: 10px !important;
+        border-bottom: 1px solid #d3cccc;
     }
     
     /* Image sizing */
