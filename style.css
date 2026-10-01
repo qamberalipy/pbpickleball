@@ -9324,3 +9324,130 @@ body.woocommerce-page, body.woocommerce-cart, body.woocommerce-checkout {
 @media (max-width: 576px) {
     .woocommerce ul.products { grid-template-columns: 1fr !important; }
 }
+
+/* ============================================================
+   SHOP UI FIXES: HEADER, PAGINATION, VIEW CART & MODAL
+   ============================================================ */
+
+/* 1. Fix the Zoomed Header & Giant White Box */
+.woocommerce-products-header {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+}
+.woocommerce-products-header__title.page-title {
+    font-family: var(--font-heading) !important;
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    color: var(--navy) !important;
+    text-transform: uppercase;
+    margin: 0 0 10px 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+.woocommerce-breadcrumb {
+    font-family: var(--font-body) !important;
+    font-size: 0.9rem !important;
+    color: var(--gray-text) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+/* 2. Top Bar: Result count & Sorting */
+.woocommerce-result-count {
+    font-size: 0.95rem !important;
+    color: var(--gray-text) !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+}
+.woocommerce-ordering {
+    margin-bottom: 0 !important;
+}
+.woocommerce-ordering select {
+    border: 2px solid var(--gray-light) !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-family: var(--font-body) !important;
+    color: var(--navy) !important;
+    font-weight: 600 !important;
+    outline: none !important;
+    background-color: var(--white) !important;
+    cursor: pointer;
+}
+
+/* 3. Hide the ugly "View Cart" inline text */
+a.added_to_cart.wc-forward {
+    display: none !important;
+}
+
+/* 4. Style Native Pagination */
+.woocommerce-pagination {
+    margin-top: 50px !important;
+    text-align: center !important;
+    width: 100% !important;
+    clear: both !important;
+}
+.woocommerce-pagination ul.page-numbers {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+}
+.woocommerce-pagination ul.page-numbers li {
+    border: none !important;
+}
+.woocommerce-pagination ul.page-numbers li a,
+.woocommerce-pagination ul.page-numbers li span.current {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    background: var(--white) !important;
+    color: var(--navy) !important;
+    border: 2px solid var(--gray-light) !important;
+    transition: all 0.3s ease !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+.woocommerce-pagination ul.page-numbers li span.current,
+.woocommerce-pagination ul.page-numbers li a:hover {
+    background: var(--green) !important;
+    color: var(--white) !important;
+    border-color: var(--green) !important;
+}
+
+/* 5. Quick View Modal Branding */
+.woosq-popup {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    border-top: 8px solid var(--green) !important;
+}
+.woosq-product .product_title {
+    font-family: var(--font-heading) !important;
+    color: var(--navy) !important;
+    font-size: 2rem !important;
+}
+.woosq-product .price {
+    color: var(--green) !important;
+    font-weight: 800 !important;
+}
+.woosq-product .single_add_to_cart_button {
+    background: var(--navy) !important;
+    border-radius: 8px !important;
+    text-transform: uppercase !important;
+    font-family: var(--font-heading) !important;
+}
+.woosq-product .single_add_to_cart_button:hover {
+    background: var(--green) !important;
+}
