@@ -164,6 +164,12 @@ if ( $lessons_query->have_posts() ) :
 
             <div class="lp-card-body" style="display: flex; flex-direction: column; height: 100%;">
                 <h3 style="margin-bottom: 10px;"><?php echo get_the_title(); ?></h3>
+                <!-- Product Price -->
+                <?php if ( $price_html ) : ?>
+                    <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--green); margin-bottom: 15px;">
+                        <?php echo $price_html; ?>
+                    </div>
+                <?php endif; ?>
 
                 <!-- Unified Description -->
                 <div class="lp-card-desc" style="flex-grow: 1; margin-bottom: 20px;">
@@ -257,6 +263,12 @@ if ( $clinics_query->have_posts() ) :
 
             <div class="lp-card-body" style="display: flex; flex-direction: column; height: 100%;">
                 <h3 style="margin-bottom: 10px;"><?php echo get_the_title(); ?></h3>
+                <!-- Product Price -->
+                <?php if ( $price_html ) : ?>
+                    <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--green); margin-bottom: 15px;">
+                        <?php echo $price_html; ?>
+                    </div>
+                <?php endif; ?>
 
                 <!-- Unified Description -->
                 <div class="lp-card-desc" style="flex-grow: 1; margin-bottom: 20px;">
