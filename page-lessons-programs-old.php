@@ -5,102 +5,10 @@
  * @package PBPickleball
  */
 
-// ── Form Processing Logic for Pricing Inquiry ──────────────────────────────
-$inq_errors  = array();
-$inq_success = false;
-
-if ( isset( $_POST['inq_submit'] ) ) {
-    if ( ! isset( $_POST['inq_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['inq_nonce'] ), 'pba_inquiry_form' ) ) {
-        $inq_errors[] = __( 'Security check failed. Please refresh and try again.', 'pba' );
-    } elseif ( ! empty( $_POST['inq_hp'] ) ) {
-        $inq_success = true; // Honeypot triggered
-    } else {
-        $inq_name    = sanitize_text_field( wp_unslash( $_POST['inq_name'] ?? '' ) );
-        $inq_email   = sanitize_email( wp_unslash( $_POST['inq_email'] ?? '' ) );
-        $inq_phone   = sanitize_text_field( wp_unslash( $_POST['inq_phone'] ?? '' ) );
-        $inq_program = sanitize_text_field( wp_unslash( $_POST['inq_program'] ?? '' ) );
-
-        if ( '' === $inq_name ) { $inq_errors[] = __( 'Please enter your name.', 'pba' ); }
-        if ( '' === $inq_email || ! is_email( $inq_email ) ) { $inq_errors[] = __( 'Please enter a valid email address.', 'pba' ); }
-
-        if ( empty( $inq_errors ) ) {
-            $to      = 'support@gopbacademy.com';
-            $subject = sprintf( __( 'New Pricing Inquiry for: %s', 'pba' ), $inq_program );
-            $body    = "New pricing inquiry submission:\n\n"
-                . "Program: {$inq_program}\n"
-                . "Name: {$inq_name}\n"
-                . "Email: {$inq_email}\n"
-                . "Phone: {$inq_phone}\n";
-            $headers = array(
-                'Content-Type: text/plain; charset=UTF-8',
-                'From: PB Academy <noreply@gopbacademy.com>',
-                'Reply-To: ' . $inq_name . ' <' . $inq_email . '>',
-            );
-
-            $inq_success = (bool) wp_mail( $to, $subject, $body, $headers );
-
-            // ── HubSpot CRM API Integration ──
-            if ( $inq_success ) {
-                $hubspot_token = defined( 'PBA_HUBSPOT_TOKEN' ) ? PBA_HUBSPOT_TOKEN : '';
-                if ( ! empty( $hubspot_token ) && ! empty( $inq_email ) ) {
-                    $name_parts = explode( ' ', trim( $inq_name ), 2 );
-                    $hs_first   = $name_parts[0];
-                    $hs_last    = isset( $name_parts[1] ) ? $name_parts[1] : '';
-
-                    $contact_properties = array(
-                        'email'          => $inq_email,
-                        'firstname'      => $hs_first,
-                        'lifecyclestage' => 'lead',
-                    );
-                    if ( ! empty( $hs_last ) )  $contact_properties['lastname'] = $hs_last;
-                    if ( ! empty( $inq_phone ) ) $contact_properties['phone']    = $inq_phone;
-
-                    $hs_message  = "SOURCE: Pricing Inquiry Modal\n";
-                    $hs_message .= "Interested In: {$inq_program}\n";
-                    $contact_properties['message'] = $hs_message;
-
-                    $payload = json_encode( array( 'properties' => $contact_properties ) );
-
-                    $ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts' );
-                    curl_setopt_array( $ch, array(
-                        CURLOPT_POST           => true,
-                        CURLOPT_POSTFIELDS     => $payload,
-                        CURLOPT_HTTPHEADER     => array( 'Authorization: Bearer ' . $hubspot_token, 'Content-Type: application/json' ),
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT        => 5,
-                    ) );
-                    $hs_response  = curl_exec( $ch );
-                    $hs_http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-                    curl_close( $ch );
-
-                    if ( 409 === $hs_http_code && ! empty( $hs_response ) ) {
-                        $hs_data = json_decode( $hs_response, true );
-                        if ( ! empty( $hs_data['message'] ) && preg_match( '/Existing ID:\s*(\d+)/i', $hs_data['message'], $hs_matches ) ) {
-                            $patch_ch = curl_init( 'https://api.hubapi.com/crm/v3/objects/contacts/' . $hs_matches[1] );
-                            curl_setopt_array( $patch_ch, array(
-                                CURLOPT_CUSTOMREQUEST  => 'PATCH',
-                                CURLOPT_POSTFIELDS     => $payload,
-                                CURLOPT_HTTPHEADER     => array( 'Authorization: Bearer ' . $hubspot_token, 'Content-Type: application/json' ),
-                                CURLOPT_RETURNTRANSFER => true,
-                                CURLOPT_TIMEOUT        => 5,
-                            ) );
-                            curl_exec( $patch_ch );
-                            curl_close( $patch_ch );
-                        }
-                    }
-                }
-                $_POST = array(); // Clear form
-            } else {
-                $inq_errors[] = __( 'Sorry, something went wrong sending your inquiry.', 'pba' );
-            }
-        }
-    }
-}
-// ─────────────────────────────────────────────────────────────────────────────
-
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'pba-lessons-programs', get_template_directory_uri() . '/lessons-programs.css', array(), '1.0.0' );
 } );
+
 
 get_header();
 ?>
@@ -116,6 +24,8 @@ get_header();
         <div class="hero-container">
             <div class="hero-content anim-fade-up">
                 <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;"><span style="color: var(--navy);">PB ACADEMY</span><br><span class="highlight program-hero-main">PROGRAMS</span></h1>
+                <!-- <h3 class="hero-tagline" style="margin-top: 15px; font-weight: 700; letter-spacing: 1px;">Learn. Practice. Play. Improve.</h3> -->
+                <!-- <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.15rem; max-width: 800px; margin: 25px auto 0; line-height: 1.6; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);">Whether someone has never picked up a paddle or wants to improve their existing game, PB Academy offers structured programs designed to help players learn at their own pace while building skills, confidence and enjoyment of pickleball.</p> -->
 
                 <!-- Quick-Jump Anchor Bar -->
                 <div class="hero-quick-jump anim-fade-up" style="animation-delay: 1.1s;">
@@ -129,7 +39,23 @@ get_header();
             </div>
         </div>
     </section>
-
+<?php
+// Fetch the "Exclusive" Core 4 Product for dynamic pricing & link
+$core4_link = home_url('/contact-us/');
+$core4_btn_text = 'VIEW DETAILS & REGISTER';
+$core4_query = new WP_Query(array(
+    'post_type'      => 'product',
+    'posts_per_page' => 1,
+    'tax_query'      => array(
+        array('taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'exclusive')
+    )
+));
+if ($core4_query->have_posts()) {
+    $core4_query->the_post();
+    $core4_link = get_permalink(); // Routes to the single product page
+    wp_reset_postdata();
+}
+?>
 <section class="c4-promo-strip">
     <div class="container c4-promo-inner anim-fade-up">
 
@@ -145,7 +71,7 @@ get_header();
         </div>
         <div class="c4-promo-actions">
             <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
-            <button class="btn btn-outline-white inq-btn" style="border-color: var(--navy); color: var(--navy);" data-program="PBA Core 4">ASK FOR PRICING</button>
+            <a href="<?php echo esc_url($core4_link); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);"><?php echo esc_html($core4_btn_text); ?></a>
         </div>
     </div>
 </section>
@@ -154,7 +80,7 @@ get_header();
     <!-- ============================================================
          PHASE 2: LESSONS CATEGORY & PROGRESSION BAR
          ============================================================ -->
-    <section id="core-4" class="lp-core4-section">
+             <section id="core-4" class="lp-core4-section">
         <div class="container lp-core4-container anim-fade-up">
             <div class="lp-core4-header">
                 <h2>PBA CORE 4</h2>
@@ -194,15 +120,15 @@ get_header();
             </div>
             
             <div class="hero-buttons" style="margin-top: 40px;">
-                <button class="btn btn-green inq-btn" data-program="PBA Core 4">ASK FOR PRICING</button>
+                <a href="#" class="btn btn-outline-white">LEARN MORE</a>
+                <a href="<?php echo esc_url($core4_link); ?>" class="btn btn-green"><?php echo esc_html($core4_btn_text); ?></a>
             </div>
         </div>
     </section>
-
     <section id="lessons" class="container" style="padding: 80px 20px;">
         <h2 class="lp-section-title">PROGRAM CATEGORY 1 — LESSONS</h2>
         
-        <!-- 4-Column Grid for Lessons -->
+        <!-- 4-Column Grid for Lessons (Avoids orphaned cards) -->
         <div class="lp-lessons-grid anim-fade-up">
 <?php
 $lessons_query = new WP_Query(array(
@@ -223,6 +149,9 @@ if ( $lessons_query->have_posts() ) :
         $short_desc = $product->get_short_description();
         $duration   = $product->get_attribute('duration') ?: '60 Mins';
         $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
+        $price_html = $product->get_price_html();
+
+        $booking_link = get_permalink(); // Routes to the single product page
 
         $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
         if(empty($img_url)) {
@@ -235,6 +164,12 @@ if ( $lessons_query->have_posts() ) :
 
             <div class="lp-card-body" style="display: flex; flex-direction: column; height: 100%;">
                 <h3 style="margin-bottom: 10px;"><?php echo get_the_title(); ?></h3>
+                <!-- Product Price -->
+                <?php if ( $price_html ) : ?>
+                    <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--green); margin-bottom: 15px;">
+                        <?php echo $price_html; ?>
+                    </div>
+                <?php endif; ?>
 
                 <!-- Unified Description -->
                 <div class="lp-card-desc" style="flex-grow: 1; margin-bottom: 20px;">
@@ -253,10 +188,10 @@ if ( $lessons_query->have_posts() ) :
                     </span>
                 </div>
 
-                <!-- Dynamic Inquiry Button -->
-                <button class="btn btn-navy lp-card-btn inq-btn" style="width: 100%; margin-top: auto;" data-program="<?php echo esc_attr(get_the_title()); ?>">
-                    ASK FOR PRICING
-                </button>
+                <!-- Unified Button -->
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
+                    VIEW DETAILS &amp; REGISTER
+                </a>
             </div>
         </div>
 
@@ -281,6 +216,11 @@ endif;
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         PHASE 3: PBA CORE 4 (PROMINENT FEATURE)
+         ============================================================ -->
+
 
     <!-- ============================================================
          PHASE 4: CLINICS, PLAY & FINAL CTA
@@ -308,6 +248,9 @@ if ( $clinics_query->have_posts() ) :
         $short_desc = $product->get_short_description();
         $duration   = $product->get_attribute('duration') ?: '60 Mins';
         $capacity   = $product->get_attribute('capacity') ?: 'Check Availability';
+        $price_html = $product->get_price_html();
+
+        $booking_link = get_permalink(); // Routes to the single product page
 
         $img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
         if(empty($img_url)) {
@@ -320,6 +263,12 @@ if ( $clinics_query->have_posts() ) :
 
             <div class="lp-card-body" style="display: flex; flex-direction: column; height: 100%;">
                 <h3 style="margin-bottom: 10px;"><?php echo get_the_title(); ?></h3>
+                <!-- Product Price -->
+                <?php if ( $price_html ) : ?>
+                    <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--green); margin-bottom: 15px;">
+                        <?php echo $price_html; ?>
+                    </div>
+                <?php endif; ?>
 
                 <!-- Unified Description -->
                 <div class="lp-card-desc" style="flex-grow: 1; margin-bottom: 20px;">
@@ -338,10 +287,10 @@ if ( $clinics_query->have_posts() ) :
                     </span>
                 </div>
 
-                <!-- Dynamic Inquiry Button -->
-                <button class="btn btn-navy lp-card-btn inq-btn" style="width: 100%; margin-top: auto;" data-program="<?php echo esc_attr(get_the_title()); ?>">
-                    ASK FOR PRICING
-                </button>
+                <!-- Unified Button -->
+                <a href="<?php echo esc_url($booking_link); ?>" class="btn btn-navy lp-card-btn" style="width: 100%; margin-top: auto;">
+                    VIEW DETAILS &amp; REGISTER
+                </a>
             </div>
         </div>
 
@@ -361,115 +310,12 @@ endif;
             <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 15px;">Not Sure Where to Start?</h2>
             <p style="font-size: 1.15rem; color: var(--gray-text); max-width: 600px; margin: 0 auto 30px; line-height: 1.6;">Answer a few simple questions or contact PB Academy and we'll help you choose the appropriate program.</p>
             <div class="hero-buttons">
+                <a href="#" class="btn btn-navy">HELP ME CHOOSE</a>
                 <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-green">CONTACT US</a>
             </div>
         </div>
     </section>
 
 </main>
-
-<!-- ============================================================
-     GLOBAL PRICING INQUIRY MODAL
-     ============================================================ -->
-<div id="inquiryModal" class="pba-modal <?php echo ($inq_success || !empty($inq_errors)) ? 'is-open' : ''; ?>" aria-hidden="true">
-    <div class="pba-modal-overlay" data-modal-close></div>
-    <div class="pba-modal-content" role="dialog" aria-modal="true" style="max-width: 500px; padding: 40px; text-align: left;">
-        <button class="pba-modal-close" data-modal-close aria-label="Close modal">&times;</button>
-        <div class="pba-modal-body">
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 1.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px;">Ask For Pricing</h3>
-            <p style="color: var(--gray-text); font-size: 0.95rem; margin-bottom: 25px; line-height: 1.5;">Enter your details below and our team will send you pricing and availability for <strong id="inq-program-display" style="color: var(--green);">this program</strong>.</p>
-            
-            <?php if ( $inq_success ) : ?>
-                <div style="background: rgba(46, 125, 50, 0.1); color: var(--green); border: 1px solid rgba(46, 125, 50, 0.3); padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600;">
-                    Thank you! Your inquiry has been sent successfully. We will be in touch shortly.
-                </div>
-            <?php elseif ( ! empty( $inq_errors ) ) : ?>
-                <div style="background: rgba(200, 40, 40, 0.08); color: #b3261e; border: 1px solid rgba(200, 40, 40, 0.25); padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem;">
-                    <ul style="margin:0; padding-left: 20px;">
-                        <?php foreach ( $inq_errors as $err ) echo "<li>" . esc_html($err) . "</li>"; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-
-            <form action="<?php echo esc_url( get_permalink() ); ?>" method="post" style="display: flex; flex-direction: column; gap: 15px;">
-                <?php wp_nonce_field( 'pba_inquiry_form', 'inq_nonce' ); ?>
-                <input type="hidden" name="inq_hp" value="">
-                <!-- This hidden field stores the program name based on which button they clicked -->
-                <input type="hidden" name="inq_program" id="inq-program-input" value="<?php echo isset($_POST['inq_program']) ? esc_attr($_POST['inq_program']) : ''; ?>">
-                
-                <div>
-                    <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--navy);">Name *</label>
-                    <input type="text" name="inq_name" required style="width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: var(--font-body); margin-top: 5px;" value="<?php echo esc_attr($_POST['inq_name'] ?? ''); ?>">
-                </div>
-                <div>
-                    <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--navy);">Email *</label>
-                    <input type="email" name="inq_email" required style="width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: var(--font-body); margin-top: 5px;" value="<?php echo esc_attr($_POST['inq_email'] ?? ''); ?>">
-                </div>
-                <div>
-                    <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--navy);">Phone Number</label>
-                    <input type="tel" name="inq_phone" style="width: 100%; padding: 12px 15px; border: 1.5px solid var(--gray-light); border-radius: 8px; font-family: var(--font-body); margin-top: 5px;" value="<?php echo esc_attr($_POST['inq_phone'] ?? ''); ?>">
-                </div>
-                <button type="submit" name="inq_submit" value="1" class="btn btn-green" style="width: 100%; padding: 16px; margin-top: 10px; border-radius: 8px; font-size: 0.95rem;">REQUEST PRICING</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. General Modal Close Logic
-    var closeBtns = document.querySelectorAll('[data-modal-close]');
-    closeBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var modal = this.closest('.pba-modal');
-            if(modal) {
-                modal.classList.remove('is-open');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-
-    // 2. Core 4 Image Flyer Modal
-    var c4Btns = document.querySelectorAll('[data-modal-target="core4Modal"]');
-    var c4Modal = document.getElementById('core4Modal');
-    c4Btns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if(c4Modal) {
-                c4Modal.classList.add('is-open');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-
-    // 3. New Pricing Inquiry Modal Logic
-    var inqBtns = document.querySelectorAll('.inq-btn');
-    var inqModal = document.getElementById('inquiryModal');
-    var inqDisplay = document.getElementById('inq-program-display');
-    var inqInput = document.getElementById('inq-program-input');
-    
-    inqBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Extract the program name stored directly on the button HTML
-            var progName = this.getAttribute('data-program');
-            
-            // Inject the name into the modal text and hidden form input
-            if(progName) {
-                if(inqDisplay) inqDisplay.textContent = progName;
-                if(inqInput) inqInput.value = progName;
-            }
-            
-            // Open Modal
-            if(inqModal) {
-                inqModal.classList.add('is-open');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-});
-</script>
 
 <?php get_footer(); ?>
