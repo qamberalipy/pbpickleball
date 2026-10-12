@@ -223,11 +223,11 @@ endif; ?>
     <div class="ct-form-row">
         <div class="ct-form-group">
             <label for="rev-name">Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="rev-name" name="rev_name" required value="<?php echo isset($name) && !$rev_success ? esc_attr($name) : ''; ?>">
+            <input type="text" id="rev-name" name="rev_name" required value="<?php echo isset($_POST['rev_name']) && !$rev_success ? esc_attr($_POST['rev_name']) : ''; ?>">
         </div>
         <div class="ct-form-group">
             <label for="rev-email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="rev-email" name="rev_email" required value="<?php echo isset($email) && !$rev_success ? esc_attr($email) : ''; ?>">
+            <input type="email" id="rev-email" name="rev_email" required value="<?php echo isset($_POST['rev_email']) && !$rev_success ? esc_attr($_POST['rev_email']) : ''; ?>">
         </div>
     </div>
 
@@ -235,26 +235,26 @@ endif; ?>
         <div class="ct-form-group">
             <label for="rev-program">Program / Service <span aria-hidden="true">*</span></label>
             <select id="rev-program" name="rev_program" required>
-                <option value="" disabled <?php selected(empty($program) || $rev_success); ?>>Select a program...</option>
-                <option value="Private Lessons">Private Lessons</option>
-                <option value="Group Lessons">Group Lessons</option>
-                <option value="PBA Core 4">PBA Core 4</option>
-                <option value="Clinics">Clinics</option>
-                <option value="Events">Events</option>
-                <option value="Retreats">Retreats</option>
-                <option value="Beginner Manual">Beginner Manual</option>
+                <option value="" disabled <?php selected(empty($_POST['rev_program']) || $rev_success); ?>>Select a program...</option>
+                <option value="Private Lessons" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Private Lessons'); ?>>Private Lessons</option>
+                <option value="Group Lessons" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Group Lessons'); ?>>Group Lessons</option>
+                <option value="PBA Core 4" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'PBA Core 4'); ?>>PBA Core 4</option>
+                <option value="Clinics" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Clinics'); ?>>Clinics</option>
+                <option value="Events" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Events'); ?>>Events</option>
+                <option value="Retreats" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Retreats'); ?>>Retreats</option>
+                <option value="Beginner Manual" <?php selected(isset($_POST['rev_program']) && $_POST['rev_program'] === 'Beginner Manual'); ?>>Beginner Manual</option>
             </select>
         </div>
         <div class="ct-form-group">
             <label for="rev-instructor">Instructor (if applicable)</label>
-            <input type="text" id="rev-instructor" name="rev_instructor" placeholder="e.g., Charles Azoulay" value="<?php echo isset($instructor) && !$rev_success ? esc_attr($instructor) : ''; ?>">
+            <input type="text" id="rev-instructor" name="rev_instructor" placeholder="e.g., Charles Azoulay" value="<?php echo isset($_POST['rev_instructor']) && !$rev_success ? esc_attr($_POST['rev_instructor']) : ''; ?>">
         </div>
     </div>
 
     <div class="ct-form-group" style="margin-bottom: 16px;">
         <label for="rev-rating">Star Rating <span aria-hidden="true">*</span></label>
         <select id="rev-rating" name="rev_rating" required>
-            <option value="" disabled <?php selected(empty($rating) || $rev_success); ?>>Select a rating...</option>
+            <option value="" disabled <?php selected(empty($_POST['rev_rating']) || $rev_success); ?>>Select a rating...</option>
             <option value="5">5 Stars</option>
             <option value="4">4 Stars</option>
             <option value="3">3 Stars</option>
@@ -265,7 +265,7 @@ endif; ?>
 
     <div class="ct-form-group" style="margin-bottom: 16px;">
         <label for="rev-comments">Your Review <span aria-hidden="true">*</span></label>
-        <textarea id="rev-comments" name="rev_comments" rows="5" required placeholder="Tell us about your experience..."><?php echo isset($comments) && !$rev_success ? esc_textarea($comments) : ''; ?></textarea>
+        <textarea id="rev-comments" name="rev_comments" rows="5" required placeholder="Tell us about your experience..."><?php echo isset($_POST['rev_comments']) && !$rev_success ? esc_textarea($_POST['rev_comments']) : ''; ?></textarea>
     </div>
 
     <div class="ct-form-group" style="margin-bottom: 16px;">

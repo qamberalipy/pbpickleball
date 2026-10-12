@@ -316,10 +316,10 @@ get_header();
                                 <input type="text" name="im_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                                 <div class="bm-form-group">
-                                    <input type="text" id="im-name" name="im_name" placeholder="Your First Name" required value="<?php echo isset($name) ? esc_attr($name) : ''; ?>">
+                                    <input type="text" id="im-name" name="im_name" placeholder="Your First Name" required value="<?php echo isset($_POST['im_name']) ? esc_attr($_POST['im_name']) : ''; ?>">
                                 </div>
                                 <div class="bm-form-group">
-                                    <input type="email" id="im-email" name="im_email" placeholder="Your Email Address" required value="<?php echo isset($email) ? esc_attr($email) : ''; ?>">
+                                    <input type="email" id="im-email" name="im_email" placeholder="Your Email Address" required value="<?php echo isset($_POST['im_email']) ? esc_attr($_POST['im_email']) : ''; ?>">
                                 </div>
                                 <button type="submit" name="im_submit" value="1" class="bm-btn-order" style="background: var(--accent-orange); color: var(--navy); box-shadow: 0 10px 20px rgba(242, 169, 0, 0.25);">
                                     GET THE GUIDE NOW

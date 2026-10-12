@@ -342,17 +342,17 @@ get_header(); ?>
                     <div class="ct-form-row">
                         <div class="ct-form-group ct-form-group--full">
                             <label for="ev-name">Full Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="ev-name" name="ev_name" placeholder="Your full name" required value="<?php echo isset( $name ) && ! $ev_success ? esc_attr( $name ) : ''; ?>">
+                            <input type="text" id="ev-name" name="ev_name" placeholder="Your full name" required value="<?php echo isset( $_POST['ev_name'] ) && ! $ev_success ? esc_attr( $_POST['ev_name'] ) : ''; ?>">
                         </div>
                     </div>
                     <div class="ct-form-row">
                         <div class="ct-form-group">
                             <label for="ev-email">Email Address <span aria-hidden="true">*</span></label>
-                            <input type="email" id="ev-email" name="ev_email" placeholder="you@example.com" required value="<?php echo isset( $email ) && ! $ev_success ? esc_attr( $email ) : ''; ?>">
+                            <input type="email" id="ev-email" name="ev_email" placeholder="you@example.com" required value="<?php echo isset( $_POST['ev_email'] ) && ! $ev_success ? esc_attr( $_POST['ev_email'] ) : ''; ?>">
                         </div>
                         <div class="ct-form-group">
                             <label for="ev-phone">Phone Number <span aria-hidden="true">*</span></label>
-                            <input type="tel" id="ev-phone" name="ev_phone" placeholder="(561) 855-9500" required value="<?php echo isset( $phone ) && ! $ev_success ? esc_attr( $phone ) : ''; ?>">
+                            <input type="tel" id="ev-phone" name="ev_phone" placeholder="(561) 855-9500" required value="<?php echo isset( $_POST['ev_phone'] ) && ! $ev_success ? esc_attr( $_POST['ev_phone'] ) : ''; ?>">
                         </div>
                     </div>
 
