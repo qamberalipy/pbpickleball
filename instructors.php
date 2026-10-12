@@ -241,9 +241,9 @@ get_header();
             
             <!-- Left Side: Value Proposition -->
             <div class="bm-purchase-content">
-                <span class="bm-purchase-eyebrow" style="color: var(--accent-orange);">Coach The PBA Way</span>
+                <span class="bm-purchase-eyebrow" style="color: var(--accent-orange);">Instruct The PBA Way</span>
                 <h2>Get The Instructor Manual</h2>
-                <p>Curious about what it takes to be a PB Academy Coach? Download our free overview guide covering our teaching philosophy, core drill structures, and certification paths.</p>
+                <p>Curious about what it takes to be a PB Academy Instructor? Download our free overview guide covering our teaching philosophy, core drill structures, and certification paths.</p>
                 
                 <div class="bm-purchase-features">
                     <div class="bm-pf-item anim-fade-up anim-stagger" style="--stagger-delay:0ms;">
