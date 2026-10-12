@@ -164,7 +164,7 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
 					</div>
 					<h3>Expert Instruction</h3>
-					<p>Learn from certified coaches focused on your progress and technique.</p>
+					<p>Learn from certified instructors focused on your progress and technique.</p>
 				</div>
 				<div class="bl-benefit">
 					<div class="bl-benefit-icon">
@@ -204,7 +204,7 @@ get_header();
 
 				<?php if ( $bl_success ) : ?>
 					<div class="bl-alert bl-alert--success" role="status">
-						<?php esc_html_e( 'Thanks! Your request has been sent — we\'ll be in touch shortly to confirm.', 'pba' ); ?>
+						<?php esc_html_e( 'Thank you! Your lesson request has been received. Our team will contact you shortly to confirm pricing, availability, and finalize your booking.', 'pba' ); ?>
 					</div>
 				<?php elseif ( ! empty( $bl_errors ) ) : ?>
 					<div class="bl-alert bl-alert--error" role="alert">
@@ -346,9 +346,17 @@ get_header();
 						</ul>
 					</div>
 
+					<!-- Privacy & Expectation Disclaimer -->
+					<div class="ct-form-group ct-form-group--full" style="flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
+						<input type="checkbox" id="privacy_agree" name="privacy_agree" required style="width: auto; margin-right: 12px; margin-top: 4px; flex-shrink: 0;">
+						<label for="privacy_agree" style="text-transform: none; font-weight: 500; font-size: 0.85rem; line-height: 1.5; cursor: pointer; color: var(--gray-text);">
+							I agree to the <a href="<?php echo home_url('/privacy-policy/'); ?>" style="color: var(--green); text-decoration: underline;">Privacy Policy</a> and understand that submitting this form is a request, not a confirmed booking. Pricing and times will be confirmed via phone or email.
+						</label>
+					</div>
+
 					<button type="submit" name="bl_submit" value="1" class="btn btn-green bl-submit-btn">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-						Complete Registration
+						REQUEST MY LESSON
 					</button>
 				</form>
 			</div>
@@ -390,7 +398,7 @@ if ( $reviews_query->have_posts() ) :
                     <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: <?php echo ($i <=$star_rating) ? 'var(--green)' : '#dddddd'; ?>; stroke: none;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <?php endfor; ?>
             </div>
-            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <p><?php echo esc_html($review_quote); ?></p>
             <footer>
                 <span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
             </footer>

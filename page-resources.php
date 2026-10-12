@@ -154,6 +154,8 @@ get_header(); ?>
 
             <div class="r-grid r-grid--upcoming anim-fade-up">
 
+                <!-- TODO: Uncomment and populate with real court data once provided by client -->
+                <!--
                 <article class="r-card anim-fade-up anim-stagger" style="--stagger-delay: 0ms;">
                     <div class="r-card__image" style="background-image:url('https://images.unsplash.com/photo-1778180883807-19962eda4d99?q=80&w=800&auto=format&fit=crop');">
                         <span class="r-card__badge">Public</span>
@@ -225,6 +227,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </article>
+                -->
 
             </div>
         </div>

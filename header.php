@@ -21,7 +21,7 @@
     <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.svg" />
     <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="PB pickleball Academy" />
+    <meta name="apple-mobile-web-app-title" content="PB Academy" />
     <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/site.webmanifest" />
 </head>
 
@@ -32,7 +32,7 @@
         <div class="container announcement-inner">
             <div class="announcement-left">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Serving Pickle Ball Academy</span>
+                <span style="letter-spacing: 0.5px;">PB Academy</span>
                 &nbsp;|&nbsp; Beginner Focused. Active Adults. Real Results.
             </div>
             <div class="announcement-right">
@@ -55,7 +55,7 @@
 
             <div class="logo">
                 <a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo.png" alt="PB Pickleball Academy" class="logo-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/media/weblogo.png" alt="PB Academy" class="logo-img">
                 </a>
             </div>
 

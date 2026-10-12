@@ -255,7 +255,7 @@
         <div class="shop-container">
             <div class="shop-brand-footer__wrap">
                 <div class="shop-brand-footer__logo">
-                    <span>PB Pickleball Academy</span>
+                    <span>PB Academy</span>
                     <small>Learn. Play. Improve.</small>
                 </div>
                 <div class="shop-brand-footer__props">
