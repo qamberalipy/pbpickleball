@@ -464,13 +464,27 @@ endif; ?>
 		var firstInvalid = null;
 
 		required.forEach( function ( field ) {
-			var valid = field.value.trim() !== '';
-			if ( field.type === 'email' && valid ) {
-				valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test( field.value.trim() );
-			}
+			var valid = true;
+            
+            // Checkboxes must be evaluated by their checked state, not text value
+            if (field.type === 'checkbox') {
+                valid = field.checked;
+            } else {
+                valid = field.value.trim() !== '';
+                if ( field.type === 'email' && valid ) {
+                    valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test( field.value.trim() );
+                }
+            }
+
 			field.setAttribute( 'aria-invalid', valid ? 'false' : 'true' );
 			field.classList.toggle( 'bl-invalid', ! valid );
-			if ( ! valid && ! firstInvalid ) firstInvalid = field;
+			
+            if ( ! valid ) {
+                field.style.borderColor = '#b3261e';
+                if ( ! firstInvalid ) firstInvalid = field;
+            } else {
+                field.style.borderColor = ''; // reset on success
+            }
 		} );
 
 		if ( firstInvalid ) {
@@ -480,10 +494,16 @@ endif; ?>
 	} );
 
 	form.querySelectorAll( '[required]' ).forEach( function ( field ) {
-		field.addEventListener( 'blur', function () {
-			var valid = field.value.trim() !== '';
+		field.addEventListener( 'change', function () {
+			var valid = true;
+            if (field.type === 'checkbox') {
+                valid = field.checked;
+            } else {
+                valid = field.value.trim() !== '';
+            }
 			field.setAttribute( 'aria-invalid', valid ? 'false' : 'true' );
 			field.classList.toggle( 'bl-invalid', ! valid );
+            if(!valid){ field.style.borderColor = '#b3261e'; } else { field.style.borderColor = ''; }
 		} );
 	} );
 
