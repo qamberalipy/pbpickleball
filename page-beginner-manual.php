@@ -191,10 +191,10 @@ get_header();
                                 <input type="text" name="bm_hp" value="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                                 <div class="bm-form-group">
-                                    <input type="text" id="dl-first-name" name="dl_name" placeholder="Your First Name" required value="<?php echo isset($name) ? esc_attr($name) : ''; ?>">
+                                    <input type="text" id="dl-first-name" name="dl_name" placeholder="Your First Name" required value="<?php echo isset($_POST['dl_name']) ? esc_attr($_POST['dl_name']) : ''; ?>">
                                 </div>
                                 <div class="bm-form-group">
-                                    <input type="email" id="dl-email" name="dl_email" placeholder="Your Email Address" required value="<?php echo isset($email) ? esc_attr($email) : ''; ?>">
+                                    <input type="email" id="dl-email" name="dl_email" placeholder="Your Email Address" required value="<?php echo isset($_POST['dl_email']) ? esc_attr($_POST['dl_email']) : ''; ?>">
                                 </div>
                                 <button type="submit" name="bm_submit" value="1" class="bm-btn-order" id="dl-btn">
                                     GET YOUR MANUAL NOW

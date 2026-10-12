@@ -223,22 +223,22 @@ get_header();
 					<div class="bl-form-row">
 						<div class="bl-form-group">
 							<label for="bl-name">Full Name <span aria-hidden="true">*</span></label>
-							<input type="text" id="bl-name" name="bl_name" autocomplete="name" required aria-required="true" value="<?php echo isset( $name ) ? esc_attr( $name ) : ''; ?>">
+							<input type="text" id="bl-name" name="bl_name" autocomplete="name" required aria-required="true" value="<?php echo isset( $_POST['bl_name'] ) ? esc_attr( $_POST['bl_name'] ) : ''; ?>">
 						</div>
 						<div class="bl-form-group">
 							<label for="bl-email">Email Address <span aria-hidden="true">*</span></label>
-							<input type="email" id="bl-email" name="bl_email" autocomplete="email" required aria-required="true" value="<?php echo isset( $email ) ? esc_attr( $email ) : ''; ?>">
+							<input type="email" id="bl-email" name="bl_email" autocomplete="email" required aria-required="true" value="<?php echo isset( $_POST['bl_email'] ) ? esc_attr( $_POST['bl_email'] ) : ''; ?>">
 						</div>
 					</div>
 
 					<div class="bl-form-row">
 						<div class="bl-form-group">
 							<label for="bl-phone">Phone Number <span aria-hidden="true">*</span></label>
-							<input type="tel" id="bl-phone" name="bl_phone" autocomplete="tel" required aria-required="true" value="<?php echo isset( $phone ) ? esc_attr( $phone ) : ''; ?>">
+							<input type="tel" id="bl-phone" name="bl_phone" autocomplete="tel" required aria-required="true" value="<?php echo isset( $_POST['bl_phone'] ) ? esc_attr( $_POST['bl_phone'] ) : ''; ?>">
 						</div>
 						<div class="bl-form-group">
 							<label for="bl-participants">Number of Participants</label>
-							<input type="number" id="bl-participants" name="bl_participants" min="1" max="12" value="<?php echo isset( $participants ) ? esc_attr( $participants ) : '1'; ?>">
+							<input type="number" id="bl-participants" name="bl_participants" min="1" max="12" value="<?php echo isset( $_POST['bl_participants'] ) ? esc_attr( $_POST['bl_participants'] ) : '1'; ?>">
 						</div>
 					</div>
 
@@ -318,18 +318,18 @@ get_header();
 					<div class="bl-form-row">
 						<div class="bl-form-group">
 							<label for="bl-date">Date <span aria-hidden="true">*</span></label>
-							<input type="date" id="bl-date" name="bl_date" required aria-required="true" value="<?php echo isset( $pref_date ) ? esc_attr( $pref_date ) : ''; ?>">
+							<input type="date" id="bl-date" name="bl_date" required aria-required="true" value="<?php echo isset( $_POST['bl_date'] ) ? esc_attr( $_POST['bl_date'] ) : ''; ?>">
 						</div>
 						<div class="bl-form-group">
 							<label for="bl-time">Available Time</label>
-							<input type="time" id="bl-time" name="bl_time" value="<?php echo isset( $pref_time ) ? esc_attr( $pref_time ) : ''; ?>">
+							<input type="time" id="bl-time" name="bl_time" value="<?php echo isset( $_POST['bl_time'] ) ? esc_attr( $_POST['bl_time'] ) : ''; ?>">
 						</div>
 					</div>
 
 					<div class="bl-form-row">
 						<div class="bl-form-group bl-form-group--full">
 							<label for="bl-message">Comments or Requests</label>
-							<textarea id="bl-message" name="bl_message" rows="3" placeholder="Tell us about your goals or anything we should know before the session…"><?php echo isset( $message ) ? esc_textarea( $message ) : ''; ?></textarea>
+							<textarea id="bl-message" name="bl_message" rows="3" placeholder="Tell us about your goals or anything we should know before the session…"><?php echo isset( $_POST['bl_message'] ) ? esc_textarea( $_POST['bl_message'] ) : ''; ?></textarea>
 						</div>
 					</div>
 

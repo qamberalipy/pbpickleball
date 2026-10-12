@@ -4,8 +4,12 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <title><?php if ( is_front_page() || is_home() ) { echo 'Beginner Pickleball Lessons in Boynton Beach | PB Academy'; } else { wp_title('|', true, 'right'); bloginfo('name'); } ?></title>
     
+    <?php if ( is_front_page() || is_home() ) : ?>
+    <meta name="description" content="PB Academy provides friendly, structured pickleball instruction for beginners, seniors and active adults in Boynton Beach and Palm Beach County. Explore Core 4, private lessons, clinics and group programs.">
+    <?php endif; ?>
+
     <!-- CRITICAL CRAWLER FIX -->
     <?php if ( is_singular() || is_page() ) : ?>
         <link rel="canonical" href="<?php echo esc_url( get_permalink() ); ?>" />
