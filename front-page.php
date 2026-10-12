@@ -20,11 +20,8 @@
                 <div class="qj-links">
                     <a href="#features" class="qj-link">Why Choose Us</a>
                     <a href="#programs" class="qj-link">Programs</a>
-                    <a href="#manual" class="qj-link">Manual</a>
-                    <a href="#reviews" class="qj-link">Reviews</a>
                     <a href="#founder" class="qj-link">Our Story</a>
-                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="qj-link " style="border-color: var(--green); color: var(--white);">Register Now</a>
-                    <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="qj-link " style="border-color: var(--green); color: var(--white);">Explore Programs</a>
+                    <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="qj-link" style="border-color: var(--green); color: var(--white); background: var(--green);">Register Now</a>
                 </div>
             </div>
 
@@ -50,8 +47,7 @@
             <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
-            <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
-            <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-outline-white" style="border-color: var(--navy); color: var(--navy);">REGISTER NOW</a>
+            <button class="btn btn-navy" data-modal-target="core4Modal" style="padding: 18px 36px; font-size: 1rem;">VIEW DETAILS & REGISTER</button>
         </div>
     </div>
 </section>
@@ -197,7 +193,7 @@ if ( $reviews_query->have_posts() ) :
                 <?php endfor; ?>
             </div>
             
-            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <p><?php echo esc_html($review_quote); ?></p>
             <div class="t-author">- <?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></div>
         </div>
 
