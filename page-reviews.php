@@ -173,7 +173,7 @@ if ( $reviews_query->have_posts() ) :
                 <?php endfor; ?>
             </div>
             
-            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <p><?php echo esc_html($review_quote); ?></p>
             <div class="t-author">- <?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></div>
         </article>
 

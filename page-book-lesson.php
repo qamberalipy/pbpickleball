@@ -390,7 +390,7 @@ if ( $reviews_query->have_posts() ) :
                     <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: <?php echo ($i <=$star_rating) ? 'var(--green)' : '#dddddd'; ?>; stroke: none;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <?php endfor; ?>
             </div>
-            <p>&#8220;<?php echo esc_html($review_quote); ?>&#8221;</p>
+            <p><?php echo esc_html($review_quote); ?></p>
             <footer>
                 <span class="bl-testimonial__name"><?php echo esc_html($reviewer_name ? $reviewer_name : get_the_title()); ?></span>
             </footer>
