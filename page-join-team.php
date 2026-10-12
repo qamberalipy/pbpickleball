@@ -198,7 +198,7 @@ get_header();
                 <div class="ct-card-header">
                     <h2 class="ct-section-title">What We're Looking For</h2>
                     <div class="ct-title-line"></div>
-                    <p class="ct-card-intro">We pride ourselves on providing the best possible experience for our students. Here is what it takes to join the PB Pickleball Academy team:</p>
+                    <p class="ct-card-intro">We pride ourselves on providing the best possible experience for our students. Here is what it takes to join the PB Academy team:</p>
                 </div>
                 <ul class="ct-contact-list">
                     <li class="ct-contact-item">

@@ -82,7 +82,7 @@ get_header();
          PHASE 2: FEATURED INSTRUCTOR (CHARLES AZOULAY)
          ============================================================ -->
 
-    <section id="featured" class="container featured-instructor-section" style="padding: 80px 20px 40px;" data-mascot-msg="Coach Charles brings years of expertise to help you master the fundamentals.">
+    <section id="featured" class="container featured-instructor-section" style="padding: 80px 20px 40px;" data-mascot-msg="Instructor Charles brings years of expertise to help you master the fundamentals.">
         <div class="fi-2col-layout anim-fade-up">
             
             <!-- Left Column: Photo & Massive CTA -->
@@ -111,7 +111,7 @@ get_header();
 
                 <div>
                     <h3 class="fi-section-title">Biography & Background</h3>
-                    <p class="fi-text-content">Discovered pickleball later in life and turned a teaching background into a mission: make every beginner feel confident. With years of coaching experience, Charles has developed a proven methodology that helps adult and senior players grasp the fundamentals quickly and safely, while ensuring every lesson is filled with fun.</p>
+                    <p class="fi-text-content">Discovered pickleball later in life and turned a teaching background into a mission: make every beginner feel confident. With years of instruction experience, Charles has developed a proven methodology that helps adult and senior players grasp the fundamentals quickly and safely, while ensuring every lesson is filled with fun.</p>
                 </div>
 
                 <div>

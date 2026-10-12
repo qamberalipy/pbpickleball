@@ -44,7 +44,7 @@
                     <span class="hl-core4" style="text-decoration: underline; text-decoration-color: #030d1f; text-decoration-thickness: 4px; text-underline-offset: 4px;">CORE 4</span>
                 </span>
             </h2>
-            <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
+            <p>Our foundational 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
             <button class="btn btn-navy" data-modal-target="core4Modal" style="padding: 18px 36px; font-size: 1rem;">VIEW DETAILS & REGISTER</button>
@@ -87,7 +87,7 @@
             <div class="program-card">
                 <svg class="program-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
                 <h4>PRIVATE LESSONS</h4>
-                <p>One-on-one coaching, your pace.</p>
+                <p>One-on-one instruction, your pace.</p>
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">LEARN MORE &gt;</a>
             </div>
 
@@ -131,8 +131,8 @@
         </div>
 
         <div class="manual-content">
-            <h2>WHAT'S PB</h2>
-            <p>The <strong>Pickleball Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
+            <h2>THE BEGINNER TRAINING MANUAL</h2>
+            <p>The <strong>PB Academy Beginner Training Manual – Volume 1</strong> is the perfect companion to your lessons.</p>
             
             <ul class="manual-list-new">
                 <li>Easy-to-follow illustrations</li>
@@ -153,7 +153,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section id="reviews" class="testimonials-section" data-mascot-msg="See what our students have to say about Coach Charles and the academy.">
+<section id="reviews" class="testimonials-section" data-mascot-msg="See what our students have to say about Instructor Charles and the academy.">
     <div class="container">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">WHAT STUDENTS SAY</h2>
         
@@ -209,7 +209,7 @@ endif; ?>
     </div>
 </section>
 <!-- Founder & Looking Ahead Section -->
-<section id="founder" class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Pickleball Academy is headed next!" aria-labelledby="founderHeading">
+<section id="founder" class="founder-section" data-mascot-msg="Meet our founder Charles and see where PB Academy is headed next!" aria-labelledby="founderHeading">
     <div class="container">
         <div class="founder-grid">
 
@@ -222,7 +222,7 @@ endif; ?>
                         <h4>Charles Azoulay</h4>
                         <p class="founder-role">Founder</p>
                         <ul class="founder-achievements">
-                            <li><span class="fa-check">✓</span> Founded PB Pickleball Academy for active adult beginners</li>
+                            <li><span class="fa-check">✓</span> Founded PB Academy for active adult beginners</li>
                             <li><span class="fa-check">✓</span> Background in teaching — patient, clear, and encouraging</li>
                             <li><span class="fa-check">✓</span> Dedicated to making pickleball fun, safe &amp; accessible</li>
                         </ul>
@@ -233,7 +233,7 @@ endif; ?>
             <div class="founder-col looking-ahead-col">
                 <p class="founder-col-title">The Future</p>
                 <h3>Looking Ahead</h3>
-                <p class="la-intro">PB Pickleball Academy is growing! We're expanding our reach to bring even more players into the game — here's what's on the horizon:</p>
+                <p class="la-intro">PB Academy is growing! We're expanding our reach to bring even more players into the game — here's what's on the horizon:</p>
                 <div class="la-grid">
                     <div class="la-item"><div class="la-check">&#10003;</div> More Instructors</div>
                     <div class="la-item"><div class="la-check">&#10003;</div> More Courts</div>
@@ -282,7 +282,7 @@ endif; ?>
 
         <div class="cta-right">
             <div class="cta-right-text">
-                <p>Spots fill up fast &ndash;<br>reserve your time today!</p>
+                <p>Secure your spot on the court &ndash;<br>reserve your time today!</p>
             </div>
             <svg class="cta-paddle-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <ellipse cx="32" cy="30" rx="22" ry="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>

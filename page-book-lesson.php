@@ -164,7 +164,7 @@ get_header();
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
 					</div>
 					<h3>Expert Instruction</h3>
-					<p>Learn from certified coaches focused on your progress and technique.</p>
+					<p>Learn from certified instructors focused on your progress and technique.</p>
 				</div>
 				<div class="bl-benefit">
 					<div class="bl-benefit-icon">

@@ -141,7 +141,7 @@ get_header();
                     <span class="hl-core4" style="text-decoration: underline; text-decoration-color: #030d1f; text-decoration-thickness: 4px; text-underline-offset: 4px;">CORE 4</span>
                 </span>
             </h2>
-            <p>Our exclusive 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
+            <p>Our foundational 4-lesson beginner system. From zero experience to confident player in just 4 hours.</p>
         </div>
         <div class="c4-promo-actions">
             <button class="btn btn-navy" data-modal-target="core4Modal">VIEW MORE</button>
