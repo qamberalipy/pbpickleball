@@ -204,7 +204,7 @@ get_header();
 
 				<?php if ( $bl_success ) : ?>
 					<div class="bl-alert bl-alert--success" role="status">
-						<?php esc_html_e( 'Thanks! Your request has been sent — we\'ll be in touch shortly to confirm.', 'pba' ); ?>
+						<?php esc_html_e( 'Thank you! Your lesson request has been received. Our team will contact you shortly to confirm pricing, availability, and finalize your booking.', 'pba' ); ?>
 					</div>
 				<?php elseif ( ! empty( $bl_errors ) ) : ?>
 					<div class="bl-alert bl-alert--error" role="alert">
@@ -346,9 +346,17 @@ get_header();
 						</ul>
 					</div>
 
+					<!-- Privacy & Expectation Disclaimer -->
+					<div class="ct-form-group ct-form-group--full" style="flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
+						<input type="checkbox" id="privacy_agree" name="privacy_agree" required style="width: auto; margin-right: 12px; margin-top: 4px; flex-shrink: 0;">
+						<label for="privacy_agree" style="text-transform: none; font-weight: 500; font-size: 0.85rem; line-height: 1.5; cursor: pointer; color: var(--gray-text);">
+							I agree to the <a href="<?php echo home_url('/privacy-policy/'); ?>" style="color: var(--green); text-decoration: underline;">Privacy Policy</a> and understand that submitting this form is a request, not a confirmed booking. Pricing and times will be confirmed via phone or email.
+						</label>
+					</div>
+
 					<button type="submit" name="bl_submit" value="1" class="btn btn-green bl-submit-btn">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-						Complete Registration
+						REQUEST MY LESSON
 					</button>
 				</form>
 			</div>
