@@ -9931,3 +9931,28 @@ p {
         padding-top: 15px !important;
     }
 }
+
+/* ============================================================
+   FORM UI FIX: NATIVE CHECKBOX RESTORATION
+   ============================================================ */
+.ct-form-group input[type="checkbox"],
+.bl-form-group input[type="checkbox"] {
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    padding: 0 !important;
+    margin-top: 3px !important;
+    border: 2px solid var(--gray-light) !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    background: initial !important;
+    flex-shrink: 0 !important;
+}
+
+.ct-form-group label[for="privacy_agree"] {
+    cursor: pointer !important;
+    user-select: none !important;
+}
+

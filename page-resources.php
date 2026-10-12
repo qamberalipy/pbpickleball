@@ -286,7 +286,7 @@ get_header(); ?>
     <section class="r-section bg-gray " style="padding: 70px 20px; text-align:center;">
         <div class="container anim-fade-up">
             <h2 style="font-family: var(--font-heading); font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 900; color: var(--navy); text-transform: uppercase; margin-bottom: 15px;">Ready To Practice This On The Court?</h2>
-            <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy coach.</p>
+            <p style="font-size: 1.05rem; color: var(--gray-text); max-width: 650px; margin: 0 auto 30px;">Reading is a great start — but nothing beats hands-on instruction with a PB Academy instructor.</p>
             <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
                 <a href="<?php echo home_url('/program-and-lessons/'); ?>" class="btn btn-outline">EXPLORE PROGRAMS</a>
                 <a href="<?php echo home_url('/book-a-lesson/'); ?>" class="btn btn-green">REGISTER NOW</a>
