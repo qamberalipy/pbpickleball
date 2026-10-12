@@ -75,16 +75,24 @@
                 <ul class="nav-links">
                     <li><a href="<?php echo home_url('/'); ?>" <?php if (is_front_page() || is_home() || is_page('home')) echo 'class="active"'; ?>>HOME</a></li>
                     <li><a href="<?php echo home_url('/about-pba/'); ?>" <?php if (is_page('about-pba')) echo 'class="active"'; ?>>ABOUT</a></li>
-                    <li><a href="<?php echo home_url('/our-instructor/'); ?>" <?php if (is_page('our-instructor')) echo 'class="active"'; ?>>INSTRUCTORS</a></li>
-                    <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page(array('program-and-lessons', 'lessons-programs'))) echo 'class="active"'; ?>>PROGRAMS</a></li>                    
-                    <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>REGISTER NOW</a></li>
-                    <li><a href="<?php echo home_url('/beginner-manual/'); ?>" <?php if (is_page('beginner-manual')) echo 'class="active"'; ?>>MANUAL</a></li>               
-                    <li><a href="<?php echo home_url('/treats/'); ?>" <?php if (is_page(array('treats', 'retreats'))) echo 'class="active"'; ?>>RETREATS</a></li>
-                    <li><a href="<?php echo home_url('/events/'); ?>" <?php if (is_page('events')) echo 'class="active"'; ?>>EVENTS</a></li>
-                    <li><a href="<?php echo home_url('/shop/'); ?>" <?php if (is_page('shop')) echo 'class="active"'; ?>>SHOP</a></li>
-                    <li><a href="<?php echo home_url('/reviews/'); ?>" <?php if (is_page('reviews')) echo 'class="active"'; ?>>REVIEWS</a></li>
+                    <li><a href="<?php echo home_url('/program-and-lessons/'); ?>" <?php if (is_page(array('program-and-lessons', 'lessons-programs'))) echo 'class="active"'; ?>>PROGRAMS</a></li>
+                    <li><a href="<?php echo home_url('/program-and-lessons/#core-4'); ?>">CORE 4</a></li>
                     <li><a href="<?php echo home_url('/resources/'); ?>" <?php if (is_page('resources')) echo 'class="active"'; ?>>RESOURCES</a></li>
                     <li><a href="<?php echo home_url('/contact-us/'); ?>" <?php if (is_page('contact-us')) echo 'class="active"'; ?>>CONTACT</a></li>
+                    <li><a href="<?php echo home_url('/book-a-lesson/'); ?>" <?php if (is_page('book-a-lesson')) echo 'class="active"'; ?>>REGISTER</a></li>
+                    
+                    <!-- New Grouped Tab for Secondary Links -->
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropbtn" onclick="event.preventDefault();">MORE ▾</a>
+                        <ul class="nav-dropdown-content">
+                            <li><a href="<?php echo home_url('/our-instructor/'); ?>">Instructors</a></li>
+                            <li><a href="<?php echo home_url('/beginner-manual/'); ?>">Manual</a></li>
+                            <li><a href="<?php echo home_url('/retreats/'); ?>">Retreats</a></li>
+                            <li><a href="<?php echo home_url('/events/'); ?>">Events</a></li>
+                            <li><a href="<?php echo home_url('/shop/'); ?>">Shop</a></li>
+                            <li><a href="<?php echo home_url('/reviews/'); ?>">Reviews</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 

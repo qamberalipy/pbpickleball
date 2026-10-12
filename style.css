@@ -9841,3 +9841,93 @@ a.added_to_cart.wc-forward {
         font-size: 0.8rem !important;
     }
 }
+
+
+/* ============================================================
+   ITERATION 1: UX, SENIOR ACCESSIBILITY & DROPDOWN NAV
+   ============================================================ */
+
+/* 1. Global Typography Bump for 60+ Demographic */
+body {
+    font-size: 1.2rem !important;
+    line-height: 1.7 !important;
+}
+p {
+    font-size: 1.15rem; 
+}
+
+/* 2. Fix Mascot Overlapping Content on Desktop */
+#mascot-avatar {
+    width: 140px !important; /* Scaled down so it doesn't block Core 4 text */
+}
+#mascot-companion {
+    bottom: 25px !important;
+    right: 25px !important;
+}
+
+/* 3. New 'More' Dropdown Navigation */
+.nav-dropdown {
+    position: relative;
+}
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0px 8px 24px 0px rgba(11,32,70,0.15);
+    z-index: 300;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--gray-light);
+}
+.nav-dropdown:hover .nav-dropdown-content {
+    display: flex;
+}
+.nav-dropdown-content li {
+    width: 100%;
+}
+.nav-dropdown-content li a {
+    padding: 12px 20px !important;
+    display: block !important;
+    text-align: left !important;
+    text-transform: capitalize !important;
+    font-size: 0.9rem !important;
+}
+.nav-dropdown-content li a::after {
+    display: none !important; /* Hides the green underline on sub-items */
+}
+.nav-dropdown-content li a:hover {
+    background-color: #F4F9F0;
+    color: var(--green) !important;
+}
+
+/* 4. Streamlined Main Header Spacing */
+.nav-links {
+    gap: 16px !important;
+}
+.nav-links li a {
+    font-size: 0.95rem !important;
+}
+
+/* Mobile Adjustments for Dropdown */
+@media (max-width: 980px) {
+    .nav-dropdown-content {
+        position: static;
+        display: flex;
+        box-shadow: none;
+        padding: 0 0 0 15px;
+        background: transparent;
+        border: none;
+    }
+    .nav-dropdown .nav-dropbtn {
+        pointer-events: none; /* Turns 'MORE' into a static label on mobile */
+        color: var(--gray-text) !important;
+        border-top: 1px dashed var(--gray-light);
+        margin-top: 10px;
+        padding-top: 15px !important;
+    }
+}
