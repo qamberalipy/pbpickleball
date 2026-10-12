@@ -42,14 +42,13 @@ get_header(); ?>
 
                 <h2>1. Lessons and Training Sessions</h2>
                 <p>Cancellation and rescheduling policies may vary depending on the type of lesson or program booked. Unless otherwise stated at the time of booking, participants are encouraged to provide as much advance notice as possible if they need to cancel or reschedule.</p>
-                <p>PB Academy reserves the right to determine whether a cancellation is eligible for:</p>
+                <p>To provide fairness to all students and instructors, PB Academy enforces the following strict cancellation rules for standard lessons and clinics:</p>
                 <ul>
-                    <li>A refund</li>
-                    <li>A credit</li>
-                    <li>A transfer to another session</li>
-                    <li>Rescheduling</li>
+                    <li><strong>24+ Hours Notice:</strong> Eligible for rescheduling or a full credit.</li>
+                    <li><strong>Under 24 Hours Notice:</strong> Eligible for a 50% credit.</li>
+                    <li><strong>No-Show:</strong> No refund or credit.</li>
+                    <li><strong>Academy / Weather Cancellation:</strong> Eligible for rescheduling or full credit.</li>
                 </ul>
-                <p>No-shows or late cancellations may not be eligible for a refund.</p>
 
                 <h2>2. Programs and Clinics</h2>
                 <p>For group programs, clinics, camps, and training sessions, cancellation and refund eligibility may depend on:</p>
@@ -62,9 +61,8 @@ get_header(); ?>
                 <p>Where applicable, participants may be offered a credit toward a future PB Academy program instead of a refund.</p>
 
                 <h2>3. Events and Retreats</h2>
-                <p>Events and retreats may involve advance planning, venue reservations, accommodations, transportation, instructors, and other non-refundable expenses.</p>
-                <p>Specific cancellation terms for an event or retreat may be provided at the time of registration. Those specific terms will take precedence over this general policy.</p>
-                <p>Unless otherwise required by applicable law, certain deposits, reservation fees, or amounts already paid to third-party providers may be non-refundable. We strongly encourage participants to review the cancellation terms carefully before registering for an event or retreat.</p>
+                <p>Events and retreats involve extensive advance planning, venue reservations, luxury accommodations, and third-party supplier contracts with strict non-refundable clauses.</p>
+                <p>Because of these complexities, Retreats are completely exempt from the standard 24-hour cancellation policy. Please refer to our dedicated <a href="<?php echo home_url('/retreat-terms/'); ?>">Retreat Terms & Conditions</a> for the specific deposit, cancellation, and refund windows applicable to travel experiences.</p>
 
                 <h2>4. Cancellations by PB Academy</h2>
                 <p>PB Academy reserves the right to cancel, postpone, reschedule, or modify a lesson, program, clinic, event, or retreat due to circumstances including:</p>
