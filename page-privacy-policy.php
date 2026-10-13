@@ -199,6 +199,7 @@ get_header(); ?>
                 <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
                 <p>
                     <strong>PB Academy</strong><br>
+                    Address: 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426<br>
                     Website: <a href="https://GoPBAcademy.com">GoPBAcademy.com</a><br>
                     Email: <a href="mailto:info@gopbacademy.com">info@gopbacademy.com</a><br>
                     Phone: <a href="tel:5618559500">561-855-9500</a>

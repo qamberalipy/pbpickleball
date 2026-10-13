@@ -10,6 +10,7 @@
                     </a>
                     <ul class="footer-contact-list">
                         <li class="fc-bold">PB ACADEMY</li>
+                        <li class="fc-address"><a href="https://maps.google.com/?q=1375+Gateway+Blvd+Ste+545,+Boynton+Beach,+FL+33426" target="_blank" rel="noopener noreferrer">1375 Gateway Blvd Ste 545<br>Boynton Beach, FL 33426</a></li>
                         <li><a href="https://gopbacademy.com">GoPBAcademy.com</a></li>
                         <li><a href="tel:5618559500">561.855.9500</a></li>
                         <li><a href="mailto:info@gopbacademy.com">info@gopbacademy.com</a></li>

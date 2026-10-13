@@ -278,6 +278,7 @@ endif; ?>
                 REGISTER NOW
             </a>
             <span class="cta-or-text">or call 561-855-9500</span>
+            <span class="cta-location-text" style="display: block; margin-top: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.8);"><a href="<?php echo home_url('/contact-us/'); ?>" style="color: inherit; text-decoration: none;">📍 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426</a></span>
         </div>
 
         <div class="cta-right">
