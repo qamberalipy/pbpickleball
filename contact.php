@@ -149,6 +149,7 @@ get_header();
                     <span class="qj-label">Click To View More:</span>
                     <div class="qj-links">
                         <a href="#contact-info" class="qj-link">Contact Info</a>
+                        <a href="#location-map" class="qj-link">Location &amp; Map</a>
                         <a href="#community" class="qj-link">Community</a>
                     </div>
                 </div>
@@ -170,6 +171,17 @@ get_header();
                     <p class="ct-card-intro">We'd love to connect with you. Reach out via phone, email, or explore our site!</p>
                 </div>
                 <ul class="ct-contact-list">
+                    <li class="ct-contact-item">
+                        <div class="ct-ci-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="ct-ci-text">
+                            <span class="ct-ci-label">Location / Address</span>
+                            <a href="https://maps.google.com/?q=1375+Gateway+Blvd+Ste+545,+Boynton+Beach,+FL+33426" target="_blank" rel="noopener noreferrer" class="ct-ci-value">
+                                1375 Gateway Blvd Ste 545<br>Boynton Beach, FL 33426
+                            </a>
+                        </div>
+                    </li>
                     <li class="ct-contact-item">
                         <div class="ct-ci-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01z"/></svg>
@@ -287,7 +299,41 @@ get_header();
     </section>
 
     <!-- ============================================================
-         PHASE 3: COMMUNITY / HOA CALLOUT
+         PHASE 3: FIND US — Location & Google Map Block
+         ============================================================ -->
+    <section id="location-map" class="ct-map-section container anim-fade-up" data-mascot-msg="Visit us at 1375 Gateway Blvd Ste 545 in Boynton Beach!">
+        <div class="ct-map-header">
+            <h2 class="ct-section-title">Find Us</h2>
+            <div class="ct-title-line"></div>
+            <p>1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426 &mdash; centrally located and easy to reach from anywhere in Palm Beach County.</p>
+        </div>
+        <div class="ct-map-wrapper">
+            <iframe
+                title="PB Academy Location — 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426"
+                src="https://maps.google.com/maps?q=1375+Gateway+Blvd+Ste+545,+Boynton+Beach,+FL+33426&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="ct-map-tags">
+            <span class="ct-map-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                1375 Gateway Blvd Ste 545
+            </span>
+            <span class="ct-map-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)"><path d="M18.92 5.01C18.72 4.42 18.16 4 17.5 4h-11c-.66 0-1.21.42-1.42 1.01L3 11v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 6h10.29l1.04 3H5.81l1.04-3zM19 17H5v-5h14v5z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
+                Plenty of Parking
+            </span>
+            <span class="ct-map-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Boynton Beach, FL 33426
+            </span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PHASE 4: COMMUNITY / HOA CALLOUT
          ============================================================ -->
     <section id="community" class="container" style="padding-bottom: 80px;">
         <div class="ct-community-banner anim-fade-up">

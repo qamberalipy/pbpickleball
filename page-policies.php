@@ -97,6 +97,7 @@ get_header(); ?>
                 <h2>8. How to Request a Cancellation or Refund</h2>
                 <p>To request a cancellation, rescheduling, or refund, please contact us as soon as possible:</p>
                 <p><strong>PB Academy</strong><br>
+                Address: 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426<br>
                 Email: <a href="mailto:info@gopbacademy.com">info@gopbacademy.com</a><br>
                 Phone: <a href="tel:5618559500">561-855-9500</a></p>
                 <p>Please include:</p>
@@ -215,6 +216,7 @@ get_header(); ?>
                 <h2>12. Contact Us</h2>
                 <p>For questions regarding shipping, returns, exchanges, cancellations, or refunds, please contact:</p>
                 <p><strong>PB Academy</strong><br>
+                Address: 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426<br>
                 Website: <a href="https://GoPBAcademy.com">GoPBAcademy.com</a><br>
                 Email: <a href="mailto:info@gopbacademy.com">info@gopbacademy.com</a><br>
                 Phone: <a href="tel:5618559500">561-855-9500</a></p>

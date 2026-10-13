@@ -16,6 +16,27 @@
         <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
     <?php endif; ?>
 
+    <!-- Schema.org LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsClub",
+        "name": "PB Pickleball Academy",
+        "alternateName": "PB Academy",
+        "url": "<?php echo esc_url( home_url('/') ); ?>",
+        "telephone": "+1-561-855-9500",
+        "email": "info@gopbacademy.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1375 Gateway Blvd Ste 545",
+            "addressLocality": "Boynton Beach",
+            "addressRegion": "FL",
+            "postalCode": "33426",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
@@ -36,8 +57,10 @@
         <div class="container announcement-inner">
             <div class="announcement-left">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span style="letter-spacing: 0.5px;">PB Academy</span>
-                &nbsp;|&nbsp; Beginner Focused. Active Adults. Real Results.
+                <a href="<?php echo home_url('/contact-us/'); ?>" class="ann-location-link" style="color: inherit; text-decoration: none;">
+                    <span style="letter-spacing: 0.5px;">PB Academy</span>
+                    &nbsp;|&nbsp; 1375 Gateway Blvd Ste 545, Boynton Beach, FL 33426
+                </a>
             </div>
             <div class="announcement-right">
                 <a href="tel:5618559500" class="ann-contact">
